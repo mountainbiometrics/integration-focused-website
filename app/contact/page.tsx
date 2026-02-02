@@ -3,7 +3,7 @@ import Hero from '@/components/content/Hero';
 import ContactForm from '@/components/forms/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact | Mountain Biometrics',
+  title: 'Contact | MTN',
   description:
     'Start a conversation about your next integration. Discuss your acquisition, system change, or visibility challenges with our team.',
 };

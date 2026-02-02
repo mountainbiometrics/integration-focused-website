@@ -11,11 +11,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mountain Biometrics | End Data Blackout Periods",
+  title: "MTN | End Data Blackout Periods",
   description: "Eliminate data blackout periods during acquisitions, system changes, and multi-vendor environments. Keep reporting, revenue visibility, and operations live while systems evolve.",
   keywords: ["healthcare integration", "data integration", "healthcare rollups", "MSO", "revenue cycle management", "EHR integration"],
   openGraph: {
-    title: "Mountain Biometrics | End Data Blackout Periods",
+    title: "MTN | End Data Blackout Periods",
     description: "Eliminate data blackout periods during acquisitions and system changes. Keep visibility live while systems evolve.",
     type: "website",
   },

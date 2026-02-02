@@ -5,7 +5,7 @@ import TechnicalSection from '@/components/technical/TechnicalSection';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 
 export const metadata: Metadata = {
-  title: 'Technical Overview | Mountain Biometrics',
+  title: 'Technical Overview | MTN',
   description:
     'Technical architecture and implementation details for data engineers and IT teams evaluating MTN Data Foundry.',
 };

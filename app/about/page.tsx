@@ -3,7 +3,7 @@ import Hero from '@/components/content/Hero';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 
 export const metadata: Metadata = {
-  title: 'About | Mountain Biometrics',
+  title: 'About | MTN',
   description:
     'We built MTN Data Foundry to solve our own integration challenges. A team of neuroscientists, ML scientists, and engineers sharing what we built.',
 };

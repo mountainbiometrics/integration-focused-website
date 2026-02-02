@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Mountain Biometrics',
+  title: 'Privacy Policy | MTN',
   description: 'Privacy policy for Mountain Biometrics website and services.',
 };
 

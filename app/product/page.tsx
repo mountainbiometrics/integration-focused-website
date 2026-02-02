@@ -5,7 +5,7 @@ import OutcomeBullets from '@/components/content/OutcomeBullets';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 
 export const metadata: Metadata = {
-  title: 'Product | Mountain Biometrics',
+  title: 'Product | MTN',
   description:
     'MTN Data Foundry eliminates blackout periods during acquisitions and system changes. Learn how it works.',
 };

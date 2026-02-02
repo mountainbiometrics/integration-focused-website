@@ -3,8 +3,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useState } from 'react';
 
-// Replace with your actual Formspree form ID
-const FORMSPREE_FORM_ID = 'xpwzgvqk'; // Placeholder - user should replace this
+const FORMSPREE_FORM_ID = 'xaqbaljo';
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);

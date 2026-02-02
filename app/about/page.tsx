@@ -29,24 +29,17 @@ export default function AboutPage() {
             </h2>
             <div className="prose prose-gray max-w-none space-y-4">
               <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed">
-                Medical Timeseries Networks started as a neuroscience company.
-                We built AI-powered solutions that needed to work with
-                healthcare data across multiple sites. Every time we deployed at
-                a new location, we hit the same wall: different EHRs, different
-                schemas, different data formats. We were spending more time on
-                integration than on our actual product.
-              </p>
-              <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed">
-                Each site meant custom mapping work. Each vendor update meant
-                broken pipelines. Our team of neuroscientists and ML scientists
-                were debugging data transformations instead of advancing the
-                science. We knew there had to be a better way.
+                Medical Timeseries Networks was building our own
+                AI-powered solutions across healthcare sites.
+                Deployments hit the same wall: different EHRs, different
+                schemas, IOT devices, and broken pipelines with each vendor update. Our
+                ML scientists and engineers wanted to avoid debugging data
+                transformations and focus on advancing medicine.
               </p>
               <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed">
                 The problem wasn&apos;t unique to us. Traditional integration
                 approaches assume stability, but healthcare data environments
-                are anything but stable. Systems change, vendors update,
-                organizations consolidate. We needed infrastructure that
+                are anything but stable. We needed infrastructure that
                 expected change instead of breaking from it.
               </p>
             </div>
@@ -63,24 +56,18 @@ export default function AboutPage() {
             </h2>
             <div className="prose prose-gray max-w-none space-y-4">
               <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed">
-                So we built our own solution. Our team&mdash;neuroscientists, ML
-                scientists, and software engineers&mdash;developed an AI-powered
+                So we built our own solution. Our team of ML
+                scientists, physicians and software engineers developed an AI-powered
                 integration layer that could detect schemas automatically, learn
-                from previous mappings, and adapt when sources changed. We built
-                it because we needed it.
+                from previous mappings, and adapt when sources changed.
               </p>
               <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed">
-                The more we used it, the more we realized this core technology
-                was solving a bigger problem. Every healthcare organization
-                facing consolidation, system changes, or multi-site scaling was
-                hitting the same walls we had. The Foundry wasn&apos;t just
-                useful for us&mdash;it was potentially valuable for anyone
-                dealing with healthcare data integration at scale.
-              </p>
-              <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed">
-                That&apos;s why we&apos;re offering it as a standalone product.
-                The same technology that accelerated our own deployments can
-                help other organizations eliminate their data blackout periods.
+                The more we used it, the more we realized every healthcare
+                organization facing consolidation or multi-site scaling was
+                hitting the same walls. That&apos;s why we&apos;re offering it
+                as a standalone product. The same technology built to
+                accelerated our deployments can help others eliminate their data
+                blackout periods.
               </p>
             </div>
 
@@ -118,10 +105,9 @@ export default function AboutPage() {
               The team
             </h2>
             <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed mb-8">
-              We&apos;re an unusual combination: neuroscientists who understand
-              complex health data, ML scientists who built the AI that powers
-              the Foundry, and software engineers who productized it. We built
-              this technology because we needed it ourselves&mdash;and we&apos;re
+              We&apos;re an unusual combination: ML scientists who understand
+              complex health data, physicians who understand data infrastructure, and software engineers who productized it. We built
+              this technology because we needed it ourselves. We&apos;re
               now making it available to others facing the same challenges.
             </p>
 
@@ -130,7 +116,7 @@ export default function AboutPage() {
                 &ldquo;We were tired of spending more time on data plumbing than
                 on actual science. So we built a system that could handle the
                 integration complexity for us. Turns out, that system is exactly
-                what a lot of other healthcare organizations need too.&rdquo;
+                what a lot of other healthcare organizations need.&rdquo;
               </p>
             </div>
           </div>
@@ -141,7 +127,7 @@ export default function AboutPage() {
       <PrimaryCTABanner
         headline="Want to learn more?"
         description="We're happy to discuss MTN Data Foundry, our approach, or your specific challenges."
-        ctaText="Start a Conversation"
+        ctaText="Learn More About Our Approach"
         ctaHref="/contact"
       />
     </>

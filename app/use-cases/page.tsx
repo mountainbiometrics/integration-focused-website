@@ -17,8 +17,6 @@ const acquisitionNarrative = {
       'After an acquisition closes, the data integration work begins. Teams scramble to connect systems while operations continue.',
     points: [
       'Executives have no consolidated reporting for 3-6 months',
-      'Finance manually reconciles between legacy and acquired systems',
-      'RCM teams work from separate queues, missing cross-system patterns',
       'Data engineering starts building custom pipelines under time pressure',
       'Operational decisions wait for data that may never arrive cleanly',
     ],
@@ -30,9 +28,7 @@ const acquisitionNarrative = {
     points: [
       'Raw data from acquired systems connects immediately',
       'Mappings are suggested automatically based on prior integrations',
-      'Uncertain cases route to your team for quick resolution',
       'Reporting starts flowing while edge cases are still being refined',
-      'Operations continue without disruption to either organization',
     ],
   },
   after: {
@@ -42,8 +38,6 @@ const acquisitionNarrative = {
     points: [
       'Consolidated reporting across all entities',
       'Schema changes handled automatically going forward',
-      'Single operational view for RCM, finance, and leadership',
-      'Reduced ongoing integration maintenance burden',
       'Foundation ready for the next acquisition',
     ],
   },
@@ -56,9 +50,7 @@ const rcmNarrative = {
       'When billing systems, clearinghouses, and payer portals don\'t talk to each other, revenue slips through the cracks.',
     points: [
       'Denial queues exist in multiple systems with no unified view',
-      'Staff log into 3-5 tools daily to reconcile work',
       'Aging denials get missed because they live in different silos',
-      'Manual exports and spreadsheets bridge system gaps',
       'Leadership gets delayed reports built from inconsistent data',
     ],
   },
@@ -69,8 +61,6 @@ const rcmNarrative = {
     points: [
       'Denial data flows from all sources into a unified layer',
       'Staff work from a single prioritized queue',
-      'Cross-system patterns become visible immediately',
-      'Automatic alerts when denials approach filing deadlines',
       'No retraining required for operational staff',
     ],
   },
@@ -80,10 +70,8 @@ const rcmNarrative = {
       'Revenue cycle teams work from complete information. Leadership gets reliable metrics. Nothing falls through the cracks.',
     points: [
       'Real-time visibility into denial aging across all payers',
-      'Reduced time spent on manual reconciliation',
-      'Earlier intervention on high-value or time-sensitive denials',
+      'Reduced time on manual reconciliation',
       'Consistent metrics for performance tracking',
-      'Foundation for process improvement and automation',
     ],
   },
 };
@@ -96,8 +84,6 @@ const digitalHealthNarrative = {
     points: [
       'Every new customer requires custom data mapping work',
       'Device vendors change data formats without warning',
-      'Engineering time goes to integration instead of product',
-      'Patient data arrives in inconsistent formats across sources',
       'Scaling means multiplying integration complexity',
     ],
   },
@@ -108,9 +94,7 @@ const digitalHealthNarrative = {
     points: [
       'New data sources connect with minimal custom development',
       'Schema changes from device vendors handled automatically',
-      'Mappings from similar sources apply to new customers',
       'Engineering focuses on product, not data plumbing',
-      'Patient data normalized regardless of source format',
     ],
   },
   after: {
@@ -119,9 +103,7 @@ const digitalHealthNarrative = {
       'A foundation that grows with your customer base instead of against it.',
     points: [
       'Faster time-to-value for new customer deployments',
-      'Reduced integration maintenance burden',
       'Consistent data quality across all sources',
-      'Ready for new device types and data formats',
       'Engineering bandwidth freed for innovation',
     ],
   },
@@ -194,7 +176,7 @@ export default function UseCasesPage() {
               consolidation, we&apos;ll design an approach that fits your
               operational reality.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
               <div className="p-6 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
                 <h3 className="font-semibold text-[var(--color-neutral-dark)] mb-2">
                   Multi-clinic consolidation
@@ -202,15 +184,6 @@ export default function UseCasesPage() {
                 <p className="text-sm text-[var(--color-neutral-mid)]">
                   Bringing together multiple locations with different systems and
                   workflows
-                </p>
-              </div>
-              <div className="p-6 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-                <h3 className="font-semibold text-[var(--color-neutral-dark)] mb-2">
-                  EHR migrations
-                </h3>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
-                  Maintaining visibility while transitioning between electronic
-                  health record systems
                 </p>
               </div>
               <div className="p-6 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
@@ -231,15 +204,6 @@ export default function UseCasesPage() {
                   entities
                 </p>
               </div>
-              <div className="p-6 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-                <h3 className="font-semibold text-[var(--color-neutral-dark)] mb-2">
-                  Multi-source patient monitoring
-                </h3>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
-                  Integrating wearables, medical devices, and clinical systems
-                  for unified remote monitoring
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -249,7 +213,7 @@ export default function UseCasesPage() {
       <PrimaryCTABanner
         headline="What's your integration scenario?"
         description="We'll walk through your specific situation and show how the Foundry would fit."
-        ctaText="Start a Conversation"
+        ctaText="Discuss Your Integration"
         ctaHref="/contact"
       />
     </>

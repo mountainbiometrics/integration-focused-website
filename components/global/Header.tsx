@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -13,6 +14,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -53,7 +55,11 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[var(--color-neutral-dark)] hover:text-[var(--color-cta-blue)] transition-colors text-[0.9375rem] font-medium no-underline"
+                className={`text-[0.9375rem] font-medium no-underline transition-all px-3 py-1.5 rounded-md ${
+                  pathname === link.href
+                    ? 'text-[var(--color-cta-blue)] bg-[var(--color-cta-blue)]/10'
+                    : 'text-[var(--color-neutral-dark)] hover:text-[var(--color-cta-blue)] hover:bg-[var(--color-neutral-lighter)]/50'
+                }`}
               >
                 {link.label}
               </Link>
@@ -109,7 +115,11 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[var(--color-neutral-dark)] hover:text-[var(--color-cta-blue)] transition-colors text-base font-medium py-2 no-underline"
+                  className={`text-base font-medium py-2 px-3 rounded-md no-underline transition-all ${
+                    pathname === link.href
+                      ? 'text-[var(--color-cta-blue)] bg-[var(--color-cta-blue)]/10'
+                      : 'text-[var(--color-neutral-dark)] hover:text-[var(--color-cta-blue)] hover:bg-[var(--color-neutral-lighter)]/50'
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}

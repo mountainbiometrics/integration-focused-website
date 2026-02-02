@@ -18,8 +18,6 @@ const ingestionDetails = {
     'Supports JSON, HL7, X12, CSV, and structured database connections',
     'Schema signatures are computed from payload structure, not just field names',
     'New schema versions trigger mapping workflows automatically',
-    'Handles nested structures, arrays, and variable-length records',
-    'Incoming data is buffered and validated before processing',
     'Malformed payloads are quarantined with detailed error context',
   ],
 };
@@ -29,11 +27,9 @@ const mappingDetails = {
   description:
     'Data is mapped to a canonical concept layer that represents healthcare entities consistently across sources. Mapping decisions are governed by confidence thresholds and human approval.',
   behaviors: [
-    'Canonical concepts define the semantic contract for downstream consumers',
     'Mappings are suggested based on field values, patterns, and healthcare standards',
     'Confidence scores determine whether mappings auto-apply or require review',
     'Human-in-the-loop workflows route uncertain cases to domain experts',
-    'All mapping decisions are logged with timestamp, user, and rationale',
     'Mapping versions are immutable; changes create new versions',
   ],
 };
@@ -44,11 +40,9 @@ const changeDetails = {
     'When source schemas change, the Foundry detects the change, evaluates impact, and either adapts automatically or routes for review. Historical data remains stable.',
   behaviors: [
     'Schema changes detected through payload fingerprinting',
-    'Change diffs presented clearly for review when needed',
     'High-confidence changes apply automatically with audit logging',
     'Low-confidence changes pause and notify for human decision',
     'Historical data is never retroactively remapped unless explicitly requested',
-    'Rollback available for any mapping version if issues are discovered',
   ],
 };
 
@@ -60,8 +54,6 @@ const monitoringDetails = {
     'Transmission health monitoring tracks source connectivity and data flow',
     'Alerting triggers on schema drift, volume anomalies, and quality degradation',
     'Downstream systems are protected from bad data through validation gates',
-    'Clear separation between ingestion, mapping, and output stages',
-    'Each stage can be inspected, paused, or replayed independently',
     'Full observability through structured logs and metrics export',
   ],
 };
@@ -218,19 +210,12 @@ export default function TechnicalPage() {
             </div>
 
             <div className="prose prose-gray max-w-none">
-              <p className="text-[var(--color-neutral-dark)] leading-relaxed mb-4">
-                In a medallion architecture, data flows through Bronze (raw),
-                Silver (cleansed), and Gold (business-ready) layers. The
-                bronze-to-silver transition is where schemas must be normalized,
-                fields mapped to consistent definitions, and data quality
-                validated—traditionally the most fragile part of the pipeline.
-              </p>
               <p className="text-[var(--color-neutral-dark)] leading-relaxed mb-6">
-                MTN Data Foundry operates at this critical boundary. It ingests
-                raw data from heterogeneous sources, detects structure
-                automatically, and maps fields to a canonical semantic layer.
-                When source schemas change, the Foundry adapts rather than
-                breaking.
+                In a medallion architecture, the bronze-to-silver transition—where
+                schemas are normalized and fields mapped—is traditionally the most
+                fragile point. MTN Data Foundry operates at this boundary,
+                automatically detecting structure, mapping to a canonical layer,
+                and adapting when source schemas change.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

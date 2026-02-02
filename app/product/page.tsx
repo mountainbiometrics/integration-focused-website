@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 const selfOrganizingBehaviors = [
   'Automatically recognizes new data structures when systems are connected',
   'Suggests mappings based on field values, naming patterns, and healthcare standards',
-  'Reuses prior mappings when similar schemas appear across systems',
   'Routes low-confidence cases for human review instead of guessing',
 ];
 
@@ -21,22 +20,42 @@ const selfHealingScenarios = [
   {
     title: 'New fields added',
     description:
-      'New fields are detected and either auto-mapped or flagged for review. Existing mappings remain stable.',
+      'When sources add new data elements, the Foundry detects them automatically and suggests mappings based on similar fields it has seen before.',
+    icon: (
+      <svg className="w-6 h-6 text-[var(--color-cta-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
   },
   {
     title: 'Field names change',
     description:
-      'Name changes are detected through value analysis. Mappings update without manual reconfiguration.',
+      'Renamed fields are detected through value pattern matching, not just column headers. High-confidence matches apply automatically.',
+    icon: (
+      <svg className="w-6 h-6 text-[var(--color-cta-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+      </svg>
+    ),
   },
   {
     title: 'Data types shift',
     description:
-      'Type changes are handled gracefully with appropriate conversions or explicit alerts.',
+      'When vendors change data formats, the Foundry identifies the change and adjusts transformations without manual intervention.',
+    icon: (
+      <svg className="w-6 h-6 text-[var(--color-cta-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+      </svg>
+    ),
   },
   {
     title: 'Payload structure evolves',
     description:
-      'Structural changes trigger re-evaluation. Historical data stays consistent while new data adapts.',
+      'Even significant structural changes are handled gracefully. The system presents a clear diff and applies updates with full audit logging.',
+    icon: (
+      <svg className="w-6 h-6 text-[var(--color-cta-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+      </svg>
+    ),
   },
 ];
 
@@ -85,7 +104,7 @@ export default function ProductPage() {
             subheadline="New systems come online quickly because the Foundry learns from existing mappings."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {selfOrganizingBehaviors.map((behavior, index) => (
               <div
                 key={index}
@@ -115,28 +134,47 @@ export default function ProductPage() {
             subheadline="When source systems change, the Foundry adapts instead of breaking."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {selfHealingScenarios.map((scenario, index) => (
-              <div key={index} className="space-y-3">
-                <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg">
-                  {scenario.title}
-                </h3>
-                <p className="text-[var(--color-neutral-mid)] leading-relaxed">
-                  {scenario.description}
-                </p>
+              <div
+                key={index}
+                className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[rgba(74,111,165,0.1)] flex items-center justify-center">
+                    {scenario.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg mb-2">
+                      {scenario.title}
+                    </h3>
+                    <p className="text-[var(--color-neutral-mid)] leading-relaxed">
+                      {scenario.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
 
           <div className="mt-12 p-6 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-            <h4 className="font-semibold text-[var(--color-neutral-dark)] mb-2">
-              No retroactive changes
-            </h4>
-            <p className="text-[var(--color-neutral-mid)]">
-              Historical data remains stable. Schema changes apply forward only,
-              unless you explicitly choose to reprocess. This preserves audit
-              trails and ensures downstream reports stay consistent.
-            </p>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[rgba(74,111,165,0.12)] flex items-center justify-center">
+                <svg className="w-5 h-5 text-[var(--color-cta-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[var(--color-neutral-dark)] mb-2">
+                  No retroactive changes
+                </h4>
+                <p className="text-[var(--color-neutral-mid)]">
+                  Historical data remains stable. Schema changes apply forward only,
+                  unless you explicitly choose to reprocess. This preserves audit
+                  trails and ensures downstream reports stay consistent.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -190,7 +228,7 @@ export default function ProductPage() {
       <PrimaryCTABanner
         headline="See how this fits your stack"
         description="We'll walk through your current systems and show how the Foundry would integrate."
-        ctaText="Start a Conversation"
+        ctaText="See How It Fits Your Stack"
         ctaHref="/contact"
       />
     </>

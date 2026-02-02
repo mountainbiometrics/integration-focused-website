@@ -30,10 +30,8 @@ export default function Home() {
               framing="When systems change, the same pattern repeats:"
               bullets={[
                 "Executives lose reporting visibility for months after close",
-                "RCM teams reconcile denials across multiple systems manually",
-                "Aging denials slip through the cracks, unnoticed",
+                "Critical items slip through the cracks across fragmented systems",
                 "Data teams scramble to patch pipelines that break repeatedly",
-                "Integration timelines drag far beyond initial estimates",
                 "Operational decisions get delayed waiting for reliable data",
               ]}
             />
@@ -58,7 +56,6 @@ export default function Home() {
                   'Months of broken reporting after acquisitions',
                   'Manual reconciliation across fragmented systems',
                   'Pipelines break when schemas change',
-                  'Teams retrain for every new system',
                   'Revenue leakage during transitions',
                 ],
               }}
@@ -69,7 +66,6 @@ export default function Home() {
                   'New systems integrated in days to weeks',
                   'Pipelines adapt automatically as data evolves',
                   'Operations continue without disruption',
-                  'Revenue continuity maintained throughout',
                 ],
               }}
               variant="withIcons"
@@ -80,8 +76,7 @@ export default function Home() {
                 headline="What changes for your organization"
                 bullets={[
                   "Reporting continuity from day one of any acquisition",
-                  "Reduced manual reconciliation and swivel-chair work",
-                  "Lower integration maintenance burden over time",
+                  "Less manual work and lower integration maintenance",
                   "Faster time to operational visibility",
                 ]}
               />
@@ -167,7 +162,7 @@ export default function Home() {
       <PrimaryCTABanner
         headline="Ready to discuss your next integration?"
         description="We'll walk through your specific scenario and show how visibility can stay live during your transition."
-        ctaText="Start a Conversation"
+        ctaText="Talk Through Your Scenario"
         ctaHref="/contact"
       />
     </>

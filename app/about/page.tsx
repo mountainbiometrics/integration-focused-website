@@ -13,7 +13,7 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="Why we built this"
+        headline="Why we built the MTN Data Foundry"
         subheadline="We built the Foundry to solve our own integration challenges. Then we realized it could help everyone else facing the same problem."
         variant="internal"
         ctaText=""

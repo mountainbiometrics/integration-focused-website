@@ -3,6 +3,7 @@ import Hero from '@/components/content/Hero';
 import SectionHeader from '@/components/content/SectionHeader';
 import OutcomeBullets from '@/components/content/OutcomeBullets';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
+import { Radio, GitCompare, AlertTriangle, Bell, Database, Settings, BarChart3, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Product | MTN',
@@ -74,24 +75,67 @@ export default function ProductPage() {
       {/* Product Overview */}
       <section className="section-spacing bg-[var(--color-neutral-lighter)]/30">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-neutral-dark)] mb-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-neutral-dark)] mb-8 text-center">
               What MTN Data Foundry does
             </h2>
-            <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed mb-8">
-              The Foundry sits between your source systems and downstream tools,
-              creating a consistent data layer that adapts automatically. It does
-              not replace your warehouse, BI tools, or existing analytics
-              infrastructure. It makes them resilient to change.
+
+            {/* Flow diagram */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-10">
+              {/* Sources */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-white border border-[var(--color-neutral-lighter)] flex items-center justify-center mb-2">
+                  <Database className="w-8 h-8 text-[var(--color-neutral-mid)]" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm font-medium text-[var(--color-neutral-dark)]">Sources</span>
+                <span className="text-xs text-[var(--color-neutral-mid)]">EHRs, billing, vendors</span>
+              </div>
+
+              {/* Arrow */}
+              <ArrowRight className="w-6 h-6 text-[var(--color-neutral-light)] hidden md:block" strokeWidth={1.5} />
+              <div className="w-6 h-6 flex items-center justify-center md:hidden">
+                <ArrowRight className="w-5 h-5 text-[var(--color-neutral-light)] rotate-90" strokeWidth={1.5} />
+              </div>
+
+              {/* Foundry */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full bg-[rgba(74,111,165,0.12)] border-2 border-[var(--color-cta-blue)]/30 flex items-center justify-center mb-2">
+                  <Settings className="w-10 h-10 text-[var(--color-cta-blue)]" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm font-semibold text-[var(--color-cta-blue)]">Foundry</span>
+                <span className="text-xs text-[var(--color-neutral-mid)]">Adapts automatically</span>
+              </div>
+
+              {/* Arrow */}
+              <ArrowRight className="w-6 h-6 text-[var(--color-neutral-light)] hidden md:block" strokeWidth={1.5} />
+              <div className="w-6 h-6 flex items-center justify-center md:hidden">
+                <ArrowRight className="w-5 h-5 text-[var(--color-neutral-light)] rotate-90" strokeWidth={1.5} />
+              </div>
+
+              {/* Tools */}
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-white border border-[var(--color-neutral-lighter)] flex items-center justify-center mb-2">
+                  <BarChart3 className="w-8 h-8 text-[var(--color-neutral-mid)]" strokeWidth={1.5} />
+                </div>
+                <span className="text-sm font-medium text-[var(--color-neutral-dark)]">Tools</span>
+                <span className="text-xs text-[var(--color-neutral-mid)]">Warehouse, BI, analytics</span>
+              </div>
+            </div>
+
+            <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed mb-8 text-center max-w-2xl mx-auto">
+              The Foundry creates a consistent data layer that adapts automatically.
+              It doesn&apos;t replace your existing infrastructure — it makes it resilient to change.
             </p>
 
-            <OutcomeBullets
-              bullets={[
-                'Continuous visibility during acquisitions and system migrations',
-                'Reduced integration maintenance burden over time',
-                'Faster onboarding of new systems without custom development',
-              ]}
-            />
+            <div className="max-w-2xl mx-auto">
+              <OutcomeBullets
+                bullets={[
+                  'Continuous visibility during acquisitions and system migrations',
+                  'Reduced integration maintenance burden over time',
+                  'Faster onboarding of new systems without custom development',
+                ]}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -186,46 +230,63 @@ export default function ProductPage() {
       {/* Continuous Monitoring */}
       <section className="section-spacing">
         <div className="container-site">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <SectionHeader
               headline="Continuous monitoring"
               subheadline="Early warning before downstream tools break."
+              align="center"
             />
 
-            <div>
-            <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed mb-8">
-              The Foundry monitors data transmission and structure continuously.
-              Instead of discovering problems when reports fail or dashboards go
-              blank, you get alerts before downstream impact occurs.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              <div className="text-center p-6">
-                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
-                  Transmission health
+            {/* Central alert concept */}
+            <div className="relative mb-12">
+              <div className="flex justify-center mb-8">
+                <div className="w-24 h-24 rounded-full bg-[rgba(74,111,165,0.12)] flex items-center justify-center">
+                  <Bell className="w-12 h-12 text-[var(--color-cta-blue)]" strokeWidth={1.5} />
                 </div>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
+              </div>
+              <p className="text-center text-lg text-[var(--color-neutral-mid)] leading-relaxed max-w-2xl mx-auto">
+                Get alerts before downstream impact occurs — not after reports fail or dashboards go blank.
+              </p>
+            </div>
+
+            {/* Three monitoring features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white">
+                <div className="w-12 h-12 rounded-lg bg-[rgba(74,111,165,0.1)] flex items-center justify-center mb-4">
+                  <Radio className="w-6 h-6 text-[var(--color-cta-blue)]" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg mb-2">
+                  Transmission health
+                </h3>
+                <p className="text-sm text-[var(--color-neutral-mid)] leading-relaxed">
                   Know when sources stop sending or change patterns
                 </p>
               </div>
-              <div className="text-center p-6">
-                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
-                  Schema drift
+
+              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white">
+                <div className="w-12 h-12 rounded-lg bg-[rgba(74,111,165,0.1)] flex items-center justify-center mb-4">
+                  <GitCompare className="w-6 h-6 text-[var(--color-cta-blue)]" strokeWidth={1.5} />
                 </div>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
+                <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg mb-2">
+                  Schema drift
+                </h3>
+                <p className="text-sm text-[var(--color-neutral-mid)] leading-relaxed">
                   Detect structural changes before they cause failures
                 </p>
               </div>
-              <div className="text-center p-6">
-                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
-                  Quality alerts
+
+              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white">
+                <div className="w-12 h-12 rounded-lg bg-[rgba(74,111,165,0.1)] flex items-center justify-center mb-4">
+                  <AlertTriangle className="w-6 h-6 text-[var(--color-cta-blue)]" strokeWidth={1.5} />
                 </div>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
+                <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg mb-2">
+                  Quality alerts
+                </h3>
+                <p className="text-sm text-[var(--color-neutral-mid)] leading-relaxed">
                   Flag anomalies in data values and completeness
                 </p>
               </div>
             </div>
-          </div>
           </div>
         </div>
       </section>

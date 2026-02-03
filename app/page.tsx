@@ -5,6 +5,7 @@ import OutcomeBullets from '@/components/content/OutcomeBullets';
 import BeforeAfter from '@/components/comparison/BeforeAfter';
 import ThreeStepFlow from '@/components/comparison/ThreeStepFlow';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
+import { TrendingDown, Layers, Unplug, Clock, Database, GitMerge, RefreshCw, Activity, Zap, Shield } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -61,15 +62,15 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <SectionHeader
               headline="Every acquisition or expansion creates a data blackout period"
-              subheadline="During that blackout, critical business functions break down."
+              subheadline="When systems change, the same pattern repeats."
             />
             <ProblemBullets
-              framing="When systems change, the same pattern repeats:"
-              bullets={[
-                "Executives lose reporting visibility for months after close",
-                "Critical items slip through the cracks across fragmented systems",
-                "Data teams scramble to patch pipelines that break repeatedly",
-                "Operational decisions get delayed waiting for reliable data",
+              variant="visual"
+              iconBullets={[
+                { icon: TrendingDown, label: 'Lost visibility' },
+                { icon: Layers, label: 'Fragmented systems' },
+                { icon: Unplug, label: 'Broken pipelines' },
+                { icon: Clock, label: 'Delayed decisions' },
               ]}
             />
           </div>
@@ -90,31 +91,34 @@ export default function Home() {
               before={{
                 title: 'Traditional Integration',
                 items: [
-                  'Months of broken reporting after acquisitions',
-                  'Manual reconciliation across fragmented systems',
-                  'Pipelines break when schemas change',
-                  'Revenue leakage during transitions',
+                  'Broken reporting',
+                  'Manual reconciliation',
+                  'Fragile pipelines',
+                  'Revenue leakage',
                 ],
               }}
               after={{
                 title: 'With MTN Data Foundry',
                 items: [
-                  'Visibility stays live during system transitions',
-                  'New systems integrated in days to weeks',
-                  'Pipelines adapt automatically as data evolves',
-                  'Operations continue without disruption',
+                  'Live visibility',
+                  'Fast integration',
+                  'Auto-adapting',
+                  'Zero disruption',
                 ],
               }}
               variant="withIcons"
+              compact
             />
 
             <div className="mt-16 max-w-4xl mx-auto">
               <OutcomeBullets
                 headline="What changes for your organization"
-                bullets={[
-                  "Reporting continuity from day one of any acquisition",
-                  "Less manual work and lower integration maintenance",
-                  "Faster time to operational visibility",
+                variant="metricCards"
+                align="center"
+                metricCards={[
+                  { icon: Activity, metric: 'Day One', label: 'Visibility' },
+                  { icon: Zap, metric: 'Days to Weeks', label: 'Integration' },
+                  { icon: Shield, metric: 'Zero', label: 'Disruption' },
                 ]}
               />
             </div>
@@ -133,24 +137,25 @@ export default function Home() {
             />
 
             <ThreeStepFlow
+              variant="iconForward"
               steps={[
                 {
                   number: 1,
-                  title: 'Ingest from any system',
-                  description:
-                    'Connect data from EHRs, billing systems, and vendors without custom development for each source.',
+                  title: 'Ingest',
+                  description: 'Connect any data source',
+                  icon: Database,
                 },
                 {
                   number: 2,
-                  title: 'Map to a shared layer',
-                  description:
-                    'Data is automatically mapped to consistent concepts, with human oversight for uncertain cases.',
+                  title: 'Map',
+                  description: 'Auto-map to shared concepts',
+                  icon: GitMerge,
                 },
                 {
                   number: 3,
-                  title: 'Adapt as schemas evolve',
-                  description:
-                    'When source systems change, mappings update automatically. No more broken pipelines.',
+                  title: 'Adapt',
+                  description: 'Schemas evolve, pipelines don\'t break',
+                  icon: RefreshCw,
                 },
               ]}
             />

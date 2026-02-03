@@ -3,6 +3,31 @@ import Hero from '@/components/content/Hero';
 import SectionHeader from '@/components/content/SectionHeader';
 import UseCaseNarrative from '@/components/use-case/UseCaseNarrative';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
+import {
+  AlertCircle,
+  Clock,
+  HelpCircle,
+  Plug,
+  ArrowRight,
+  Play,
+  CheckCircle,
+  TrendingUp,
+  Sparkles,
+  Split,
+  FileWarning,
+  Timer,
+  Link,
+  Users,
+  BarChart3,
+  Activity,
+  Settings,
+  Zap,
+  Database,
+  RefreshCw,
+  Code,
+  Rocket,
+  Target,
+} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Use Cases | Mountain Biometrics',
@@ -12,33 +37,27 @@ export const metadata: Metadata = {
 
 const acquisitionNarrative = {
   before: {
-    title: 'The typical post-close chaos',
-    description:
-      'After an acquisition closes, the data integration work begins. Teams scramble to connect systems while operations continue.',
-    points: [
-      'Executives have no consolidated reporting for 3-6 months',
-      'Data engineering starts building custom pipelines under time pressure',
-      'Operational decisions wait for data that may never arrive cleanly',
+    title: 'Post-close chaos',
+    iconPoints: [
+      { icon: AlertCircle, text: 'No consolidated reporting for months' },
+      { icon: Clock, text: 'Custom pipelines under time pressure' },
+      { icon: HelpCircle, text: 'Decisions wait for unreliable data' },
     ],
   },
   during: {
-    title: 'How MTN Data Foundry changes the transition',
-    description:
-      'With the Foundry, visibility starts within days of connecting systems. No waiting for perfect schema alignment.',
-    points: [
-      'Raw data from acquired systems connects immediately',
-      'Mappings are suggested automatically based on prior integrations',
-      'Reporting starts flowing while edge cases are still being refined',
+    title: 'Immediate visibility',
+    iconPoints: [
+      { icon: Plug, text: 'Systems connect in days' },
+      { icon: ArrowRight, text: 'Auto-suggested mappings' },
+      { icon: Play, text: 'Reporting flows immediately' },
     ],
   },
   after: {
-    title: 'The steady state',
-    description:
-      'Once integrated, the Foundry maintains visibility as both systems continue to evolve. No more catch-up work.',
-    points: [
-      'Consolidated reporting across all entities',
-      'Schema changes handled automatically going forward',
-      'Foundation ready for the next acquisition',
+    title: 'Steady state',
+    iconPoints: [
+      { icon: CheckCircle, text: 'Consolidated reporting across entities' },
+      { icon: TrendingUp, text: 'Schema changes handled automatically' },
+      { icon: Sparkles, text: 'Ready for next acquisition' },
     ],
   },
 };
@@ -46,65 +65,53 @@ const acquisitionNarrative = {
 const rcmNarrative = {
   before: {
     title: 'Fragmented denial management',
-    description:
-      'When billing systems, clearinghouses, and payer portals don\'t talk to each other, revenue slips through the cracks.',
-    points: [
-      'Denial queues exist in multiple systems with no unified view',
-      'Aging denials get missed because they live in different silos',
-      'Leadership gets delayed reports built from inconsistent data',
+    iconPoints: [
+      { icon: Split, text: 'Multiple systems, no unified view' },
+      { icon: FileWarning, text: 'Aging denials missed in silos' },
+      { icon: Timer, text: 'Delayed, inconsistent reports' },
     ],
   },
   during: {
-    title: 'Unified visibility without system replacement',
-    description:
-      'The Foundry creates a consistent view across systems without requiring anyone to change their workflows or tools.',
-    points: [
-      'Denial data flows from all sources into a unified layer',
-      'Staff work from a single prioritized queue',
-      'No retraining required for operational staff',
+    title: 'Unified visibility',
+    iconPoints: [
+      { icon: Link, text: 'All denial data in one layer' },
+      { icon: Users, text: 'Single prioritized queue' },
+      { icon: Settings, text: 'No workflow changes required' },
     ],
   },
   after: {
     title: 'Operational clarity',
-    description:
-      'Revenue cycle teams work from complete information. Leadership gets reliable metrics. Nothing falls through the cracks.',
-    points: [
-      'Real-time visibility into denial aging across all payers',
-      'Reduced time on manual reconciliation',
-      'Consistent metrics for performance tracking',
+    iconPoints: [
+      { icon: Activity, text: 'Real-time denial aging visibility' },
+      { icon: BarChart3, text: 'Less manual reconciliation' },
+      { icon: Target, text: 'Consistent performance metrics' },
     ],
   },
 };
 
 const digitalHealthNarrative = {
   before: {
-    title: 'The scaling bottleneck',
-    description:
-      'As digital health companies grow, each new customer or device type creates integration overhead.',
-    points: [
-      'Every new customer requires custom data mapping work',
-      'Device vendors change data formats without warning',
-      'Scaling means multiplying integration complexity',
+    title: 'Scaling bottleneck',
+    iconPoints: [
+      { icon: Code, text: 'Custom mapping per customer' },
+      { icon: AlertCircle, text: 'Vendors change formats unexpectedly' },
+      { icon: Split, text: 'Integration complexity multiplies' },
     ],
   },
   during: {
-    title: 'How MTN Data Foundry accelerates onboarding',
-    description:
-      'The Foundry learns from each integration, making subsequent onboarding faster.',
-    points: [
-      'New data sources connect with minimal custom development',
-      'Schema changes from device vendors handled automatically',
-      'Engineering focuses on product, not data plumbing',
+    title: 'Accelerated onboarding',
+    iconPoints: [
+      { icon: Database, text: 'Minimal custom development' },
+      { icon: RefreshCw, text: 'Schema changes auto-handled' },
+      { icon: Zap, text: 'Engineering focuses on product' },
     ],
   },
   after: {
-    title: 'Scalable data infrastructure',
-    description:
-      'A foundation that grows with your customer base instead of against it.',
-    points: [
-      'Faster time-to-value for new customer deployments',
-      'Consistent data quality across all sources',
-      'Engineering bandwidth freed for innovation',
+    title: 'Scalable infrastructure',
+    iconPoints: [
+      { icon: Rocket, text: 'Faster customer deployments' },
+      { icon: CheckCircle, text: 'Consistent data quality' },
+      { icon: Sparkles, text: 'Engineering freed for innovation' },
     ],
   },
 };
@@ -126,11 +133,11 @@ export default function UseCasesPage() {
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
-              headline="Acquisitions rollups, and scaling"
+              headline="Acquisitions, rollups, and scaling"
               subheadline="Eliminate the months-long visibility gap after every system integration."
               variant="emphasis"
             />
-            <UseCaseNarrative {...acquisitionNarrative} />
+            <UseCaseNarrative {...acquisitionNarrative} variant="compact" />
           </div>
         </div>
       </section>
@@ -144,7 +151,7 @@ export default function UseCasesPage() {
               subheadline="Stop losing revenue to fragmented systems and manual reconciliation."
               variant="emphasis"
             />
-            <UseCaseNarrative {...rcmNarrative} />
+            <UseCaseNarrative {...rcmNarrative} variant="compact" />
           </div>
         </div>
       </section>
@@ -158,7 +165,7 @@ export default function UseCasesPage() {
               subheadline="Onboard new customers and data sources without rebuilding integrations."
               variant="emphasis"
             />
-            <UseCaseNarrative {...digitalHealthNarrative} />
+            <UseCaseNarrative {...digitalHealthNarrative} variant="compact" />
           </div>
         </div>
       </section>

@@ -23,7 +23,7 @@ export default function Hero({
     <section
       className={`relative ${
         isHomepage
-          ? 'pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-48 lg:pb-32'
+          ? 'pt-32 pb-20 md:pt-40 md:pb-[50px] lg:pt-48 lg:pb-32'
           : 'pt-28 pb-12 md:pt-32 md:pb-16'
       }`}
     >

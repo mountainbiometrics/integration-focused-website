@@ -210,12 +210,15 @@ export default function TechnicalPage() {
             </div>
 
             <div className="prose prose-gray max-w-none">
-              <p className="text-[var(--color-neutral-dark)] leading-relaxed mb-6">
-                In a medallion architecture, the bronze-to-silver transition, where
-                schemas are normalized and fields mapped, is traditionally the most
-                fragile point. The MTN Data Foundry operates at this boundary,
-                automatically detecting structure, mapping to a canonical layer,
-                and adapting when source schemas change.
+              <p className="text-[var(--color-neutral-dark)] leading-relaxed mb-4">
+                Whether you use medallion architecture, data mesh, or your own layered approach,
+                the transition from raw source data to governed, consistent output is traditionally
+                the most fragile point. MTN Data Foundry operates at this boundary—automatically
+                detecting structure, mapping to a canonical layer, and adapting when source schemas change.
+              </p>
+              <p className="text-[var(--color-neutral-mid)] text-sm mb-6">
+                Medallion terminology provides a familiar reference point. The Foundry itself is
+                architecture-agnostic and works with any pipeline that requires resilient schema mapping.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

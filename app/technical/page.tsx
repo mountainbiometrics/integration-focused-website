@@ -297,7 +297,7 @@ export default function TechnicalPage() {
                     Forward-only changes
                   </div>
                   <p className="text-[var(--color-neutral-mid)]">
-                    Historical data stays stable unless explicit reprocessing
+                    Backward compatibility guaranteed
                   </p>
                 </div>
               </div>

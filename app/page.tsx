@@ -108,7 +108,7 @@ export default function Home() {
               variant="withIcons"
             />
 
-            <div className="mt-16">
+            <div className="mt-16 max-w-4xl mx-auto">
               <OutcomeBullets
                 headline="What changes for your organization"
                 bullets={[

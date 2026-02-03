@@ -64,7 +64,7 @@ export default function TechnicalPage() {
       {/* Hero Section */}
       <Hero
         headline="Technical architecture"
-        subheadline="How MTN Data Foundry works under the hood. Built for engineers who need to understand system behavior before recommending adoption."
+        subheadline="An adaptive transition layer that detects schemas automatically, maps to canonical concepts with confidence-based governance, and self-heals when sources change."
         ctaText="Schedule a Technical Session"
         ctaHref="/contact"
         variant="internal"
@@ -211,9 +211,9 @@ export default function TechnicalPage() {
 
             <div className="prose prose-gray max-w-none">
               <p className="text-[var(--color-neutral-dark)] leading-relaxed mb-6">
-                In a medallion architecture, the bronze-to-silver transition—where
-                schemas are normalized and fields mapped—is traditionally the most
-                fragile point. MTN Data Foundry operates at this boundary,
+                In a medallion architecture, the bronze-to-silver transition, where
+                schemas are normalized and fields mapped, is traditionally the most
+                fragile point. The MTN Data Foundry operates at this boundary,
                 automatically detecting structure, mapping to a canonical layer,
                 and adapting when source schemas change.
               </p>

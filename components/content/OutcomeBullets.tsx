@@ -1,23 +1,27 @@
 interface OutcomeBulletsProps {
   headline?: string;
   bullets: string[];
+  align?: 'left' | 'center';
 }
 
 export default function OutcomeBullets({
   headline,
   bullets,
+  align = 'left',
 }: OutcomeBulletsProps) {
+  const isCentered = align === 'center';
+
   return (
-    <div className="space-y-6">
+    <div className={`space-y-6 ${isCentered ? 'flex flex-col items-center' : ''}`}>
       {/* Optional headline */}
       {headline && (
-        <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-neutral-dark)] leading-snug">
+        <h3 className={`text-xl md:text-2xl font-semibold text-[var(--color-neutral-dark)] leading-snug ${isCentered ? 'text-center' : ''}`}>
           {headline}
         </h3>
       )}
 
       {/* Bullet list */}
-      <ul className="space-y-4">
+      <ul className={`space-y-4 ${isCentered ? 'inline-block' : ''}`}>
         {bullets.map((bullet, index) => (
           <li key={index} className="flex items-start gap-3">
             {/* Checkmark indicator for positive outcomes */}

@@ -11,19 +11,56 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="End data blackout periods during consolidation and system change"
+        headline="End data blackout periods during acquisitions, vendor transitions, and scaling"
         subheadline="Keep reporting, revenue visibility, and operations live while underlying systems are being integrated. New systems onboarded in days to weeks, not months."
         ctaText="Talk Through Your Next Integration"
         ctaHref="/contact"
         variant="homepage"
       />
 
+      {/* Uses Include Section */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-lg font-medium text-[var(--color-neutral-mid)] text-center mb-8">
+              Transform
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white text-center">
+                <div className="font-semibold text-[var(--color-neutral-dark)] mb-2">
+                  Acquisitions & rollups
+                </div>
+                <p className="text-sm text-[var(--color-neutral-mid)]">
+                  Keep consolidated reporting live
+                </p>
+              </div>
+              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white text-center">
+                <div className="font-semibold text-[var(--color-neutral-dark)] mb-2">
+                  Revenue cycle visibility
+                </div>
+                <p className="text-sm text-[var(--color-neutral-mid)]">
+                  Unify denial signals across systems
+                </p>
+              </div>
+              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white text-center">
+                <div className="font-semibold text-[var(--color-neutral-dark)] mb-2">
+                  Digital health scaling
+                </div>
+                <p className="text-sm text-[var(--color-neutral-mid)]">
+                  Onboard new data sources without custom mapping
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Problem Section */}
       <section className="section-spacing bg-[rgba(196,69,79,0.04)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <SectionHeader
-              headline="Every acquisition creates a data blackout period"
+              headline="Every acquisition or expansion creates a data blackout period"
               subheadline="During that blackout, critical business functions break down."
             />
             <ProblemBullets

@@ -99,12 +99,13 @@ export default function ProductPage() {
       {/* Self-Organizing Integration */}
       <section className="section-spacing">
         <div className="container-site">
-          <SectionHeader
-            headline="Self-organizing integration"
-            subheadline="New systems come online quickly because the Foundry learns from existing mappings."
-          />
+          <div className="max-w-5xl mx-auto">
+            <SectionHeader
+              headline="Self-organizing integration"
+              subheadline="New systems come online quickly because the Foundry learns from existing mappings."
+            />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {selfOrganizingBehaviors.map((behavior, index) => (
               <div
                 key={index}
@@ -122,6 +123,7 @@ export default function ProductPage() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
@@ -129,12 +131,13 @@ export default function ProductPage() {
       {/* Self-Healing Pipelines */}
       <section className="section-spacing bg-[var(--color-neutral-lighter)]/30">
         <div className="container-site">
-          <SectionHeader
-            headline="Self-healing pipelines"
-            subheadline="When source systems change, the Foundry adapts instead of breaking."
-          />
+          <div className="max-w-5xl mx-auto">
+            <SectionHeader
+              headline="Self-healing pipelines"
+              subheadline="When source systems change, the Foundry adapts instead of breaking."
+            />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {selfHealingScenarios.map((scenario, index) => (
               <div
                 key={index}
@@ -176,18 +179,20 @@ export default function ProductPage() {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Continuous Monitoring */}
       <section className="section-spacing">
         <div className="container-site">
-          <SectionHeader
-            headline="Continuous monitoring"
-            subheadline="Early warning before downstream tools break."
-          />
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader
+              headline="Continuous monitoring"
+              subheadline="Early warning before downstream tools break."
+            />
 
-          <div className="max-w-3xl mx-auto">
+            <div>
             <p className="text-lg text-[var(--color-neutral-mid)] leading-relaxed mb-8">
               The Foundry monitors data transmission and structure continuously.
               Instead of discovering problems when reports fail or dashboards go
@@ -220,6 +225,7 @@ export default function ProductPage() {
                 </p>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>

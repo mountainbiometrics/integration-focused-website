@@ -236,42 +236,42 @@ a:focus-visible {
 
 /* Section spacing utility - responsive */
 .section-spacing {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 @media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
   .section-spacing {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1536px) {
+  .section-spacing {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+}
+
+@media (min-width: 1920px) {
   .section-spacing {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 2200px) {
   .section-spacing {
     padding-top: 7rem;
     padding-bottom: 7rem;
-  }
-}
-
-@media (min-width: 1920px) {
-  .section-spacing {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
-}
-
-@media (min-width: 2200px) {
-  .section-spacing {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
   }
 }
 

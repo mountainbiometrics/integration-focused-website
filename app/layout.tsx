@@ -11,11 +11,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MTN | Full Data Visibility From Day One",
+  title: "MTN | Close the Visibility Gap",
   description: "Close data visibility gaps during acquisitions, system changes, and multi-vendor environments. Keep reporting, revenue visibility, and operations live while systems evolve.",
   keywords: ["healthcare integration", "data integration", "healthcare rollups", "MSO", "revenue cycle management", "EHR integration"],
   openGraph: {
-    title: "MTN | Full Data Visibility From Day One",
+    title: "MTN | Close the Visibility Gap",
     description: "Close data visibility gaps during acquisitions and system changes. Keep visibility live while systems evolve.",
     type: "website",
   },

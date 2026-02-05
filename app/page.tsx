@@ -12,7 +12,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="Full data visibility from day one"
+        headline="Close the visibility gap"
         subheadline="Keep reporting, revenue visibility, and operations live while underlying systems are being integrated. New systems onboarded in days to weeks, not months."
         ctaText="Talk Through Your Next Integration"
         ctaHref="/contact"
@@ -61,7 +61,7 @@ export default function Home() {
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <SectionHeader
-              headline="Every acquisition or expansion creates a visibility gap"
+              headline="Every acquisition or expansion creates a data visibility gap"
               subheadline="When systems change, the same pattern repeats."
             />
             <ProblemBullets

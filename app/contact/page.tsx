@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const scenarios = [
   {
     title: 'Upcoming acquisition',
-    description: 'Planning a close and want to avoid the usual data blackout',
+    description: 'Planning a close and want to maintain data visibility throughout',
   },
   {
     title: 'Recent system change',

@@ -32,7 +32,7 @@ export default function Footer() {
               />
             </Link>
             <p className="!text-white text-sm leading-relaxed max-w-xs">
-              Eliminating data blackout periods during consolidation and system change.
+              Full data visibility during consolidation and system change.
             </p>
           </div>
 

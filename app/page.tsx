@@ -12,14 +12,14 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="End data blackout periods during acquisitions, vendor transitions, and scaling"
+        headline="Full data visibility from day one"
         subheadline="Keep reporting, revenue visibility, and operations live while underlying systems are being integrated. New systems onboarded in days to weeks, not months."
         ctaText="Talk Through Your Next Integration"
         ctaHref="/contact"
         variant="homepage"
       />
 
-      {/* Uses Include Section */}
+      {/* Uses Include Section
       <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
@@ -54,14 +54,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Problem Section */}
       <section className="section-spacing bg-[rgba(196,69,79,0.04)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <SectionHeader
-              headline="Every acquisition or expansion creates a data blackout period"
+              headline="Every acquisition or expansion creates a visibility gap"
               subheadline="When systems change, the same pattern repeats."
             />
             <ProblemBullets
@@ -69,7 +69,7 @@ export default function Home() {
               iconBullets={[
                 { icon: TrendingDown, label: 'Lost visibility' },
                 { icon: Layers, label: 'Fragmented systems' },
-                { icon: Unplug, label: 'Broken pipelines' },
+                { icon: Unplug, label: 'Stalled pipelines' },
                 { icon: Clock, label: 'Delayed decisions' },
               ]}
             />
@@ -82,7 +82,7 @@ export default function Home() {
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
-              headline="Integration without the blackout"
+              headline="Integration without a gap"
               subheadline="Visibility and operations continue while systems evolve underneath."
               variant="emphasis"
             />
@@ -91,10 +91,10 @@ export default function Home() {
               before={{
                 title: 'Traditional Integration',
                 items: [
-                  'Broken reporting',
+                  'Delayed reporting',
                   'Manual reconciliation',
-                  'Fragile pipelines',
-                  'Revenue leakage',
+                  'Stalled pipelines',
+                  'Revenue at risk',
                 ],
               }}
               after={{
@@ -132,7 +132,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto">
             <SectionHeader
               headline="How it works"
-              subheadline="A shared semantic layer that adapts as your systems change."
+              subheadline="A integration layer framework that minimizes visibility disruption."
               align="center"
             />
 
@@ -154,7 +154,7 @@ export default function Home() {
                 {
                   number: 3,
                   title: 'Adapt',
-                  description: 'Schemas evolve, pipelines don\'t break',
+                  description: 'Schemas evolve, pipelines adapt',
                   icon: RefreshCw,
                 },
               ]}
@@ -166,11 +166,11 @@ export default function Home() {
       {/* Credibility Section */}
       <section className="section-spacing">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-neutral-dark)] mb-8">
               Built for healthcare data integration
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="p-6">
                 <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
                   Enterprise-grade
@@ -193,6 +193,14 @@ export default function Home() {
                 </div>
                 <p className="text-[var(--color-neutral-mid)] text-sm">
                   Works alongside your existing warehouse and BI tools
+                </p>
+              </div>
+              <div className="p-6">
+                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
+                  Security
+                </div>
+                <p className="text-[var(--color-neutral-mid)] text-sm">
+                  SOC 2-aligned controls, end-to-end encryption, and role-based access
                 </p>
               </div>
             </div>

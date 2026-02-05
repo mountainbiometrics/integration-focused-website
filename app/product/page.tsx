@@ -8,7 +8,7 @@ import { Radio, GitCompare, AlertTriangle, Bell, Database, Settings, BarChart3, 
 export const metadata: Metadata = {
   title: 'Product | MTN',
   description:
-    'MTN Data Foundry eliminates blackout periods during acquisitions and system changes. Learn how it works.',
+    'MTN Data Foundry closes visibility gaps during acquisitions and system changes. Learn how it works.',
 };
 
 const selfOrganizingBehaviors = [
@@ -66,7 +66,7 @@ export default function ProductPage() {
       {/* Hero Section */}
       <Hero
         headline="Adaptive integration that stays live"
-        subheadline="MTN Data Foundry adapts as systems change. No more broken pipelines, no more integration restarts, no more months of catch-up."
+        subheadline="MTN Data Foundry adapts as systems change. Continuous visibility, no integration restarts, no months of catch-up."
         ctaText="See How It Works"
         ctaHref="/contact"
         variant="internal"
@@ -178,7 +178,7 @@ export default function ProductPage() {
           <div className="max-w-5xl mx-auto">
             <SectionHeader
               headline="Self-healing pipelines"
-              subheadline="When source systems change, the Foundry adapts instead of breaking."
+              subheadline="When source systems change, the Foundry adapts automatically."
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -233,7 +233,7 @@ export default function ProductPage() {
           <div className="max-w-5xl mx-auto">
             <SectionHeader
               headline="Continuous monitoring"
-              subheadline="Early warning before downstream tools break."
+              subheadline="Early warning before downstream impact."
               align="center"
             />
 
@@ -245,7 +245,7 @@ export default function ProductPage() {
                 </div>
               </div>
               <p className="text-center text-lg text-[var(--color-neutral-mid)] leading-relaxed max-w-2xl mx-auto">
-                Get alerts before downstream impact occurs — not after reports fail or dashboards go blank.
+                Surface issues before they reach downstream systems — not after reports lag or dashboards go stale.
               </p>
             </div>
 

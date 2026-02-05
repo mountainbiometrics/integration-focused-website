@@ -32,7 +32,7 @@ export default function AboutPage() {
                 Medical Timeseries Networks was building our own
                 AI-powered solutions across healthcare sites.
                 Deployments hit the same wall: different EHRs, different
-                schemas, IOT devices, and broken pipelines with each vendor update. Our
+                schemas, IOT devices, and stalled pipelines with each vendor update. Our
                 ML scientists and engineers wanted to avoid debugging data
                 transformations and focus on advancing medicine.
               </p>
@@ -66,8 +66,8 @@ export default function AboutPage() {
                 organization facing consolidation or multi-site scaling was
                 hitting the same walls. That&apos;s why we&apos;re offering it
                 as a standalone product. The same technology built to
-                accelerated our deployments can help others eliminate their data
-                blackout periods.
+                accelerated our deployments can help others close their data
+                visibility gaps.
               </p>
             </div>
 

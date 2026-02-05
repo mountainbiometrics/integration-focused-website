@@ -30,14 +30,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Use Cases | Mountain Biometrics',
+  title: 'Use Cases | MTN',
   description:
     'See how MTN Data Foundry solves real problems during acquisitions, rollups, revenue cycle management, and digital health scaling.',
 };
 
 const acquisitionNarrative = {
   before: {
-    title: 'Post-close chaos',
+    title: 'Post-close friction',
     iconPoints: [
       { icon: AlertCircle, text: 'No consolidated reporting for months' },
       { icon: Clock, text: 'Custom pipelines under time pressure' },
@@ -122,7 +122,7 @@ export default function UseCasesPage() {
       {/* Hero Section */}
       <Hero
         headline="Where this makes a difference"
-        subheadline="Real operational moments where MTN Data Foundry prevents data blackouts and keeps teams productive."
+        subheadline="Real operational moments where MTN Data Foundry closes visibility gaps and keeps teams productive."
         ctaText="Discuss Your Scenario"
         ctaHref="/contact"
         variant="internal"
@@ -134,7 +134,7 @@ export default function UseCasesPage() {
           <div className="max-w-4xl mx-auto">
             <SectionHeader
               headline="Acquisitions, rollups, and scaling"
-              subheadline="Eliminate the months-long visibility gap after every system integration."
+              subheadline="Close the visibility gap within weeks of every system integration."
               variant="emphasis"
             />
             <UseCaseNarrative {...acquisitionNarrative} variant="compact" />
@@ -148,7 +148,7 @@ export default function UseCasesPage() {
           <div className="max-w-4xl mx-auto">
             <SectionHeader
               headline="Revenue cycle and denial visibility"
-              subheadline="Stop losing revenue to fragmented systems and manual reconciliation."
+              subheadline="Unify revenue cycle visibility across fragmented systems."
               variant="emphasis"
             />
             <UseCaseNarrative {...rcmNarrative} variant="compact" />

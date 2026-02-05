@@ -13,7 +13,7 @@ export default function Home() {
       {/* Hero Section */}
       <Hero
         headline="Close the visibility gap"
-        subheadline="Keep reporting, revenue visibility, and operations live while underlying systems are being integrated. New systems onboarded in days to weeks, not months."
+        subheadline="Keep reporting, revenue visibility, and operations live while underlying systems are being integrated. Onboard new systems in days to weeks, not months. Save hundreds of hours and thousands of dollars while reducing operational headaches."
         ctaText="Talk Through Your Next Integration"
         ctaHref="/contact"
         variant="homepage"

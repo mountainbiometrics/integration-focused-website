@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# generated business card assets
+/public/cards/
+
 # production
 /build
 

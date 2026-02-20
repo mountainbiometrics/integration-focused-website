@@ -32,6 +32,11 @@
   /* Background and foreground */
   --background: #FFFFFF;
   --foreground: #3D3D3D;
+
+  /* Microsite theme defaults (overridden per-microsite via inline styles) */
+  --ms-primary: var(--color-cta-blue);
+  --ms-primary-hover: var(--color-cta-blue-hover);
+  --ms-hero-gradient: #f8f9fa;
 }
 
 /* Tailwind v4 theme configuration */

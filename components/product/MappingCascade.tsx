@@ -70,7 +70,7 @@ export default function MappingCascade() {
               {/* "New source" label */}
               <text
                 x={SRC_X + FIELD_W / 2} y={24}
-                textAnchor="middle" fontSize="10" fontWeight="600"
+                textAnchor="middle" fontSize="14" fontWeight="600"
                 fill="var(--ms-heading)" opacity={srcBoxFade}
               >
                 New source
@@ -98,17 +98,6 @@ export default function MappingCascade() {
                   </g>
                 );
               })}
-
-              {/* Arrow to Foundry */}
-              <line
-                x1={SRC_X + FIELD_W + 12} y1={SVG_H / 2}
-                x2={FDR_CX - 30} y2={SVG_H / 2}
-                stroke="var(--ms-muted)"
-                strokeWidth="1.5"
-                strokeDasharray="80"
-                strokeDashoffset={80 * (1 - arrowToFoundry)}
-                strokeLinecap="round"
-              />
 
               {/* Foundry circle */}
               <circle
@@ -139,7 +128,7 @@ export default function MappingCascade() {
               {/* "Target fields" label */}
               <text
                 x={TGT_X - FIELD_W / 2} y={24}
-                textAnchor="middle" fontSize="10" fontWeight="600"
+                textAnchor="middle" fontSize="14" fontWeight="600"
                 fill="var(--ms-heading)" opacity={tgtFields(0)}
               >
                 Target fields

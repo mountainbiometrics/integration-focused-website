@@ -11,7 +11,7 @@ export default function TechnicalSection({
 }: TechnicalSectionProps) {
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-semibold text-[var(--color-neutral-dark)]">
+      <h3 className="font-display text-xl font-semibold text-[var(--color-neutral-dark)]">
         {title}
       </h3>
       <p className="text-[var(--color-neutral-mid)] leading-relaxed">

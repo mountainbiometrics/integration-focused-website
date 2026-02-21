@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | MTN',
-  description: 'Terms of service for Mountain Biometrics website and services.',
+  description: 'Terms of service for Mountain Biometrics, Inc. website and services.',
 };
 
 export default function TermsPage() {
@@ -41,7 +41,7 @@ export default function TermsPage() {
             </h2>
             <p className="text-[var(--color-neutral-mid)] leading-relaxed">
               All content on this website, including text, graphics, logos, and
-              images, is the property of Mountain Biometrics and is protected by
+              images, is the property of Mountain Biometrics, Inc. and is protected by
               applicable intellectual property laws.
             </p>
 
@@ -49,7 +49,7 @@ export default function TermsPage() {
               Limitation of Liability
             </h2>
             <p className="text-[var(--color-neutral-mid)] leading-relaxed">
-              Mountain Biometrics shall not be liable for any indirect,
+              Mountain Biometrics, Inc. shall not be liable for any indirect,
               incidental, special, consequential, or punitive damages resulting
               from your use of or inability to use this website.
             </p>

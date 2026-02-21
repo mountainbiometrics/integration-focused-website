@@ -33,7 +33,7 @@ export default function ProblemBullets({
                   aria-hidden="true"
                 />
               </div>
-              <span className="text-[var(--color-neutral-dark)] font-medium text-base">
+              <span className="text-[var(--ms-heading)] font-medium text-base">
                 {item.label}
               </span>
             </div>

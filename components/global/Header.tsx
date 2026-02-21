@@ -40,9 +40,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/images/MTN_ekg_extended_large.svg"
+              src="/images/MTN_ekg.svg"
               alt="Mountain Biometrics"
-              width={180}
+              width={40}
               height={40}
               priority
               className="h-10 w-auto"
@@ -57,8 +57,8 @@ export default function Header() {
                 href={link.href}
                 className={`text-[0.9375rem] font-medium no-underline transition-all px-3 py-1.5 rounded-md ${
                   pathname === link.href
-                    ? 'text-[var(--color-cta-blue)] bg-[var(--color-cta-blue)]/10'
-                    : 'text-[var(--color-neutral-dark)] hover:text-[var(--color-cta-blue)] hover:bg-[var(--color-neutral-lighter)]/50'
+                    ? 'text-[var(--ms-accent)] bg-[var(--ms-accent)]/10'
+                    : 'text-[var(--ms-heading)] hover:text-[var(--ms-accent)] hover:bg-[var(--color-neutral-lighter)]/50'
                 }`}
               >
                 {link.label}
@@ -69,7 +69,8 @@ export default function Header() {
           {/* Primary CTA - Desktop */}
           <Link
             href="/contact"
-            className="hidden lg:inline-flex items-center justify-center px-6 py-3 bg-[var(--color-cta-blue)] text-white font-medium rounded-md hover:bg-[var(--color-cta-blue-hover)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-cta-blue)] focus-visible:ring-offset-2 no-underline"
+            className="hidden lg:inline-flex items-center justify-center px-6 py-3 bg-[var(--ms-accent)] text-white font-medium rounded-xl hover:bg-[#8B1924] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ms-accent)] focus-visible:ring-offset-2 no-underline hover:-translate-y-0.5"
+            style={{ boxShadow: 'var(--ms-shadow-btn)' }}
           >
             Start a Conversation
           </Link>
@@ -117,8 +118,8 @@ export default function Header() {
                   href={link.href}
                   className={`text-base font-medium py-2 px-3 rounded-md no-underline transition-all ${
                     pathname === link.href
-                      ? 'text-[var(--color-cta-blue)] bg-[var(--color-cta-blue)]/10'
-                      : 'text-[var(--color-neutral-dark)] hover:text-[var(--color-cta-blue)] hover:bg-[var(--color-neutral-lighter)]/50'
+                      ? 'text-[var(--ms-accent)] bg-[var(--ms-accent)]/10'
+                      : 'text-[var(--ms-heading)] hover:text-[var(--ms-accent)] hover:bg-[var(--color-neutral-lighter)]/50'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -127,7 +128,8 @@ export default function Header() {
               ))}
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[var(--color-cta-blue)] text-white font-medium rounded-md hover:bg-[var(--color-cta-blue-hover)] transition-colors mt-2 no-underline"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[var(--ms-accent)] text-white font-medium rounded-xl hover:bg-[#8B1924] transition-all mt-2 no-underline hover:-translate-y-0.5"
+                style={{ boxShadow: 'var(--ms-shadow-btn)' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Start a Conversation

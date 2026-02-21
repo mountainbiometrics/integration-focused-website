@@ -17,7 +17,7 @@ export default function SectionHeader({
   return (
     <div className={`mb-12 ${isCenter ? 'text-center' : ''}`}>
       <h2
-        className={`font-semibold text-[var(--color-neutral-dark)] leading-snug ${
+        className={`font-display leading-[1.12] text-[var(--ms-heading)] ${
           isEmphasis ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-xl md:text-2xl lg:text-3xl'
         } ${isCenter ? 'mx-auto' : ''}`}
       >
@@ -25,7 +25,7 @@ export default function SectionHeader({
       </h2>
       {subheadline && (
         <p
-          className={`mt-4 text-[var(--color-neutral-mid)] leading-relaxed ${
+          className={`mt-4 text-[var(--ms-body)] leading-relaxed ${
             isEmphasis ? 'text-lg' : 'text-base'
           } ${isCenter ? 'max-w-2xl mx-auto' : 'max-w-xl'}`}
         >

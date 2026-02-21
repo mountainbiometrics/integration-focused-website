@@ -100,7 +100,7 @@ export default function TechnicalPage() {
                   <div className="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-1">
                     Bronze
                   </div>
-                  <div className="font-semibold text-[var(--color-neutral-dark)] text-lg">
+                  <div className="font-display font-semibold text-[var(--color-neutral-dark)] text-lg">
                     Source Systems
                   </div>
                   <div className="text-sm text-[var(--color-neutral-mid)]">
@@ -150,7 +150,7 @@ export default function TechnicalPage() {
                   <div className="text-xs uppercase tracking-wide text-[var(--color-cta-blue)] font-semibold mb-1">
                     Bronze → Silver
                   </div>
-                  <div className="font-semibold text-[var(--color-neutral-dark)] text-lg">
+                  <div className="font-display font-semibold text-[var(--color-neutral-dark)] text-lg">
                     MTN Data Foundry
                   </div>
                   <div className="text-sm text-[var(--color-neutral-mid)]">
@@ -199,7 +199,7 @@ export default function TechnicalPage() {
                   <div className="text-xs uppercase tracking-wide text-yellow-600 font-semibold mb-1">
                     Silver / Gold
                   </div>
-                  <div className="font-semibold text-[var(--color-neutral-dark)] text-lg">
+                  <div className="font-display font-semibold text-[var(--color-neutral-dark)] text-lg">
                     Your Platform
                   </div>
                   <div className="text-sm text-[var(--color-neutral-mid)]">
@@ -223,7 +223,7 @@ export default function TechnicalPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="p-4 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-                  <h4 className="font-semibold text-[var(--color-neutral-dark)] mb-2">
+                  <h4 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-2">
                     What it does
                   </h4>
                   <ul className="space-y-2 text-sm text-[var(--color-neutral-mid)]">
@@ -234,7 +234,7 @@ export default function TechnicalPage() {
                   </ul>
                 </div>
                 <div className="p-4 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-                  <h4 className="font-semibold text-[var(--color-neutral-dark)] mb-2">
+                  <h4 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-2">
                     What it does not do
                   </h4>
                   <ul className="space-y-2 text-sm text-[var(--color-neutral-mid)]">
@@ -267,7 +267,7 @@ export default function TechnicalPage() {
 
             {/* Governance detail box */}
             <div className="mt-8 p-6 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-              <h4 className="font-semibold text-[var(--color-neutral-dark)] mb-3">
+              <h4 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-3">
                 Governance model
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
@@ -337,7 +337,7 @@ export default function TechnicalPage() {
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)]">
-                <h3 className="font-semibold text-[var(--color-neutral-dark)] mb-3">
+                <h3 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-3">
                   Cloud-hosted
                 </h3>
                 <p className="text-sm text-[var(--color-neutral-mid)] mb-4">
@@ -351,7 +351,7 @@ export default function TechnicalPage() {
                 </ul>
               </div>
               <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)]">
-                <h3 className="font-semibold text-[var(--color-neutral-dark)] mb-3">
+                <h3 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-3">
                   On-premises
                 </h3>
                 <p className="text-sm text-[var(--color-neutral-mid)] mb-4">

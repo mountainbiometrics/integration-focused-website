@@ -29,14 +29,17 @@ export default function ThreeStepFlow({
             <div key={step.number} className="relative text-center">
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-12 left-1/2 w-full h-0.5 bg-[var(--color-neutral-lighter)]" />
+                <div className="hidden md:block absolute top-12 left-1/2 w-full h-0.5 bg-[var(--ms-border)]" />
               )}
 
               {/* Icon */}
               {Icon && (
-                <div className="relative z-10 w-20 h-20 mx-auto mb-4 rounded-full bg-[rgba(74,111,165,0.12)] flex items-center justify-center">
+                <div
+                  className="relative z-10 w-20 h-20 mx-auto mb-4 rounded-full bg-[var(--ms-blue)]/10 flex items-center justify-center"
+                  style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+                >
                   <Icon
-                    className="w-10 h-10 text-[var(--color-cta-blue)]"
+                    className="w-10 h-10 text-[var(--ms-blue)]"
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
@@ -44,17 +47,17 @@ export default function ThreeStepFlow({
               )}
 
               {/* Step number */}
-              <div className="relative z-10 w-8 h-8 mx-auto mb-3 rounded-full bg-[var(--color-cta-blue)] flex items-center justify-center">
+              <div className="relative z-10 w-8 h-8 mx-auto mb-3 rounded-full bg-[var(--ms-blue)] flex items-center justify-center">
                 <span className="text-white font-semibold text-sm">
                   {step.number}
                 </span>
               </div>
 
               {/* Content */}
-              <h3 className="font-semibold text-[var(--color-neutral-dark)] text-lg mb-2">
+              <h3 className="font-display font-semibold text-[var(--ms-heading)] text-lg mb-2">
                 {step.title}
               </h3>
-              <p className="text-[var(--color-neutral-mid)] text-sm leading-relaxed">
+              <p className="text-[var(--ms-body)] text-sm leading-relaxed">
                 {step.description}
               </p>
             </div>
@@ -82,21 +85,21 @@ export default function ThreeStepFlow({
         >
           {/* Connector line for horizontal layout */}
           {isHorizontal && index < steps.length - 1 && (
-            <div className="hidden md:block absolute top-6 left-1/2 w-full h-0.5 bg-[var(--color-neutral-lighter)]" />
+            <div className="hidden md:block absolute top-6 left-1/2 w-full h-0.5 bg-[var(--ms-border)]" />
           )}
 
           {/* Connector line for vertical layout */}
           {!isHorizontal && index < steps.length - 1 && (
-            <div className="absolute left-6 top-12 w-0.5 h-full bg-[var(--color-neutral-lighter)]" />
+            <div className="absolute left-6 top-12 w-0.5 h-full bg-[var(--ms-border)]" />
           )}
 
           {/* Step number */}
           <div
-            className={`relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-[rgba(74,111,165,0.12)] flex items-center justify-center ${
+            className={`relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-[var(--ms-blue)]/10 flex items-center justify-center ${
               isHorizontal ? 'mx-auto mb-4' : ''
             }`}
           >
-            <span className="text-[var(--color-cta-blue)] font-semibold text-lg">
+            <span className="text-[var(--ms-blue)] font-semibold text-lg">
               {step.number}
             </span>
           </div>
@@ -104,13 +107,13 @@ export default function ThreeStepFlow({
           {/* Content */}
           <div className={`${isHorizontal ? 'text-center' : ''}`}>
             <h3
-              className={`font-semibold text-[var(--color-neutral-dark)] text-lg mb-2 ${
+              className={`font-display font-semibold text-[var(--ms-heading)] text-lg mb-2 ${
                 isHorizontal ? '' : 'mt-1'
               }`}
             >
               {step.title}
             </h3>
-            <p className="text-[var(--color-neutral-mid)] text-base leading-relaxed">
+            <p className="text-[var(--ms-body)] text-base leading-relaxed">
               {step.description}
             </p>
           </div>

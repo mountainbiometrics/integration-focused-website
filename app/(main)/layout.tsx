@@ -7,10 +7,10 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div className="microsite-premium">
       <Header />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }

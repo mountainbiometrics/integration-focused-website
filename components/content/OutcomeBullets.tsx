@@ -23,12 +23,12 @@ export default function OutcomeBullets({
 }: OutcomeBulletsProps) {
   const isCentered = align === 'center';
 
-  // Metric cards variant: horizontal cards with icons
+  // Metric cards variant: premium cards with icons
   if (variant === 'metricCards' && metricCards) {
     return (
       <div className="space-y-6">
         {headline && (
-          <h3 className={`text-xl md:text-2xl font-semibold text-[var(--color-neutral-dark)] leading-snug ${isCentered ? 'text-center' : ''}`}>
+          <h3 className={`text-xl md:text-2xl font-display leading-[1.12] text-[var(--ms-heading)] ${isCentered ? 'text-center' : ''}`}>
             {headline}
           </h3>
         )}
@@ -38,19 +38,20 @@ export default function OutcomeBullets({
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-6 rounded-lg bg-[rgba(74,111,165,0.06)]"
+                className="flex flex-col items-center text-center p-6 rounded-2xl bg-white"
+                style={{ boxShadow: 'var(--ms-shadow-card)' }}
               >
-                <div className="w-14 h-14 rounded-full bg-[rgba(74,111,165,0.12)] flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-full bg-[var(--ms-blue)]/10 flex items-center justify-center mb-4">
                   <Icon
-                    className="w-7 h-7 text-[var(--color-cta-blue)]"
+                    className="w-7 h-7 text-[var(--ms-blue)]"
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
                 </div>
-                <span className="text-2xl font-bold text-[var(--color-neutral-dark)] mb-1">
+                <span className="text-2xl font-bold text-[var(--ms-accent)] mb-1">
                   {card.metric}
                 </span>
-                <span className="text-sm text-[var(--color-neutral-mid)]">
+                <span className="text-sm text-[var(--ms-body-light)]">
                   {card.label}
                 </span>
               </div>
@@ -65,7 +66,7 @@ export default function OutcomeBullets({
   return (
     <div className={`space-y-6 ${isCentered ? 'flex flex-col items-center' : ''}`}>
       {headline && (
-        <h3 className={`text-xl md:text-2xl font-semibold text-[var(--color-neutral-dark)] leading-snug ${isCentered ? 'text-center' : ''}`}>
+        <h3 className={`text-xl md:text-2xl font-display leading-[1.12] text-[var(--ms-heading)] ${isCentered ? 'text-center' : ''}`}>
           {headline}
         </h3>
       )}
@@ -74,9 +75,9 @@ export default function OutcomeBullets({
         <ul className={`space-y-4 ${isCentered ? 'inline-block' : ''}`}>
           {bullets.map((bullet, index) => (
             <li key={index} className="flex items-start gap-3">
-              <span className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-[rgba(74,111,165,0.15)] flex items-center justify-center">
+              <span className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-[var(--ms-blue)]/12 flex items-center justify-center">
                 <svg
-                  className="w-3 h-3 text-[var(--color-cta-blue)]"
+                  className="w-3 h-3 text-[var(--ms-blue)]"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -89,7 +90,7 @@ export default function OutcomeBullets({
                   />
                 </svg>
               </span>
-              <span className="text-[var(--color-neutral-dark)] leading-relaxed text-base">
+              <span className="text-[var(--ms-heading)] leading-relaxed text-base">
                 {bullet}
               </span>
             </li>

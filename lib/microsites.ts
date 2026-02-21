@@ -40,7 +40,7 @@ export interface MicrositeConfig {
 const microsites: MicrositeConfig[] = [
   {
     slug: 'healthcare-pe',
-    title: 'MTN | Close the Visibility Gap',
+    title: 'MTN | Faster Integration, Better Exits',
     metaDescription:
       'Download the executive and technical white papers on closing the data visibility gap during healthcare rollups and PE-backed consolidation.',
     headline: 'Close the Visibility Gap',

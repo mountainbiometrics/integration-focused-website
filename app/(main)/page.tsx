@@ -3,9 +3,10 @@ import SectionHeader from '@/components/content/SectionHeader';
 import ProblemBullets from '@/components/content/ProblemBullets';
 import OutcomeBullets from '@/components/content/OutcomeBullets';
 import BeforeAfter from '@/components/comparison/BeforeAfter';
-import ThreeStepFlow from '@/components/comparison/ThreeStepFlow';
+import AnimatedThreeStepFlow from '@/components/animation/AnimatedThreeStepFlow';
+import ScrollReveal from '@/components/animation/ScrollReveal';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
-import { TrendingDown, Layers, Unplug, Clock, Database, GitMerge, RefreshCw, Activity, Zap, Shield } from 'lucide-react';
+import { TrendingDown, Layers, Unplug, Clock, Activity, Zap, Shield } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -13,66 +14,33 @@ export default function Home() {
       {/* Hero Section */}
       <Hero
         headline="Close the visibility gap"
-        subheadline="Keep reporting, revenue visibility, and operations live while underlying systems are being integrated. Onboard new systems in days to weeks, not months. Save hundreds of hours and thousands of dollars while reducing operational headaches."
+        subheadline="Live visibility during integration · New systems online in days · Zero operational disruption"
         ctaText="Talk Through Your Next Integration"
         ctaHref="/contact"
         variant="homepage"
       />
 
-      {/* Uses Include Section
-      <section className="section-spacing">
-        <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-lg font-medium text-[var(--color-neutral-mid)] text-center mb-8">
-              Transform
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white text-center">
-                <div className="font-semibold text-[var(--color-neutral-dark)] mb-2">
-                  Acquisitions & rollups
-                </div>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
-                  Keep consolidated reporting live
-                </p>
-              </div>
-              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white text-center">
-                <div className="font-semibold text-[var(--color-neutral-dark)] mb-2">
-                  Revenue cycle visibility
-                </div>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
-                  Unify denial signals across systems
-                </p>
-              </div>
-              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)] bg-white text-center">
-                <div className="font-semibold text-[var(--color-neutral-dark)] mb-2">
-                  Digital health scaling
-                </div>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
-                  Onboard new data sources without custom mapping
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Problem Section */}
-      <section className="section-spacing bg-[rgba(196,69,79,0.04)]">
+      <section className="section-spacing bg-[var(--ms-surface-warm)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
-            <SectionHeader
-              headline="Every acquisition or expansion creates a data visibility gap"
-              subheadline="When systems change, the same pattern repeats."
-            />
-            <ProblemBullets
-              variant="visual"
-              iconBullets={[
-                { icon: TrendingDown, label: 'Lost visibility' },
-                { icon: Layers, label: 'Fragmented systems' },
-                { icon: Unplug, label: 'Stalled pipelines' },
-                { icon: Clock, label: 'Delayed decisions' },
-              ]}
-            />
+            <ScrollReveal>
+              <SectionHeader
+                headline="Every acquisition or expansion creates a data visibility gap"
+                subheadline="When systems change, the same pattern repeats."
+              />
+            </ScrollReveal>
+            <ScrollReveal stagger={0.15} distance={20}>
+              <ProblemBullets
+                variant="visual"
+                iconBullets={[
+                  { icon: TrendingDown, label: 'Lost visibility' },
+                  { icon: Layers, label: 'Fragmented systems' },
+                  { icon: Unplug, label: 'Stalled pipelines' },
+                  { icon: Clock, label: 'Delayed decisions' },
+                ]}
+              />
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -81,81 +49,88 @@ export default function Home() {
       <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
-            <SectionHeader
-              headline="Integration without a gap"
-              subheadline="Visibility and operations continue while systems evolve underneath."
-              variant="emphasis"
-            />
+            <ScrollReveal>
+              <SectionHeader
+                headline="Integration without a gap"
+                subheadline="Visibility and operations continue while systems evolve underneath."
+                variant="emphasis"
+              />
+            </ScrollReveal>
 
-            <BeforeAfter
-              before={{
-                title: 'Traditional Integration',
-                items: [
-                  'Delayed reporting',
-                  'Manual reconciliation',
-                  'Stalled pipelines',
-                  'Revenue at risk',
-                ],
-              }}
-              after={{
-                title: 'With MTN Data Foundry',
-                items: [
-                  'Live visibility',
-                  'Fast integration',
-                  'Auto-adapting',
-                  'Zero disruption',
-                ],
-              }}
-              variant="withIcons"
-              compact
-            />
+            <ScrollReveal stagger={0.15} distance={20}>
+              <BeforeAfter
+                before={{
+                  title: 'Traditional Integration',
+                  items: [
+                    'Delayed reporting',
+                    'Manual reconciliation',
+                    'Stalled pipelines',
+                    'Revenue at risk',
+                  ],
+                }}
+                after={{
+                  title: 'With MTN Data Foundry',
+                  items: [
+                    'Live visibility',
+                    'Fast integration',
+                    'Auto-adapting',
+                    'Zero disruption',
+                  ],
+                }}
+                variant="withIcons"
+                compact
+              />
+            </ScrollReveal>
 
             <div className="mt-16 max-w-4xl mx-auto">
-              <OutcomeBullets
-                headline="What changes for your organization"
-                variant="metricCards"
-                align="center"
-                metricCards={[
-                  { icon: Activity, metric: 'Day One', label: 'Visibility' },
-                  { icon: Zap, metric: 'Days to Weeks', label: 'Integration' },
-                  { icon: Shield, metric: 'Zero', label: 'Disruption' },
-                ]}
-              />
+              <ScrollReveal stagger={0.1}>
+                <OutcomeBullets
+                  headline="What changes for your organization"
+                  variant="metricCards"
+                  align="center"
+                  metricCards={[
+                    { icon: Activity, metric: 'Day One', label: 'Visibility' },
+                    { icon: Zap, metric: 'Days to Weeks', label: 'Integration' },
+                    { icon: Shield, metric: 'Zero', label: 'Disruption' },
+                  ]}
+                />
+              </ScrollReveal>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="section-spacing bg-[var(--color-neutral-lighter)]/30">
+      <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
           <div className="max-w-5xl mx-auto">
-            <SectionHeader
-              headline="How it works"
-              subheadline="A integration layer framework that minimizes visibility disruption."
-              align="center"
-            />
+            <ScrollReveal>
+              <SectionHeader
+                headline="How it works"
+                subheadline="A integration layer framework that minimizes visibility disruption."
+                align="center"
+              />
+            </ScrollReveal>
 
-            <ThreeStepFlow
-              variant="iconForward"
+            <AnimatedThreeStepFlow
               steps={[
                 {
                   number: 1,
                   title: 'Ingest',
                   description: 'Connect any data source',
-                  icon: Database,
+                  icon: 'Database',
                 },
                 {
                   number: 2,
                   title: 'Map',
                   description: 'Auto-map to shared concepts',
-                  icon: GitMerge,
+                  icon: 'GitMerge',
                 },
                 {
                   number: 3,
                   title: 'Adapt',
                   description: 'Schemas evolve, pipelines adapt',
-                  icon: RefreshCw,
+                  icon: 'RefreshCw',
                 },
               ]}
             />
@@ -167,42 +142,64 @@ export default function Home() {
       <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold text-[var(--color-neutral-dark)] mb-8">
-              Built for healthcare data integration
-            </h2>
+            <ScrollReveal>
+              <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-8">
+                Built for healthcare data integration
+              </h2>
+            </ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="p-6">
-                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
-                  Enterprise-grade
+              <ScrollReveal stagger={0} distance={20}>
+                <div
+                  className="p-6 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)]"
+                  style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+                >
+                  <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
+                    Enterprise-grade
+                  </div>
+                  <p className="text-[var(--ms-body)] text-sm">
+                    Full audit logging, versioned mappings, and governance controls
+                  </p>
                 </div>
-                <p className="text-[var(--color-neutral-mid)] text-sm">
-                  Full audit logging, versioned mappings, and governance controls
-                </p>
-              </div>
-              <div className="p-6">
-                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
-                  Human-in-the-loop
+              </ScrollReveal>
+              <ScrollReveal stagger={0.1} distance={20}>
+                <div
+                  className="p-6 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)]"
+                  style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+                >
+                  <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
+                    Human-in-the-loop
+                  </div>
+                  <p className="text-[var(--ms-body)] text-sm">
+                    Uncertain mappings routed for review. Your team stays in control.
+                  </p>
                 </div>
-                <p className="text-[var(--color-neutral-mid)] text-sm">
-                  Uncertain mappings routed for review. Your team stays in control.
-                </p>
-              </div>
-              <div className="p-6">
-                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
-                  Non-disruptive
+              </ScrollReveal>
+              <ScrollReveal stagger={0.2} distance={20}>
+                <div
+                  className="p-6 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)]"
+                  style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+                >
+                  <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
+                    Non-disruptive
+                  </div>
+                  <p className="text-[var(--ms-body)] text-sm">
+                    Works alongside your existing warehouse and BI tools
+                  </p>
                 </div>
-                <p className="text-[var(--color-neutral-mid)] text-sm">
-                  Works alongside your existing warehouse and BI tools
-                </p>
-              </div>
-              <div className="p-6">
-                <div className="text-[var(--color-cta-blue)] font-semibold text-lg mb-2">
-                  Security
+              </ScrollReveal>
+              <ScrollReveal stagger={0.3} distance={20}>
+                <div
+                  className="p-6 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)]"
+                  style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+                >
+                  <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
+                    Security
+                  </div>
+                  <p className="text-[var(--ms-body)] text-sm">
+                    SOC 2-aligned controls, end-to-end encryption, and role-based access
+                  </p>
                 </div>
-                <p className="text-[var(--color-neutral-mid)] text-sm">
-                  SOC 2-aligned controls, end-to-end encryption, and role-based access
-                </p>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>

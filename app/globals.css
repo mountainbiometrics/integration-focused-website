@@ -37,6 +37,23 @@
   --ms-primary: var(--color-cta-blue);
   --ms-primary-hover: var(--color-cta-blue-hover);
   --ms-hero-gradient: #f8f9fa;
+
+  /* Premium design tokens (global) */
+  --ms-heading: #1A1A2E;
+  --ms-body: #4A4A5A;
+  --ms-body-light: #6B6B7B;
+  --ms-muted: #9A9AAA;
+  --ms-border: #E2E2EA;
+  --ms-surface: #F7F7FB;
+  --ms-surface-warm: #FBF8F6;
+  --ms-blue: #5A6FD1;
+  --ms-dark-bg: #2A2A3A;
+  --ms-accent: #AC1F2D;
+
+  --ms-shadow-card: 0 1px 2px rgba(15,15,26,0.04), 0 4px 12px rgba(15,15,26,0.06), 0 12px 32px rgba(15,15,26,0.04);
+  --ms-shadow-card-sm: 0 1px 3px rgba(15,15,26,0.03), 0 6px 16px rgba(15,15,26,0.05);
+  --ms-shadow-hero: 0 2px 4px rgba(15,15,26,0.04), 0 8px 24px rgba(15,15,26,0.08), 0 24px 48px rgba(15,15,26,0.04);
+  --ms-shadow-btn: 0 1px 2px rgba(139,25,36,0.3), 0 4px 12px rgba(172,31,45,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
 }
 
 /* Tailwind v4 theme configuration */
@@ -291,6 +308,15 @@ a:focus-visible {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: -0.02em;
+}
+
+/* Premium card hover — CSS-only shadow lift */
+.shadow-card-hover {
+  box-shadow: var(--ms-shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.shadow-card-hover:hover {
+  box-shadow: var(--ms-shadow-hero);
 }
 
 /* Microsite premium theme tokens */

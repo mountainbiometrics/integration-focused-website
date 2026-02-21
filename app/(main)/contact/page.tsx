@@ -41,7 +41,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left column - Context */}
             <div>
-              <h2 className="text-xl font-semibold text-[var(--color-neutral-dark)] mb-6">
+              <h2 className="font-display text-xl font-semibold text-[var(--color-neutral-dark)] mb-6">
                 What we&apos;ll cover
               </h2>
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-[var(--color-neutral-dark)] mb-4">
+              <h3 className="font-display text-lg font-semibold text-[var(--color-neutral-dark)] mb-4">
                 Common scenarios
               </h3>
 
@@ -143,7 +143,7 @@ export default function ContactPage() {
             {/* Right column - Form */}
             <div>
               <div className="bg-white p-8 rounded-xl border border-[var(--color-neutral-lighter)] shadow-sm">
-                <h2 className="text-xl font-semibold text-[var(--color-neutral-dark)] mb-6">
+                <h2 className="font-display text-xl font-semibold text-[var(--color-neutral-dark)] mb-6">
                   Get in touch
                 </h2>
                 <ContactForm />

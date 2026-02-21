@@ -22,8 +22,11 @@ export default function BeforeAfter({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
       {/* Before column */}
-      <div className="p-6 md:p-8 rounded-lg bg-[rgba(196,69,79,0.06)]">
-        <h4 className="font-semibold text-[var(--color-neutral-dark)] text-lg mb-4 flex items-center gap-2">
+      <div
+        className="p-6 md:p-8 rounded-2xl bg-[rgba(196,69,79,0.06)]"
+        style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+      >
+        <h4 className="font-display font-semibold text-[var(--ms-heading)] text-lg mb-4 flex items-center gap-2">
           {variant === 'withIcons' && (
             <svg
               className="w-5 h-5 text-[var(--color-primary-red)]/70"
@@ -53,7 +56,7 @@ export default function BeforeAfter({
               ) : (
                 <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--color-primary-red)]/60" />
               )}
-              <span className={`text-[var(--color-neutral-dark)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-sm'}`}>
+              <span className={`text-[var(--ms-heading)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-sm'}`}>
                 {item}
               </span>
             </li>
@@ -62,11 +65,14 @@ export default function BeforeAfter({
       </div>
 
       {/* After column */}
-      <div className="p-6 md:p-8 rounded-lg bg-[rgba(74,111,165,0.08)]">
-        <h4 className="font-semibold text-[var(--color-neutral-dark)] text-lg mb-4 flex items-center gap-2">
+      <div
+        className="p-6 md:p-8 rounded-2xl bg-[rgba(74,111,165,0.08)]"
+        style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+      >
+        <h4 className="font-display font-semibold text-[var(--ms-heading)] text-lg mb-4 flex items-center gap-2">
           {variant === 'withIcons' && (
             <svg
-              className="w-5 h-5 text-[var(--color-cta-blue)]"
+              className="w-5 h-5 text-[var(--ms-blue)]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -86,14 +92,14 @@ export default function BeforeAfter({
             <li key={index} className="flex items-center gap-3">
               {compact ? (
                 <Check
-                  className="flex-shrink-0 w-5 h-5 text-[var(--color-cta-blue)]"
+                  className="flex-shrink-0 w-5 h-5 text-[var(--ms-blue)]"
                   strokeWidth={2}
                   aria-hidden="true"
                 />
               ) : (
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-white flex items-center justify-center">
                   <svg
-                    className="w-3 h-3 text-[var(--color-cta-blue)]"
+                    className="w-3 h-3 text-[var(--ms-blue)]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -107,7 +113,7 @@ export default function BeforeAfter({
                   </svg>
                 </span>
               )}
-              <span className={`text-[var(--color-neutral-dark)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-sm'}`}>
+              <span className={`text-[var(--ms-heading)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-sm'}`}>
                 {item}
               </span>
             </li>

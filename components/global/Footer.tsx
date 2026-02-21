@@ -17,28 +17,28 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-700">
+    <footer className="bg-[var(--ms-dark-bg)]">
       <div className="container-site py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Logo and Company Info */}
           <div className="space-y-4">
             <Link href="/">
               <Image
-                src="/images/MTN_ekg_extended_large_white.svg"
+                src="/images/MTN_ekg_white.svg"
                 alt="Mountain Biometrics"
                 width={160}
                 height={36}
                 className="h-9 w-auto"
               />
             </Link>
-            <p className="!text-white text-sm leading-relaxed max-w-xs">
+            <p className="!text-gray-300 text-sm leading-relaxed max-w-xs">
               Full data visibility during consolidation and system change.
             </p>
           </div>
 
           {/* Navigation Links */}
           <div>
-            <h4 className="!text-white font-semibold mb-4 text-sm uppercase tracking-wide">
+            <h4 className="font-display !text-white font-semibold mb-4 text-sm uppercase tracking-wide">
               Navigation
             </h4>
             <nav className="flex flex-col gap-3">
@@ -46,7 +46,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="!text-white hover:!text-gray-300 transition-colors text-sm no-underline"
+                  className="!text-gray-300 hover:!text-white transition-colors text-sm no-underline"
                 >
                   {link.label}
                 </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="!text-white font-semibold mb-4 text-sm uppercase tracking-wide">
+            <h4 className="font-display !text-white font-semibold mb-4 text-sm uppercase tracking-wide">
               Legal
             </h4>
             <nav className="flex flex-col gap-3">
@@ -64,7 +64,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="!text-white hover:!text-gray-300 transition-colors text-sm no-underline"
+                  className="!text-gray-300 hover:!text-white transition-colors text-sm no-underline"
                 >
                   {link.label}
                 </Link>
@@ -74,9 +74,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-600">
-          <p className="!text-white text-sm">
-            &copy; {currentYear} Mountain Biometrics. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <p className="!text-gray-400 text-sm">
+            &copy; 2026 Mountain Biometrics, Inc. All rights reserved.
           </p>
         </div>
       </div>

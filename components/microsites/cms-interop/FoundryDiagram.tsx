@@ -54,10 +54,10 @@ export default function FoundryDiagram() {
               borderColor: 'var(--ms-border)',
             }}
           >
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3 text-center">
               Clinics &amp; Sources
             </p>
-            <div className="flex flex-wrap gap-1.5 mb-3">
+            <div className="flex flex-wrap gap-1.5 mb-3 justify-center">
               {DOT_SIZES.map((size, i) => {
                 const dotAnim = remap(progress, 0.22 + i * 0.015, 0.40 + i * 0.015);
                 return (
@@ -76,7 +76,7 @@ export default function FoundryDiagram() {
               })}
             </div>
             <div
-              className="flex flex-wrap gap-x-3 gap-y-1"
+              className="flex flex-wrap gap-x-3 gap-y-1 justify-center"
               style={{ opacity: sourceLabels }}
             >
               {SOURCE_TYPES.map((t) => (
@@ -98,7 +98,7 @@ export default function FoundryDiagram() {
             }}
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-[#AC1F2D] rounded-l-2xl" />
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#AC1F2D]">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#AC1F2D] text-center">
               MTN Data Foundry
             </p>
           </div>
@@ -116,10 +116,10 @@ export default function FoundryDiagram() {
               borderColor: 'var(--ms-border)',
             }}
           >
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3 text-center">
               Your Systems
             </p>
-            <div className="flex flex-wrap gap-1.5 mb-3">
+            <div className="flex flex-wrap gap-1.5 mb-3 justify-center">
               {Array.from({ length: 12 }).map((_, i) => {
                 const dotAnim = remap(progress, 0.56 + i * 0.015, 0.70 + i * 0.015);
                 return (
@@ -136,7 +136,7 @@ export default function FoundryDiagram() {
               })}
             </div>
             <div
-              className="flex flex-wrap gap-x-3 gap-y-1"
+              className="flex flex-wrap gap-x-3 gap-y-1 justify-center"
               style={{ opacity: systemLabels }}
             >
               {SYSTEM_OUTPUTS.map((s) => (

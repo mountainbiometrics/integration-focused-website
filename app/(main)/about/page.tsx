@@ -29,7 +29,7 @@ export default function AboutPage() {
             </h2>
             <div className="prose prose-gray max-w-none space-y-4">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                Medical Timeseries Networks was building our own
+                We were building our own
                 AI-powered solutions across healthcare sites.
                 Deployments hit the same wall: different EHRs, different
                 schemas, IOT devices, and stalled pipelines with each vendor update. Our

@@ -3,7 +3,7 @@ export default function B2bPeHero() {
     <section
       id="hero-section"
       className="py-20 md:py-28 lg:py-32 relative overflow-hidden"
-      style={{ background: 'linear-gradient(160deg, #E0E8F0 0%, #FDFBFC 40%, #F7F7FB 100%)' }}
+      style={{ background: 'linear-gradient(160deg, #F5E0E2 0%, #FDFBFC 40%, #F7F7FB 100%)' }}
     >
       {/* Decorative rising-line chart */}
       <div className="absolute inset-0 flex items-center pointer-events-none" aria-hidden="true">
@@ -15,7 +15,7 @@ export default function B2bPeHero() {
         >
           <path
             d="M0 100 L80 95 L160 88 L240 82 L320 72 L400 60 L480 46 L560 34 L640 24 L720 16 L800 10"
-            stroke="#4A6FA5"
+            stroke="#AC1F2D"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -34,7 +34,7 @@ export default function B2bPeHero() {
             className="inline-flex flex-col items-center bg-white/80 backdrop-blur-md rounded-2xl px-8 py-7 w-full md:w-auto"
             style={{ boxShadow: 'var(--ms-shadow-hero)' }}
           >
-            <p className="text-4xl md:text-5xl font-bold text-[#4A6FA5] tabular-nums">
+            <p className="text-4xl md:text-5xl font-bold text-[#AC1F2D] tabular-nums">
               70%
             </p>
             <p className="text-sm text-[var(--ms-body)] mt-1.5 text-center">
@@ -51,8 +51,8 @@ export default function B2bPeHero() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-6 md:mt-8 md:justify-center">
           <a
             href="#architecture"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#4A6FA5] text-white font-semibold rounded-xl hover:bg-[#3D5C8A] transition-all duration-200 text-sm md:text-base hover:-translate-y-0.5"
-            style={{ boxShadow: '0 1px 2px rgba(61,92,138,0.3), 0 4px 12px rgba(74,111,165,0.2), inset 0 1px 0 rgba(255,255,255,0.1)' }}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#AC1F2D] text-white font-semibold rounded-xl hover:bg-[#8B1924] transition-all duration-200 text-sm md:text-base hover:-translate-y-0.5"
+            style={{ boxShadow: '0 1px 2px rgba(139,25,36,0.3), 0 4px 12px rgba(172,31,45,0.2), inset 0 1px 0 rgba(255,255,255,0.1)' }}
           >
             See how it works
           </a>

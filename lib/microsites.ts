@@ -40,7 +40,7 @@ export interface MicrositeConfig {
 const microsites: MicrositeConfig[] = [
   {
     slug: 'healthcare-pe',
-    title: 'Close the Visibility Gap | MTN White Papers',
+    title: 'MTN | Close the Visibility Gap',
     metaDescription:
       'Download the executive and technical white papers on closing the data visibility gap during healthcare rollups and PE-backed consolidation.',
     headline: 'Close the Visibility Gap',
@@ -110,7 +110,7 @@ const microsites: MicrositeConfig[] = [
   },
   {
     slug: 'b2b-pe',
-    title: 'Cut the Integration Tax | MTN White Papers',
+    title: 'MTN | Cut the Integration Tax',
     metaDescription:
       'Download executive and technical white papers on reducing compounding integration costs in PE-backed B2B rollups.',
     headline: 'Cut the Integration Tax',
@@ -133,9 +133,9 @@ const microsites: MicrositeConfig[] = [
     formspreeId: 'xaqbaljo',
     ctaLabel: 'Download the White Papers',
     theme: {
-      primaryColor: '#4A6FA5',
-      primaryColorHover: '#3D5C8A',
-      heroGradientColor: '#E0E8F0',
+      primaryColor: '#AC1F2D',
+      primaryColorHover: '#8B1924',
+      heroGradientColor: '#F5E0E2',
     },
     sections: [
       {
@@ -175,7 +175,7 @@ const microsites: MicrositeConfig[] = [
   },
   {
     slug: 'cms-interop',
-    title: 'Compliance to Capability | MTN White Papers',
+    title: 'MTN | Compliance to Capability',
     metaDescription:
       'Download executive and technical white papers on turning CMS interoperability compliance into a competitive advantage for payers.',
     headline: 'Compliance to Capability',

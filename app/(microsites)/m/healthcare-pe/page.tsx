@@ -138,7 +138,6 @@ export default function HealthcarePePage() {
       <StickyMobileCta
         bgColor="#AC1F2D"
         activeBgColor="#8B1924"
-        emailSubject="Healthcare%20PE%20Assessment"
         label="Request an assessment"
       />
     </MicrositeThemeWrapper>

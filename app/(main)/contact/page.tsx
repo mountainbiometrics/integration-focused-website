@@ -29,7 +29,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <Hero
         headline="Start a conversation"
-        subheadline="We'll discuss your specific scenario and walk through how visibility can stay live during your transition."
+        subheadline="We'll discuss your specific scenario, walk through how visibility can stay live during your transition, and how you can reduce maintenance costs."
         variant="internal"
         ctaText=""
         ctaHref=""
@@ -121,7 +121,7 @@ export default function ContactPage() {
                     <div className="font-medium text-[var(--ms-heading)] mb-1">
                       {scenario.title}
                     </div>
-                    <div className="text-sm text-[var(--ms-body)]">
+                    <div className="text-base text-[var(--ms-body)]">
                       {scenario.description}
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                 <h4 className="font-medium text-[var(--ms-heading)] mb-2">
                   No preparation needed
                 </h4>
-                <p className="text-sm text-[var(--ms-body)]">
+                <p className="text-base text-[var(--ms-body)]">
                   This is a working conversation, not a formal demo. You don&apos;t
                   need to prepare data samples or technical specifications upfront.
                   We&apos;ll discuss what makes sense based on your situation.

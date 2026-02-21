@@ -6,7 +6,7 @@ interface StickyMobileCtaProps {
   bgColor: string;
   activeBgColor: string;
   btnShadow?: string;
-  emailSubject: string;
+  href?: string;
   label: string;
 }
 
@@ -14,7 +14,7 @@ export default function StickyMobileCta({
   bgColor,
   activeBgColor,
   btnShadow = 'var(--ms-shadow-btn)',
-  emailSubject,
+  href = '/contact',
   label,
 }: StickyMobileCtaProps) {
   const [visible, setVisible] = useState(false);
@@ -60,7 +60,7 @@ export default function StickyMobileCta({
         }}
       >
         <a
-          href={`mailto:warren@themtn.ai?subject=${emailSubject}`}
+          href={href}
           className="block w-full text-center px-6 py-3 text-white font-semibold rounded-xl text-sm transition-colors"
           style={{
             backgroundColor: bgColor,

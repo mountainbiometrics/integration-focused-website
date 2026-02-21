@@ -11,7 +11,7 @@ export default function B2bPeCta() {
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
           <a
-            href="mailto:warren@themtn.ai?subject=B2B%20PE%20Integration%20Assessment"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#4A6FA5] text-white font-semibold rounded-xl hover:bg-[#3D5C8A] transition-all duration-200 hover:-translate-y-0.5"
             style={{ boxShadow: '0 1px 2px rgba(61,92,138,0.3), 0 4px 12px rgba(74,111,165,0.2), inset 0 1px 0 rgba(255,255,255,0.1)' }}
           >

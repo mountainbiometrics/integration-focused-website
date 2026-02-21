@@ -61,7 +61,7 @@ export default function ProblemBullets({
               />
               <span
                 className={`text-[var(--ms-heading)] leading-relaxed ${
-                  variant === 'executive' ? 'text-base' : 'text-sm'
+                  variant === 'executive' ? 'text-base' : 'text-base'
                 }`}
               >
                 {bullet}

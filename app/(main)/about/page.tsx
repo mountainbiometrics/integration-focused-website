@@ -34,7 +34,7 @@ export default function AboutPage() {
                 Deployments hit the same wall: different EHRs, different
                 schemas, IOT devices, and stalled pipelines with each vendor update. Our
                 ML scientists and engineers wanted to avoid debugging data
-                transformations and focus on advancing medicine.
+                transformations and focus on actionable models.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
                 The problem wasn&apos;t unique to us. Traditional integration
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
                   Built for operators
                 </h3>
-                <p className="text-sm text-[var(--ms-body)]">
+                <p className="text-base text-[var(--ms-body)]">
                   The Foundry is designed for people who need visibility now,
                   not perfect data eventually. It prioritizes operational
                   continuity over architectural elegance.
@@ -92,7 +92,7 @@ export default function AboutPage() {
                 <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
                   Built for governance
                 </h3>
-                <p className="text-sm text-[var(--ms-body)]">
+                <p className="text-base text-[var(--ms-body)]">
                   Healthcare requires audit trails, human oversight, and
                   deterministic behavior. The Foundry is designed to satisfy
                   compliance requirements, not work around them.

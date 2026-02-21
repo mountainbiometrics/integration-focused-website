@@ -156,7 +156,7 @@ export default function Home() {
                   <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
                     Enterprise-grade
                   </div>
-                  <p className="text-[var(--ms-body)] text-sm">
+                  <p className="text-[var(--ms-body)] text-base">
                     Full audit logging, versioned mappings, and governance controls
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export default function Home() {
                   <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
                     Human-in-the-loop
                   </div>
-                  <p className="text-[var(--ms-body)] text-sm">
+                  <p className="text-[var(--ms-body)] text-base">
                     Uncertain mappings routed for review. Your team stays in control.
                   </p>
                 </div>
@@ -182,7 +182,7 @@ export default function Home() {
                   <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
                     Non-disruptive
                   </div>
-                  <p className="text-[var(--ms-body)] text-sm">
+                  <p className="text-[var(--ms-body)] text-base">
                     Works alongside your existing warehouse and BI tools
                   </p>
                 </div>
@@ -195,7 +195,7 @@ export default function Home() {
                   <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
                     Security
                   </div>
-                  <p className="text-[var(--ms-body)] text-sm">
+                  <p className="text-[var(--ms-body)] text-base">
                     SOC 2-aligned controls, end-to-end encryption, and role-based access
                   </p>
                 </div>

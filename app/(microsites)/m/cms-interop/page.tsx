@@ -111,7 +111,6 @@ export default function CmsInteropPage() {
       <StickyMobileCta
         bgColor="#AC1F2D"
         activeBgColor="#8B1924"
-        emailSubject="Data%20Foundry%20walkthrough"
         label="Let&rsquo;s look at your data"
       />
     </MicrositeThemeWrapper>

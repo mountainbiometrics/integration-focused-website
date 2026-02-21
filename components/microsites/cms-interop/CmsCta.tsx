@@ -11,7 +11,7 @@ export default function CmsCta() {
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
           <a
-            href="mailto:warren@themtn.ai?subject=Data%20Foundry%20walkthrough"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#AC1F2D] text-white font-semibold rounded-xl hover:bg-[#8B1924] transition-all duration-200 hover:-translate-y-0.5"
             style={{ boxShadow: 'var(--ms-shadow-btn)' }}
           >

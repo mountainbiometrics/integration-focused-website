@@ -56,7 +56,7 @@ export default function BeforeAfter({
               ) : (
                 <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-accent)]/60" />
               )}
-              <span className={`text-[var(--ms-heading)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-sm'}`}>
+              <span className={`text-[var(--ms-heading)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-base'}`}>
                 {item}
               </span>
             </li>
@@ -113,7 +113,7 @@ export default function BeforeAfter({
                   </svg>
                 </span>
               )}
-              <span className={`text-[var(--ms-heading)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-sm'}`}>
+              <span className={`text-[var(--ms-heading)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-base'}`}>
                 {item}
               </span>
             </li>

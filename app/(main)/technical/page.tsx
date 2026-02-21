@@ -216,7 +216,7 @@ export default function TechnicalPage() {
                 the most fragile point. MTN Data Foundry operates at this boundary—automatically
                 detecting structure, mapping to a canonical layer, and adapting when source schemas change.
               </p>
-              <p className="text-[var(--ms-body)] text-sm mb-6">
+              <p className="text-[var(--ms-body)] text-base mb-6">
                 Medallion terminology provides a familiar reference point. The Foundry itself is
                 architecture-agnostic and works with any pipeline that requires resilient schema mapping.
               </p>
@@ -226,7 +226,7 @@ export default function TechnicalPage() {
                   <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
                     What it does
                   </h4>
-                  <ul className="space-y-2 text-sm text-[var(--ms-body)]">
+                  <ul className="space-y-2 text-base text-[var(--ms-body)]">
                     <li>• Ingests bronze-layer data from any source</li>
                     <li>• Maps to silver-layer semantic definitions</li>
                     <li>• Adapts when source schemas change</li>
@@ -237,7 +237,7 @@ export default function TechnicalPage() {
                   <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
                     What it does not do
                   </h4>
-                  <ul className="space-y-2 text-sm text-[var(--ms-body)]">
+                  <ul className="space-y-2 text-base text-[var(--ms-body)]">
                     <li>• Replace your silver or gold layers</li>
                     <li>• Compete with your warehouse or BI tools</li>
                     <li>• Require changes to source systems</li>
@@ -270,36 +270,36 @@ export default function TechnicalPage() {
               <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
                 Governance model
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <div className="font-medium text-[var(--ms-heading)] mb-1">
+                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
                     Confidence thresholds
                   </div>
-                  <p className="text-[var(--ms-body)]">
+                  <p className="text-base text-[var(--ms-body)]">
                     Configurable thresholds control automation vs. human review
                   </p>
                 </div>
                 <div>
-                  <div className="font-medium text-[var(--ms-heading)] mb-1">
+                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
                     Audit logging
                   </div>
-                  <p className="text-[var(--ms-body)]">
+                  <p className="text-base text-[var(--ms-body)]">
                     Every decision is logged for compliance and debugging
                   </p>
                 </div>
                 <div>
-                  <div className="font-medium text-[var(--ms-heading)] mb-1">
+                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
                     Version control
                   </div>
-                  <p className="text-[var(--ms-body)]">
+                  <p className="text-base text-[var(--ms-body)]">
                     Mappings are versioned; rollback is always available
                   </p>
                 </div>
                 <div>
-                  <div className="font-medium text-[var(--ms-heading)] mb-1">
+                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
                     Forward-only changes
                   </div>
-                  <p className="text-[var(--ms-body)]">
+                  <p className="text-base text-[var(--ms-body)]">
                     Backward compatibility guaranteed
                   </p>
                 </div>
@@ -340,11 +340,11 @@ export default function TechnicalPage() {
                 <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
                   Cloud-hosted
                 </h3>
-                <p className="text-sm text-[var(--ms-body)] mb-4">
+                <p className="text-base text-[var(--ms-body)] mb-4">
                   Managed deployment in your preferred cloud environment with
                   SOC 2 compliance and BAA support.
                 </p>
-                <ul className="space-y-2 text-sm text-[var(--ms-body)]">
+                <ul className="space-y-2 text-base text-[var(--ms-body)]">
                   <li>• AWS, Azure, or GCP</li>
                   <li>• Single-tenant isolation</li>
                   <li>• Managed updates and monitoring</li>
@@ -354,11 +354,11 @@ export default function TechnicalPage() {
                 <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
                   On-premises
                 </h3>
-                <p className="text-sm text-[var(--ms-body)] mb-4">
+                <p className="text-base text-[var(--ms-body)] mb-4">
                   Deploy within your existing infrastructure for complete data
                   control and air-gapped environments.
                 </p>
-                <ul className="space-y-2 text-sm text-[var(--ms-body)]">
+                <ul className="space-y-2 text-base text-[var(--ms-body)]">
                   <li>• Kubernetes or VM deployment</li>
                   <li>• No external data transmission</li>
                   <li>• Your security policies apply</li>

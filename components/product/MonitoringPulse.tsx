@@ -79,7 +79,7 @@ export default function MonitoringPulse() {
               {/* ── Lane 1: Transmission health ── */}
               <g opacity={lane1Enter}>
                 {/* Lane label */}
-                <text x={LANE_X1 - 10} y={y1 + 1} textAnchor="end" dominantBaseline="central" fontSize="12" fontWeight="600" fill="var(--ms-heading)">
+                <text x={LANE_X1 - 10} y={y1 + 1} textAnchor="end" dominantBaseline="central" fontSize="15" fontWeight="600" fill="var(--ms-heading)">
                   Transmission
                 </text>
                 {/* Lane line */}
@@ -127,8 +127,8 @@ export default function MonitoringPulse() {
                 {/* Tooltip */}
                 {lane1Bell > 0.5 && (
                   <g opacity={Math.min((lane1Bell - 0.5) * 3, 1)}>
-                    <rect x={BELL_X - 60} y={y1 + 14} width={132} height={22} rx={4} fill="var(--ms-heading)" />
-                    <text x={BELL_X + 6} y={y1 + 26} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="white">
+                    <rect x={BELL_X - 66} y={y1 + 14} width={145} height={24} rx={4} fill="var(--ms-heading)" />
+                    <text x={BELL_X + 6} y={y1 + 26} textAnchor="middle" dominantBaseline="central" fontSize="13" fill="white">
                       Source stopped sending
                     </text>
                   </g>
@@ -137,7 +137,7 @@ export default function MonitoringPulse() {
 
               {/* ── Lane 2: Schema drift ── */}
               <g opacity={lane2Enter}>
-                <text x={LANE_X1 - 10} y={y2 + 1} textAnchor="end" dominantBaseline="central" fontSize="12" fontWeight="600" fill="var(--ms-heading)">
+                <text x={LANE_X1 - 10} y={y2 + 1} textAnchor="end" dominantBaseline="central" fontSize="15" fontWeight="600" fill="var(--ms-heading)">
                   Schema
                 </text>
                 <line x1={LANE_X1} y1={y2} x2={LANE_X2} y2={y2} stroke="var(--ms-border)" strokeWidth="1" opacity={0.5} />
@@ -179,8 +179,8 @@ export default function MonitoringPulse() {
 
                 {lane2Bell > 0.5 && (
                   <g opacity={Math.min((lane2Bell - 0.5) * 3, 1)}>
-                    <rect x={BELL_X - 54} y={y2 + 14} width={120} height={22} rx={4} fill="var(--ms-heading)" />
-                    <text x={BELL_X + 6} y={y2 + 26} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="white">
+                    <rect x={BELL_X - 58} y={y2 + 14} width={130} height={24} rx={4} fill="var(--ms-heading)" />
+                    <text x={BELL_X + 6} y={y2 + 26} textAnchor="middle" dominantBaseline="central" fontSize="13" fill="white">
                       Structure changed
                     </text>
                   </g>
@@ -189,7 +189,7 @@ export default function MonitoringPulse() {
 
               {/* ── Lane 3: Quality alerts ── */}
               <g opacity={lane3Enter}>
-                <text x={LANE_X1 - 10} y={y3 + 1} textAnchor="end" dominantBaseline="central" fontSize="12" fontWeight="600" fill="var(--ms-heading)">
+                <text x={LANE_X1 - 10} y={y3 + 1} textAnchor="end" dominantBaseline="central" fontSize="15" fontWeight="600" fill="var(--ms-heading)">
                   Quality
                 </text>
                 <line x1={LANE_X1} y1={y3} x2={LANE_X2} y2={y3} stroke="var(--ms-border)" strokeWidth="1" opacity={0.5} />
@@ -214,7 +214,7 @@ export default function MonitoringPulse() {
                       <text
                         x={vx} y={y3 + 1}
                         textAnchor="middle" dominantBaseline="central"
-                        fontSize="12" fontWeight="600" fontFamily="monospace"
+                        fontSize="14" fontWeight="600" fontFamily="monospace"
                         fill={outlierActive ? '#EF5350' : 'var(--ms-heading)'}
                       >
                         {val}
@@ -239,8 +239,8 @@ export default function MonitoringPulse() {
 
                 {lane3Bell > 0.5 && (
                   <g opacity={Math.min((lane3Bell - 0.5) * 3, 1)}>
-                    <rect x={BELL_X - 52} y={y3 + 14} width={116} height={22} rx={4} fill="var(--ms-heading)" />
-                    <text x={BELL_X + 6} y={y3 + 26} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="white">
+                    <rect x={BELL_X - 56} y={y3 + 14} width={126} height={24} rx={4} fill="var(--ms-heading)" />
+                    <text x={BELL_X + 6} y={y3 + 26} textAnchor="middle" dominantBaseline="central" fontSize="13" fill="white">
                       Anomaly detected
                     </text>
                   </g>
@@ -251,7 +251,7 @@ export default function MonitoringPulse() {
 
           {/* Closing line */}
           <p
-            className="text-sm md:text-base font-medium text-[var(--ms-heading)] text-center max-w-lg mx-auto"
+            className="text-base font-medium text-[var(--ms-heading)] text-center max-w-lg mx-auto"
             style={{
               opacity: closeLine,
               transform: `translateY(${(1 - closeLine) * 8}px)`,

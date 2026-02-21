@@ -21,7 +21,7 @@ export default function TechnicalSection({
         {behaviors.map((behavior, index) => (
           <li key={index} className="flex items-start gap-3">
             <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-            <span className="text-[var(--ms-heading)] text-sm leading-relaxed">
+            <span className="text-[var(--ms-heading)] text-base leading-relaxed">
               {behavior}
             </span>
           </li>

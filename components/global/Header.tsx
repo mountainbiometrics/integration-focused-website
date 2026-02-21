@@ -55,7 +55,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[0.9375rem] font-medium no-underline transition-all px-3 py-1.5 rounded-md ${
+                className={`text-base font-medium no-underline transition-all px-3 py-1.5 rounded-md ${
                   pathname === link.href
                     ? 'text-[var(--ms-accent)] bg-[var(--ms-accent)]/10'
                     : 'text-[var(--ms-heading)] hover:text-[var(--ms-accent)] hover:bg-[var(--ms-border)]/50'

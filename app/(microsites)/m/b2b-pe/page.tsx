@@ -141,7 +141,6 @@ export default function B2bPePage() {
         bgColor="#4A6FA5"
         activeBgColor="#3D5C8A"
         btnShadow="0 1px 2px rgba(61,92,138,0.3), 0 4px 12px rgba(74,111,165,0.2), inset 0 1px 0 rgba(255,255,255,0.1)"
-        emailSubject="B2B%20PE%20Integration%20Assessment"
         label="Request an integration assessment"
       />
     </MicrositeThemeWrapper>

@@ -22,7 +22,7 @@ const iconMap: Record<string, LucideIcon> = {
 export function generateStaticParams() {
   // These slugs have dedicated custom pages at /m/<slug>/page.tsx
   return getAllMicrositeSlugs()
-    .filter((slug) => slug !== 'cms-interop' && slug !== 'healthcare-pe')
+    .filter((slug) => slug !== 'cms-interop' && slug !== 'healthcare-pe' && slug !== 'b2b-pe')
     .map((slug) => ({ slug }));
 }
 

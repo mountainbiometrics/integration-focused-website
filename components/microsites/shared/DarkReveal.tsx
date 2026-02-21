@@ -1,9 +1,23 @@
 'use client';
 
-import { useRef } from 'react';
-import { useScrollProgress, remap } from './useScrollProgress';
+import { useRef, type ReactNode } from 'react';
+import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
-export default function DarkReveal() {
+interface DarkRevealProps {
+  glowColor: string;
+  setupText: ReactNode;
+  revealText: ReactNode;
+  punchlineText: ReactNode;
+  punchlineColor: string;
+}
+
+export default function DarkReveal({
+  glowColor,
+  setupText,
+  revealText,
+  punchlineText,
+  punchlineColor,
+}: DarkRevealProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const progress = useScrollProgress(sectionRef, { startVh: 0.50, endVh: -0.20 });
 
@@ -18,10 +32,10 @@ export default function DarkReveal() {
       className="py-24 md:py-36 lg:py-44 relative overflow-hidden"
       style={{ backgroundColor: 'var(--ms-dark-bg)' }}
     >
-      {/* Warm radial glow */}
+      {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 55%, rgba(172,31,45,0.12), transparent 70%)' }}
+        style={{ background: `radial-gradient(ellipse 80% 60% at 50% 55%, ${glowColor}, transparent 70%)` }}
         aria-hidden="true"
       />
 
@@ -47,8 +61,7 @@ export default function DarkReveal() {
             transform: `translateY(${(1 - setupFade) * 12}px)`,
           }}
         >
-          A five-year hold that loses twelve to eighteen months
-          to&nbsp;integration&hellip;
+          {setupText}
         </p>
 
         {/* Reveal */}
@@ -60,19 +73,19 @@ export default function DarkReveal() {
             transform: `translateY(${(1 - revealFade) * 16}px)`,
           }}
         >
-          &hellip;is really a three-and-a-half-year&nbsp;hold.
+          {revealText}
         </p>
 
         {/* Punchline */}
         <p
           className="text-lg md:text-2xl font-bold"
           style={{
-            color: '#F06070',
+            color: punchlineColor,
             opacity: punchFade,
             transform: `translateY(${(1 - punchFade) * 10}px)`,
           }}
         >
-          You don&rsquo;t get those months&nbsp;back.
+          {punchlineText}
         </p>
       </div>
     </section>

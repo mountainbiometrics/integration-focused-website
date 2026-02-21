@@ -1,6 +1,21 @@
 @import "tailwindcss";
 
-/* Design System CSS Variables */
+/*
+ * ──────────────────────────────────────────────────────────────
+ * CSS Variable Systems
+ *
+ * LEGACY (--color-*): Used by ~30+ files (Header, forms, technical
+ *   page, microsites gate, legal pages, cards, etc.). Still the
+ *   primary system for the main site shell.
+ *
+ * PREMIUM (--ms-*): Used by product page, microsite components,
+ *   and all animation components. The preferred system for new code.
+ *
+ * MIGRATION: New components should use --ms-* tokens exclusively.
+ *   A future PR will alias --color-neutral-* → --ms-* equivalents
+ *   and batch-rename across the legacy files.
+ * ──────────────────────────────────────────────────────────────
+ */
 :root {
   /* Primary brand - softer, warmer tones */
   --color-primary-red: #C4454F;

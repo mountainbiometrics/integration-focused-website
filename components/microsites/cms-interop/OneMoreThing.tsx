@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useScrollProgress, remap } from './useScrollProgress';
+import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 export default function OneMoreThing() {
   const sectionRef = useRef<HTMLElement>(null);

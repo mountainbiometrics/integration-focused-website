@@ -9,12 +9,12 @@ import MicrositeEmailGate from '@/components/microsites/MicrositeEmailGate';
 import PeHero from '@/components/microsites/healthcare-pe/PeHero';
 import ChaosGrid from '@/components/microsites/healthcare-pe/ChaosGrid';
 import MeshDiagram from '@/components/microsites/healthcare-pe/MeshDiagram';
-import AccelerationRows from '@/components/microsites/healthcare-pe/AccelerationRows';
-import ReturnCards from '@/components/microsites/healthcare-pe/ReturnCards';
-import MeaningBeat from '@/components/microsites/healthcare-pe/MeaningBeat';
-import DarkReveal from '@/components/microsites/healthcare-pe/DarkReveal';
+import AccelerationRows from '@/components/microsites/shared/AccelerationRows';
+import ReturnCards from '@/components/microsites/shared/ReturnCards';
+import MeaningBeat from '@/components/microsites/shared/MeaningBeat';
+import DarkReveal from '@/components/microsites/shared/DarkReveal';
 import PeCta from '@/components/microsites/healthcare-pe/PeCta';
-import StickyMobileCta from '@/components/microsites/healthcare-pe/StickyMobileCta';
+import StickyMobileCta from '@/components/microsites/shared/StickyMobileCta';
 
 const config = getMicrositeBySlug('healthcare-pe')!;
 
@@ -52,10 +52,46 @@ export default function HealthcarePePage() {
       <PeHero />
       <ChaosGrid />
       <MeshDiagram />
-      <AccelerationRows />
-      <ReturnCards />
-      <MeaningBeat />
-      <DarkReveal />
+      <AccelerationRows config={{
+        accentRgb: '90,111,209',
+        accentColor: 'var(--ms-blue)',
+        heading: 'Three things get faster. Permanently.',
+        timeline: {
+          barCompressionFactor: 78,
+          beforeLabels: ['1mo', '6mo', '12mo', '18mo', '24mo', '36mo'],
+          summary: 'Weeks, not years.',
+          detail: 'Per acquisition. Every time.',
+        },
+        team: { detail: '3\u20135 people instead of 15\u201325. Same output.' },
+        maintenance: { xAxisLabel: 'Clinics', detail: '<1 hr/week at 200+ sources. Conventional: 2\u20133 dedicated engineers.' },
+      }} />
+      <ReturnCards
+        accentColor="#AC1F2D"
+        accentRgb="172,31,45"
+        cards={[
+          { label: 'Per-Clinic Uplift', stat: '$208K', detail: 'additional EBITDA per clinic, per year' },
+          { label: '10-Clinic Portfolio', stat: '$2.08M', detail: 'year-one EBITDA improvement across the platform' },
+          { label: 'Enterprise Value', stat: '$24M', detail: 'at a 12x exit multiple \u2014 the spread between \u201Cmet plan\u201D and \u201Cexceeded plan\u201D' },
+        ]}
+      />
+      <MeaningBeat
+        heading="This isn&rsquo;t a spreadsheet problem."
+        body={
+          <p>
+            Every month your systems don&rsquo;t talk, a clinician somewhere is making a
+            decision without the full picture. A referral loops. A prior auth stalls.
+            A patient&nbsp;waits.
+          </p>
+        }
+        closer={<>Faster integration isn&rsquo;t operational efficiency. It&rsquo;s care that arrives on&nbsp;time.</>}
+      />
+      <DarkReveal
+        glowColor="rgba(172,31,45,0.12)"
+        setupText={<>A five-year hold that loses twelve to eighteen months to&nbsp;integration&hellip;</>}
+        revealText={<>&hellip;is really a three-and-a-half-year&nbsp;hold.</>}
+        punchlineText={<>You don&rsquo;t get those months&nbsp;back.</>}
+        punchlineColor="#F06070"
+      />
       <PeCta />
 
       {/* Email-gated download */}
@@ -99,7 +135,12 @@ export default function HealthcarePePage() {
         </div>
       </footer>
 
-      <StickyMobileCta />
+      <StickyMobileCta
+        bgColor="#AC1F2D"
+        activeBgColor="#8B1924"
+        emailSubject="Healthcare%20PE%20Assessment"
+        label="Request an assessment"
+      />
     </MicrositeThemeWrapper>
   );
 }

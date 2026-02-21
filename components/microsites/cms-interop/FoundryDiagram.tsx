@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useScrollProgress, remap } from './useScrollProgress';
+import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 const SOURCE_TYPES = ['EHRs', 'Claims', 'Prior Auth', 'Payer-to-Payer', 'TEFCA / QHINs', 'UM Platforms'];
 const SOURCE_COLORS = ['#9A9AAA', '#D4793A', '#6B6B7B', '#AC1F2D', '#9A9AAA', '#5A6FD1'];

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useScrollProgress, remap } from './useScrollProgress';
+import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 const STAT_CARDS = [
   { value: '$1.55B', label: 'spent industry-wide \u2014 and counting' },

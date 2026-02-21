@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useScrollProgress, remap } from './useScrollProgress';
+import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 const SOURCE_FIELDS = ['customer_id', 'dob', 'account_num', 'policy_num', 'vendor_id'];
 const TARGET_FIELDS = ['client_id', 'birth_date', 'account_number', 'policy_number', 'supplier_id'];

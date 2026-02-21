@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useScrollProgress, remap } from './useScrollProgress';
+import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 const DENIAL_CARDS = [
   { clinic: 'Clinic A', encoding: 'CO-4', subtext: 'CARC code' },

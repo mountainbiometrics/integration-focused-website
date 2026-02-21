@@ -2,7 +2,21 @@
 
 import { useEffect, useState } from 'react';
 
-export default function StickyMobileCta() {
+interface StickyMobileCtaProps {
+  bgColor: string;
+  activeBgColor: string;
+  btnShadow?: string;
+  emailSubject: string;
+  label: string;
+}
+
+export default function StickyMobileCta({
+  bgColor,
+  activeBgColor,
+  btnShadow = 'var(--ms-shadow-btn)',
+  emailSubject,
+  label,
+}: StickyMobileCtaProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -46,11 +60,17 @@ export default function StickyMobileCta() {
         }}
       >
         <a
-          href="mailto:warren@themtn.ai?subject=B2B%20PE%20Integration%20Assessment"
-          className="block w-full text-center px-6 py-3 bg-[#4A6FA5] text-white font-semibold rounded-xl text-sm active:bg-[#3D5C8A] transition-colors"
-          style={{ boxShadow: '0 1px 2px rgba(61,92,138,0.3), 0 4px 12px rgba(74,111,165,0.2), inset 0 1px 0 rgba(255,255,255,0.1)' }}
+          href={`mailto:warren@themtn.ai?subject=${emailSubject}`}
+          className="block w-full text-center px-6 py-3 text-white font-semibold rounded-xl text-sm transition-colors"
+          style={{
+            backgroundColor: bgColor,
+            boxShadow: btnShadow,
+          }}
+          onPointerDown={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = activeBgColor; }}
+          onPointerUp={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = bgColor; }}
+          onPointerLeave={(e) => { (e.currentTarget as HTMLElement).style.backgroundColor = bgColor; }}
         >
-          Request an integration assessment
+          {label}
         </a>
       </div>
     </div>

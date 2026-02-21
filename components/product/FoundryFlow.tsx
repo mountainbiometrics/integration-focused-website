@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useScrollProgress, remap } from './useScrollProgress';
+import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 const SOURCE_LABELS = ['EHRs', 'Billing', 'Vendors'];
 const TOOL_LABELS = ['Warehouse', 'BI', 'Analytics'];

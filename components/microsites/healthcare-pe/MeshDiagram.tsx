@@ -1,7 +1,8 @@
 'use client';
 
-import { useRef, useEffect, useState, useCallback } from 'react';
-import { remap } from './useScrollProgress';
+import { useRef } from 'react';
+import { remap } from '@/hooks/useScrollProgress';
+import { useLoopProgress } from '@/hooks/useLoopProgress';
 
 // Generate positions for N nodes in a circle
 function circleNodes(count: number, cx: number, cy: number, r: number) {
@@ -35,63 +36,6 @@ const NODES_5 = circleNodes(5, CENTER, CENTER, RADIUS * 0.7);
 const NODES_10 = circleNodes(10, CENTER, CENTER, RADIUS);
 const PAIRS_5 = pairwise(5);   // 10 connections
 const PAIRS_10 = pairwise(10); // 45 connections
-
-/** Loops 0→1 over `duration` ms, pauses, then resets. Runs only when visible. */
-function useLoopProgress(
-  ref: React.RefObject<HTMLElement | null>,
-  options?: { duration?: number; pauseEnd?: number; pauseStart?: number },
-) {
-  const duration = options?.duration ?? 8000;
-  const pauseEnd = options?.pauseEnd ?? 2500;
-  const pauseStart = options?.pauseStart ?? 400;
-  const totalCycle = duration + pauseEnd + pauseStart;
-
-  const [progress, setProgress] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasEntered, setHasEntered] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-        if (entry.isIntersecting) setHasEntered(true);
-      },
-      { threshold: 0.15 },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [ref]);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setProgress(1);
-      return;
-    }
-    let animId: number;
-    let startTime: number | null = null;
-    function tick(now: number) {
-      if (startTime === null) startTime = now;
-      const elapsed = (now - startTime) % totalCycle;
-      let p: number;
-      if (elapsed < duration) {
-        p = elapsed / duration;
-      } else if (elapsed < duration + pauseEnd) {
-        p = 1;
-      } else {
-        p = 0;
-      }
-      setProgress(p);
-      animId = requestAnimationFrame(tick);
-    }
-    animId = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(animId);
-  }, [isVisible, duration, pauseEnd, totalCycle]);
-
-  return { progress, hasEntered };
-}
 
 export default function MeshDiagram() {
   const sectionRef = useRef<HTMLElement>(null);

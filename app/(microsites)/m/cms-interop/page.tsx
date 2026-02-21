@@ -11,10 +11,10 @@ import BudgetBar from '@/components/microsites/cms-interop/BudgetBar';
 import FoundryDiagram from '@/components/microsites/cms-interop/FoundryDiagram';
 import TransformationRows from '@/components/microsites/cms-interop/TransformationRows';
 import RevenueCards from '@/components/microsites/cms-interop/RevenueCards';
-import MeaningBeat from '@/components/microsites/cms-interop/MeaningBeat';
+import MeaningBeat from '@/components/microsites/shared/MeaningBeat';
 import OneMoreThing from '@/components/microsites/cms-interop/OneMoreThing';
 import CmsCta from '@/components/microsites/cms-interop/CmsCta';
-import StickyMobileCta from '@/components/microsites/cms-interop/StickyMobileCta';
+import StickyMobileCta from '@/components/microsites/shared/StickyMobileCta';
 
 const config = getMicrositeBySlug('cms-interop')!;
 
@@ -54,7 +54,16 @@ export default function CmsInteropPage() {
       <FoundryDiagram />
       <TransformationRows />
       <RevenueCards />
-      <MeaningBeat />
+      <MeaningBeat
+        heading="This isn&rsquo;t about plumbing."
+        body={
+          <p>
+            Every failed data mapping is a patient whose history didn&rsquo;t follow them.
+            A diagnosis that disappeared. A prior auth that made someone&nbsp;wait.
+          </p>
+        }
+        closer="The pipe matters because what&rsquo;s inside it&nbsp;matters."
+      />
       <OneMoreThing />
       <CmsCta />
 
@@ -99,7 +108,12 @@ export default function CmsInteropPage() {
         </div>
       </footer>
 
-      <StickyMobileCta />
+      <StickyMobileCta
+        bgColor="#AC1F2D"
+        activeBgColor="#8B1924"
+        emailSubject="Data%20Foundry%20walkthrough"
+        label="Let&rsquo;s look at your data"
+      />
     </MicrositeThemeWrapper>
   );
 }

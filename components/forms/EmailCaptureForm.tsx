@@ -48,7 +48,7 @@ export default function EmailCaptureForm({
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-[var(--color-neutral-dark)] mb-2"
+          className="block text-sm font-medium text-[var(--ms-heading)] mb-2"
         >
           Work email
         </label>
@@ -57,7 +57,7 @@ export default function EmailCaptureForm({
           id="email"
           name="email"
           required
-          className="w-full px-4 py-3 min-h-[48px] border border-[var(--color-neutral-light)] rounded-md text-base focus:outline-none focus:ring-2 focus:ring-[var(--ms-primary,var(--color-cta-blue))] focus:border-transparent text-[var(--color-neutral-dark)]"
+          className="w-full px-4 py-3 min-h-[48px] border border-[var(--ms-muted)] rounded-md text-base focus:outline-none focus:ring-2 focus:ring-[var(--ms-primary)] focus:border-transparent text-[var(--ms-heading)]"
           placeholder="you@company.com"
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -74,13 +74,13 @@ export default function EmailCaptureForm({
       <button
         type="submit"
         disabled={state.submitting}
-        className="w-full px-8 py-4 min-h-[52px] bg-[var(--ms-primary,var(--color-cta-blue))] text-white text-base font-semibold rounded-md hover:bg-[var(--ms-primary-hover,var(--color-cta-blue-hover))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ms-primary,var(--color-cta-blue))] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full px-8 py-4 min-h-[52px] bg-[var(--ms-primary)] text-white text-base font-semibold rounded-md hover:bg-[var(--ms-primary-hover)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ms-primary)] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {state.submitting ? 'Submitting...' : ctaLabel}
       </button>
 
       {state.errors && Object.keys(state.errors).length > 0 && (
-        <p className="text-[var(--color-categorical-alert)] text-sm mt-2">
+        <p className="text-[var(--ms-alert)] text-sm mt-2">
           There was an error. Please try again.
         </p>
       )}

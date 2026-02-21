@@ -23,13 +23,13 @@ export default function BeforeAfter({
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
       {/* Before column */}
       <div
-        className="p-6 md:p-8 rounded-2xl bg-[rgba(196,69,79,0.06)]"
+        className="p-6 md:p-8 rounded-2xl bg-[rgba(172,31,45,0.06)]"
         style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
       >
         <h4 className="font-display font-semibold text-[var(--ms-heading)] text-lg mb-4 flex items-center gap-2">
           {variant === 'withIcons' && (
             <svg
-              className="w-5 h-5 text-[var(--color-primary-red)]/70"
+              className="w-5 h-5 text-[var(--ms-accent)]/70"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -49,12 +49,12 @@ export default function BeforeAfter({
             <li key={index} className="flex items-center gap-3">
               {compact ? (
                 <X
-                  className="flex-shrink-0 w-5 h-5 text-[var(--color-primary-red)]/70"
+                  className="flex-shrink-0 w-5 h-5 text-[var(--ms-accent)]/70"
                   strokeWidth={2}
                   aria-hidden="true"
                 />
               ) : (
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--color-primary-red)]/60" />
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-accent)]/60" />
               )}
               <span className={`text-[var(--ms-heading)] leading-relaxed ${compact ? 'text-base font-medium' : 'text-sm'}`}>
                 {item}

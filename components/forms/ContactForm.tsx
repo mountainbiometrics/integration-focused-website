@@ -26,7 +26,7 @@ export default function ContactForm() {
       <div className="bg-[rgba(74,111,165,0.1)] rounded-lg p-8 text-center">
         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[rgba(74,111,165,0.15)] flex items-center justify-center">
           <svg
-            className="w-8 h-8 text-[var(--color-cta-blue)]"
+            className="w-8 h-8 text-[var(--ms-primary)]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -39,10 +39,10 @@ export default function ContactForm() {
             />
           </svg>
         </div>
-        <h3 className="font-display text-xl font-semibold text-[var(--color-neutral-dark)] mb-2">
+        <h3 className="font-display text-xl font-semibold text-[var(--ms-heading)] mb-2">
           Message sent
         </h3>
-        <p className="text-[var(--color-neutral-mid)]">
+        <p className="text-[var(--ms-body)]">
           We&apos;ll be in touch within one business day to schedule a conversation.
         </p>
       </div>
@@ -55,9 +55,9 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-[var(--color-neutral-dark)] mb-2"
+          className="block text-sm font-medium text-[var(--ms-heading)] mb-2"
         >
-          Name <span className="text-[var(--color-neutral-mid)]">*</span>
+          Name <span className="text-[var(--ms-body)]">*</span>
         </label>
         <input
           type="text"
@@ -66,7 +66,7 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-[var(--color-neutral-light)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-blue)] focus:border-transparent text-[var(--color-neutral-dark)]"
+          className="w-full px-4 py-3 border border-[var(--ms-muted)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ms-primary)] focus:border-transparent text-[var(--ms-heading)]"
           placeholder="Your name"
         />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
@@ -76,9 +76,9 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-[var(--color-neutral-dark)] mb-2"
+          className="block text-sm font-medium text-[var(--ms-heading)] mb-2"
         >
-          Email <span className="text-[var(--color-neutral-mid)]">*</span>
+          Email <span className="text-[var(--ms-body)]">*</span>
         </label>
         <input
           type="email"
@@ -87,7 +87,7 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-[var(--color-neutral-light)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-blue)] focus:border-transparent text-[var(--color-neutral-dark)]"
+          className="w-full px-4 py-3 border border-[var(--ms-muted)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ms-primary)] focus:border-transparent text-[var(--ms-heading)]"
           placeholder="you@company.com"
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -97,9 +97,9 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="organization"
-          className="block text-sm font-medium text-[var(--color-neutral-dark)] mb-2"
+          className="block text-sm font-medium text-[var(--ms-heading)] mb-2"
         >
-          Organization <span className="text-[var(--color-neutral-mid)]">*</span>
+          Organization <span className="text-[var(--ms-body)]">*</span>
         </label>
         <input
           type="text"
@@ -108,7 +108,7 @@ export default function ContactForm() {
           required
           value={formData.organization}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-[var(--color-neutral-light)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-blue)] focus:border-transparent text-[var(--color-neutral-dark)]"
+          className="w-full px-4 py-3 border border-[var(--ms-muted)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ms-primary)] focus:border-transparent text-[var(--ms-heading)]"
           placeholder="Your company or organization"
         />
         <ValidationError
@@ -122,10 +122,10 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="scenario"
-          className="block text-sm font-medium text-[var(--color-neutral-dark)] mb-2"
+          className="block text-sm font-medium text-[var(--ms-heading)] mb-2"
         >
           What&apos;s your integration scenario?{' '}
-          <span className="text-[var(--color-neutral-mid)] font-normal">
+          <span className="text-[var(--ms-body)] font-normal">
             (optional)
           </span>
         </label>
@@ -135,7 +135,7 @@ export default function ContactForm() {
           rows={4}
           value={formData.scenario}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-[var(--color-neutral-light)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-cta-blue)] focus:border-transparent text-[var(--color-neutral-dark)] resize-none"
+          className="w-full px-4 py-3 border border-[var(--ms-muted)] rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--ms-primary)] focus:border-transparent text-[var(--ms-heading)] resize-none"
           placeholder="Tell us about your upcoming acquisition, system change, or current visibility challenges..."
         />
         <ValidationError
@@ -149,14 +149,14 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="w-full px-8 py-4 bg-[var(--color-cta-blue)] text-white font-medium rounded-md hover:bg-[var(--color-cta-blue-hover)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-cta-blue)] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full px-8 py-4 bg-[var(--ms-primary)] text-white font-medium rounded-md hover:bg-[var(--ms-primary-hover)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ms-primary)] focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {state.submitting ? 'Sending...' : 'Start a Conversation'}
       </button>
 
       {/* Error message */}
       {state.errors && Object.keys(state.errors).length > 0 && (
-        <p className="text-[var(--color-categorical-alert)] text-sm mt-2">
+        <p className="text-[var(--ms-alert)] text-sm mt-2">
           There was an error submitting your message. Please try again.
         </p>
       )}

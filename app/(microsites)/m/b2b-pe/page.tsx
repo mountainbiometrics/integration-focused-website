@@ -110,7 +110,7 @@ export default function B2bPePage() {
           <div className="flex justify-center mb-6 md:mb-8">
             <div className="w-16 h-16 rounded-full bg-[rgba(74,111,165,0.08)] flex items-center justify-center">
               <FileDown
-                className="w-8 h-8 text-[var(--ms-primary,var(--color-cta-blue))]"
+                className="w-8 h-8 text-[var(--ms-primary)]"
                 strokeWidth={1.5}
                 aria-hidden="true"
               />

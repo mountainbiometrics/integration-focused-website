@@ -41,7 +41,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Left column - Context */}
             <div>
-              <h2 className="font-display text-xl font-semibold text-[var(--color-neutral-dark)] mb-6">
+              <h2 className="font-display text-xl font-semibold text-[var(--ms-heading)] mb-6">
                 What we&apos;ll cover
               </h2>
 
@@ -49,7 +49,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[rgba(74,111,165,0.15)] flex items-center justify-center mt-0.5">
                     <svg
-                      className="w-3 h-3 text-[var(--color-cta-blue)]"
+                      className="w-3 h-3 text-[var(--ms-primary)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -62,14 +62,14 @@ export default function ContactPage() {
                       />
                     </svg>
                   </span>
-                  <span className="text-[var(--color-neutral-dark)]">
+                  <span className="text-[var(--ms-heading)]">
                     Your specific integration scenario and timeline
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[rgba(74,111,165,0.15)] flex items-center justify-center mt-0.5">
                     <svg
-                      className="w-3 h-3 text-[var(--color-cta-blue)]"
+                      className="w-3 h-3 text-[var(--ms-primary)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -82,14 +82,14 @@ export default function ContactPage() {
                       />
                     </svg>
                   </span>
-                  <span className="text-[var(--color-neutral-dark)]">
+                  <span className="text-[var(--ms-heading)]">
                     How MTN Data Foundry fits with your existing systems
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[rgba(74,111,165,0.15)] flex items-center justify-center mt-0.5">
                     <svg
-                      className="w-3 h-3 text-[var(--color-cta-blue)]"
+                      className="w-3 h-3 text-[var(--ms-primary)]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -102,13 +102,13 @@ export default function ContactPage() {
                       />
                     </svg>
                   </span>
-                  <span className="text-[var(--color-neutral-dark)]">
+                  <span className="text-[var(--ms-heading)]">
                     What a pilot would look like for your use case
                   </span>
                 </div>
               </div>
 
-              <h3 className="font-display text-lg font-semibold text-[var(--color-neutral-dark)] mb-4">
+              <h3 className="font-display text-lg font-semibold text-[var(--ms-heading)] mb-4">
                 Common scenarios
               </h3>
 
@@ -116,23 +116,23 @@ export default function ContactPage() {
                 {scenarios.map((scenario, index) => (
                   <div
                     key={index}
-                    className="p-4 rounded-lg bg-[var(--color-neutral-lighter)]/50"
+                    className="p-4 rounded-lg bg-[var(--ms-border)]/50"
                   >
-                    <div className="font-medium text-[var(--color-neutral-dark)] mb-1">
+                    <div className="font-medium text-[var(--ms-heading)] mb-1">
                       {scenario.title}
                     </div>
-                    <div className="text-sm text-[var(--color-neutral-mid)]">
+                    <div className="text-sm text-[var(--ms-body)]">
                       {scenario.description}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-10 p-6 rounded-lg border border-[var(--color-neutral-lighter)]">
-                <h4 className="font-medium text-[var(--color-neutral-dark)] mb-2">
+              <div className="mt-10 p-6 rounded-lg border border-[var(--ms-border)]">
+                <h4 className="font-medium text-[var(--ms-heading)] mb-2">
                   No preparation needed
                 </h4>
-                <p className="text-sm text-[var(--color-neutral-mid)]">
+                <p className="text-sm text-[var(--ms-body)]">
                   This is a working conversation, not a formal demo. You don&apos;t
                   need to prepare data samples or technical specifications upfront.
                   We&apos;ll discuss what makes sense based on your situation.
@@ -142,8 +142,8 @@ export default function ContactPage() {
 
             {/* Right column - Form */}
             <div>
-              <div className="bg-white p-8 rounded-xl border border-[var(--color-neutral-lighter)] shadow-sm">
-                <h2 className="font-display text-xl font-semibold text-[var(--color-neutral-dark)] mb-6">
+              <div className="bg-white p-8 rounded-xl border border-[var(--ms-border)] shadow-sm">
+                <h2 className="font-display text-xl font-semibold text-[var(--ms-heading)] mb-6">
                   Get in touch
                 </h2>
                 <ContactForm />

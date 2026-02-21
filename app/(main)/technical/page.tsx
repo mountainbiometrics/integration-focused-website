@@ -71,7 +71,7 @@ export default function TechnicalPage() {
       />
 
       {/* Architecture Overview */}
-      <section className="section-spacing bg-[var(--color-neutral-lighter)]/30">
+      <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
@@ -79,7 +79,7 @@ export default function TechnicalPage() {
               subheadline="Where the Foundry sits in your data infrastructure."
             />
             {/* Medallion Architecture Diagram - Visual */}
-            <div className="mb-8 p-6 md:p-8 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
+            <div className="mb-8 p-6 md:p-8 rounded-lg bg-white border border-[var(--ms-border)]">
               <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
                 {/* Bronze - Source Systems */}
                 <div className="flex flex-col items-center text-center p-4 min-w-[140px]">
@@ -100,16 +100,16 @@ export default function TechnicalPage() {
                   <div className="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-1">
                     Bronze
                   </div>
-                  <div className="font-display font-semibold text-[var(--color-neutral-dark)] text-lg">
+                  <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
                     Source Systems
                   </div>
-                  <div className="text-sm text-[var(--color-neutral-mid)]">
+                  <div className="text-sm text-[var(--ms-body)]">
                     Raw data as-is
                   </div>
                 </div>
 
                 {/* Arrow 1 - Desktop */}
-                <div className="hidden md:flex items-center text-[var(--color-neutral-light)]">
+                <div className="hidden md:flex items-center text-[var(--ms-muted)]">
                   <svg
                     className="w-12 h-8"
                     viewBox="0 0 48 24"
@@ -121,7 +121,7 @@ export default function TechnicalPage() {
                   </svg>
                 </div>
                 {/* Arrow 1 - Mobile */}
-                <div className="md:hidden text-[var(--color-neutral-light)]">
+                <div className="md:hidden text-[var(--ms-muted)]">
                   <svg
                     className="w-8 h-8"
                     viewBox="0 0 24 24"
@@ -134,9 +134,9 @@ export default function TechnicalPage() {
                 </div>
 
                 {/* Foundry - Center, highlighted */}
-                <div className="flex flex-col items-center text-center p-6 min-w-[180px] rounded-xl bg-[rgba(74,111,165,0.1)] border-2 border-[var(--color-cta-blue)]/40">
+                <div className="flex flex-col items-center text-center p-6 min-w-[180px] rounded-xl bg-[rgba(74,111,165,0.1)] border-2 border-[var(--ms-primary)]/40">
                   {/* Gear/cog icon */}
-                  <div className="w-16 h-16 mb-3 text-[var(--color-cta-blue)]">
+                  <div className="w-16 h-16 mb-3 text-[var(--ms-primary)]">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -147,19 +147,19 @@ export default function TechnicalPage() {
                       <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
                     </svg>
                   </div>
-                  <div className="text-xs uppercase tracking-wide text-[var(--color-cta-blue)] font-semibold mb-1">
+                  <div className="text-xs uppercase tracking-wide text-[var(--ms-primary)] font-semibold mb-1">
                     Bronze → Silver
                   </div>
-                  <div className="font-display font-semibold text-[var(--color-neutral-dark)] text-lg">
+                  <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
                     MTN Data Foundry
                   </div>
-                  <div className="text-sm text-[var(--color-neutral-mid)]">
+                  <div className="text-sm text-[var(--ms-body)]">
                     Adaptive transition layer
                   </div>
                 </div>
 
                 {/* Arrow 2 - Desktop */}
-                <div className="hidden md:flex items-center text-[var(--color-neutral-light)]">
+                <div className="hidden md:flex items-center text-[var(--ms-muted)]">
                   <svg
                     className="w-12 h-8"
                     viewBox="0 0 48 24"
@@ -171,7 +171,7 @@ export default function TechnicalPage() {
                   </svg>
                 </div>
                 {/* Arrow 2 - Mobile */}
-                <div className="md:hidden text-[var(--color-neutral-light)]">
+                <div className="md:hidden text-[var(--ms-muted)]">
                   <svg
                     className="w-8 h-8"
                     viewBox="0 0 24 24"
@@ -199,10 +199,10 @@ export default function TechnicalPage() {
                   <div className="text-xs uppercase tracking-wide text-yellow-600 font-semibold mb-1">
                     Silver / Gold
                   </div>
-                  <div className="font-display font-semibold text-[var(--color-neutral-dark)] text-lg">
+                  <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
                     Your Platform
                   </div>
-                  <div className="text-sm text-[var(--color-neutral-mid)]">
+                  <div className="text-sm text-[var(--ms-body)]">
                     Business-ready
                   </div>
                 </div>
@@ -210,34 +210,34 @@ export default function TechnicalPage() {
             </div>
 
             <div className="prose prose-gray max-w-none">
-              <p className="text-[var(--color-neutral-dark)] leading-relaxed mb-4">
+              <p className="text-[var(--ms-heading)] leading-relaxed mb-4">
                 Whether you use medallion architecture, data mesh, or your own layered approach,
                 the transition from raw source data to governed, consistent output is traditionally
                 the most fragile point. MTN Data Foundry operates at this boundary—automatically
                 detecting structure, mapping to a canonical layer, and adapting when source schemas change.
               </p>
-              <p className="text-[var(--color-neutral-mid)] text-sm mb-6">
+              <p className="text-[var(--ms-body)] text-sm mb-6">
                 Medallion terminology provides a familiar reference point. The Foundry itself is
                 architecture-agnostic and works with any pipeline that requires resilient schema mapping.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-4 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-                  <h4 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-2">
+                <div className="p-4 rounded-lg bg-white border border-[var(--ms-border)]">
+                  <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
                     What it does
                   </h4>
-                  <ul className="space-y-2 text-sm text-[var(--color-neutral-mid)]">
+                  <ul className="space-y-2 text-sm text-[var(--ms-body)]">
                     <li>• Ingests bronze-layer data from any source</li>
                     <li>• Maps to silver-layer semantic definitions</li>
                     <li>• Adapts when source schemas change</li>
                     <li>• Outputs governed, consistent data downstream</li>
                   </ul>
                 </div>
-                <div className="p-4 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-                  <h4 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-2">
+                <div className="p-4 rounded-lg bg-white border border-[var(--ms-border)]">
+                  <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
                     What it does not do
                   </h4>
-                  <ul className="space-y-2 text-sm text-[var(--color-neutral-mid)]">
+                  <ul className="space-y-2 text-sm text-[var(--ms-body)]">
                     <li>• Replace your silver or gold layers</li>
                     <li>• Compete with your warehouse or BI tools</li>
                     <li>• Require changes to source systems</li>
@@ -260,46 +260,46 @@ export default function TechnicalPage() {
       </section>
 
       {/* Mapping Section */}
-      <section className="section-spacing bg-[var(--color-neutral-lighter)]/30">
+      <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <TechnicalSection {...mappingDetails} />
 
             {/* Governance detail box */}
-            <div className="mt-8 p-6 rounded-lg bg-white border border-[var(--color-neutral-lighter)]">
-              <h4 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-3">
+            <div className="mt-8 p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+              <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
                 Governance model
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <div className="font-medium text-[var(--color-neutral-dark)] mb-1">
+                  <div className="font-medium text-[var(--ms-heading)] mb-1">
                     Confidence thresholds
                   </div>
-                  <p className="text-[var(--color-neutral-mid)]">
+                  <p className="text-[var(--ms-body)]">
                     Configurable thresholds control automation vs. human review
                   </p>
                 </div>
                 <div>
-                  <div className="font-medium text-[var(--color-neutral-dark)] mb-1">
+                  <div className="font-medium text-[var(--ms-heading)] mb-1">
                     Audit logging
                   </div>
-                  <p className="text-[var(--color-neutral-mid)]">
+                  <p className="text-[var(--ms-body)]">
                     Every decision is logged for compliance and debugging
                   </p>
                 </div>
                 <div>
-                  <div className="font-medium text-[var(--color-neutral-dark)] mb-1">
+                  <div className="font-medium text-[var(--ms-heading)] mb-1">
                     Version control
                   </div>
-                  <p className="text-[var(--color-neutral-mid)]">
+                  <p className="text-[var(--ms-body)]">
                     Mappings are versioned; rollback is always available
                   </p>
                 </div>
                 <div>
-                  <div className="font-medium text-[var(--color-neutral-dark)] mb-1">
+                  <div className="font-medium text-[var(--ms-heading)] mb-1">
                     Forward-only changes
                   </div>
-                  <p className="text-[var(--color-neutral-mid)]">
+                  <p className="text-[var(--ms-body)]">
                     Backward compatibility guaranteed
                   </p>
                 </div>
@@ -319,7 +319,7 @@ export default function TechnicalPage() {
       </section>
 
       {/* Monitoring Section */}
-      <section className="section-spacing bg-[var(--color-neutral-lighter)]/30">
+      <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <TechnicalSection {...monitoringDetails} />
@@ -336,29 +336,29 @@ export default function TechnicalPage() {
               subheadline="Flexible deployment to fit your security and infrastructure requirements."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)]">
-                <h3 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-3">
+              <div className="p-6 rounded-lg border border-[var(--ms-border)]">
+                <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
                   Cloud-hosted
                 </h3>
-                <p className="text-sm text-[var(--color-neutral-mid)] mb-4">
+                <p className="text-sm text-[var(--ms-body)] mb-4">
                   Managed deployment in your preferred cloud environment with
                   SOC 2 compliance and BAA support.
                 </p>
-                <ul className="space-y-2 text-sm text-[var(--color-neutral-mid)]">
+                <ul className="space-y-2 text-sm text-[var(--ms-body)]">
                   <li>• AWS, Azure, or GCP</li>
                   <li>• Single-tenant isolation</li>
                   <li>• Managed updates and monitoring</li>
                 </ul>
               </div>
-              <div className="p-6 rounded-lg border border-[var(--color-neutral-lighter)]">
-                <h3 className="font-display font-semibold text-[var(--color-neutral-dark)] mb-3">
+              <div className="p-6 rounded-lg border border-[var(--ms-border)]">
+                <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
                   On-premises
                 </h3>
-                <p className="text-sm text-[var(--color-neutral-mid)] mb-4">
+                <p className="text-sm text-[var(--ms-body)] mb-4">
                   Deploy within your existing infrastructure for complete data
                   control and air-gapped environments.
                 </p>
-                <ul className="space-y-2 text-sm text-[var(--color-neutral-mid)]">
+                <ul className="space-y-2 text-sm text-[var(--ms-body)]">
                   <li>• Kubernetes or VM deployment</li>
                   <li>• No external data transmission</li>
                   <li>• Your security policies apply</li>

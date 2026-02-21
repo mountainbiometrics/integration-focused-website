@@ -16,10 +16,10 @@ export default function CardsPage() {
     <div className="pt-28 pb-24">
       <div className="container-site">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-semibold text-[var(--color-neutral-dark)] mb-4">
+          <h1 className="text-3xl md:text-4xl font-semibold text-[var(--ms-heading)] mb-4">
             Team Business Cards
           </h1>
-          <p className="text-[var(--color-neutral-mid)] leading-relaxed mb-12">
+          <p className="text-[var(--ms-body)] leading-relaxed mb-12">
             Scan a QR code to save contact information, or download individual files.
           </p>
 
@@ -27,7 +27,7 @@ export default function CardsPage() {
             {teamMembers.map((member) => (
               <div
                 key={member.slug}
-                className="p-6 rounded-xl border border-[var(--color-neutral-lighter)] bg-white shadow-sm"
+                className="p-6 rounded-xl border border-[var(--ms-border)] bg-white shadow-sm"
               >
                 <div className="flex justify-center mb-6">
                   <Image
@@ -40,13 +40,13 @@ export default function CardsPage() {
                 </div>
 
                 <div className="text-center mb-4">
-                  <h2 className="text-xl font-semibold text-[var(--color-neutral-dark)]">
+                  <h2 className="text-xl font-semibold text-[var(--ms-heading)]">
                     {member.firstName} {member.lastName}
                   </h2>
-                  <p className="text-sm text-[var(--color-neutral-mid)] mt-1">
+                  <p className="text-sm text-[var(--ms-body)] mt-1">
                     {member.title}
                   </p>
-                  <p className="text-sm text-[var(--color-neutral-mid)]">
+                  <p className="text-sm text-[var(--ms-body)]">
                     {member.email}
                   </p>
                 </div>
@@ -55,14 +55,14 @@ export default function CardsPage() {
                   <a
                     href={`/cards/${member.slug}.vcf`}
                     download
-                    className="inline-flex items-center justify-center px-4 py-2 bg-[var(--color-cta-blue)] text-white font-medium rounded-md hover:bg-[var(--color-cta-blue-hover)] transition-colors text-sm no-underline"
+                    className="inline-flex items-center justify-center px-4 py-2 bg-[var(--ms-primary)] text-white font-medium rounded-md hover:bg-[var(--ms-primary-hover)] transition-colors text-sm no-underline"
                   >
                     Download vCard
                   </a>
                   <a
                     href={`/cards/${member.slug}-qr.svg`}
                     download
-                    className="inline-flex items-center justify-center px-4 py-2 border border-[var(--color-neutral-lighter)] text-[var(--color-neutral-dark)] font-medium rounded-md hover:bg-[var(--color-neutral-lighter)]/50 transition-colors text-sm no-underline"
+                    className="inline-flex items-center justify-center px-4 py-2 border border-[var(--ms-border)] text-[var(--ms-heading)] font-medium rounded-md hover:bg-[var(--ms-border)]/50 transition-colors text-sm no-underline"
                   >
                     Download QR Code
                   </a>

@@ -14,7 +14,7 @@ export default function Home() {
       {/* Hero Section */}
       <Hero
         headline="Close the visibility gap"
-        subheadline="Live visibility during integration · New systems online in days · Zero operational disruption"
+        subheadline="New systems online in days · Flat maintenance demands"
         ctaText="Talk Through Your Next Integration"
         ctaHref="/contact"
         variant="homepage"

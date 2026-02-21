@@ -11,17 +11,17 @@ export default function TechnicalSection({
 }: TechnicalSectionProps) {
   return (
     <div className="space-y-4">
-      <h3 className="font-display text-xl font-semibold text-[var(--color-neutral-dark)]">
+      <h3 className="font-display text-xl font-semibold text-[var(--ms-heading)]">
         {title}
       </h3>
-      <p className="text-[var(--color-neutral-mid)] leading-relaxed">
+      <p className="text-[var(--ms-body)] leading-relaxed">
         {description}
       </p>
       <ul className="space-y-3 mt-4">
         {behaviors.map((behavior, index) => (
           <li key={index} className="flex items-start gap-3">
-            <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--color-neutral-mid)]" />
-            <span className="text-[var(--color-neutral-dark)] text-sm leading-relaxed">
+            <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+            <span className="text-[var(--ms-heading)] text-sm leading-relaxed">
               {behavior}
             </span>
           </li>

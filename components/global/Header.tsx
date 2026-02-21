@@ -58,7 +58,7 @@ export default function Header() {
                 className={`text-[0.9375rem] font-medium no-underline transition-all px-3 py-1.5 rounded-md ${
                   pathname === link.href
                     ? 'text-[var(--ms-accent)] bg-[var(--ms-accent)]/10'
-                    : 'text-[var(--ms-heading)] hover:text-[var(--ms-accent)] hover:bg-[var(--color-neutral-lighter)]/50'
+                    : 'text-[var(--ms-heading)] hover:text-[var(--ms-accent)] hover:bg-[var(--ms-border)]/50'
                 }`}
               >
                 {link.label}
@@ -78,7 +78,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="lg:hidden p-2 text-[var(--color-neutral-dark)]"
+            className="lg:hidden p-2 text-[var(--ms-heading)]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle navigation menu"
@@ -110,7 +110,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-[var(--color-neutral-lighter)]">
+          <div className="lg:hidden mt-4 pb-4 border-t border-[var(--ms-border)]">
             <div className="flex flex-col gap-4 pt-4">
               {navLinks.map((link) => (
                 <Link
@@ -119,7 +119,7 @@ export default function Header() {
                   className={`text-base font-medium py-2 px-3 rounded-md no-underline transition-all ${
                     pathname === link.href
                       ? 'text-[var(--ms-accent)] bg-[var(--ms-accent)]/10'
-                      : 'text-[var(--ms-heading)] hover:text-[var(--ms-accent)] hover:bg-[var(--color-neutral-lighter)]/50'
+                      : 'text-[var(--ms-heading)] hover:text-[var(--ms-accent)] hover:bg-[var(--ms-border)]/50'
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

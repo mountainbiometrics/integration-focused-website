@@ -20,9 +20,9 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 export function generateStaticParams() {
-  // cms-interop has a dedicated custom page at /m/cms-interop/page.tsx
+  // These slugs have dedicated custom pages at /m/<slug>/page.tsx
   return getAllMicrositeSlugs()
-    .filter((slug) => slug !== 'cms-interop')
+    .filter((slug) => slug !== 'cms-interop' && slug !== 'healthcare-pe')
     .map((slug) => ({ slug }));
 }
 

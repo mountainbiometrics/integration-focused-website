@@ -61,7 +61,7 @@ export default function CmsInteropPage() {
       {/* Email-gated download */}
       <section
         id="download"
-        className="py-12 md:py-20"
+        className="py-8 md:py-14"
         style={{
           background: config.theme
             ? `linear-gradient(180deg, white 0%, ${config.theme.heroGradientColor} 100%)`

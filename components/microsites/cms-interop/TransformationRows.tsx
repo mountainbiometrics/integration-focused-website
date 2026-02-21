@@ -70,7 +70,7 @@ function TimelineRow({ progress }: { progress: number }) {
         <div className="relative w-full flex justify-center">
           {/* Bar */}
           <div
-            className="h-10 rounded-lg relative"
+            className="h-10 rounded-lg relative min-w-[140px]"
             style={{
               width: `${barWidth}%`,
               backgroundColor: color,

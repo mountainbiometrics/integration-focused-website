@@ -49,7 +49,7 @@ export default function UseCasesPage() {
       />
 
       {/* Microsite Hub Cards */}
-      <section className="section-spacing">
+      <section className="section-spacing !pt-4 md:!pt-5 xl:!pt-7">
         <div className="container-site">
           <div className="max-w-4xl mx-auto flex flex-col gap-8">
             {micrositeCards.map((card) => (

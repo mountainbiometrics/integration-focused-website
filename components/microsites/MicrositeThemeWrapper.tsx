@@ -18,7 +18,7 @@ export default function MicrositeThemeWrapper({
     : undefined;
 
   return (
-    <div style={style} className="min-h-screen flex flex-col">
+    <div style={style} className="microsite-premium min-h-screen flex flex-col">
       {children}
     </div>
   );

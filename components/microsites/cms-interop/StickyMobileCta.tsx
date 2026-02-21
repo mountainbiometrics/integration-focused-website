@@ -38,12 +38,19 @@ export default function StickyMobileCta() {
       className="fixed bottom-0 left-0 right-0 z-50 md:hidden transition-transform duration-300"
       style={{ transform: visible ? 'translateY(0)' : 'translateY(100%)' }}
     >
-      <div className="bg-white/90 backdrop-blur-sm border-t border-[#ECECEC] px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      <div
+        className="bg-white/90 backdrop-blur-sm px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+        style={{
+          borderTop: '1px solid var(--ms-border)',
+          boxShadow: '0 -4px 24px rgba(15,15,26,0.08)',
+        }}
+      >
         <a
           href="mailto:warren@themtn.ai?subject=Data%20Foundry%20walkthrough"
-          className="block w-full text-center px-6 py-3 bg-[#AC1F2D] text-white font-medium rounded-md text-sm active:bg-[#8B1924] transition-colors"
+          className="block w-full text-center px-6 py-3 bg-[#AC1F2D] text-white font-semibold rounded-xl text-sm active:bg-[#8B1924] transition-colors"
+          style={{ boxShadow: 'var(--ms-shadow-btn)' }}
         >
-          Schedule a walkthrough
+          Let&rsquo;s look at your data
         </a>
       </div>
     </div>

@@ -11,7 +11,8 @@ import BudgetBar from '@/components/microsites/cms-interop/BudgetBar';
 import FoundryDiagram from '@/components/microsites/cms-interop/FoundryDiagram';
 import TransformationRows from '@/components/microsites/cms-interop/TransformationRows';
 import RevenueCards from '@/components/microsites/cms-interop/RevenueCards';
-import ProofMetrics from '@/components/microsites/cms-interop/ProofMetrics';
+import MeaningBeat from '@/components/microsites/cms-interop/MeaningBeat';
+import OneMoreThing from '@/components/microsites/cms-interop/OneMoreThing';
 import CmsCta from '@/components/microsites/cms-interop/CmsCta';
 import StickyMobileCta from '@/components/microsites/cms-interop/StickyMobileCta';
 
@@ -33,14 +34,14 @@ export default function CmsInteropPage() {
   return (
     <MicrositeThemeWrapper theme={config.theme}>
       {/* Minimal header — logo only */}
-      <header className="py-5 bg-white border-b border-[var(--color-neutral-lighter)]">
+      <header className="py-3 bg-white border-b border-[var(--ms-border)]">
         <div className="container-site">
           <Link href="/">
             <Image
-              src="/images/MTN_ekg_extended_large.svg"
+              src="/images/MTN_ekg.svg"
               alt="Mountain Biometrics"
-              width={160}
-              height={36}
+              width={137}
+              height={137}
               priority
               className="h-9 w-auto"
             />
@@ -53,7 +54,8 @@ export default function CmsInteropPage() {
       <FoundryDiagram />
       <TransformationRows />
       <RevenueCards />
-      <ProofMetrics />
+      <MeaningBeat />
+      <OneMoreThing />
       <CmsCta />
 
       {/* Email-gated download */}
@@ -86,12 +88,12 @@ export default function CmsInteropPage() {
       </section>
 
       {/* Minimal footer */}
-      <footer className="mt-auto py-6 md:py-8 border-t border-[var(--color-neutral-lighter)]">
+      <footer className="mt-auto py-6 md:py-8 border-t border-[var(--ms-border)]">
         <div className="container-site text-center">
-          <p className="text-sm text-[var(--color-neutral-mid)] mb-2">
-            Full data visibility during consolidation and system change.
+          <p className="text-sm text-[var(--ms-body)] mb-2">
+            Under an hour a week. That&rsquo;s the whole&nbsp;job.
           </p>
-          <p className="text-xs text-[var(--color-neutral-light)]">
+          <p className="text-xs text-[var(--ms-muted)]">
             &copy; {currentYear} Mountain Biometrics. All rights reserved.
           </p>
         </div>

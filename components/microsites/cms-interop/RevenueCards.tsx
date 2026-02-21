@@ -5,32 +5,22 @@ import { useScrollProgress, remap } from './useScrollProgress';
 
 const CARDS = [
   {
-    label: 'Star Ratings',
-    stat: '~5 pp',
-    detail: 'rebate increase from 3.5 → 4 stars',
-    subtext:
-      'Most Star measure failures are not clinical. They are data availability failures.',
+    label: 'Star Ratings & Retention',
+    stat: '~5 points',
+    detail:
+      'The jump from 3.5 to 4 stars. Worth hundreds of millions in rebates \u2014 and every member you keep.',
   },
   {
     label: 'Risk Adjustment',
     stat: 'Millions',
-    detail: 'in PMPM revenue from accurate RAF capture',
-    subtext:
-      'A diagnosis that fails to map is revenue that silently disappears.',
+    detail:
+      'A diagnosis that fails to map is revenue that quietly disappears. Every month.',
   },
   {
     label: 'Prior Auth',
-    stat: '$3.52 → $0.05',
-    detail: 'per transaction — manual vs. electronic',
-    subtext:
-      'CMS built the highway. The question is whether your data is clean enough for auto-adjudication.',
-  },
-  {
-    label: 'Retention',
-    stat: '1 pt churn',
-    detail: 'reduced = tens to hundreds of millions preserved',
-    subtext:
-      'Better payer-to-payer exchange eliminates the blind spot for new members.',
+    stat: '$3.52 \u2192 $0.05',
+    detail:
+      'Per transaction. That\u2019s the difference between a person and a wire.',
   },
 ] as const;
 
@@ -39,35 +29,39 @@ export default function RevenueCards() {
   const progress = useScrollProgress(sectionRef);
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-white">
-      <div className="container-site max-w-3xl mx-auto">
-        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-3 bg-[rgba(172,31,45,0.10)] text-[#AC1F2D]">
-          The Revenue Case
+    <section
+      ref={sectionRef}
+      className="py-20 md:py-28 lg:py-32"
+      style={{ background: 'linear-gradient(180deg, white, var(--ms-surface-warm))' }}
+    >
+      <div className="container-site max-w-4xl mx-auto">
+        <span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]">
+          The money
         </span>
-        <h2 className="text-xl md:text-2xl font-bold text-[#4D4D4D] mb-8">
-          Four revenue pools. One capability&nbsp;gap.
+        <h2 className="font-display text-[1.5rem] md:text-[2rem] leading-[1.12] text-[var(--ms-heading)] mb-10 md:mb-14">
+          Three revenue pools you&rsquo;re leaving&nbsp;dry.
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {CARDS.map((card, i) => {
-            const cardProgress = remap(progress, 0.05 + i * 0.1, 0.25 + i * 0.1);
+            const cardProgress = remap(progress, 0.05 + i * 0.12, 0.30 + i * 0.12);
             return (
               <div
                 key={card.label}
-                className="bg-white rounded-lg p-5 border border-[#ECECEC] border-t-[3px] border-t-[#AC1F2D]"
+                className="bg-white rounded-2xl p-6 md:p-8 border-l-[3px] border-l-[#AC1F2D]"
                 style={{
                   opacity: cardProgress,
                   transform: `translateY(${(1 - cardProgress) * 12}px)`,
+                  boxShadow: 'var(--ms-shadow-card)',
                 }}
               >
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[#7D7D7D]">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--ms-body-light)]">
                   {card.label}
                 </span>
                 <p className="text-2xl md:text-3xl font-bold text-[#AC1F2D] mt-2">
                   {card.stat}
                 </p>
-                <p className="text-sm text-[#4D4D4D] mt-1 font-medium">{card.detail}</p>
-                <p className="text-xs text-[#7D7D7D] mt-2 leading-relaxed">{card.subtext}</p>
+                <p className="text-sm text-[var(--ms-heading)] mt-1 font-medium">{card.detail}</p>
               </div>
             );
           })}

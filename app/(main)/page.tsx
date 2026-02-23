@@ -1,12 +1,11 @@
 import Hero from '@/components/content/Hero';
 import SectionHeader from '@/components/content/SectionHeader';
 import ProblemBullets from '@/components/content/ProblemBullets';
-import OutcomeBullets from '@/components/content/OutcomeBullets';
 import BeforeAfter from '@/components/comparison/BeforeAfter';
 import AnimatedThreeStepFlow from '@/components/animation/AnimatedThreeStepFlow';
 import ScrollReveal from '@/components/animation/ScrollReveal';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
-import { TrendingDown, Layers, Unplug, Clock, Activity, Zap, Shield } from 'lucide-react';
+import { TrendingDown, Layers, Unplug, Clock } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -74,7 +73,7 @@ export default function Home() {
                     'Live visibility',
                     'Fast integration',
                     'Auto-adapting',
-                    'Zero disruption',
+                    'Flat maintenance',
                   ],
                 }}
                 variant="withIcons"
@@ -82,20 +81,6 @@ export default function Home() {
               />
             </ScrollReveal>
 
-            <div className="mt-16 max-w-4xl mx-auto">
-              <ScrollReveal stagger={0.1}>
-                <OutcomeBullets
-                  headline="What changes for your organization"
-                  variant="metricCards"
-                  align="center"
-                  metricCards={[
-                    { icon: Activity, metric: 'Day One', label: 'Visibility' },
-                    { icon: Zap, metric: 'Days to Weeks', label: 'Integration' },
-                    { icon: Shield, metric: 'Zero', label: 'Disruption' },
-                  ]}
-                />
-              </ScrollReveal>
-            </div>
           </div>
         </div>
       </section>
@@ -144,7 +129,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
               <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-8">
-                Built for healthcare data integration
+                Built for regulated data
               </h2>
             </ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

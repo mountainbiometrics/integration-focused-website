@@ -54,7 +54,7 @@ export default function MappingCascade() {
       <div className="container-site">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-3 text-center">
-            Self-organizing integration
+            Rapidly onboard new integrations
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
             New systems come online quickly because the Foundry learns from existing mappings.

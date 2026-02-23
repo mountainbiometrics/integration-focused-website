@@ -59,7 +59,7 @@ export default function MonitoringPulse() {
   const y3 = laneY(2);
 
   return (
-    <section ref={sectionRef} className="section-spacing">
+    <section ref={sectionRef} className="section-spacing bg-[var(--ms-surface)]">
       <div className="container-site">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-3 text-center">

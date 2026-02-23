@@ -4,6 +4,7 @@ import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 import FoundryFlow from '@/components/product/FoundryFlow';
 import MappingCascade from '@/components/product/MappingCascade';
 import HealingPipeline from '@/components/product/HealingPipeline';
+import AutomatePlumbing from '@/components/product/AutomatePlumbing';
 import MonitoringPulse from '@/components/product/MonitoringPulse';
 
 export const metadata: Metadata = {
@@ -30,8 +31,11 @@ export default function ProductPage() {
       {/* Self-Organizing Integration — animated field mapping */}
       <MappingCascade />
 
-      {/* Self-Healing Pipelines — looping pipeline disruptions */}
+      {/* Flatten the Maintenance Curve — chart */}
       <HealingPipeline />
+
+      {/* Automate the Plumbing — self-healing infographic rows */}
+      <AutomatePlumbing />
 
       {/* Continuous Monitoring — 3 signal lanes */}
       <MonitoringPulse />

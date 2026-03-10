@@ -58,7 +58,7 @@ function SectionBlock({ section, sectionIndex }: { section: MicrositeSection; se
       <section className={`py-10 md:py-16 ${bulletSectionBg}`}>
         <div className="container-site max-w-3xl mx-auto">
           {section.badgeLabel && (
-            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-3 ${
+            <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold uppercase tracking-wide mb-3 ${
               isPain
                 ? 'bg-[rgba(172,31,45,0.10)] text-[var(--ms-accent)]'
                 : 'bg-[rgba(74,111,165,0.10)] text-[var(--ms-primary)]'
@@ -84,11 +84,11 @@ function SectionBlock({ section, sectionIndex }: { section: MicrositeSection; se
                   </span>
                 )}
                 <div>
-                  <p className="text-sm md:text-base font-semibold text-[var(--ms-heading)]">
+                  <p className="text-base md:text-lg font-semibold text-[var(--ms-heading)]">
                     {item.label}
                   </p>
                   {item.detail && (
-                    <p className="text-sm text-[var(--ms-body)] mt-0.5">
+                    <p className="text-base text-[var(--ms-body)] mt-0.5">
                       {item.detail}
                     </p>
                   )}
@@ -99,7 +99,7 @@ function SectionBlock({ section, sectionIndex }: { section: MicrositeSection; se
           {section.annotation && (
             <div className="flex items-center justify-center gap-2 mt-4 md:mt-6 px-4 py-2.5 rounded-lg bg-[rgba(74,111,165,0.06)] max-w-md mx-auto">
               <TrendingUp className="w-4 h-4 text-[var(--ms-primary)] flex-shrink-0" strokeWidth={1.5} />
-              <p className="text-xs sm:text-sm text-[var(--ms-body)]">
+              <p className="text-sm sm:text-base text-[var(--ms-body)]">
                 {section.annotation}
               </p>
             </div>
@@ -136,7 +136,7 @@ function SectionBlock({ section, sectionIndex }: { section: MicrositeSection; se
       <section className={`py-10 md:py-16 ${sectionBg}`}>
         <div className="container-site max-w-3xl mx-auto">
           {section.badgeLabel && (
-            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-3 ${
+            <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold uppercase tracking-wide mb-3 ${
               isPain
                 ? 'bg-[rgba(172,31,45,0.10)] text-[var(--ms-accent)]'
                 : 'bg-[rgba(74,111,165,0.10)] text-[var(--ms-primary)]'
@@ -180,7 +180,7 @@ function SectionBlock({ section, sectionIndex }: { section: MicrositeSection; se
                   {item.label}
                 </p>
                 {item.detail && (
-                  <p className="text-xs text-[var(--ms-body)] mt-1 sm:mt-2">
+                  <p className="text-sm text-[var(--ms-body)] mt-1 sm:mt-2">
                     {item.detail}
                   </p>
                 )}
@@ -190,7 +190,7 @@ function SectionBlock({ section, sectionIndex }: { section: MicrositeSection; se
           {section.annotation && (
             <div className="flex items-center justify-center gap-2 mt-4 md:mt-6 px-4 py-2.5 rounded-lg bg-[rgba(74,111,165,0.06)] max-w-md mx-auto">
               <TrendingUp className="w-4 h-4 text-[var(--ms-primary)] flex-shrink-0" strokeWidth={1.5} />
-              <p className="text-xs sm:text-sm text-[var(--ms-body)]">
+              <p className="text-sm sm:text-base text-[var(--ms-body)]">
                 {section.annotation}
               </p>
             </div>
@@ -220,7 +220,7 @@ function SectionBlock({ section, sectionIndex }: { section: MicrositeSection; se
                     {item.label}
                   </p>
                   {item.detail && (
-                    <p className="text-sm text-[var(--ms-body)] mt-1">
+                    <p className="text-base text-[var(--ms-body)] mt-1">
                       {item.detail}
                     </p>
                   )}
@@ -319,7 +319,7 @@ export default async function MicrositePage({
                 {config.heroStat}
               </p>
               {config.heroStatCaption && (
-                <p className="text-sm text-[var(--ms-body)] mt-1.5">
+                <p className="text-base text-[var(--ms-body)] mt-1.5">
                   {config.heroStatCaption}
                 </p>
               )}
@@ -391,11 +391,11 @@ export default async function MicrositePage({
       <footer className="mt-auto py-6 md:py-8 border-t border-[var(--ms-border)]">
         <div className="container-site text-center">
           {config.brandTagline && (
-            <p className="text-sm text-[var(--ms-body)] mb-2">
+            <p className="text-base text-[var(--ms-body)] mb-2">
               {config.brandTagline}
             </p>
           )}
-          <p className="text-xs text-[var(--ms-muted)]">
+          <p className="text-sm text-[var(--ms-muted)]">
             &copy; {currentYear} Mountain Biometrics. All rights reserved.
           </p>
         </div>

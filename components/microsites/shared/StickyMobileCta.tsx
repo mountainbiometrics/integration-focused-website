@@ -61,7 +61,7 @@ export default function StickyMobileCta({
       >
         <a
           href={href}
-          className="block w-full text-center px-6 py-3 text-white font-semibold rounded-xl text-sm transition-colors"
+          className="block w-full text-center px-6 py-3 text-white font-semibold rounded-xl text-base transition-colors"
           style={{
             backgroundColor: bgColor,
             boxShadow: btnShadow,

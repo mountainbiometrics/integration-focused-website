@@ -39,7 +39,7 @@ export default function ChaosGrid() {
       <div className="container-site max-w-4xl mx-auto">
         {/* Badge */}
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]"
           style={{
             opacity: badgeFade,
             transform: `translateY(${(1 - badgeFade) * 12}px)`,
@@ -85,13 +85,13 @@ export default function ChaosGrid() {
                     boxShadow: 'var(--ms-shadow-card-sm)',
                   }}
                 >
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--ms-body-light)] mb-2">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-[var(--ms-body-light)] mb-2">
                     {card.clinic}
                   </p>
-                  <p className="text-sm md:text-base font-bold text-[var(--ms-heading)] font-mono leading-tight min-h-[2.5rem] flex items-center justify-center">
+                  <p className="text-base md:text-lg font-bold text-[var(--ms-heading)] font-mono leading-tight min-h-[2.5rem] flex items-center justify-center">
                     {card.encoding}
                   </p>
-                  <p className="text-[10px] text-[var(--ms-muted)] mt-1.5">{card.subtext}</p>
+                  <p className="text-sm text-[var(--ms-muted)] mt-1.5">{card.subtext}</p>
                 </div>
               );
             })}
@@ -106,7 +106,7 @@ export default function ChaosGrid() {
               ${costValue}K
             </span>
             <span className="text-lg md:text-xl text-[#AC1F2D] font-medium">/mo</span>
-            <p className="text-sm text-[var(--ms-body)] mt-1">
+            <p className="text-base text-[var(--ms-body)] mt-1">
               leaking across the portfolio
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function ChaosGrid() {
               transform: `translateY(${(1 - bracketFade) * 8}px)`,
             }}
           >
-            <svg viewBox="0 0 400 40" className="w-full max-w-[400px] h-auto">
+            <svg viewBox="0 0 400 40" className="w-full max-w-[560px] h-auto">
               {/* Left bracket arm */}
               <path
                 d="M20 8 L20 20 L200 20"

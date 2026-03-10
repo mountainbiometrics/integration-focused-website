@@ -64,7 +64,7 @@ export default function MappingCascade() {
           <div className="flex justify-center mb-6">
             <svg
               viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-              className="w-full max-w-[560px] h-auto"
+              className="w-full max-w-[784px] h-auto"
               aria-label="Fields from a new source are automatically mapped to target fields through the Foundry"
             >
               {/* "New source" label */}
@@ -91,7 +91,7 @@ export default function MappingCascade() {
                     <text
                       x={SRC_X + FIELD_W / 2} y={y + FIELD_H / 2 + 1}
                       textAnchor="middle" dominantBaseline="central"
-                      fontSize="9" fontFamily="monospace" fill="var(--ms-heading)"
+                      fontSize="11" fontFamily="monospace" fill="var(--ms-heading)"
                     >
                       {field}
                     </text>
@@ -101,7 +101,7 @@ export default function MappingCascade() {
 
               {/* Foundry circle */}
               <circle
-                cx={FDR_CX} cy={SVG_H / 2} r={24}
+                cx={FDR_CX} cy={SVG_H / 2} r={32}
                 fill="rgba(90,111,209,0.08)"
                 stroke="var(--ms-blue)" strokeWidth="2"
                 opacity={arrowToFoundry}
@@ -109,7 +109,7 @@ export default function MappingCascade() {
               <text
                 x={FDR_CX} y={SVG_H / 2 + 1}
                 textAnchor="middle" dominantBaseline="central"
-                fontSize="8" fontWeight="700" fill="var(--ms-blue)"
+                fontSize="13" fontWeight="700" fill="var(--ms-blue)"
                 opacity={arrowToFoundry}
               >
                 Foundry
@@ -119,7 +119,7 @@ export default function MappingCascade() {
               {foundryPulse > 0 && foundryPulse < 1 && (
                 <circle
                   cx={FDR_CX} cy={SVG_H / 2}
-                  r={24 + foundryPulse * 16}
+                  r={32 + foundryPulse * 16}
                   fill="none" stroke="var(--ms-blue)" strokeWidth="1.5"
                   opacity={0.5 * (1 - foundryPulse)}
                 />
@@ -149,7 +149,7 @@ export default function MappingCascade() {
                     <text
                       x={TGT_X - FIELD_W / 2} y={y + FIELD_H / 2 + 1}
                       textAnchor="middle" dominantBaseline="central"
-                      fontSize="9" fontFamily="monospace" fill="var(--ms-heading)"
+                      fontSize="11" fontFamily="monospace" fill="var(--ms-heading)"
                     >
                       {field}
                     </text>
@@ -208,7 +208,7 @@ export default function MappingCascade() {
                         <text
                           x={TGT_X + 18} y={tgtY + 1}
                           textAnchor="middle" dominantBaseline="central"
-                          fontSize="8" fontWeight="600" fill="var(--ms-blue)"
+                          fontSize="10" fontWeight="600" fill="var(--ms-blue)"
                         >
                           {CONFIDENCE[i]}
                         </text>
@@ -249,7 +249,7 @@ export default function MappingCascade() {
                         <text
                           x={TGT_X + 15} y={tgtY + 1}
                           textAnchor="middle" dominantBaseline="central"
-                          fontSize="9" fontWeight="700" fill="#F59E0B"
+                          fontSize="11" fontWeight="700" fill="#F59E0B"
                         >
                           ?
                         </text>

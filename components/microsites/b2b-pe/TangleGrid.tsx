@@ -76,7 +76,7 @@ export default function TangleGrid() {
       <div className="container-site max-w-4xl mx-auto">
         {/* Badge */}
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]"
           style={{
             opacity: badgeFade,
             transform: `translateY(${(1 - badgeFade) * 12}px)`,
@@ -99,7 +99,7 @@ export default function TangleGrid() {
         <div className="flex justify-center mb-6">
           <svg
             viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
-            className="w-full max-w-[380px] h-auto"
+            className="w-full max-w-[532px] h-auto"
           >
             {/* Pairwise connections (phase 2) */}
             {PAIRS_8.map(([a, b], i) => {
@@ -142,7 +142,7 @@ export default function TangleGrid() {
                     textAnchor="middle"
                     dominantBaseline="central"
                     fill="var(--ms-heading)"
-                    fontSize="8"
+                    fontSize="12"
                     fontWeight="600"
                   >
                     {NODE_LABELS[i].name}
@@ -153,7 +153,7 @@ export default function TangleGrid() {
                     textAnchor="middle"
                     dominantBaseline="central"
                     fill="var(--ms-muted)"
-                    fontSize="6.5"
+                    fontSize="8"
                   >
                     {NODE_LABELS[i].fmt}
                   </text>
@@ -174,7 +174,7 @@ export default function TangleGrid() {
             >
               {connectionCount}
             </span>
-            <span className="text-sm text-[var(--ms-body)] ml-2">connections</span>
+            <span className="text-base text-[var(--ms-body)] ml-2">connections</span>
           </div>
         )}
 

@@ -117,7 +117,7 @@ function NewFieldRow({ p }: { p: number }) {
 
   return (
     <div className="flex justify-center">
-      <svg viewBox={`0 0 ${CARD_W} ${CARD_H}`} className="w-full max-w-[320px] h-auto">
+      <svg viewBox={`0 0 ${CARD_W} ${CARD_H}`} className="w-full max-w-[448px] h-auto">
         {FIELDS.map((f, i) => {
           const y = 10 + i * 30;
           return (
@@ -153,7 +153,7 @@ function NewFieldRow({ p }: { p: number }) {
 
         <line x1={160} y1={65} x2={210} y2={65} stroke="var(--ms-blue)" strokeWidth="1.5" strokeDasharray="40" strokeDashoffset={40 * (1 - arrowDraw)} strokeLinecap="round" />
         <polygon points="210,65 204,61 204,69" fill="var(--ms-blue)" opacity={arrowDraw} />
-        <text x={230} y={67} dominantBaseline="central" fontSize="11" fontWeight="600" fill="var(--ms-blue)" opacity={arrowDraw}>
+        <text x={230} y={67} dominantBaseline="central" fontSize="16" fontWeight="600" fill="var(--ms-blue)" opacity={arrowDraw}>
           Mapped
         </text>
       </svg>
@@ -177,7 +177,7 @@ function RenameRow({ p }: { p: number }) {
 
   return (
     <div className="flex justify-center">
-      <svg viewBox={`0 0 ${CARD_W} ${BW}`} className="w-full max-w-[320px] h-auto">
+      <svg viewBox={`0 0 ${CARD_W} ${BW}`} className="w-full max-w-[448px] h-auto">
         <g opacity={oldIn}>
           <rect x={LX} y={CY - 12} width={BW} height={24} rx={5} fill="var(--ms-surface)" stroke={strike > 0.3 ? '#EF5350' : 'var(--ms-border)'} strokeWidth="1" />
           <text x={LX + BW / 2} y={CY + 1} textAnchor="middle" dominantBaseline="central" fontSize="10" fontFamily="monospace" fill={strike > 0.3 ? '#EF5350' : 'var(--ms-heading)'}>
@@ -198,15 +198,15 @@ function RenameRow({ p }: { p: number }) {
           </text>
         </g>
 
-        <text x={LX + BW / 2} y={CY + 24} textAnchor="middle" fontSize="8" fill="var(--ms-body-light)" opacity={oldIn}>
+        <text x={LX + BW / 2} y={CY + 24} textAnchor="middle" fontSize="10" fill="var(--ms-body-light)" opacity={oldIn}>
           38291, 50412, 77203…
         </text>
-        <text x={RX + BW / 2} y={CY + 24} textAnchor="middle" fontSize="8" fill="var(--ms-body-light)" opacity={newIn}>
+        <text x={RX + BW / 2} y={CY + 24} textAnchor="middle" fontSize="10" fill="var(--ms-body-light)" opacity={newIn}>
           38291, 50412, 77203…
         </text>
 
         <line x1={LX + BW / 2} y1={CY + 32} x2={RX + BW / 2} y2={CY + 32} stroke="var(--ms-blue)" strokeWidth="1" strokeDasharray="4 3" opacity={valuesMatch * 0.5} />
-        <text x={(LX + RX + BW) / 2} y={CY + 46} textAnchor="middle" fontSize="9" fontWeight="600" fill="var(--ms-blue)" opacity={valuesMatch}>
+        <text x={(LX + RX + BW) / 2} y={CY + 46} textAnchor="middle" fontSize="16" fontWeight="600" fill="var(--ms-blue)" opacity={valuesMatch}>
           Values match
         </text>
 
@@ -231,14 +231,14 @@ function TypeConvertRow({ p }: { p: number }) {
 
   return (
     <div className="flex justify-center">
-      <svg viewBox={`0 0 ${CARD_W} 100`} className="w-full max-w-[320px] h-auto">
+      <svg viewBox={`0 0 ${CARD_W} 100`} className="w-full max-w-[448px] h-auto">
         <g opacity={beforeIn}>
-          <text x={LX + BW / 2} y={22} textAnchor="middle" fontSize="9" fontWeight="600" fill="var(--ms-body-light)">Source sends</text>
+          <text x={LX + BW / 2} y={22} textAnchor="middle" fontSize="11" fontWeight="600" fill="var(--ms-body-light)">Source sends</text>
           <rect x={LX} y={30} width={BW} height={26} rx={5} fill="var(--ms-surface)" stroke="var(--ms-border)" strokeWidth="1" />
           <text x={LX + BW / 2} y={44} textAnchor="middle" dominantBaseline="central" fontSize="10" fontFamily="monospace" fill="var(--ms-heading)">
             &quot;01/15/2024&quot;
           </text>
-          <text x={LX + BW / 2} y={70} textAnchor="middle" fontSize="9" fill="var(--ms-body-light)">string</text>
+          <text x={LX + BW / 2} y={70} textAnchor="middle" fontSize="11" fill="var(--ms-body-light)">string</text>
         </g>
 
         <line x1={LX + BW + 6} y1={CY - 7} x2={RX - 6} y2={CY - 7} stroke="var(--ms-blue)" strokeWidth="1.5" strokeDasharray="36" strokeDashoffset={36 * (1 - arrowDraw)} strokeLinecap="round" />
@@ -251,12 +251,12 @@ function TypeConvertRow({ p }: { p: number }) {
         )}
 
         <g opacity={afterIn}>
-          <text x={RX + BW / 2} y={22} textAnchor="middle" fontSize="9" fontWeight="600" fill="var(--ms-blue)">Target expects</text>
+          <text x={RX + BW / 2} y={22} textAnchor="middle" fontSize="11" fontWeight="600" fill="var(--ms-blue)">Target expects</text>
           <rect x={RX} y={30} width={BW} height={26} rx={5} fill="rgba(90,111,209,0.06)" stroke="var(--ms-blue)" strokeWidth="1.5" />
           <text x={RX + BW / 2} y={44} textAnchor="middle" dominantBaseline="central" fontSize="10" fontFamily="monospace" fill="var(--ms-blue)">
             2024-01-15
           </text>
-          <text x={RX + BW / 2} y={70} textAnchor="middle" fontSize="9" fill="var(--ms-blue)">date</text>
+          <text x={RX + BW / 2} y={70} textAnchor="middle" fontSize="11" fill="var(--ms-blue)">date</text>
         </g>
 
         <CheckSmall x={RX + BW + 12} y={CY - 7} opacity={check} />
@@ -280,33 +280,33 @@ function StructureRow({ p }: { p: number }) {
 
   return (
     <div className="flex justify-center">
-      <svg viewBox={`0 0 ${CARD_W} ${CARD_H}`} className="w-full max-w-[320px] h-auto">
+      <svg viewBox={`0 0 ${CARD_W} ${CARD_H}`} className="w-full max-w-[448px] h-auto">
         <g opacity={beforeIn * (1 - flash * 0.3)}>
-          <text x={LX + BW / 2} y={16} textAnchor="middle" fontSize="9" fontWeight="600" fill="var(--ms-body-light)">Before</text>
+          <text x={LX + BW / 2} y={16} textAnchor="middle" fontSize="11" fontWeight="600" fill="var(--ms-body-light)">Before</text>
           <rect x={LX} y={22} width={BW} height={22} rx={4} fill="var(--ms-surface)" stroke={flash > 0.3 ? '#F59E0B' : 'var(--ms-border)'} strokeWidth="1" />
           <text x={LX + BW / 2} y={34} textAnchor="middle" dominantBaseline="central" fontSize="10" fontFamily="monospace" fill="var(--ms-heading)">address</text>
           <rect x={LX + 10} y={48} width={BW - 10} height={18} rx={3} fill="white" stroke="var(--ms-border)" strokeWidth="0.75" />
-          <text x={LX + 10 + (BW - 10) / 2} y={58} textAnchor="middle" dominantBaseline="central" fontSize="8" fontFamily="monospace" fill="var(--ms-body-light)">street, city, state</text>
+          <text x={LX + 10 + (BW - 10) / 2} y={58} textAnchor="middle" dominantBaseline="central" fontSize="10" fontFamily="monospace" fill="var(--ms-body-light)">street, city, state</text>
           <rect x={LX + 10} y={70} width={BW - 10} height={18} rx={3} fill="white" stroke="var(--ms-border)" strokeWidth="0.75" />
-          <text x={LX + 10 + (BW - 10) / 2} y={80} textAnchor="middle" dominantBaseline="central" fontSize="8" fontFamily="monospace" fill="var(--ms-body-light)">zip</text>
+          <text x={LX + 10 + (BW - 10) / 2} y={80} textAnchor="middle" dominantBaseline="central" fontSize="10" fontFamily="monospace" fill="var(--ms-body-light)">zip</text>
         </g>
 
         <line x1={LX + BW + 6} y1={55} x2={RX - 6} y2={55} stroke="var(--ms-blue)" strokeWidth="1.5" strokeDasharray="36" strokeDashoffset={36 * (1 - arrowDraw)} strokeLinecap="round" />
         <polygon points={`${RX - 6},55 ${RX - 12},51 ${RX - 12},59`} fill="var(--ms-blue)" opacity={arrowDraw} />
 
         <g opacity={afterIn}>
-          <text x={RX + BW / 2} y={16} textAnchor="middle" fontSize="9" fontWeight="600" fill="var(--ms-blue)">After</text>
+          <text x={RX + BW / 2} y={16} textAnchor="middle" fontSize="11" fontWeight="600" fill="var(--ms-blue)">After</text>
           <rect x={RX} y={22} width={BW} height={20} rx={4} fill="rgba(90,111,209,0.06)" stroke="var(--ms-blue)" strokeWidth="1" />
-          <text x={RX + BW / 2} y={33} textAnchor="middle" dominantBaseline="central" fontSize="9" fontFamily="monospace" fill="var(--ms-blue)">street_address</text>
+          <text x={RX + BW / 2} y={33} textAnchor="middle" dominantBaseline="central" fontSize="11" fontFamily="monospace" fill="var(--ms-blue)">street_address</text>
           <rect x={RX} y={46} width={BW} height={20} rx={4} fill="rgba(90,111,209,0.06)" stroke="var(--ms-blue)" strokeWidth="1" />
-          <text x={RX + BW / 2} y={57} textAnchor="middle" dominantBaseline="central" fontSize="9" fontFamily="monospace" fill="var(--ms-blue)">city, state</text>
+          <text x={RX + BW / 2} y={57} textAnchor="middle" dominantBaseline="central" fontSize="11" fontFamily="monospace" fill="var(--ms-blue)">city, state</text>
           <rect x={RX} y={70} width={BW} height={20} rx={4} fill="rgba(90,111,209,0.06)" stroke="var(--ms-blue)" strokeWidth="1" />
-          <text x={RX + BW / 2} y={81} textAnchor="middle" dominantBaseline="central" fontSize="9" fontFamily="monospace" fill="var(--ms-blue)">postal_code</text>
+          <text x={RX + BW / 2} y={81} textAnchor="middle" dominantBaseline="central" fontSize="11" fontFamily="monospace" fill="var(--ms-blue)">postal_code</text>
         </g>
 
         <g opacity={audit}>
-          <rect x={CARD_W / 2 - 48} y={104} width={96} height={20} rx={10} fill="rgba(76,175,80,0.10)" stroke="#4CAF50" strokeWidth="1" />
-          <text x={CARD_W / 2} y={115} textAnchor="middle" dominantBaseline="central" fontSize="9" fontWeight="600" fill="#4CAF50">
+          <rect x={CARD_W / 2 - 68} y={103} width={136} height={24} rx={12} fill="rgba(76,175,80,0.10)" stroke="#4CAF50" strokeWidth="1" />
+          <text x={CARD_W / 2} y={116} textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="600" fill="#4CAF50">
             Audit log updated
           </text>
         </g>

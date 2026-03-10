@@ -20,7 +20,7 @@ export default function ProofMetrics() {
   return (
     <section ref={sectionRef} className="py-20 md:py-28 lg:py-32" style={{ backgroundColor: 'var(--ms-surface)' }}>
       <div className="container-site max-w-4xl mx-auto">
-        <span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)]">
+        <span className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)]">
           The Proof
         </span>
         <h2 className="font-display text-[1.5rem] md:text-[2rem] leading-[1.12] text-[var(--ms-heading)] mb-10 md:mb-14">
@@ -39,7 +39,7 @@ export default function ProofMetrics() {
               style={{ boxShadow: 'var(--ms-shadow-card)' }}
             >
               <p className="text-xl md:text-2xl font-bold text-[var(--ms-blue)]">{m.value}</p>
-              <p className="text-[10px] sm:text-xs text-[var(--ms-body)] mt-1">{m.label}</p>
+              <p className="text-xs sm:text-base text-[var(--ms-body)] mt-1">{m.label}</p>
             </div>
           ))}
         </div>
@@ -56,8 +56,8 @@ export default function ProofMetrics() {
               borderLeft: '3px solid var(--ms-blue)',
             }}
           >
-            <span className="text-sm font-bold text-[var(--ms-blue)] whitespace-nowrap">50 integrations</span>
-            <span className="text-sm text-[var(--ms-body)]">Dedicated team → one part-time reviewer</span>
+            <span className="text-base font-bold text-[var(--ms-blue)] whitespace-nowrap">50 integrations</span>
+            <span className="text-base text-[var(--ms-body)]">Dedicated team → one part-time reviewer</span>
           </div>
           <div
             className="flex items-baseline gap-3 p-4 rounded-2xl bg-white"
@@ -66,8 +66,8 @@ export default function ProofMetrics() {
               borderLeft: '3px solid var(--ms-blue)',
             }}
           >
-            <span className="text-sm font-bold text-[var(--ms-blue)] whitespace-nowrap">200 integrations</span>
-            <span className="text-sm text-[var(--ms-body)]">5–10 engineers → &lt;1 hr/wk review</span>
+            <span className="text-base font-bold text-[var(--ms-blue)] whitespace-nowrap">200 integrations</span>
+            <span className="text-base text-[var(--ms-body)]">5–10 engineers → &lt;1 hr/wk review</span>
           </div>
         </div>
       </div>

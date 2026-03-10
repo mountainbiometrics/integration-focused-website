@@ -77,7 +77,7 @@ export default function MeshDiagram() {
     >
       <div className="container-site max-w-4xl mx-auto">
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)] transition-opacity duration-700"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)] transition-opacity duration-700"
           style={{ opacity: enterOpacity }}
         >
           The math
@@ -94,7 +94,7 @@ export default function MeshDiagram() {
         <div className="flex justify-center mb-6">
           <svg
             viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
-            className="w-full max-w-[360px] h-auto"
+            className="w-full max-w-[504px] h-auto"
           >
             {/* Phase 1 & 2: Mesh connections */}
             <g style={{ opacity: meshOpacity }}>
@@ -200,7 +200,7 @@ export default function MeshDiagram() {
               <circle
                 cx={CENTER}
                 cy={CENTER}
-                r={20}
+                r={28}
                 fill="var(--ms-blue)"
                 opacity={hubOpacity}
               />
@@ -210,7 +210,7 @@ export default function MeshDiagram() {
                 textAnchor="middle"
                 dominantBaseline="central"
                 fill="white"
-                fontSize="7"
+                fontSize="12"
                 fontWeight="600"
               >
                 Foundry
@@ -226,7 +226,7 @@ export default function MeshDiagram() {
           }}>
             {connectionCount}
           </span>
-          <span className="text-sm text-[var(--ms-body)] ml-2">connections</span>
+          <span className="text-base text-[var(--ms-body)] ml-2">connections</span>
         </div>
 
         {/* Takeaway */}

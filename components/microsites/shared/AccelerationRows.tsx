@@ -34,7 +34,7 @@ export default function AccelerationRows({ config }: { config: AccelerationRowsC
     <section ref={sectionRef} className="py-20 md:py-28 lg:py-32" style={{ backgroundColor: 'var(--ms-surface)' }}>
       <div className="container-site max-w-4xl mx-auto">
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border"
           style={{
             backgroundColor: `rgba(${config.accentRgb},0.05)`,
             borderColor: `rgba(${config.accentRgb},0.12)`,
@@ -104,7 +104,7 @@ function TimelineRow({ progress, config }: { progress: number; config: Accelerat
               style={{ opacity: beforeLabelOpacity }}
             >
               {config.timeline.beforeLabels.map((w) => (
-                <span key={w} className="text-white text-[9px] sm:text-[11px] font-medium whitespace-nowrap">
+                <span key={w} className="text-white text-[11px] sm:text-[13px] font-medium whitespace-nowrap">
                   {w}
                 </span>
               ))}
@@ -116,17 +116,17 @@ function TimelineRow({ progress, config }: { progress: number; config: Accelerat
               style={{ opacity: afterLabelOpacity }}
             >
               {['W1', 'W2', 'W3'].map((w) => (
-                <span key={w} className="text-white text-[9px] sm:text-[11px] font-medium">{w}</span>
+                <span key={w} className="text-white text-[11px] sm:text-[13px] font-medium">{w}</span>
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      <p className="text-sm md:text-base font-semibold text-[var(--ms-heading)] text-center">
+      <p className="text-base md:text-lg font-semibold text-[var(--ms-heading)] text-center">
         {config.timeline.summary}
       </p>
-      <p className="text-xs mt-1 text-center" style={{ color: config.accentColor, opacity: cardEntrance }}>
+      <p className="text-sm mt-1 text-center" style={{ color: config.accentColor, opacity: cardEntrance }}>
         {config.timeline.detail}
       </p>
     </div>
@@ -167,10 +167,10 @@ function TeamRow({ progress, accentColor, detail }: { progress: number; accentCo
         </div>
       </div>
 
-      <p className="text-sm md:text-base font-semibold text-[var(--ms-heading)] text-center">
+      <p className="text-base md:text-lg font-semibold text-[var(--ms-heading)] text-center">
         A handful, not a department.
       </p>
-      <p className="text-xs mt-1 text-center" style={{ color: accentColor, opacity: cardEntrance }}>
+      <p className="text-sm mt-1 text-center" style={{ color: accentColor, opacity: cardEntrance }}>
         {detail}
       </p>
     </div>
@@ -183,25 +183,25 @@ function MaintenanceRow({ progress, accentColor, xAxisLabel, detail }: { progres
   const cardEntrance = remap(progress, 0, 0.22);
   const lineAnim = remap(progress, 0.15, 0.75);
 
-  const svgWidth = 280;
-  const svgHeight = 80;
-  const xStart = 20;
-  const xEnd = 260;
-  const yBottom = 70;
-  const yTop = 12;
+  const svgWidth = 360;
+  const svgHeight = 140;
+  const xStart = 36;
+  const xEnd = 340;
+  const yBottom = 120;
+  const yTop = 16;
 
   const drawX = xStart + lineAnim * (xEnd - xStart);
 
   const conventionalPoints: string[] = [];
   const foundryPoints: string[] = [];
-  const steps = 40;
+  const steps = 50;
   for (let s = 0; s <= steps; s++) {
     const t = s / steps;
     const x = xStart + t * (xEnd - xStart);
     if (x > drawX) break;
     const yConv = yBottom - (t * t) * (yBottom - yTop);
     conventionalPoints.push(`${x},${yConv}`);
-    const yFlat = yBottom - t * 8;
+    const yFlat = yBottom - t * 12;
     foundryPoints.push(`${x},${yFlat}`);
   }
 
@@ -224,11 +224,15 @@ function MaintenanceRow({ progress, accentColor, xAxisLabel, detail }: { progres
       }}
     >
       <div className="mb-5 flex items-center justify-center">
-        <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full max-w-[300px] h-auto">
-          {/* Axis labels */}
-          <text x={xStart} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="8" textAnchor="start">{xAxisLabel}</text>
-          <text x={xEnd} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="8" textAnchor="end">200+</text>
-          <text x={4} y={yBottom - 2} fill="var(--ms-muted)" fontSize="7" textAnchor="start" transform="rotate(-90, 8, 55)">hrs/wk</text>
+        <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full max-w-[588px] h-auto">
+          {/* Y axis label */}
+          <text x={14} y={(yTop + yBottom) / 2} fill="var(--ms-muted)" fontSize="11" textAnchor="middle" transform={`rotate(-90, 14, ${(yTop + yBottom) / 2})`}>
+            hrs / wk
+          </text>
+
+          {/* X axis labels */}
+          <text x={xStart} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="11" textAnchor="start">{xAxisLabel}</text>
+          <text x={xEnd} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="11" textAnchor="end">200+</text>
 
           {/* Conventional line */}
           {convPath && (
@@ -257,19 +261,19 @@ function MaintenanceRow({ progress, accentColor, xAxisLabel, detail }: { progres
           {/* Legend */}
           {lineAnim > 0.6 && (
             <>
-              <line x1={xStart} y1={yTop + 6} x2={xStart + 18} y2={yTop + 6} stroke={convColor} strokeWidth="2" />
-              <text x={xStart + 22} y={yTop + 10} fill={convColor} fontSize="8">Conventional</text>
-              <line x1={xStart} y1={yTop + 18} x2={xStart + 18} y2={yTop + 18} stroke={accentColor} strokeWidth="2" />
-              <text x={xStart + 22} y={yTop + 22} fill={accentColor} fontSize="8">Foundry</text>
+              <line x1={xStart} y1={yTop + 6} x2={xStart + 20} y2={yTop + 6} stroke={convColor} strokeWidth="2" />
+              <text x={xStart + 24} y={yTop + 10} fill={convColor} fontSize="10">Conventional</text>
+              <line x1={xStart} y1={yTop + 20} x2={xStart + 20} y2={yTop + 20} stroke={accentColor} strokeWidth="2" />
+              <text x={xStart + 24} y={yTop + 24} fill={accentColor} fontSize="10">Foundry</text>
             </>
           )}
         </svg>
       </div>
 
-      <p className="text-sm md:text-base font-semibold text-[var(--ms-heading)] text-center">
+      <p className="text-base md:text-lg font-semibold text-[var(--ms-heading)] text-center">
         Maintenance stays flat.
       </p>
-      <p className="text-xs mt-1 text-center" style={{ color: accentColor, opacity: cardEntrance }}>
+      <p className="text-sm mt-1 text-center" style={{ color: accentColor, opacity: cardEntrance }}>
         {detail}
       </p>
     </div>

@@ -70,7 +70,7 @@ export default function FoundryFlow() {
           <div className="flex justify-center mb-8">
             <svg
               viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-              className="w-full max-w-[540px] h-auto"
+              className="w-full max-w-[756px] h-auto"
               aria-label="Data flows from sources through the Foundry to your tools"
             >
               {/* Source circle */}
@@ -105,7 +105,7 @@ export default function FoundryFlow() {
                     />
                     <text
                       x={s.x} y={s.y + SAT_R + 12}
-                      textAnchor="middle" fontSize="9" fill="var(--ms-body-light)"
+                      textAnchor="middle" fontSize="11" fill="var(--ms-body-light)"
                       opacity={a}
                     >
                       {SOURCE_LABELS[i]}
@@ -240,7 +240,7 @@ export default function FoundryFlow() {
                     />
                     <text
                       x={s.x} y={s.y + SAT_R + 12}
-                      textAnchor="middle" fontSize="9" fill="var(--ms-body-light)"
+                      textAnchor="middle" fontSize="11" fill="var(--ms-body-light)"
                       opacity={a}
                     >
                       {TOOL_LABELS[i]}

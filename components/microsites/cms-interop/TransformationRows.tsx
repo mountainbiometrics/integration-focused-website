@@ -16,7 +16,7 @@ export default function TransformationRows() {
   return (
     <section ref={sectionRef} className="py-20 md:py-28 lg:py-32" style={{ backgroundColor: 'var(--ms-surface)' }}>
       <div className="container-site max-w-4xl mx-auto">
-        <span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)]">
+        <span className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)]">
           What actually changes
         </span>
         <h2 className="font-display text-[1.5rem] md:text-[2rem] leading-[1.12] text-[var(--ms-heading)] mb-10 md:mb-14">
@@ -84,7 +84,7 @@ function TimelineRow({ progress }: { progress: number }) {
               style={{ opacity: beforeLabelOpacity }}
             >
               {['Mo 1', 'Mo 2', 'Mo 3', 'Mo 4', 'Mo 5', 'Mo 6'].map((m) => (
-                <span key={m} className="text-white text-[9px] sm:text-[11px] font-medium whitespace-nowrap">{m}</span>
+                <span key={m} className="text-white text-[11px] sm:text-[13px] font-medium whitespace-nowrap">{m}</span>
               ))}
             </div>
 
@@ -94,17 +94,17 @@ function TimelineRow({ progress }: { progress: number }) {
               style={{ opacity: afterLabelOpacity }}
             >
               {['D1', 'D2', 'D3', 'D4', 'D5'].map((d) => (
-                <span key={d} className="text-white text-[9px] sm:text-[11px] font-medium">{d}</span>
+                <span key={d} className="text-white text-[11px] sm:text-[13px] font-medium">{d}</span>
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      <p className="text-sm md:text-base font-semibold text-[var(--ms-heading)] text-center">
+      <p className="text-base md:text-lg font-semibold text-[var(--ms-heading)] text-center">
         Days, not months.
       </p>
-      <p className="text-xs text-[var(--ms-blue)] mt-1 text-center" style={{ opacity: cardEntrance }}>
+      <p className="text-sm text-[var(--ms-blue)] mt-1 text-center" style={{ opacity: cardEntrance }}>
         Benchmarked: 5&ndash;15 minutes per integration review
       </p>
     </div>
@@ -201,10 +201,10 @@ function SelfHealingRow({ progress }: { progress: number }) {
         </svg>
       </div>
 
-      <p className="text-sm md:text-base font-semibold text-[var(--ms-heading)] text-center">
+      <p className="text-base md:text-lg font-semibold text-[var(--ms-heading)] text-center">
         Connections stop breaking.
       </p>
-      <p className="text-xs text-[var(--ms-blue)] mt-1 text-center" style={{ opacity: cardEntrance }}>
+      <p className="text-sm text-[var(--ms-blue)] mt-1 text-center" style={{ opacity: cardEntrance }}>
         99% mapping accuracy across 60 format variants
       </p>
     </div>
@@ -277,10 +277,10 @@ function AuditTrailRow({ progress }: { progress: number }) {
         })}
       </div>
 
-      <p className="text-sm md:text-base font-semibold text-[var(--ms-heading)]">
+      <p className="text-base md:text-lg font-semibold text-[var(--ms-heading)]">
         Compliance that runs itself.
       </p>
-      <p className="text-xs text-[var(--ms-blue)] mt-1" style={{ opacity: cardEntrance }}>
+      <p className="text-sm text-[var(--ms-blue)] mt-1" style={{ opacity: cardEntrance }}>
         &lt;1 hour/week at 200+ connections
       </p>
     </div>

@@ -128,10 +128,10 @@ export default function B2bPePage() {
       {/* Minimal footer */}
       <footer className="mt-auto py-6 md:py-8 border-t border-[var(--ms-border)]">
         <div className="container-site text-center">
-          <p className="text-sm text-[var(--ms-body)] mb-2">
+          <p className="text-base text-[var(--ms-body)] mb-2">
             Full data visibility during consolidation and system&nbsp;change.
           </p>
-          <p className="text-xs text-[var(--ms-muted)]">
+          <p className="text-sm text-[var(--ms-muted)]">
             &copy; {currentYear} Mountain Biometrics. All rights reserved.
           </p>
         </div>

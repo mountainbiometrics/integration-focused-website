@@ -37,7 +37,7 @@ export default function B2bPeHero() {
             <p className="text-4xl md:text-5xl font-bold text-[#AC1F2D] tabular-nums">
               70%
             </p>
-            <p className="text-sm text-[var(--ms-body)] mt-1.5 text-center">
+            <p className="text-base text-[var(--ms-body)] mt-1.5 text-center">
               of mergers fail to achieve revenue synergies
             </p>
           </div>
@@ -51,12 +51,12 @@ export default function B2bPeHero() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-6 md:mt-8 md:justify-center">
           <a
             href="#architecture"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#AC1F2D] text-white font-semibold rounded-xl hover:bg-[#8B1924] transition-all duration-200 text-sm md:text-base hover:-translate-y-0.5"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#AC1F2D] text-white font-semibold rounded-xl hover:bg-[#8B1924] transition-all duration-200 text-base md:text-lg hover:-translate-y-0.5"
             style={{ boxShadow: '0 1px 2px rgba(139,25,36,0.3), 0 4px 12px rgba(172,31,45,0.2), inset 0 1px 0 rgba(255,255,255,0.1)' }}
           >
             See how it works
           </a>
-          <span className="text-xs text-[var(--ms-muted)] font-medium tracking-wider uppercase">
+          <span className="text-sm text-[var(--ms-muted)] font-medium tracking-wider uppercase">
             73% of PE deals are add-ons&ensp;&middot;&ensp;integration is the bottleneck
           </span>
         </div>

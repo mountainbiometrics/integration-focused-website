@@ -65,17 +65,17 @@ export default function HealingPipeline() {
             }}
           >
             <div className="mb-5 flex items-center justify-center">
-              <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full max-w-[420px] h-auto">
+              <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full max-w-[588px] h-auto">
                 {/* Y axis label */}
-                <text x={6} y={yBottom - 4} fill="var(--ms-muted)" fontSize="9" textAnchor="start" transform="rotate(-90, 10, 75)">
+                <text x={14} y={(yTop + yBottom) / 2} fill="var(--ms-muted)" fontSize="11" textAnchor="middle" transform={`rotate(-90, 14, ${(yTop + yBottom) / 2})`}>
                   hrs / wk
                 </text>
 
                 {/* X axis labels */}
-                <text x={xStart} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="9" textAnchor="start">
+                <text x={xStart} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="11" textAnchor="start">
                   1 system
                 </text>
-                <text x={xEnd} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="9" textAnchor="end">
+                <text x={xEnd} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="11" textAnchor="end">
                   200+
                 </text>
 

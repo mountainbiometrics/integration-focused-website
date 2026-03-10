@@ -54,7 +54,7 @@ export default function BudgetBar() {
       <div className="container-site max-w-4xl mx-auto">
         {/* Badge */}
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]"
           style={{
             opacity: badgeFade,
             transform: `translateY(${(1 - badgeFade) * 12}px)`,
@@ -86,7 +86,7 @@ export default function BudgetBar() {
             {counterValue}%
           </span>
           <p
-            className="text-sm text-[var(--ms-body)] mt-2"
+            className="text-base text-[var(--ms-body)] mt-2"
             style={{ opacity: counterFade }}
           >
             spent after you flip the switch
@@ -100,7 +100,7 @@ export default function BudgetBar() {
             className="absolute -top-6 z-10 transition-opacity duration-300"
             style={{ left: '43%', opacity: showDivider ? 1 : 0 }}
           >
-            <span className="absolute left-1/2 -translate-x-1/2 text-[10px] text-[var(--ms-body)] whitespace-nowrap font-medium">
+            <span className="absolute left-1/2 -translate-x-1/2 text-sm text-[var(--ms-body)] whitespace-nowrap font-medium">
               Go-live
             </span>
           </div>
@@ -130,7 +130,7 @@ export default function BudgetBar() {
         </div>
 
         {/* Bar labels */}
-        <div className="flex justify-between mt-3 text-xs text-[var(--ms-body)]">
+        <div className="flex justify-between mt-3 text-sm text-[var(--ms-body)]">
           <span>Build (43%)</span>
           <span className="text-[#AC1F2D] font-semibold">Maintain (57%+)</span>
         </div>
@@ -148,7 +148,7 @@ export default function BudgetBar() {
               }}
             >
               <p className="text-base sm:text-xl font-bold text-[#AC1F2D]">{value}</p>
-              <p className="text-[10px] sm:text-xs text-[var(--ms-body)] mt-1">{label}</p>
+              <p className="text-xs sm:text-sm text-[var(--ms-body)] mt-1">{label}</p>
             </div>
           ))}
         </div>

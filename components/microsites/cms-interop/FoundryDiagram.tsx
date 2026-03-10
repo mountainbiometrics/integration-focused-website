@@ -34,7 +34,7 @@ export default function FoundryDiagram() {
   return (
     <section ref={sectionRef} id="architecture" className="py-20 md:py-28 lg:py-32 bg-white">
       <div className="container-site max-w-5xl mx-auto">
-        <span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)]">
+        <span className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(90,111,209,0.05)] border-[rgba(90,111,209,0.12)] text-[var(--ms-blue)]">
           The fix
         </span>
         <h2 className="font-display text-[1.5rem] md:text-[2rem] leading-[1.12] text-[var(--ms-heading)] mb-10 md:mb-14">
@@ -54,7 +54,7 @@ export default function FoundryDiagram() {
               borderColor: 'var(--ms-border)',
             }}
           >
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3 text-center">
+            <p className="text-[13px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3 text-center">
               Clinics &amp; Sources
             </p>
             <div className="flex flex-wrap gap-1.5 mb-3 justify-center">
@@ -80,7 +80,7 @@ export default function FoundryDiagram() {
               style={{ opacity: sourceLabels }}
             >
               {SOURCE_TYPES.map((t) => (
-                <span key={t} className="text-[11px] text-[var(--ms-body-light)]">{t}</span>
+                <span key={t} className="text-[13px] text-[var(--ms-body-light)]">{t}</span>
               ))}
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function FoundryDiagram() {
             }}
           >
             <div className="absolute top-0 left-0 w-1 h-full bg-[#AC1F2D] rounded-l-2xl" />
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[#AC1F2D] text-center">
+            <p className="text-[13px] font-semibold uppercase tracking-wider text-[#AC1F2D] text-center">
               MTN Data Foundry
             </p>
           </div>
@@ -116,7 +116,7 @@ export default function FoundryDiagram() {
               borderColor: 'var(--ms-border)',
             }}
           >
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3 text-center">
+            <p className="text-[13px] font-semibold uppercase tracking-wider text-[var(--ms-body)] mb-3 text-center">
               Your Systems
             </p>
             <div className="flex flex-wrap gap-1.5 mb-3 justify-center">
@@ -140,7 +140,7 @@ export default function FoundryDiagram() {
               style={{ opacity: systemLabels }}
             >
               {SYSTEM_OUTPUTS.map((s) => (
-                <span key={s} className="text-[11px] text-[var(--ms-body-light)]">{s}</span>
+                <span key={s} className="text-[13px] text-[var(--ms-body-light)]">{s}</span>
               ))}
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function FoundryDiagram() {
 
         {/* Single takeaway */}
         <p
-          className="text-sm md:text-base text-[var(--ms-heading)] font-medium leading-relaxed max-w-2xl mx-auto text-center mt-2"
+          className="text-base md:text-lg text-[var(--ms-heading)] font-medium leading-relaxed max-w-2xl mx-auto text-center mt-2"
           style={{ opacity: copyFade1, transform: `translateY(${(1 - copyFade1) * 8}px)` }}
         >
           Connection two hundred doesn&rsquo;t break connection&nbsp;one.

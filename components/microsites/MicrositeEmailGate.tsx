@@ -77,12 +77,12 @@ export default function MicrositeEmailGate({
                 {paper.title}
               </p>
               {paper.subtitle && (
-                <p className="text-sm text-[var(--ms-body)] mt-0.5">
+                <p className="text-base text-[var(--ms-body)] mt-0.5">
                   {paper.subtitle}
                 </p>
               )}
               {paper.fileSize && (
-                <p className="hidden md:block text-xs text-[var(--ms-muted)] mt-1">
+                <p className="hidden md:block text-sm text-[var(--ms-muted)] mt-1">
                   PDF &middot; {paper.fileSize}
                 </p>
               )}
@@ -129,11 +129,11 @@ export default function MicrositeEmailGate({
                 />
               </svg>
               <div>
-                <p className="text-sm font-medium text-[var(--ms-heading)]">
+                <p className="text-base font-medium text-[var(--ms-heading)]">
                   {paper.title}
                 </p>
                 {paper.subtitle && (
-                  <p className="text-xs text-[var(--ms-body)]">
+                  <p className="text-sm text-[var(--ms-body)]">
                     {paper.subtitle}
                   </p>
                 )}

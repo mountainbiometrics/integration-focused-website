@@ -71,7 +71,7 @@ export default function SharedLayerDiagram() {
     >
       <div className="container-site max-w-4xl mx-auto">
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(74,111,165,0.05)] border-[rgba(74,111,165,0.12)] text-[#4A6FA5] transition-opacity duration-700"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(74,111,165,0.05)] border-[rgba(74,111,165,0.12)] text-[#4A6FA5] transition-opacity duration-700"
           style={{ opacity: enterOpacity }}
         >
           The architecture
@@ -88,7 +88,7 @@ export default function SharedLayerDiagram() {
         <div className="flex justify-center mb-6">
           <svg
             viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
-            className="w-full max-w-[380px] h-auto"
+            className="w-full max-w-[532px] h-auto"
           >
             {/* Phase 1 & 2: Mesh connections */}
             <g style={{ opacity: meshOpacity }}>
@@ -196,7 +196,7 @@ export default function SharedLayerDiagram() {
               <circle
                 cx={CENTER}
                 cy={CENTER}
-                r={22}
+                r={30}
                 fill="#4A6FA5"
                 opacity={hubOpacity}
               />
@@ -206,7 +206,7 @@ export default function SharedLayerDiagram() {
                 textAnchor="middle"
                 dominantBaseline="central"
                 fill="white"
-                fontSize="7"
+                fontSize="12"
                 fontWeight="600"
               >
                 Foundry
@@ -225,7 +225,7 @@ export default function SharedLayerDiagram() {
           >
             {connectionCount}
           </span>
-          <span className="text-sm text-[var(--ms-body)] ml-2">
+          <span className="text-base text-[var(--ms-body)] ml-2">
             {phase3 > 0.5 ? 'spokes' : 'connections'}
           </span>
         </div>

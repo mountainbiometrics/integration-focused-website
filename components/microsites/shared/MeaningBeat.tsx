@@ -44,7 +44,7 @@ export default function MeaningBeat({
 
       <div className="container-site max-w-2xl mx-auto text-center relative">
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border"
           style={{
             backgroundColor: `rgba(${accentRgb},0.05)`,
             borderColor: `rgba(${accentRgb},0.12)`,

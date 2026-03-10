@@ -28,7 +28,7 @@ export default function OneMoreThing() {
       <div className="container-site max-w-2xl mx-auto text-center relative">
         {/* Small caps label */}
         <p
-          className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 mb-8"
+          className="text-[13px] font-semibold uppercase tracking-[0.2em] text-white/80 mb-8"
           style={{
             color: 'rgba(255,255,255,0.8)',
             opacity: labelFade,

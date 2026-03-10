@@ -33,7 +33,7 @@ export default function ReturnCards({
     >
       <div className="container-site max-w-4xl mx-auto">
         <span
-          className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border"
+          className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border"
           style={{
             backgroundColor: `rgba(${accentRgb},0.05)`,
             borderColor: `rgba(${accentRgb},0.12)`,
@@ -60,13 +60,13 @@ export default function ReturnCards({
                   borderLeft: `3px solid ${accentColor}`,
                 }}
               >
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--ms-body-light)]">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[var(--ms-body-light)]">
                   {card.label}
                 </span>
                 <p className="text-2xl md:text-3xl font-bold mt-2" style={{ color: accentColor }}>
                   {card.stat}
                 </p>
-                <p className="text-sm text-[var(--ms-heading)] mt-1 font-medium">{card.detail}</p>
+                <p className="text-base text-[var(--ms-heading)] mt-1 font-medium">{card.detail}</p>
               </div>
             );
           })}

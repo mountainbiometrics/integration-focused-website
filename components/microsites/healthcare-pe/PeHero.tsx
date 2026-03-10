@@ -40,7 +40,7 @@ export default function PeHero() {
             <p className="text-2xl md:text-3xl text-[#AC1F2D]/70 font-normal -mt-1">
               per month
             </p>
-            <p className="text-sm text-[var(--ms-body)] mt-1.5 text-center">
+            <p className="text-base text-[var(--ms-body)] mt-1.5 text-center">
               leaking from your portfolio while systems don&rsquo;t&nbsp;talk
             </p>
           </div>
@@ -54,12 +54,12 @@ export default function PeHero() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-6 md:mt-8 md:justify-center">
           <a
             href="#architecture"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#AC1F2D] text-white font-semibold rounded-xl hover:bg-[#8B1924] transition-all duration-200 text-sm md:text-base hover:-translate-y-0.5"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#AC1F2D] text-white font-semibold rounded-xl hover:bg-[#8B1924] transition-all duration-200 text-base md:text-lg hover:-translate-y-0.5"
             style={{ boxShadow: 'var(--ms-shadow-btn)' }}
           >
             See how
           </a>
-          <span className="text-xs text-[var(--ms-muted)] font-medium tracking-wider uppercase">
+          <span className="text-sm text-[var(--ms-muted)] font-medium tracking-wider uppercase">
             73% of PE deals are add-ons&ensp;&middot;&ensp;integration is the bottleneck
           </span>
         </div>

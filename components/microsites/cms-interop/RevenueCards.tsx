@@ -35,7 +35,7 @@ export default function RevenueCards() {
       style={{ background: 'linear-gradient(180deg, white, var(--ms-surface-warm))' }}
     >
       <div className="container-site max-w-4xl mx-auto">
-        <span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]">
+        <span className="inline-block px-4 py-1.5 rounded-full text-[13px] font-semibold uppercase tracking-[0.12em] mb-4 border bg-[rgba(172,31,45,0.05)] border-[rgba(172,31,45,0.12)] text-[#AC1F2D]">
           The money
         </span>
         <h2 className="font-display text-[1.5rem] md:text-[2rem] leading-[1.12] text-[var(--ms-heading)] mb-10 md:mb-14">
@@ -55,13 +55,13 @@ export default function RevenueCards() {
                   boxShadow: 'var(--ms-shadow-card)',
                 }}
               >
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--ms-body-light)]">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[var(--ms-body-light)]">
                   {card.label}
                 </span>
                 <p className="text-2xl md:text-3xl font-bold text-[#AC1F2D] mt-2">
                   {card.stat}
                 </p>
-                <p className="text-sm text-[var(--ms-heading)] mt-1 font-medium">{card.detail}</p>
+                <p className="text-base text-[var(--ms-heading)] mt-1 font-medium">{card.detail}</p>
               </div>
             );
           })}

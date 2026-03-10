@@ -73,7 +73,7 @@ export default function MonitoringPulse() {
           <div className="flex justify-center mb-6">
             <svg
               viewBox={`0 0 ${SVG_W} ${SVG_H}`}
-              className="w-full max-w-[520px] h-auto"
+              className="w-full max-w-[728px] h-auto"
               aria-label="Three monitoring lanes detecting transmission gaps, schema drift, and quality anomalies"
             >
               {/* ── Lane 1: Transmission health ── */}

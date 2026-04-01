@@ -38,7 +38,7 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div>
-            <h4 className="font-display !text-white font-semibold mb-4 text-sm uppercase tracking-wide">
+            <h4 className="font-display !text-white mb-4 text-sm uppercase tracking-wide">
               Navigation
             </h4>
             <nav className="flex flex-col gap-3">
@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-display !text-white font-semibold mb-4 text-sm uppercase tracking-wide">
+            <h4 className="font-display !text-white mb-4 text-sm uppercase tracking-wide">
               Legal
             </h4>
             <nav className="flex flex-col gap-3">

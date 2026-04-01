@@ -26,7 +26,7 @@ export default function BeforeAfter({
         className="p-6 md:p-8 rounded-2xl bg-[rgba(172,31,45,0.06)]"
         style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
       >
-        <h4 className="font-display font-semibold text-[var(--ms-heading)] text-lg mb-4 flex items-center gap-2">
+        <h4 className="font-display text-[var(--ms-heading)] text-lg mb-4 flex items-center gap-2">
           {variant === 'withIcons' && (
             <svg
               className="w-5 h-5 text-[var(--ms-accent)]/70"
@@ -69,7 +69,7 @@ export default function BeforeAfter({
         className="p-6 md:p-8 rounded-2xl bg-[rgba(74,111,165,0.08)]"
         style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
       >
-        <h4 className="font-display font-semibold text-[var(--ms-heading)] text-lg mb-4 flex items-center gap-2">
+        <h4 className="font-display text-[var(--ms-heading)] text-lg mb-4 flex items-center gap-2">
           {variant === 'withIcons' && (
             <svg
               className="w-5 h-5 text-[var(--ms-blue)]"

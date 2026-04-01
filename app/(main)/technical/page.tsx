@@ -223,7 +223,7 @@ export default function TechnicalPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="p-4 rounded-lg bg-white border border-[var(--ms-border)]">
-                  <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
+                  <h4 className="font-display text-[var(--ms-heading)] mb-2">
                     What it does
                   </h4>
                   <ul className="space-y-2 text-base text-[var(--ms-body)]">
@@ -234,7 +234,7 @@ export default function TechnicalPage() {
                   </ul>
                 </div>
                 <div className="p-4 rounded-lg bg-white border border-[var(--ms-border)]">
-                  <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
+                  <h4 className="font-display text-[var(--ms-heading)] mb-2">
                     What it does not do
                   </h4>
                   <ul className="space-y-2 text-base text-[var(--ms-body)]">
@@ -267,7 +267,7 @@ export default function TechnicalPage() {
 
             {/* Governance detail box */}
             <div className="mt-8 p-6 rounded-lg bg-white border border-[var(--ms-border)]">
-              <h4 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
+              <h4 className="font-display text-[var(--ms-heading)] mb-3">
                 Governance model
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -337,7 +337,7 @@ export default function TechnicalPage() {
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 rounded-lg border border-[var(--ms-border)]">
-                <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
                   Cloud-hosted
                 </h3>
                 <p className="text-base text-[var(--ms-body)] mb-4">
@@ -351,7 +351,7 @@ export default function TechnicalPage() {
                 </ul>
               </div>
               <div className="p-6 rounded-lg border border-[var(--ms-border)]">
-                <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-3">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
                   On-premises
                 </h3>
                 <p className="text-base text-[var(--ms-body)] mb-4">

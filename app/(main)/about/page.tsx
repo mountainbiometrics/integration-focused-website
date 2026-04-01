@@ -76,7 +76,7 @@ export default function AboutPage() {
                 className="p-6 rounded-2xl bg-white"
                 style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
               >
-                <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
+                <h3 className="font-display text-[var(--ms-heading)] mb-2">
                   Built for operators
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 className="p-6 rounded-2xl bg-white"
                 style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
               >
-                <h3 className="font-display font-semibold text-[var(--ms-heading)] mb-2">
+                <h3 className="font-display text-[var(--ms-heading)] mb-2">
                   Built for governance
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">

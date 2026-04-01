@@ -102,7 +102,7 @@ export default function AnimatedThreeStepFlow({ steps }: AnimatedThreeStepFlowPr
             </div>
 
             {/* Content */}
-            <h3 className="font-display font-semibold text-[var(--ms-heading)] text-lg mb-2">
+            <h3 className="font-display text-[var(--ms-heading)] text-lg mb-2">
               {step.title}
             </h3>
             <p className="text-[var(--ms-body)] text-base leading-relaxed">

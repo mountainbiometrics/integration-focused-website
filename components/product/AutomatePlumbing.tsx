@@ -305,7 +305,7 @@ function StructureRow({ p }: { p: number }) {
         </g>
 
         <g opacity={audit}>
-          <rect x={CARD_W / 2 - 68} y={103} width={136} height={24} rx={12} fill="rgba(76,175,80,0.10)" stroke="#4CAF50" strokeWidth="1" />
+          <rect x={CARD_W / 2 - 80} y={103} width={160} height={24} rx={12} fill="rgba(76,175,80,0.10)" stroke="#4CAF50" strokeWidth="1" />
           <text x={CARD_W / 2} y={116} textAnchor="middle" dominantBaseline="central" fontSize="16" fontWeight="600" fill="#4CAF50">
             Audit log updated
           </text>

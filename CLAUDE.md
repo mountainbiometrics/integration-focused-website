@@ -22,28 +22,37 @@ No test framework is configured.
 ### Routing (App Router with Route Groups)
 
 - `app/(main)/` — Primary site pages (homepage, product, use-cases, technical, about, contact, cards, privacy, terms). Wrapped in Header + Footer layout.
-- `app/(microsites)/m/` — Targeted landing pages with minimal layout. Three microsites defined in `lib/microsites.ts` (`healthcare-pe`, `b2b-pe`, `cms-interop`). Dynamic routes via `[slug]/page.tsx`, plus a custom page for `cms-interop/`.
+- `app/(microsites)/m/` — Targeted landing pages with minimal layout. Microsites defined in `lib/microsites.ts` (`healthcare-pe`, `b2b-pe`, `cms-interop`). Dynamic routes via `[slug]/page.tsx`, with dedicated route directories for `healthcare-pe/`, `b2b-pe/`, and `cms-interop/`.
 
 ### Component Organization (`components/`)
 
-Organized by feature domain: `global/` (Header, Footer), `content/` (Hero, SectionHeader, bullets), `comparison/` (BeforeAfter, ThreeStepFlow), `cta/`, `forms/`, `microsites/`, `technical/`.
+Organized by feature domain: `global/` (Header, Footer), `content/` (Hero, SectionHeader, bullets), `comparison/` (BeforeAfter, ThreeStepFlow), `product/`, `animation/`, `cta/`, `forms/`, `microsites/`, `technical/`.
 
 ### Key Conventions
 
 - **Static export only** — `output: "export"` in next.config.ts. No SSR, API routes, or runtime data fetching. Images use `unoptimized: true`.
 - **Server components by default** — Only interactive components use `'use client'` (Header, forms, email gate, scroll hooks).
-- **Styling** — Tailwind v4 configured via `app/globals.css` (no tailwind.config file). Design tokens as CSS variables (`--color-primary-red`, `--color-cta-blue`, `--spacing-section`, etc.). Custom container utilities (`.container-site`, `.container-content`, `.section-spacing`).
+- **Styling** — Tailwind v4 configured via `app/globals.css` with `@theme inline` (no tailwind.config file). Design tokens use `--ms-*` CSS variables (e.g. `--ms-heading`, `--ms-body`, `--ms-accent`, `--ms-surface`). Tailwind theme maps to these via `@theme inline` block.
+- **Fonts** — Three Google Fonts loaded in root layout: Inter (sans), Instrument Serif (display), Source Serif 4 (body serif). Available as CSS variables `--font-inter`, `--font-display`, `--font-body-serif`.
 - **Microsite theming** — `MicrositeThemeWrapper` injects CSS variables (`--ms-primary`, `--ms-hero-gradient`) per microsite config.
 - **Props** — Typed with interfaces, not inline types.
 - **Icons** — lucide-react throughout.
 - **Forms** — @formspree/react integration.
 - **Path alias** — `@/*` maps to project root.
 
+### Custom Hooks (`hooks/`)
+
+- `useScrollProgress` — Scroll-based progress tracking
+- `useLoopProgress` — Looping animation progress
+
 ### Data & Config Files (`lib/`)
 
 - `lib/microsites.ts` — Microsite definitions (themes, content, white paper paths)
 - `lib/team-data.ts` — Team member data for QR card generation
-- `lib/design-tokens.ts` — Exported design tokens (mirrors CSS variables)
+
+### Design Documents (`design_docs/`)
+
+Planning and content docs for microsites (material briefs, design memos). Reference these for context when building or modifying microsites.
 
 ### Build-time Scripts
 

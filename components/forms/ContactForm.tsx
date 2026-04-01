@@ -39,7 +39,7 @@ export default function ContactForm() {
             />
           </svg>
         </div>
-        <h3 className="font-display text-xl font-semibold text-[var(--ms-heading)] mb-2">
+        <h3 className="font-display text-xl text-[var(--ms-heading)] mb-2">
           Message sent
         </h3>
         <p className="text-[var(--ms-body)]">

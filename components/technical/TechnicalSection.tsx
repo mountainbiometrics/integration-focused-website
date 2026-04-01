@@ -11,7 +11,7 @@ export default function TechnicalSection({
 }: TechnicalSectionProps) {
   return (
     <div className="space-y-4">
-      <h3 className="font-display text-xl font-semibold text-[var(--ms-heading)]">
+      <h3 className="font-display text-xl text-[var(--ms-heading)]">
         {title}
       </h3>
       <p className="text-[var(--ms-body)] leading-relaxed">

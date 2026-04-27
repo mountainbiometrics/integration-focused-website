@@ -6,9 +6,8 @@ import { getMicrositeBySlug } from '@/lib/microsites';
 import MicrositeThemeWrapper from '@/components/microsites/MicrositeThemeWrapper';
 import MicrositeEmailGate from '@/components/microsites/MicrositeEmailGate';
 import RhtpHero from '@/components/microsites/healthcare-state-rhtp/RhtpHero';
-import RhtpWhereItBreaks from '@/components/microsites/healthcare-state-rhtp/RhtpWhereItBreaks';
+import RhtpPatientJourney from '@/components/microsites/healthcare-state-rhtp/RhtpPatientJourney';
 import RhtpStateStack from '@/components/microsites/healthcare-state-rhtp/RhtpStateStack';
-import RhtpDeploymentTimeline from '@/components/microsites/healthcare-state-rhtp/RhtpDeploymentTimeline';
 import RhtpMaintenanceCurve from '@/components/microsites/healthcare-state-rhtp/RhtpMaintenanceCurve';
 import RhtpPeerStates from '@/components/microsites/healthcare-state-rhtp/RhtpPeerStates';
 import RhtpCta from '@/components/microsites/healthcare-state-rhtp/RhtpCta';
@@ -144,13 +143,12 @@ export default function HealthcareStateRhtpPage() {
         accentColor="#AC1F2D"
       />
 
-      <RhtpWhereItBreaks />
+      <RhtpPatientJourney />
 
       {/* ─── Act 02: The fix ─── */}
       <ActHeader number="02" title="The fix · Weeks, not quarters." />
 
       <RhtpStateStack />
-      <RhtpDeploymentTimeline />
       <RhtpMaintenanceCurve />
 
       {/* ─── Act 03: The decision ─── */}

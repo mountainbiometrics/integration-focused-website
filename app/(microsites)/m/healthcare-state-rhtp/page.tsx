@@ -47,33 +47,6 @@ const RETURN_CARDS = [
   },
 ] as const;
 
-function ActHeader({ number, title }: { number: string; title: string }) {
-  return (
-    <div className="bg-white">
-      <div className="container-site max-w-5xl mx-auto pt-14 md:pt-20 pb-2">
-        <div className="flex items-baseline gap-4 md:gap-6">
-          <span
-            className="font-display leading-none tabular-nums select-none"
-            style={{
-              fontSize: 'clamp(3.5rem, 8vw, 5.5rem)',
-              color: 'var(--ms-primary)',
-              opacity: 0.14,
-            }}
-            aria-hidden="true"
-          >
-            {number}
-          </span>
-          <p className="text-[12px] md:text-[13px] font-semibold uppercase tracking-[0.18em] text-[var(--ms-primary)]">
-            <span className="sr-only">Act {number}: </span>
-            {title}
-          </p>
-        </div>
-        <div className="h-px bg-[var(--ms-border)] mt-4 md:mt-5" />
-      </div>
-    </div>
-  );
-}
-
 function FounderNote() {
   return (
     <div className="container-site max-w-2xl mx-auto pt-2 pb-10 md:pb-14">
@@ -118,9 +91,6 @@ export default function HealthcareStateRhtpPage() {
 
       <RhtpHero />
 
-      {/* ─── Act 01: The gap ─── */}
-      <ActHeader number="01" title="The gap" />
-
       <ReturnCards
         heading="The structural gap states are working with."
         cards={RETURN_CARDS}
@@ -130,7 +100,7 @@ export default function HealthcareStateRhtpPage() {
 
       <MeaningBeat
         badge="Why it matters"
-        heading="Transport is solved. Semantics is not."
+        heading="The record moves through the HIE. The meaning does not travel with it."
         body={
           <p>
             Forty percent of local health departments have no informatics staff.
@@ -138,21 +108,15 @@ export default function HealthcareStateRhtpPage() {
             They failed at reporting&nbsp;it.
           </p>
         }
-        closer="The record moves through the HIE. The meaning does not travel with&nbsp;it."
+        closer="That gap is what Technical Factor F.2 asks states to&nbsp;close."
         accentRgb="172,31,45"
         accentColor="#AC1F2D"
       />
 
       <RhtpPatientJourney />
 
-      {/* ─── Act 02: The fix ─── */}
-      <ActHeader number="02" title="The fix · Weeks, not quarters." />
-
       <RhtpStateStack />
       <RhtpMaintenanceCurve />
-
-      {/* ─── Act 03: The decision ─── */}
-      <ActHeader number="03" title="The decision" />
 
       <RhtpPeerStates />
 

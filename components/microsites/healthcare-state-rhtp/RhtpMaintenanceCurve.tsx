@@ -29,11 +29,11 @@ export default function RhtpMaintenanceCurve() {
   const lineAnim = remap(progress, 0.15, 0.75);
 
   const svgWidth = 360;
-  const svgHeight = 160;
-  const xStart = 44;
+  const svgHeight = 140;
+  const xStart = 36;
   const xEnd = 340;
-  const yBottom = 130;
-  const yTop = 18;
+  const yBottom = 120;
+  const yTop = 16;
 
   const drawX = xStart + lineAnim * (xEnd - xStart);
 
@@ -60,9 +60,6 @@ export default function RhtpMaintenanceCurve() {
       ? TRADITIONAL_BASE
       : lerpHex(TRADITIONAL_BASE, TRADITIONAL_HIGH, remap(lineAnim, 0.5, 1.0));
 
-  const showAnnotation = lineAnim > 0.7;
-  const annotationFade = remap(lineAnim, 0.7, 0.95);
-
   return (
     <section
       ref={sectionRef}
@@ -83,13 +80,12 @@ export default function RhtpMaintenanceCurve() {
         <h2 className="font-display text-[1.5rem] md:text-[2rem] leading-[1.12] text-[var(--ms-heading)] mb-3">
           Traditional integration grows. Mapping-artifact architecture doesn&rsquo;t.
         </h2>
-        <p className="text-base md:text-lg text-[var(--ms-body)] mb-10 md:mb-14 max-w-2xl">
-          Traditional integration grows with every new facility onboarded and every annual
-          specification change. Mapping-artifact architecture grows with neither.
+        <p className="text-base md:text-lg text-[var(--ms-body)] mb-10 md:mb-14">
+          It grows with every new facility onboarded and every annual specification change.
         </p>
 
         <div
-          className="bg-white rounded-2xl p-6 md:p-10"
+          className="bg-white rounded-2xl p-6 md:p-8"
           style={{
             opacity: cardEntrance,
             transform: `translateY(${(1 - cardEntrance) * 24}px)`,
@@ -99,7 +95,7 @@ export default function RhtpMaintenanceCurve() {
           <div className="flex items-center justify-center">
             <svg
               viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-              className="w-full h-auto"
+              className="w-full max-w-[588px] h-auto"
               role="img"
               aria-label="Maintenance burden growth chart"
             >
@@ -108,11 +104,11 @@ export default function RhtpMaintenanceCurve() {
                 x={14}
                 y={(yTop + yBottom) / 2}
                 fill="var(--ms-muted)"
-                fontSize="6"
+                fontSize="11"
                 textAnchor="middle"
                 transform={`rotate(-90, 14, ${(yTop + yBottom) / 2})`}
               >
-                annual reporting hours (relative)
+                hrs / yr
               </text>
 
               {/* X axis baseline */}
@@ -126,11 +122,11 @@ export default function RhtpMaintenanceCurve() {
               />
 
               {/* X axis labels */}
-              <text x={xStart} y={svgHeight - 4} fill="var(--ms-muted)" fontSize="6" textAnchor="start">
-                25 facilities (1×)
+              <text x={xStart} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="11" textAnchor="start">
+                25 facilities
               </text>
-              <text x={xEnd} y={svgHeight - 4} fill="var(--ms-muted)" fontSize="6" textAnchor="end">
-                all participating rural facilities
+              <text x={xEnd} y={svgHeight - 2} fill="var(--ms-muted)" fontSize="11" textAnchor="end">
+                all rural facilities
               </text>
 
               {/* Conventional cubic curve */}
@@ -157,31 +153,15 @@ export default function RhtpMaintenanceCurve() {
                 />
               )}
 
-              {/* Annotation */}
-              {showAnnotation && (
-                <g style={{ opacity: annotationFade }}>
-                  <text
-                    x={xStart + 8}
-                    y={yBottom - 6}
-                    fill="var(--ms-body)"
-                    fontSize="6"
-                    fontWeight="600"
-                    textAnchor="start"
-                  >
-                    238 hrs/FQHC × 25 FQHCs ≈ 6,000 hrs baseline
-                  </text>
-                </g>
-              )}
-
               {/* Legend */}
               {lineAnim > 0.6 && (
                 <>
-                  <line x1={xEnd - 90} y1={yTop + 5} x2={xEnd - 78} y2={yTop + 5} stroke={convColor} strokeWidth="2" />
-                  <text x={xEnd - 74} y={yTop + 7} fill={convColor} fontSize="6">
+                  <line x1={xStart} y1={yTop + 6} x2={xStart + 20} y2={yTop + 6} stroke={convColor} strokeWidth="2" />
+                  <text x={xStart + 24} y={yTop + 10} fill={convColor} fontSize="10">
                     Traditional
                   </text>
-                  <line x1={xEnd - 90} y1={yTop + 14} x2={xEnd - 78} y2={yTop + 14} stroke={FOUNDRY_COLOR} strokeWidth="2" />
-                  <text x={xEnd - 74} y={yTop + 16} fill={FOUNDRY_COLOR} fontSize="6">
+                  <line x1={xStart} y1={yTop + 20} x2={xStart + 20} y2={yTop + 20} stroke={FOUNDRY_COLOR} strokeWidth="2" />
+                  <text x={xStart + 24} y={yTop + 24} fill={FOUNDRY_COLOR} fontSize="10">
                     Data Foundry
                   </text>
                 </>
@@ -189,9 +169,6 @@ export default function RhtpMaintenanceCurve() {
             </svg>
           </div>
 
-          <p className="text-sm text-[var(--ms-muted)] mt-4 text-center italic">
-            Illustrative growth, not a claimed MTN result.
-          </p>
         </div>
       </div>
     </section>

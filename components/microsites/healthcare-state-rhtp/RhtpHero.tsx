@@ -32,14 +32,11 @@ export default function RhtpHero() {
         </p>
 
         <h1 className="font-display text-[2rem] md:text-[3.5rem] leading-[1.06] text-[var(--ms-heading)] mb-7 md:mb-9">
-          Federal reporting that assembles itself from the schemas you already&nbsp;own.
+          Transport is solved. Semantics is&nbsp;not.
         </h1>
 
         <p className="text-base md:text-lg text-[var(--ms-body)] max-w-xl mx-auto">
-          Six full-time weeks per FQHC, every year &mdash; just for&nbsp;UDS.
-        </p>
-        <p className="text-[11px] md:text-xs text-[var(--ms-muted)] mt-1.5">
-          HRSA OMB&nbsp;0915-0193
+          Make your rural network mean the same thing across four EHRs and a pharmacy&nbsp;system.
         </p>
 
         <div className="mt-9 md:mt-11">

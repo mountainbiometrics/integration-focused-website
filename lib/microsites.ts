@@ -208,10 +208,10 @@ const microsites: MicrositeConfig[] = [
   },
   {
     slug: 'healthcare-state-rhtp',
-    title: 'MTN | Rural Data Infrastructure in Weeks, Not Quarters',
+    title: 'MTN | Transport is solved. Semantics is not.',
     metaDescription:
       'Hit your RHTP F.2 milestones before the September 30, 2027 obligation deadline. Semantic normalization between your HIE and your analytics stack.',
-    headline: 'Rural Data Infrastructure in Weeks, Not Quarters',
+    headline: 'Transport is solved. Semantics is not.',
     subheadline:
       'Hit your RHTP F.2 milestones before the September 30, 2027 obligation deadline. The transport layer is solved. The semantic layer is not.',
     heroStat: '238 hrs',

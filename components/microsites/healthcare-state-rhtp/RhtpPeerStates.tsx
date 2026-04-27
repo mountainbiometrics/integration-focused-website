@@ -81,16 +81,18 @@ const GAP = 4;
 const VB_W = COLS * (TILE + GAP);
 const VB_H = ROWS * (TILE + GAP);
 
-export default function RhtpPeerStates() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const progress = useScrollProgress(sectionRef);
+const SORTED_TILES = [...STATE_GRID].sort((a, b) => a.row - b.row || a.col - b.col);
+const TILE_ORDER = new Map(SORTED_TILES.map((t, i) => [t.code, i]));
+const TILE_COUNT = STATE_GRID.length;
+const STAGGER_SPAN = 0.95;
+const TILE_WINDOW = 0.13;
 
-  const mapEntrance = remap(progress, 0, 0.20);
-  const highlightFade = remap(progress, 0.10, 0.40);
+export default function RhtpPeerStates() {
+  const mapRef = useRef<HTMLDivElement>(null);
+  const progress = useScrollProgress(mapRef, { startVh: 0.60, endVh: 0.10 });
 
   return (
     <section
-      ref={sectionRef}
       className="py-20 md:py-28 lg:py-32"
       style={{ backgroundColor: 'var(--ms-surface)' }}
     >
@@ -106,17 +108,14 @@ export default function RhtpPeerStates() {
           Where the conversation is happening
         </span>
         <h2 className="font-display text-[1.5rem] md:text-[2rem] leading-[1.12] text-[var(--ms-heading)] mb-10 md:mb-14">
-          Eight states are already building this.
+          Eight states have put public dollars against this gap.
         </h2>
 
         {/* US tile-grid map */}
         <div
+          ref={mapRef}
           className="bg-white rounded-2xl p-5 md:p-8 mb-8"
-          style={{
-            boxShadow: 'var(--ms-shadow-card-sm)',
-            opacity: mapEntrance,
-            transform: `translateY(${(1 - mapEntrance) * 12}px)`,
-          }}
+          style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
         >
           <svg
             viewBox={`0 0 ${VB_W} ${VB_H}`}
@@ -129,9 +128,19 @@ export default function RhtpPeerStates() {
               const y = s.row * (TILE + GAP);
               const fill = s.highlight ? 'var(--ms-primary)' : '#E2E2EA';
               const textFill = s.highlight ? '#FFFFFF' : '#9A9AAA';
-              const opacity = s.highlight ? highlightFade : 0.55;
+
+              const idx = TILE_ORDER.get(s.code) ?? 0;
+              const tileStart = (idx / Math.max(1, TILE_COUNT - 1)) * (STAGGER_SPAN - TILE_WINDOW);
+              const tEntrance = remap(progress, tileStart, tileStart + TILE_WINDOW);
+              const finalOpacity = s.highlight ? 1 : 0.55;
+              const opacity = tEntrance * finalOpacity;
+
               return (
-                <g key={s.code} opacity={opacity}>
+                <g
+                  key={s.code}
+                  opacity={opacity}
+                  style={{ transform: `translateY(${(1 - tEntrance) * 4}px)` }}
+                >
                   <rect
                     x={x}
                     y={y}

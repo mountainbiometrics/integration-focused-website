@@ -56,11 +56,10 @@ function FounderNote() {
       >
         <p className="text-base md:text-lg text-[var(--ms-heading)] leading-relaxed">
           Rural communities are owed health data infrastructure that doesn&rsquo;t require
-          an informaticist their state can&rsquo;t hire. The semantic layer is the only
-          piece left to automate &mdash; and it&rsquo;s the piece we&nbsp;built.
+          an informaticist their state can&rsquo;t hire. We&rsquo;re building it.
         </p>
         <p className="text-sm text-[var(--ms-body-light)] mt-4">
-          &mdash; Warren Pettine, MD, Founder &amp; CEO &middot; University of Utah Medical
+          &mdash; Warren Pettine, MD, Founder &amp; CEO MTN &middot; University of Utah Medical
           Machine Intelligence Lab
         </p>
       </div>
@@ -89,53 +88,55 @@ export default function HealthcareStateRhtpPage() {
         </div>
       </header>
 
-      <RhtpHero />
+      <div className="[&>section]:!py-10 md:[&>section]:!py-14 lg:[&>section]:!py-16">
+        <RhtpHero />
 
-      <ReturnCards
-        heading="The structural gap states are working with."
-        cards={RETURN_CARDS}
-        accentColor="#AC1F2D"
-        accentRgb="172,31,45"
-      />
+        <ReturnCards
+          heading="The structural gap states are working with."
+          cards={RETURN_CARDS}
+          accentColor="#AC1F2D"
+          accentRgb="172,31,45"
+        />
 
-      <MeaningBeat
-        badge="Why it matters"
-        heading="The record moves through the HIE. The meaning does not travel with it."
-        body={
-          <p>
-            Forty percent of local health departments have no informatics staff.
-            The 195 rural hospitals that have closed since 2005 didn&rsquo;t fail at care.
-            They failed at reporting&nbsp;it.
-          </p>
-        }
-        closer="That gap is what Technical Factor F.2 asks states to&nbsp;close."
-        accentRgb="172,31,45"
-        accentColor="#AC1F2D"
-      />
+        <MeaningBeat
+          badge="Why it matters"
+          heading="The record moves through the HIE. The meaning does not travel with it."
+          body={
+            <p>
+              Forty percent of local health departments have no informatics staff.
+              The 195 rural hospitals that have closed since 2005 didn&rsquo;t fail at care.
+              They failed at reporting&nbsp;it.
+            </p>
+          }
+          closer="That gap is what Technical Factor F.2 asks states to&nbsp;close."
+          accentRgb="172,31,45"
+          accentColor="#AC1F2D"
+        />
 
-      <RhtpPatientJourney />
+        <RhtpPatientJourney />
 
-      <RhtpStateStack />
-      <RhtpMaintenanceCurve />
+        <RhtpStateStack />
+        <RhtpMaintenanceCurve />
 
-      <RhtpPeerStates />
+        <RhtpPeerStates />
 
-      <DarkReveal
-        glowColor="rgba(172,31,45,0.14)"
-        setupText={
-          <>
-            Today your F.2 report is reconstructed by hand across four EHRs and a
-            pharmacy&nbsp;system.
-          </>
-        }
-        revealText={
-          <>Tomorrow it assembles itself from the schemas you already&nbsp;own.</>
-        }
-        punchlineText={<>Federal reporting stops being a fire&nbsp;drill.</>}
-        punchlineColor="#F06070"
-      />
+        <DarkReveal
+          glowColor="rgba(172,31,45,0.14)"
+          setupText={
+            <>
+              Today your F.2 report is reconstructed by hand across four EHRs and a
+              pharmacy&nbsp;system.
+            </>
+          }
+          revealText={
+            <>Tomorrow it assembles itself from the schemas you already&nbsp;own.</>
+          }
+          punchlineText={<>Federal reporting stops being a fire&nbsp;drill.</>}
+          punchlineColor="#F06070"
+        />
 
-      <RhtpCta />
+        <RhtpCta />
+      </div>
 
       {/* Email-gated download with founder note above */}
       <FounderNote />

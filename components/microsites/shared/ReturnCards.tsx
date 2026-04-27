@@ -23,7 +23,7 @@ export default function ReturnCards({
   accentRgb,
 }: ReturnCardsProps) {
   const sectionRef = useRef<HTMLElement>(null);
-  const progress = useScrollProgress(sectionRef);
+  const progress = useScrollProgress(sectionRef, { startVh: 0.45, endVh: 0.05 });
 
   return (
     <section
@@ -48,7 +48,7 @@ export default function ReturnCards({
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {cards.map((card, i) => {
-            const cardProgress = remap(progress, 0.05 + i * 0.12, 0.30 + i * 0.12);
+            const cardProgress = remap(progress, 0.05 + i * 0.18, 0.30 + i * 0.18);
             return (
               <div
                 key={card.label}

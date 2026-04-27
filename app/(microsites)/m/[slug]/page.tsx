@@ -22,7 +22,13 @@ const iconMap: Record<string, LucideIcon> = {
 export function generateStaticParams() {
   // These slugs have dedicated custom pages at /m/<slug>/page.tsx
   const slugs = getAllMicrositeSlugs()
-    .filter((slug) => slug !== 'cms-interop' && slug !== 'healthcare-pe' && slug !== 'b2b-pe')
+    .filter(
+      (slug) =>
+        slug !== 'cms-interop' &&
+        slug !== 'healthcare-pe' &&
+        slug !== 'b2b-pe' &&
+        slug !== 'healthcare-state-rhtp',
+    )
     .map((slug) => ({ slug }));
 
   // Next.js output:"export" fails when this returns [] (upstream bug).

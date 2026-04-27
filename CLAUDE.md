@@ -15,14 +15,14 @@ npm run lint         # ESLint (Next.js core-web-vitals + TypeScript)
 npm run generate-cards  # Generate VCF contact files + QR codes to public/cards/
 ```
 
-No test framework is configured.
+No test framework is configured. The validation surface is `npm run lint` + `npm run build` + manual browser verification.
 
 ## Architecture
 
 ### Routing (App Router with Route Groups)
 
 - `app/(main)/` — Primary site pages (homepage, product, use-cases, technical, about, contact, cards, privacy, terms). Wrapped in Header + Footer layout.
-- `app/(microsites)/m/` — Targeted landing pages with minimal layout. Microsites defined in `lib/microsites.ts` (`healthcare-pe`, `b2b-pe`, `cms-interop`). Dynamic routes via `[slug]/page.tsx`, with dedicated route directories for `healthcare-pe/`, `b2b-pe/`, and `cms-interop/`.
+- `app/(microsites)/m/` — Targeted landing pages with minimal layout. Microsites defined in `lib/microsites.ts` (`healthcare-pe`, `b2b-pe`, `cms-interop`). Dynamic routes via `[slug]/page.tsx`, with dedicated route directories for `healthcare-pe/`, `b2b-pe/`, and `cms-interop/`. Because the build is a static export, adding a microsite requires both updating `lib/microsites.ts` (the data source for `getAllMicrositeSlugs` / `generateStaticParams`) and creating any custom page directory if the microsite needs bespoke layout beyond the dynamic `[slug]` template.
 
 ### Component Organization (`components/`)
 
@@ -32,9 +32,11 @@ Organized by feature domain: `global/` (Header, Footer), `content/` (Hero, Secti
 
 - **Static export only** — `output: "export"` in next.config.ts. No SSR, API routes, or runtime data fetching. Images use `unoptimized: true`.
 - **Server components by default** — Only interactive components use `'use client'` (Header, forms, email gate, scroll hooks).
-- **Styling** — Tailwind v4 configured via `app/globals.css` with `@theme inline` (no tailwind.config file). Design tokens use `--ms-*` CSS variables (e.g. `--ms-heading`, `--ms-body`, `--ms-accent`, `--ms-surface`). Tailwind theme maps to these via `@theme inline` block.
-- **Fonts** — Three Google Fonts loaded in root layout: Inter (sans), Instrument Serif (display), Source Serif 4 (body serif). Available as CSS variables `--font-inter`, `--font-display`, `--font-body-serif`.
-- **Microsite theming** — `MicrositeThemeWrapper` injects CSS variables (`--ms-primary`, `--ms-hero-gradient`) per microsite config.
+- **Styling** — Tailwind v4 configured via `app/globals.css` with `@theme inline` (no tailwind.config file). Design tokens use `--ms-*` CSS variables: `--ms-heading` (primary text), `--ms-body` / `--ms-body-light` (secondary), `--ms-muted`, `--ms-accent` / `--ms-accent-hover` (CTAs, brand red), `--ms-surface` / `--ms-surface-warm`, plus shadows `--ms-shadow-card`, `--ms-shadow-hero`, `--ms-shadow-btn`. Tailwind theme maps to these via `@theme inline` block.
+- **Layout utilities** — Defined in `globals.css`: `.container-site` (responsive max-width with breakpoints up to 2200px), `.container-content` (768px reading column), `.section-spacing` / `.subsection-spacing` (responsive vertical padding), `.shadow-card-hover` (CSS-only shadow lift). Prefer these over hand-rolled paddings/widths.
+- **Typography** — `h1`–`h6` and `p` get base styles via `@layer base` in `globals.css`: headings auto-apply Instrument Serif with `clamp()`-scaled font sizes, so do NOT add `font-display` or size classes to headings unless intentionally overriding. Body default is Inter at 1.125rem, weight 300, line-height 1.6.
+- **Fonts** — Three Google Fonts loaded in root layout: Inter (`--font-inter`, used as `--font-sans`), Instrument Serif (`--font-display`, used by all headings), Source Serif 4 (`--font-body-serif`, opt-in only).
+- **Microsite theming** — `MicrositeThemeWrapper` injects per-microsite CSS variables (`--ms-primary`, `--ms-primary-hover`, `--ms-hero-gradient`) from each microsite's `theme` config; the global `--ms-accent` red stays unchanged.
 - **Props** — Typed with interfaces, not inline types.
 - **Icons** — lucide-react throughout.
 - **Forms** — @formspree/react integration.
@@ -60,4 +62,4 @@ Planning and content docs for microsites (material briefs, design memos). Refere
 
 ### Deployment
 
-Static files in `out/` deployed via Cloudflare Workers (`wrangler.jsonc`).
+Static files in `out/` deployed via Cloudflare Workers (`wrangler.jsonc` — `assets.directory: "./out"`). White paper PDFs live in `public/papers/` and are referenced by `filePath` in `lib/microsites.ts`; adding a paper means dropping the file into `public/papers/` and wiring it into the microsite config.

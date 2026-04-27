@@ -206,6 +206,36 @@ const microsites: MicrositeConfig[] = [
     utmCampaign: 'cms-interop-wp',
     brandTagline: 'Full data visibility during consolidation and system change.',
   },
+  {
+    slug: 'healthcare-state-rhtp',
+    title: 'MTN | Rural Data Infrastructure in Weeks, Not Quarters',
+    metaDescription:
+      'Hit your RHTP F.2 milestones before the September 30, 2027 obligation deadline. Semantic normalization between your HIE and your analytics stack.',
+    headline: 'Rural Data Infrastructure in Weeks, Not Quarters',
+    subheadline:
+      'Hit your RHTP F.2 milestones before the September 30, 2027 obligation deadline. The transport layer is solved. The semantic layer is not.',
+    heroStat: '238 hrs',
+    heroStatCaption:
+      'per FQHC per year of UDS reporting alone (HRSA OMB 0915-0193) — about six full-time weeks',
+    papers: [
+      {
+        title: 'Rural Data Infrastructure in Weeks, Not Quarters — Executive Edition',
+        subtitle: 'Hitting Your RHTP F.2 Milestones Before the 2027 Deadline',
+        filePath: '/papers/mtn-wp-004-exec.pdf',
+        fileSize: '3.5 MB',
+      },
+    ],
+    formspreeId: 'xaqbaljo',
+    ctaLabel: 'Download the executive paper',
+    theme: {
+      primaryColor: '#AC1F2D',
+      primaryColorHover: '#8B1924',
+      heroGradientColor: '#F5E0E2',
+    },
+    sections: [],
+    utmCampaign: 'healthcare-state-rhtp-wp',
+    brandTagline: 'Semantic normalization between your HIE and your analytics stack.',
+  },
 ];
 
 export function getMicrositeBySlug(slug: string): MicrositeConfig | undefined {

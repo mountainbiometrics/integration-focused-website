@@ -240,7 +240,7 @@ const microsites: MicrositeConfig[] = [
     slug: 'healthcare-ma-alliance',
     title: 'MTN | Compounding IP for Healthcare M&A',
     metaDescription:
-      'Turn integration labor into compounding firm IP. A productized accelerator for healthcare M&A practices integrating PE-backed bolt-ons.',
+      'Turn integration labor into compounding firm IP. A productized accelerator for healthcare M&A practices integrating bolt-ons.',
     headline: 'Turn Integration Labor into Compounding IP',
     heroStat: '6\u20138 wk \u2192 1\u20132 wk',
     heroStatCaption: 'Encode your expertise. Compress engagement timelines',

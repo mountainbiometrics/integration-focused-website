@@ -15,7 +15,7 @@ export default function SolutionStats() {
         </span>
         <div className="mb-5 md:mb-8">
           <h2 className="text-xl md:text-2xl font-bold text-[var(--ms-heading)]">
-            What compresses, and compounds.
+            What compresses and compounds.
           </h2>
           <div className="w-10 h-0.5 bg-[var(--ms-primary)] mt-2 rounded-full" />
         </div>

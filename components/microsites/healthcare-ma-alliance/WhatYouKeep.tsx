@@ -2,7 +2,7 @@ import { Check, Shield } from 'lucide-react';
 
 const ITEMS = [
   {
-    label: 'Annotation conventions, your firm\u2019s house style, encoded.',
+    label: 'Annotation conventions encoded as your firm\u2019s house style.',
     detail:
       'Versioned artifacts with confidence scores. The next engagement starts pre-loaded with your firm\u2019s accumulated conventions.',
   },

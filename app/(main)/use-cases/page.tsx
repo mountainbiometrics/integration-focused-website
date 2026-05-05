@@ -31,7 +31,7 @@ const micrositeCards = [
     headline: 'Turn integration labor into compounding IP.',
     stat: '6\u20138 wk \u2192 1\u20132 wk',
     description:
-      'How a productized accelerator turns the integration labor on bolt-ons into firm IP that compounds across every engagement.',
+      'How a productized accelerator turns integration labor on bolt-ons into firm IP that compounds across every engagement.',
     href: '/m/healthcare-ma-alliance',
   },
   {

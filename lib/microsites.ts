@@ -270,8 +270,8 @@ const microsites: MicrositeConfig[] = [
     metaDescription:
       'Turn integration labor into compounding firm IP. A productized accelerator for B2B SaaS M&A practices integrating bolt-ons.',
     headline: 'Turn Integration Labor into Compounding IP',
-    heroStat: '6–8 wk → 1–2 wk',
-    heroStatCaption: 'Encode your expertise. Compress engagement timelines',
+    heroStat: '12 artifacts in 5 deals',
+    heroStatCaption: 'Captured every engagement. Reused on the next deal.',
     subheadline: 'Your firm’s methodology as portable IP.',
     papers: [
       {

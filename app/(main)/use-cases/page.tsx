@@ -35,6 +35,14 @@ const micrositeCards = [
     href: '/m/healthcare-ma-alliance',
   },
   {
+    badge: 'B2B SaaS M&A practices',
+    headline: 'Your firm\u2019s accelerator. Faster every engagement.',
+    stat: '12 artifacts in 5 deals',
+    description:
+      'How a productized accelerator captures the mappings, methodology, and canonical concepts your senior consultants build on B2B SaaS bolt-ons \u2014 and reuses them on every next deal.',
+    href: '/m/b2b-saas-ma-alliance',
+  },
+  {
     badge: 'Rural health programs',
     headline: 'The transport layer is solved. The semantic layer is not.',
     stat: 'Sept 30, 2027',

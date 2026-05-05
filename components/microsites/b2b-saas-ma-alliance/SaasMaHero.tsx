@@ -43,10 +43,10 @@ export default function SaasMaHero() {
             style={{ boxShadow: 'var(--ms-shadow-hero)' }}
           >
             <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#AC1F2D] tabular-nums whitespace-nowrap">
-              6&ndash;8 wk &rarr; 1&ndash;2 wk
+              12 artifacts in 5 deals
             </p>
             <p className="text-base text-[var(--ms-body)] mt-1.5 text-center">
-              Encode your expertise. Compress engagement&nbsp;timelines
+              Captured every engagement. Reused on the next&nbsp;deal.
             </p>
           </div>
         </div>

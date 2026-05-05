@@ -48,13 +48,15 @@ export default function HealthcareMaAlliancePage() {
         </div>
       </header>
 
-      <MaaHero />
-      <EngagementAmnesia />
-      <EhrTangle />
-      <CompoundingCurve />
-      <SolutionStats />
-      <IpLibrary />
-      <WhatYouKeep />
+      <div className="[&>section]:!py-10 md:[&>section]:!py-14 lg:[&>section]:!py-16">
+        <MaaHero />
+        <EngagementAmnesia />
+        <EhrTangle />
+        <CompoundingCurve />
+        <SolutionStats />
+        <IpLibrary />
+        <WhatYouKeep />
+      </div>
 
       {/* Email-gated download */}
       <section

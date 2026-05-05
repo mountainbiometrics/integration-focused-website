@@ -22,7 +22,7 @@ No test framework is configured. The validation surface is `npm run lint` + `npm
 ### Routing (App Router with Route Groups)
 
 - `app/(main)/` — Primary site pages (homepage, product, use-cases, technical, about, contact, cards, privacy, terms). Wrapped in Header + Footer layout.
-- `app/(microsites)/m/` — Targeted landing pages with minimal layout. Microsites defined in `lib/microsites.ts` (`healthcare-pe`, `b2b-pe`, `cms-interop`). Dynamic routes via `[slug]/page.tsx`, with dedicated route directories for `healthcare-pe/`, `b2b-pe/`, and `cms-interop/`. Because the build is a static export, adding a microsite requires both updating `lib/microsites.ts` (the data source for `getAllMicrositeSlugs` / `generateStaticParams`) and creating any custom page directory if the microsite needs bespoke layout beyond the dynamic `[slug]` template.
+- `app/(microsites)/m/` — Targeted landing pages with minimal layout. Microsites defined in `lib/microsites.ts` (current set: `healthcare-pe`, `b2b-pe`, `cms-interop`, `healthcare-ma-alliance`, `healthcare-state-rhtp`, `b2b-saas-ma-alliance`). Dynamic routes via `[slug]/page.tsx`, with sibling directories for any microsite that needs bespoke layout beyond the dynamic template. Because the build is a static export, adding a microsite requires updating `lib/microsites.ts` (the data source for `getAllMicrositeSlugs` / `generateStaticParams`) and creating a custom page directory only if the dynamic `[slug]` template is insufficient.
 
 ### Component Organization (`components/`)
 

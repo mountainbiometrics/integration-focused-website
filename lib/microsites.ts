@@ -264,6 +264,34 @@ const microsites: MicrositeConfig[] = [
     utmCampaign: 'healthcare-ma-alliance-wp',
     brandTagline: 'A productized accelerator for healthcare M&A integration.',
   },
+  {
+    slug: 'b2b-saas-ma-alliance',
+    title: 'MTN | Compounding IP for B2B SaaS M&A',
+    metaDescription:
+      'Turn integration labor into compounding firm IP. A productized accelerator for B2B SaaS M&A practices integrating bolt-ons.',
+    headline: 'Turn Integration Labor into Compounding IP',
+    heroStat: '6–8 wk → 1–2 wk',
+    heroStatCaption: 'Encode your expertise. Compress engagement timelines',
+    subheadline: 'Your firm’s methodology as portable IP.',
+    papers: [
+      {
+        title: 'Compounding IP for B2B SaaS M&A — Executive Briefing',
+        subtitle: 'For M&A practice leaders, engagement partners, and integration architects',
+        filePath: '/papers/mtn-wp-006-exec.pdf',
+        fileSize: '1.6 MB',
+      },
+    ],
+    formspreeId: 'xaqbaljo',
+    ctaLabel: 'Download the Briefing',
+    theme: {
+      primaryColor: '#AC1F2D',
+      primaryColorHover: '#8B1924',
+      heroGradientColor: '#F5E0E2',
+    },
+    sections: [],
+    utmCampaign: 'b2b-saas-ma-alliance-wp',
+    brandTagline: 'A productized accelerator for B2B SaaS M&A integration.',
+  },
 ];
 
 export function getMicrositeBySlug(slug: string): MicrositeConfig | undefined {

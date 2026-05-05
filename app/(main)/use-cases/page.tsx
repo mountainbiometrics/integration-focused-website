@@ -15,7 +15,7 @@ const micrositeCards = [
     headline: 'Five clinics. Five systems. No answers.',
     stat: '$200K–$500K/mo',
     description:
-      'How faster integration changes the fund math for PE-backed healthcare platforms.',
+      'How faster integration changes the fund math for healthcare platforms.',
     href: '/m/healthcare-pe',
   },
   {
@@ -25,6 +25,14 @@ const micrositeCards = [
     description:
       'Why compounding integration costs are quietly destroying rollup returns.',
     href: '/m/b2b-pe',
+  },
+  {
+    badge: 'Healthcare M&A practices',
+    headline: 'Turn integration labor into compounding IP.',
+    stat: '6\u20138 wk \u2192 1\u20132 wk',
+    description:
+      'How a productized accelerator turns the integration labor on bolt-ons into firm IP that compounds across every engagement.',
+    href: '/m/healthcare-ma-alliance',
   },
   {
     badge: 'Rural health programs',

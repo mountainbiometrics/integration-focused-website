@@ -236,6 +236,34 @@ const microsites: MicrositeConfig[] = [
     utmCampaign: 'healthcare-state-rhtp-wp',
     brandTagline: 'Semantic normalization between your HIE and your analytics stack.',
   },
+  {
+    slug: 'healthcare-ma-alliance',
+    title: 'MTN | Compounding IP for Healthcare M&A',
+    metaDescription:
+      'Turn integration labor into compounding firm IP. A productized accelerator for healthcare M&A practices integrating PE-backed bolt-ons.',
+    headline: 'Turn Integration Labor into Compounding IP',
+    heroStat: '6\u20138 wk \u2192 1\u20132 wk',
+    heroStatCaption: 'Encode your expertise. Compress engagement timelines',
+    subheadline: 'Your firm\u2019s methodology as portable IP.',
+    papers: [
+      {
+        title: 'Compounding IP for Healthcare M&A \u2014 Executive Briefing',
+        subtitle: 'For M&A practice leaders, engagement partners, and integration architects',
+        filePath: '/papers/mtn-wp-005-exec.pdf',
+        fileSize: '3.8 MB',
+      },
+    ],
+    formspreeId: 'xaqbaljo',
+    ctaLabel: 'Download the Briefing',
+    theme: {
+      primaryColor: '#AC1F2D',
+      primaryColorHover: '#8B1924',
+      heroGradientColor: '#F5E0E2',
+    },
+    sections: [],
+    utmCampaign: 'healthcare-ma-alliance-wp',
+    brandTagline: 'A productized accelerator for healthcare M&A integration.',
+  },
 ];
 
 export function getMicrositeBySlug(slug: string): MicrositeConfig | undefined {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/content/Hero';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
+import FounderCard from '@/components/content/FounderCard';
 
 export const metadata: Metadata = {
   title: 'About | MTN',
@@ -14,7 +15,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         headline="Why we built the MTN Data Foundry"
-        subheadline="We built the Foundry to solve our own integration challenges. Then we realized it could help everyone else facing the same problem."
+        subheadline="We built the Foundry to make our own AI deployments work in healthcare. Then we realized everyone needs it."
         variant="internal"
         ctaText=""
         ctaHref=""
@@ -42,6 +43,9 @@ export default function AboutPage() {
                 are anything but stable. We needed infrastructure that
                 expected change instead of breaking from it.
               </p>
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                We weren&apos;t the first to hit it. We won&apos;t be the last.
+              </p>
             </div>
           </div>
         </div>
@@ -62,12 +66,8 @@ export default function AboutPage() {
                 from previous mappings, and adapt when sources changed.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                The more we used it, the more we realized every healthcare
-                organization facing consolidation or multi-site scaling was
-                hitting the same walls. That&apos;s why we&apos;re offering it
-                as a standalone product. The same technology built to
-                accelerated our deployments can help others close their data
-                visibility gaps.
+                The same technology works wherever fragmented data systems need
+                to operate as one.
               </p>
             </div>
 
@@ -80,9 +80,9 @@ export default function AboutPage() {
                   Built for operators
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">
-                  The Foundry is designed for people who need visibility now,
-                  not perfect data eventually. It prioritizes operational
-                  continuity over architectural elegance.
+                  Designed for people who need visibility now, not perfect data
+                  eventually. Operational continuity over architectural
+                  elegance.
                 </p>
               </div>
               <div
@@ -94,7 +94,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">
                   Healthcare requires audit trails, human oversight, and
-                  deterministic behavior. The Foundry is designed to satisfy
+                  deterministic behavior. The Foundry was designed to satisfy
                   compliance requirements, not work around them.
                 </p>
               </div>
@@ -103,20 +103,80 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="section-spacing bg-[var(--ms-surface-warm)]">
+      {/* Why now */}
+      <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
-              The team
+              Why now
             </h2>
-            <p className="text-lg text-[var(--ms-body)] leading-relaxed mb-8">
-              We&apos;re an unusual combination: ML scientists who understand
-              complex health data, physicians who understand data infrastructure, and software engineers who productized it. We built
-              this technology because we needed it ourselves. We&apos;re
-              now making it available to others facing the same challenges.
+            <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+              When we hit the wall, we hit it alone. Healthcare AI was a niche,
+              and the data problem felt like ours alone. That&apos;s no longer
+              true. New AI deployment vehicles launched this year are about to
+              discover what we discovered: AI deployment in healthcare fails on
+              data, not on models. The Foundry is the layer that lets it work.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="section-spacing bg-[var(--ms-surface-warm)]">
+        <div className="container-site">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
+              Technical leadership
+            </h2>
+            <p className="text-lg text-[var(--ms-body)] leading-relaxed mb-10">
+              An unusual combination: ML scientists who understand healthcare
+              data, physicians who understand data infrastructure, and engineers
+              who turn it into product. Our work has been published in Nature
+              journals, PNAS, JMIR, Chest, PLoS Computational Biology, The Royal
+              Society, and other leading venues.
             </p>
 
+            <div className="space-y-8">
+              <FounderCard
+                name="Warren Pettine, MD"
+                title="Co-Founder & CEO"
+                imagePath="/images/team/pettine_headshot.jpg"
+                linkedInUrl="https://www.linkedin.com/in/warren-pettine/"
+                bio="A machine learning scientist and software builder who has wrestled the data engineering problem for 17 years. Trained in medicine at Colorado and computational neuroscience at Harvard, Stanford, NYU, and Yale. He co-founded MTN in 2023 to address the under-utilization of data in healthcare. Separately, he leads the Medical Machine Intelligence (M²Int) Lab at the University of Utah, an academic research group developing AI for clinical applications. Prior service in U.S. and Colorado health policy, and on the University of Utah IRB, shapes MTN's governance posture."
+              />
+
+              <FounderCard
+                name="Samuel Wecker"
+                title="Lead Systems Engineer"
+                imagePath="/images/team/samuel_wecker.jpg"
+                linkedInUrl="https://www.linkedin.com/in/samuel-wecker/"
+                bio="Over twelve years building and scaling production software, including as a founding engineer at a startup that grew to a billion-dollar platform. Specializes in unifying disparate systems and data sources at scale. Leads Data Foundry's core platform development."
+              />
+
+              <FounderCard
+                name="Brian Locke, MD, MSCI"
+                title="Clinical AI Lead"
+                imagePath="/images/team/Brian_Locke.jpg"
+                linkedInUrl="https://www.linkedin.com/in/brian-locke-464457155/"
+                bio="Active ICU physician and Assistant Professor at Intermountain Healthcare, with firsthand understanding of clinical workflows across academic medical centers and integrated delivery networks. Investigator with the M²Int Lab. Provides methodological rigor for the clinical and operational implications of MTN's technology."
+              />
+
+              <FounderCard
+                name="Matthias Christenson, PhD"
+                title="Enterprise AI Advisor"
+                imagePath="/images/team/Matthias_Christenson.jpeg"
+                linkedInUrl="https://www.linkedin.com/in/neuralsignal/"
+                bio="Head of Medical Data & AI at Sanoptis, one of the largest ophthalmology networks in Europe. PhD and postdoctoral research at Columbia University in computational ML. Previously a Deep Learning Research Engineer at DeepLife, training foundational models on genomic and biometric data. Investigator with the M²Int Lab. Aligns MTN's products with the integration and scalability needs of M&A-driven enterprises."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
             <div
               className="p-6 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)]"
               style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
@@ -125,7 +185,36 @@ export default function AboutPage() {
                 &ldquo;We were tired of spending more time on data plumbing than
                 on actual science. So we built a system that could handle the
                 integration complexity for us. Turns out, that system is exactly
-                what a lot of other healthcare organizations need.&rdquo;
+                what a lot of other organizations need.&rdquo;
+              </p>
+              <p className="text-[var(--ms-body)] text-sm mt-4">
+                — Warren Pettine, Co-Founder &amp; CEO
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our mission */}
+      <section className="section-spacing bg-[var(--ms-surface)]">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
+              Our mission
+            </h2>
+            <div className="space-y-4">
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                MTN is dedicated to improving the financial sustainability of
+                the healthcare system by making fragmented data systems
+                operable. The Data Foundry replaces months of manual data
+                engineering with software that learns, harmonizes, and adapts.
+                Each new data source is easier to use than the last. We make
+                organizations more nimble, responsive, and adaptive, reducing
+                operational overhead, raising provider satisfaction, and
+                improving patient outcomes.
+              </p>
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                We&apos;re building the connective tissue of modern healthcare.
               </p>
             </div>
           </div>
@@ -135,7 +224,7 @@ export default function AboutPage() {
       {/* Primary CTA */}
       <PrimaryCTABanner
         headline="Want to learn more?"
-        description="We're happy to discuss MTN Data Foundry, our approach, or your specific challenges."
+        description="Whether you're operating a portfolio, deploying AI, or trying to make integration work in a roll-up, we'd like to hear from you."
         ctaText="Learn More About Our Approach"
         ctaHref="/contact"
       />

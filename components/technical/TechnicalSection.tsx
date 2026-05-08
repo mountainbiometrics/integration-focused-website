@@ -2,12 +2,14 @@ interface TechnicalSectionProps {
   title: string;
   description: string;
   behaviors: string[];
+  intro?: React.ReactNode;
 }
 
 export default function TechnicalSection({
   title,
   description,
   behaviors,
+  intro,
 }: TechnicalSectionProps) {
   return (
     <div className="space-y-4">
@@ -17,6 +19,7 @@ export default function TechnicalSection({
       <p className="text-[var(--ms-body)] leading-relaxed">
         {description}
       </p>
+      {intro}
       <ul className="space-y-3 mt-4">
         {behaviors.map((behavior, index) => (
           <li key={index} className="flex items-start gap-3">

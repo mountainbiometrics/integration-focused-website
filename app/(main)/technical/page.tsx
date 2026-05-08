@@ -64,7 +64,7 @@ export default function TechnicalPage() {
       {/* Hero Section */}
       <Hero
         headline="Technical architecture"
-        subheadline="An adaptive transition layer that detects schemas automatically, maps to canonical concepts with confidence-based governance, and self-heals when sources change."
+        subheadline="Live in days. Flat through every add-on. Ready for what you deploy next."
         ctaText="Schedule a Technical Session"
         ctaHref="/contact"
         variant="internal"
@@ -205,11 +205,19 @@ export default function TechnicalPage() {
                   <div className="text-sm text-[var(--ms-body)]">
                     Business-ready
                   </div>
+                  <div className="text-xs text-[var(--ms-muted)] mt-1 italic">
+                    feeds reporting, AI, and agents alike
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="prose prose-gray max-w-none">
+              <p className="text-[var(--ms-heading)] leading-relaxed mb-4">
+                MTN Data Foundry is an adaptive transition layer. It detects schemas automatically,
+                maps them to canonical concepts with confidence-based governance, and self-heals
+                when sources change.
+              </p>
               <p className="text-[var(--ms-heading)] leading-relaxed mb-4">
                 Whether you use medallion architecture, data mesh, or your own layered approach,
                 the transition from raw source data to governed, consistent output is traditionally
@@ -250,20 +258,66 @@ export default function TechnicalPage() {
         </div>
       </section>
 
-      {/* Ingestion Section */}
+      {/* How the Foundry delivers */}
       <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader
+              headline="How the Foundry delivers."
+              subheadline="Three promises, mapped to the architecture below."
+            />
+            <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+              <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-x-6 gap-y-4 md:gap-y-5">
+                <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
+                  Live in days
+                </div>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Schema detection, payload fingerprinting, suggested mappings with confidence scoring.
+                </p>
+                <div className="hidden md:block md:col-span-2 border-t border-[var(--ms-border)]" />
+                <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
+                  Flat through every add-on
+                </div>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Self-healing on schema changes, immutable mapping versions, forward-only adaptation.
+                </p>
+                <div className="hidden md:block md:col-span-2 border-t border-[var(--ms-border)]" />
+                <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
+                  Ready for what you deploy next
+                </div>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Canonical concept layer, model-agnostic outputs, BAA-aware lineage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ingestion Section */}
+      <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <TechnicalSection {...ingestionDetails} />
+            <p className="text-[var(--ms-body)] leading-relaxed mt-4">
+              Output endpoints respect downstream contracts: SQL, REST, event streams, and dbt-compatible models.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Mapping Section */}
-      <section className="section-spacing bg-[var(--ms-border)]/30">
+      <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
-            <TechnicalSection {...mappingDetails} />
+            <TechnicalSection
+              {...mappingDetails}
+              intro={
+                <p className="text-[var(--ms-body)] leading-relaxed">
+                  A canonical concept is a stable, healthcare-aware definition: <em>patient</em>, <em>encounter</em>, <em>claim</em>, <em>medication</em>, <em>schedule</em>, <em>provider</em>. Each concept has a target schema, vocabulary bindings (SNOMED CT, ICD-10, LOINC, RxNorm, CPT, NPI), and identity-resolution rules. The Foundry annotates source schemas first; canonical definitions emerge from the patterns across annotated sources, or anchor to an external target like FHIR, USCDI, or OMOP when one applies. The canonical layer grows with the portfolio: new concepts can be added, and existing concepts can be refined without breaking downstream consumers.
+                </p>
+              }
+            />
 
             {/* Governance detail box */}
             <div className="mt-8 p-6 rounded-lg bg-white border border-[var(--ms-border)]">
@@ -310,10 +364,58 @@ export default function TechnicalPage() {
       </section>
 
       {/* Change Detection Section */}
-      <section className="section-spacing">
+      <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <TechnicalSection {...changeDetails} />
+          </div>
+        </div>
+      </section>
+
+      {/* Model-agnostic by design */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-4">
+              <h3 className="font-display text-xl text-[var(--ms-heading)]">
+                Model-agnostic by design
+              </h3>
+              <p className="text-[var(--ms-body)] leading-relaxed">
+                Whatever you deploy next, it reads from the same canonical layer.
+              </p>
+              <ul className="space-y-3 mt-4">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                    <strong className="font-semibold">Models you deploy:</strong> Claude, GPT, Gemini, open-weight models, fine-tuned models, your own. Same data, no per-vendor pipeline.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                    <strong className="font-semibold">Retrieval-friendly:</strong> canonical concepts are vector-embedding-ready and integrate with existing vector stores.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                    <strong className="font-semibold">Tool-friendly:</strong> outputs structured data that downstream agents can call as tools without re-mapping.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                    <strong className="font-semibold">BAA-aware:</strong> every model query lands inside the compliance perimeter; vendor BAAs flow through subprocessor relationships.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                    <strong className="font-semibold">Auditable:</strong> every model interaction is logged at the canonical layer, not at each vendor.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -327,8 +429,54 @@ export default function TechnicalPage() {
         </div>
       </section>
 
-      {/* Deployment and Integration */}
+      {/* Compliance and security */}
       <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader
+              headline="Compliance and security."
+              subheadline="Designed for healthcare's regulatory perimeter, not retrofitted onto a generic platform."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  HIPAA and the BAA chain
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  <strong className="font-semibold text-[var(--ms-heading)]">BAA-ready by default.</strong> The BAA chain extends through subprocessors, infrastructure providers, and model vendors, so PHI flowing into and out of the Foundry stays under one continuous chain of liability. Documentation artifacts align with HHS OCR audit expectations. Minimum-necessary access is enforced at the canonical layer, not bolted on at output.
+                </p>
+              </div>
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  42 CFR Part 2 and redisclosure
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Substance-use-disorder data is tagged at ingestion and tracked through every downstream consumer. Redisclosure restrictions are encoded in the lineage layer; a query that would violate Part 2 returns an error, not the data. Consent metadata travels with the record, not in a separate consent system.
+                </p>
+              </div>
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  State and federal regimes
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Aligned controls for California (CCPA, CPRA, CMIA, AB-3129), Washington (My Health My Data Act), Texas (Texas Data Privacy and Security Act), and the multi-state landscape (Colorado, Connecticut, Virginia, and others as they take effect). ONC information-blocking interfaces are respected; 21st Century Cures Act data-exchange requirements are supported out of the box. New regimes update at the canonical layer, not every pipeline.
+                </p>
+              </div>
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  Controls and audit
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  <strong className="font-semibold text-[var(--ms-heading)]">SOC 2 Type II aligned controls.</strong> End-to-end encryption (TLS 1.3 in transit, AES-256 at rest). Role-based access with purpose-of-use metadata on every query. Comprehensive audit logging covers every mapping change, query, and model interaction, with retention tunable per regulation. Customer-managed keys available on cloud and on-premises deployments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deployment and Integration */}
+      <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
@@ -336,13 +484,14 @@ export default function TechnicalPage() {
               subheadline="Flexible deployment to fit your security and infrastructure requirements."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 rounded-lg border border-[var(--ms-border)]">
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
                 <h3 className="font-display text-[var(--ms-heading)] mb-3">
                   Cloud-hosted
                 </h3>
                 <p className="text-base text-[var(--ms-body)] mb-4">
                   Managed deployment in your preferred cloud environment with
-                  SOC 2 compliance and BAA support.
+                  SOC 2 compliance and BAA support. BAA executed at deployment;
+                  no separate negotiation per model vendor.
                 </p>
                 <ul className="space-y-2 text-base text-[var(--ms-body)]">
                   <li>• AWS, Azure, or GCP</li>
@@ -350,13 +499,14 @@ export default function TechnicalPage() {
                   <li>• Managed updates and monitoring</li>
                 </ul>
               </div>
-              <div className="p-6 rounded-lg border border-[var(--ms-border)]">
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
                 <h3 className="font-display text-[var(--ms-heading)] mb-3">
                   On-premises
                 </h3>
                 <p className="text-base text-[var(--ms-body)] mb-4">
                   Deploy within your existing infrastructure for complete data
-                  control and air-gapped environments.
+                  control and air-gapped environments. Fully air-gapped operation;
+                  no model traffic leaves your VPC unless you configure it to.
                 </p>
                 <ul className="space-y-2 text-base text-[var(--ms-body)]">
                   <li>• Kubernetes or VM deployment</li>
@@ -369,10 +519,54 @@ export default function TechnicalPage() {
         </div>
       </section>
 
+      {/* For deployment partners */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <SectionHeader
+              headline="For deployment partners."
+              subheadline="If you're a forward-deployed engineer or SI technical lead, here's what's exposed."
+            />
+            <ul className="space-y-3 mt-4">
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                  API documentation and OpenAPI specs
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                  Sandbox environments for pre-engagement schema introspection
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                  Mapping export, replay, and review endpoints
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                  Subprocessor BAA inheritance
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
+                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                  White-label deployment available
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Primary CTA */}
       <PrimaryCTABanner
         headline="Ready to discuss architecture?"
-        description="We'll walk through how this fits your specific stack and answer technical questions in detail."
+        description="We'll walk through how this fits your stack, your deployment plans, and your security review process, and answer technical questions in detail."
         ctaText="Schedule a Technical Session"
         ctaHref="/contact"
         variant="technical"

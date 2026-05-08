@@ -3,60 +3,47 @@
 import { useRef } from 'react';
 import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
-const SOURCE_LABELS = ['EHRs', 'Billing', 'Vendors'];
-const TOOL_LABELS = ['Warehouse', 'BI', 'Analytics'];
-const BADGES = ['Continuous visibility', 'Less maintenance', 'Fast onboarding'];
+// Source and output labels
+const SOURCE_LABELS = ['EHRs', 'Billing', 'Scheduling', 'Vendors', 'Claims'];
+const OUTPUT_LABELS = ['Warehouse', 'BI', 'Analytics', 'AI Agents'];
+
+const BADGES = ['Live in days', 'Flat through every add-on', 'Ready for what you deploy next'];
 
 const SVG_W = 600;
-const SVG_H = 220;
+const SVG_H = 200;
 
-/* Circle positions */
+/* Circle positions - three nodes in a row */
 const SRC_CX = 100;
 const FDR_CX = 300;
-const TOOL_CX = 500;
+const OUT_CX = 500;
 const CY = 100;
-const MAIN_R = 36;
-const SAT_R = 8;
-const SAT_OFFSET = 50;
-
-/* Satellite positions around a circle */
-function satellites(cx: number, cy: number, count: number, offset: number) {
-  const out: { x: number; y: number }[] = [];
-  for (let i = 0; i < count; i++) {
-    const angle = -Math.PI / 2 + ((2 * Math.PI) / count) * i;
-    out.push({ x: cx + Math.cos(angle) * offset, y: cy + Math.sin(angle) * offset });
-  }
-  return out;
-}
-
-const SRC_SATS = satellites(SRC_CX, CY, 3, SAT_OFFSET);
-const TOOL_SATS = satellites(TOOL_CX, CY, 3, SAT_OFFSET);
+const MAIN_R = 40;
 
 export default function FoundryFlow() {
   const sectionRef = useRef<HTMLElement>(null);
   const progress = useScrollProgress(sectionRef, { startVh: 0.75, endVh: 0.10 });
 
   /* Phase 1: Sources materialize (0–0.30) */
-  const srcCircle = remap(progress, 0, 0.20);
-  const srcSats = (i: number) => remap(progress, 0.08 + i * 0.06, 0.26 + i * 0.06);
+  const srcCircle = remap(progress, 0, 0.18);
+  const srcLabels = (i: number) => remap(progress, 0.08 + i * 0.03, 0.24 + i * 0.03);
 
   /* Phase 2: Foundry activates (0.25–0.55) */
-  const arrowLeft = remap(progress, 0.25, 0.42);
-  const foundryScale = remap(progress, 0.32, 0.50);
-  const foundryBorder = remap(progress, 0.30, 0.52);
-  const pulseRing = remap(progress, 0.48, 0.58);
+  const arrowLeft = remap(progress, 0.25, 0.40);
+  const foundryScale = remap(progress, 0.32, 0.48);
+  const foundryBorder = remap(progress, 0.30, 0.50);
+  const pulseRing = remap(progress, 0.46, 0.56);
 
-  /* Phase 3: Tools receive (0.50–0.80) */
-  const arrowRight = remap(progress, 0.50, 0.67);
-  const toolCircle = remap(progress, 0.58, 0.72);
-  const toolSats = (i: number) => remap(progress, 0.62 + i * 0.05, 0.76 + i * 0.05);
+  /* Phase 3: Outputs receive (0.50–0.80) */
+  const arrowRight = remap(progress, 0.50, 0.65);
+  const outCircle = remap(progress, 0.56, 0.70);
+  const outLabels = (i: number) => remap(progress, 0.60 + i * 0.03, 0.76 + i * 0.03);
 
   /* Data dots flowing along arrows */
   const dot1 = remap(progress, 0.36, 0.50);
   const dot2 = remap(progress, 0.62, 0.76);
 
   /* Phase 4: Outcome badges (0.75–1.0) */
-  const badgeFade = (i: number) => remap(progress, 0.78 + i * 0.06, 0.90 + i * 0.06);
+  const badgeFade = (i: number) => remap(progress, 0.78 + i * 0.05, 0.90 + i * 0.05);
 
   return (
     <section ref={sectionRef} className="section-spacing bg-[var(--ms-surface)]">
@@ -71,9 +58,9 @@ export default function FoundryFlow() {
             <svg
               viewBox={`0 0 ${SVG_W} ${SVG_H}`}
               className="w-full max-w-[756px] h-auto"
-              aria-label="Data flows from sources through the Foundry to your tools"
+              aria-label="Data flows from sources through the Foundry to outputs"
             >
-              {/* Source circle */}
+              {/* Sources circle */}
               <circle
                 cx={SRC_CX} cy={CY} r={MAIN_R}
                 fill="white"
@@ -85,32 +72,25 @@ export default function FoundryFlow() {
               <text
                 x={SRC_CX} y={CY + 1}
                 textAnchor="middle" dominantBaseline="central"
-                fontSize="11" fontWeight="600" fill="var(--ms-heading)"
+                fontSize="13" fontWeight="600" fill="var(--ms-heading)"
                 opacity={srcCircle}
               >
                 Sources
               </text>
 
-              {/* Source satellites */}
-              {SRC_SATS.map((s, i) => {
-                const a = srcSats(i);
+              {/* Source labels below */}
+              {SOURCE_LABELS.map((label, i) => {
+                const a = srcLabels(i);
+                const labelY = CY + MAIN_R + 16 + i * 13;
                 return (
-                  <g key={`ss-${i}`}>
-                    <circle
-                      cx={s.x} cy={s.y} r={SAT_R}
-                      fill="var(--ms-muted)"
-                      opacity={a}
-                      transform={`scale(${0.3 + a * 0.7})`}
-                      style={{ transformOrigin: `${s.x}px ${s.y}px`, transformBox: 'fill-box' }}
-                    />
-                    <text
-                      x={s.x} y={s.y + SAT_R + 12}
-                      textAnchor="middle" fontSize="11" fill="var(--ms-body-light)"
-                      opacity={a}
-                    >
-                      {SOURCE_LABELS[i]}
-                    </text>
-                  </g>
+                  <text
+                    key={`src-${i}`}
+                    x={SRC_CX} y={labelY}
+                    textAnchor="middle" fontSize="11" fill="var(--ms-body-light)"
+                    opacity={a}
+                  >
+                    {label}
+                  </text>
                 );
               })}
 
@@ -162,7 +142,7 @@ export default function FoundryFlow() {
               <text
                 x={FDR_CX} y={CY + 1}
                 textAnchor="middle" dominantBaseline="central"
-                fontSize="12" fontWeight="700" fill="var(--ms-blue)"
+                fontSize="13" fontWeight="700" fill="var(--ms-blue)"
                 opacity={foundryScale}
               >
                 Foundry
@@ -183,7 +163,7 @@ export default function FoundryFlow() {
               {/* Right arrow */}
               <line
                 x1={FDR_CX + MAIN_R + 8} y1={CY}
-                x2={TOOL_CX - MAIN_R - 8} y2={CY}
+                x2={OUT_CX - MAIN_R - 8} y2={CY}
                 stroke="var(--ms-blue)"
                 strokeWidth="2"
                 strokeDasharray="120"
@@ -192,7 +172,7 @@ export default function FoundryFlow() {
               />
               {/* Right arrowhead */}
               <polygon
-                points={`${TOOL_CX - MAIN_R - 8},${CY} ${TOOL_CX - MAIN_R - 16},${CY - 5} ${TOOL_CX - MAIN_R - 16},${CY + 5}`}
+                points={`${OUT_CX - MAIN_R - 8},${CY} ${OUT_CX - MAIN_R - 16},${CY - 5} ${OUT_CX - MAIN_R - 16},${CY + 5}`}
                 fill="var(--ms-blue)"
                 opacity={arrowRight}
               />
@@ -200,7 +180,7 @@ export default function FoundryFlow() {
               {/* Data dot 2 flowing center→right */}
               {dot2 > 0 && dot2 < 1 && (
                 <circle
-                  cx={FDR_CX + MAIN_R + 8 + dot2 * (TOOL_CX - FDR_CX - 2 * MAIN_R - 16)}
+                  cx={FDR_CX + MAIN_R + 8 + dot2 * (OUT_CX - FDR_CX - 2 * MAIN_R - 16)}
                   cy={CY}
                   r={4}
                   fill="var(--ms-blue)"
@@ -208,44 +188,37 @@ export default function FoundryFlow() {
                 />
               )}
 
-              {/* Tools circle */}
+              {/* Outputs circle */}
               <circle
-                cx={TOOL_CX} cy={CY} r={MAIN_R}
+                cx={OUT_CX} cy={CY} r={MAIN_R}
                 fill="white"
-                stroke="var(--ms-border)"
+                stroke="var(--ms-blue)"
                 strokeWidth="2"
-                opacity={toolCircle}
-                transform={`translate(0,${(1 - toolCircle) * 12})`}
+                opacity={outCircle}
+                transform={`translate(0,${(1 - outCircle) * 12})`}
               />
               <text
-                x={TOOL_CX} y={CY + 1}
+                x={OUT_CX} y={CY + 1}
                 textAnchor="middle" dominantBaseline="central"
-                fontSize="11" fontWeight="600" fill="var(--ms-heading)"
-                opacity={toolCircle}
+                fontSize="13" fontWeight="600" fill="var(--ms-blue)"
+                opacity={outCircle}
               >
-                Tools
+                Outputs
               </text>
 
-              {/* Tool satellites */}
-              {TOOL_SATS.map((s, i) => {
-                const a = toolSats(i);
+              {/* Output labels below */}
+              {OUTPUT_LABELS.map((label, i) => {
+                const a = outLabels(i);
+                const labelY = CY + MAIN_R + 16 + i * 13;
                 return (
-                  <g key={`ts-${i}`}>
-                    <circle
-                      cx={s.x} cy={s.y} r={SAT_R}
-                      fill="var(--ms-blue)"
-                      opacity={a}
-                      transform={`scale(${0.3 + a * 0.7})`}
-                      style={{ transformOrigin: `${s.x}px ${s.y}px`, transformBox: 'fill-box' }}
-                    />
-                    <text
-                      x={s.x} y={s.y + SAT_R + 12}
-                      textAnchor="middle" fontSize="11" fill="var(--ms-body-light)"
-                      opacity={a}
-                    >
-                      {TOOL_LABELS[i]}
-                    </text>
-                  </g>
+                  <text
+                    key={`out-${i}`}
+                    x={OUT_CX} y={labelY}
+                    textAnchor="middle" fontSize="11" fill="var(--ms-blue)"
+                    opacity={a}
+                  >
+                    {label}
+                  </text>
                 );
               })}
             </svg>

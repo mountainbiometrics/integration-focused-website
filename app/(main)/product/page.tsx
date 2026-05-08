@@ -5,6 +5,8 @@ import FoundryFlow from '@/components/product/FoundryFlow';
 import MappingCascade from '@/components/product/MappingCascade';
 import HealingPipeline from '@/components/product/HealingPipeline';
 import AutomatePlumbing from '@/components/product/AutomatePlumbing';
+import AIReadiness from '@/components/product/AIReadiness';
+import WhatItDoes from '@/components/product/WhatItDoes';
 import MonitoringPulse from '@/components/product/MonitoringPulse';
 
 export const metadata: Metadata = {
@@ -18,8 +20,8 @@ export default function ProductPage() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="Adaptive integration that stays live"
-        subheadline="MTN Data Foundry adapts as systems change. Continuous visibility, no integration restarts, no months of catch-up."
+        headline="The data layer underneath the work."
+        subheadline="Live in days. Flat through every add-on. Ready for what you deploy next."
         ctaText="See How It Works"
         ctaHref="/contact"
         variant="internal"
@@ -28,22 +30,28 @@ export default function ProductPage() {
       {/* Product Overview — animated Sources → Foundry → Tools */}
       <FoundryFlow />
 
-      {/* Self-Organizing Integration — animated field mapping */}
+      {/* Section 1: Live in days — animated field mapping */}
       <MappingCascade />
 
-      {/* Flatten the Maintenance Curve — chart */}
+      {/* Section 2: Flat through every add-on — maintenance chart */}
       <HealingPipeline />
 
-      {/* Automate the Plumbing — self-healing infographic rows */}
+      {/* Section 3: Flat doesn't happen by accident — self-healing vignettes */}
       <AutomatePlumbing />
 
-      {/* Continuous Monitoring — 3 signal lanes */}
+      {/* Section 4: Ready for what you deploy next — AI readiness */}
+      <AIReadiness />
+
+      {/* Section 5: What it does, and what it doesn't — positioning */}
+      <WhatItDoes />
+
+      {/* Section 6: It tells you before anything breaks — 3 signal lanes */}
       <MonitoringPulse />
 
       {/* Primary CTA */}
       <PrimaryCTABanner
         headline="See how this fits your stack"
-        description="We'll walk through your current systems and show how the Foundry would integrate."
+        description="We'll walk through your sources, your warehouse, and your deployment plans, and show how the layer fits underneath."
         ctaText="See How It Fits Your Stack"
         ctaHref="/contact"
       />

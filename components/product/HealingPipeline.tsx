@@ -49,7 +49,7 @@ export default function HealingPipeline() {
       <div className="container-site">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-3 text-center">
-            Flatten the maintenance curve
+            Flat through every add-on.
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
             Conventional integration maintenance compounds with every new system. The Foundry keeps it flat.

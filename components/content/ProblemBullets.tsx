@@ -26,9 +26,9 @@ export default function ProblemBullets({
           const Icon = item.icon;
           return (
             <div key={index} className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-[rgba(172,31,45,0.08)] flex items-center justify-center mb-3">
+              <div className="w-20 h-20 rounded-full bg-[rgba(172,31,45,0.08)] flex items-center justify-center mb-3">
                 <Icon
-                  className="w-8 h-8 text-[var(--ms-accent)]"
+                  className="w-10 h-10 text-[var(--ms-accent)]"
                   strokeWidth={1.5}
                   aria-hidden="true"
                 />

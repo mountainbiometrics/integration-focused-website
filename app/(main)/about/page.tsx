@@ -15,7 +15,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         headline="Why we built the MTN Data Foundry"
-        subheadline="We built the Foundry to make our own AI deployments work in healthcare. Then we realized everyone needs it."
+        subheadline="We built the Foundry to make our own AI deployments work. Then we realized everyone deploying AI or general analytics has that same problem."
         variant="internal"
         ctaText=""
         ctaHref=""
@@ -81,8 +81,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">
                   Designed for people who need visibility now, not perfect data
-                  eventually. Operational continuity over architectural
-                  elegance.
+                  eventually.
                 </p>
               </div>
               <div
@@ -111,11 +110,9 @@ export default function AboutPage() {
               Why now
             </h2>
             <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-              When we hit the wall, we hit it alone. Healthcare AI was a niche,
-              and the data problem felt like ours alone. That&apos;s no longer
-              true. New AI deployment vehicles launched this year are about to
-              discover what we discovered: AI deployment in healthcare fails on
-              data, not on models. The Foundry is the layer that lets it work.
+              When we hit the wall, we hit it alone. That&apos;s no longer true.
+              Every AI deployment eventually discovers what we discovered: deployments
+              fail on data, not on models. The Foundry is the layer that lets it work.
             </p>
           </div>
         </div>
@@ -129,8 +126,8 @@ export default function AboutPage() {
               Technical leadership
             </h2>
             <p className="text-lg text-[var(--ms-body)] leading-relaxed mb-10">
-              An unusual combination: ML scientists who understand healthcare
-              data, physicians who understand data infrastructure, and engineers
+              An unusual combination: ML scientists who understand deployment
+              constraints, physicians who understand data infrastructure, and engineers
               who turn it into product. Our work has been published in Nature
               journals, PNAS, JMIR, Chest, PLoS Computational Biology, The Royal
               Society, and other leading venues.
@@ -153,13 +150,13 @@ export default function AboutPage() {
                 bio="Over twelve years building and scaling production software, including as a founding engineer at a startup that grew to a billion-dollar platform. Specializes in unifying disparate systems and data sources at scale. Leads Data Foundry's core platform development."
               />
 
-              <FounderCard
+              {/* <FounderCard
                 name="Brian Locke, MD, MSCI"
                 title="Clinical AI Lead"
                 imagePath="/images/team/Brian_Locke.jpg"
                 linkedInUrl="https://www.linkedin.com/in/brian-locke-464457155/"
                 bio="Active ICU physician and Assistant Professor at Intermountain Healthcare, with firsthand understanding of clinical workflows across academic medical centers and integrated delivery networks. Investigator with the M²Int Lab. Provides methodological rigor for the clinical and operational implications of MTN's technology."
-              />
+              /> */}
 
               <FounderCard
                 name="Matthias Christenson, PhD"

@@ -12,7 +12,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="Close the visibility gap"
+        headline="Value Creation & AI Transformation"
         subheadline="Every site, live in days. Flat through every add-on. Ready for what you deploy next."
         ctaText="Talk Through Your Next Integration"
         ctaHref="/contact"

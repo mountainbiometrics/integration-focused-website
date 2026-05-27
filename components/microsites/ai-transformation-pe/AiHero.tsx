@@ -25,7 +25,7 @@ export default function AiHero() {
 
       <div className="container-site max-w-3xl mx-auto relative">
         <h1 className="font-display text-[2rem] md:text-[3.25rem] leading-[1.08] text-[var(--ms-heading)] mb-3 md:mb-4 md:text-center">
-          AI shipped across every portco. In weeks, not&nbsp;years.
+          AI transformation in weeks, not&nbsp;years.
         </h1>
 
         <p className="text-lg md:text-xl italic text-[var(--ms-body-light)] mb-6 md:mb-8 md:text-center">

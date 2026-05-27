@@ -297,7 +297,7 @@ const microsites: MicrositeConfig[] = [
     title: 'MTN | Unlock AI Transformation in PE Portfolios',
     metaDescription:
       'Why AI transformation breaks in PE portfolios — and the semantic data layer that lets your portcos ship AI to production instead of stalling in pilot purgatory.',
-    headline: "AI shipped across every portco. In weeks, not years.",
+    headline: "AI transformation in weeks, not years.",
     heroStat: '80%',
     heroStatCaption: 'of AI projects never reach production',
     subheadline: "The models work. Your data doesn’t.",

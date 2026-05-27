@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 
 const micrositeCards = [
   {
+    badge: 'AI transformation',
+    headline: 'The models work. Your data doesn’t.',
+    stat: '80%',
+    description:
+      'Why your portcos can’t ship AI — and the semantic data layer that finally lets them.',
+    href: '/m/ai-transformation-pe',
+  },
+  {
     badge: 'Healthcare rollups',
     headline: 'Five clinics. Five systems. No answers.',
     stat: '$200K–$500K/mo',

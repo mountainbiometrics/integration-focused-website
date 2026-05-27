@@ -292,6 +292,27 @@ const microsites: MicrositeConfig[] = [
     utmCampaign: 'b2b-saas-ma-alliance-wp',
     brandTagline: 'A productized accelerator for B2B SaaS M&A integration.',
   },
+  {
+    slug: 'ai-transformation-pe',
+    title: 'MTN | Unlock AI Transformation in PE Portfolios',
+    metaDescription:
+      'Why AI transformation breaks in PE portfolios — and the semantic data layer that lets your portcos ship AI to production instead of stalling in pilot purgatory.',
+    headline: "AI shipped across every portco. In weeks, not years.",
+    heroStat: '80%',
+    heroStatCaption: 'of AI projects never reach production',
+    subheadline: "The models work. Your data doesn’t.",
+    papers: [],
+    formspreeId: 'xaqbaljo',
+    ctaLabel: 'Book a portfolio AI assessment',
+    theme: {
+      primaryColor: '#AC1F2D',
+      primaryColorHover: '#8B1924',
+      heroGradientColor: '#F5E0E2',
+    },
+    sections: [],
+    utmCampaign: 'ai-transformation-pe-call',
+    brandTagline: 'The semantic data layer that makes AI work across your portfolio.',
+  },
 ];
 
 export function getMicrositeBySlug(slug: string): MicrositeConfig | undefined {

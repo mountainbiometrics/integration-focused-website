@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>AI Transformation PE Microsite — Planning Document</title>
+<style>
+  :root {
+    --ms-accent: #AC1F2D;
+    --ms-accent-soft: rgba(172, 31, 45, 0.06);
+    --ms-accent-soft-2: rgba(172, 31, 45, 0.10);
+    --ms-primary: #4A6FA5;
+    --ms-primary-soft: rgba(74, 111, 165, 0.06);
+    --ms-primary-soft-2: rgba(74, 111, 165, 0.12);
+    --ms-heading: #1f2937;
+    --ms-body: #4b5563;
+    --ms-body-light: #6b7280;
+    --ms-border: #e5e7eb;
+    --ms-hero-gradient: #F5E0E2;
+    --ms-surface: #fafafa;
+    --ms-dark-bg: #11161d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ms-body);
+    line-height: 1.6;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+    background: #fff;
+  }
+  h1, h2, h3, h4 {
+    color: var(--ms-heading);
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  h1 { font-size: 2.4rem; margin: 0 0 .5rem; }
+  h2 { font-size: 1.75rem; margin: 3rem 0 1rem; border-bottom: 1px solid var(--ms-border); padding-bottom: .5rem; }
+  h3 { font-size: 1.25rem; margin: 2rem 0 .75rem; }
+  h4 { font-size: 1rem; margin: 1.25rem 0 .5rem; color: var(--ms-body); text-transform: uppercase; letter-spacing: .05em; font-family: inherit; font-weight: 700; }
+  p { margin: .5rem 0 1rem; }
+  code, pre { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .9em; }
+  code { background: #f3f4f6; padding: 1px 6px; border-radius: 4px; }
+  pre { background: #1f2937; color: #e5e7eb; padding: 16px 20px; border-radius: 8px; overflow-x: auto; line-height: 1.5; }
+  pre code { background: transparent; padding: 0; color: inherit; }
+  ul, ol { padding-left: 1.5rem; }
+  li { margin: .25rem 0; }
+
+  .meta {
+    background: var(--ms-surface);
+    border: 1px solid var(--ms-border);
+    border-left: 4px solid var(--ms-accent);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 24px 0;
+  }
+  .meta dl { display: grid; grid-template-columns: 160px 1fr; gap: 6px 16px; margin: 0; }
+  .meta dt { font-weight: 600; color: var(--ms-heading); }
+  .meta dd { margin: 0; }
+  .callout {
+    background: var(--ms-primary-soft);
+    border-left: 3px solid var(--ms-primary);
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--ms-heading);
+  }
+  .roadmap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0 24px;
+  }
+  .roadmap > div {
+    background: #fff;
+    border: 1px solid var(--ms-border);
+    border-top: 3px solid var(--ms-accent);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .roadmap h4 { margin: 0 0 8px; color: var(--ms-accent); }
+
+  /* Composition table */
+  table.comp {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 28px;
+    font-size: .94rem;
+  }
+  table.comp th, table.comp td {
+    border: 1px solid var(--ms-border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.comp th {
+    background: var(--ms-surface);
+    color: var(--ms-heading);
+    font-weight: 600;
+  }
+  .tag {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .tag.shared    { background: rgba(74,111,165,0.10);  color: var(--ms-primary); }
+  .tag.reskin    { background: rgba(217,119,6,0.10);   color: #b45309; }
+  .tag.bespoke   { background: rgba(172,31,45,0.10);   color: var(--ms-accent); }
+  .tag.template  { background: #e5e7eb; color: #374151; }
+
+  /* ---- Mockup styles ---- */
+  .mock {
+    border: 1px dashed var(--ms-border);
+    border-radius: 10px;
+    padding: 0;
+    margin: 12px 0 28px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .mock-label {
+    background: #f9fafb;
+    color: var(--ms-body-light);
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: 6px 14px;
+    border-bottom: 1px solid var(--ms-border);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  .mock-header {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--ms-border);
+    background: #fff;
+  }
+  .mock-logo {
+    display: inline-block;
+    color: var(--ms-accent);
+    font-weight: 700;
+    font-size: .9rem;
+    letter-spacing: .04em;
+  }
+  .mock-hero {
+    background: linear-gradient(135deg, var(--ms-hero-gradient) 0%, #fff 100%);
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .mock-hero h2 {
+    font-size: 2.2rem;
+    margin: 0 0 1.25rem;
+    border: none;
+    padding: 0;
+  }
+  .mock-stat {
+    display: inline-block;
+    background: rgba(255,255,255,.7);
+    border: 1px solid var(--ms-border);
+    border-top: 3px solid var(--ms-accent);
+    border-radius: 12px;
+    padding: 18px 32px;
+    margin: 16px auto 12px;
+  }
+  .mock-stat .num { font-size: 2.2rem; font-weight: 700; color: var(--ms-accent); line-height: 1; }
+  .mock-stat .cap { font-size: .95rem; color: var(--ms-body); margin-top: 6px; }
+  .mock-sub { color: var(--ms-body); font-size: 1rem; max-width: 580px; margin: 8px auto 0; }
+  .mock-section {
+    padding: 36px 24px;
+  }
+  .mock-section.pain { background: var(--ms-accent-soft); }
+  .mock-section.solution-a { background: #fff; }
+  .mock-section.solution-b { background: var(--ms-primary-soft); }
+  .mock-section.dark {
+    background: var(--ms-dark-bg);
+    color: #e5e7eb;
+    text-align: center;
+    padding: 64px 24px;
+    background-image: radial-gradient(ellipse 80% 60% at 50% 55%, rgba(172,31,45,0.18), transparent 70%);
+  }
+  .mock-section.dark .setup { color: #9ca3af; font-size: 1rem; margin-bottom: 12px; }
+  .mock-section.dark .reveal { color: #f3f4f6; font-family: "Instrument Serif", Georgia, serif; font-size: 1.6rem; line-height: 1.25; margin-bottom: 16px; }
+  .mock-section.dark .punch { color: var(--ms-accent); font-family: "Instrument Serif", Georgia, serif; font-size: 1.6rem; line-height: 1.25; }
+  .mock-section.meaning {
+    background: #fff;
+    text-align: center;
+    padding: 72px 24px;
+    background-image: radial-gradient(ellipse at 50% 40%, rgba(74,111,165,0.05), transparent 70%);
+  }
+  .mock-section.meaning .badge { display: inline-block; background: var(--ms-primary-soft-2); color: var(--ms-primary); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; padding: 4px 10px; border-radius: 999px; margin-bottom: 14px; }
+  .mock-section.meaning .heading { font-family: "Instrument Serif", Georgia, serif; font-size: 1.75rem; color: var(--ms-heading); line-height: 1.25; margin-bottom: 12px; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .mock-section.meaning .body { color: var(--ms-body); max-width: 560px; margin: 0 auto 14px; }
+  .mock-section.meaning .closer { font-family: "Instrument Serif", Georgia, serif; font-size: 1.25rem; color: var(--ms-accent); }
+  .mock-section.closing { background: #fff; border-top: 1px solid var(--ms-border); text-align: center; }
+  .mock-badge {
+    display: inline-block;
+    background: var(--ms-accent-soft-2);
+    color: var(--ms-accent);
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .mock-badge.solution { background: var(--ms-primary-soft-2); color: var(--ms-primary); }
+  .mock-heading {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--ms-heading);
+    margin: 0 0 18px;
+    font-weight: 600;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .stat-card {
+    background: #fff;
+    border: 1px solid var(--ms-border);
+    border-top: 3px solid var(--ms-accent);
+    border-radius: 8px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .stat-card.solution { border-top-color: var(--ms-primary); }
+  .stat-card .icon {
+    width: 36px; height: 36px; border-radius: 999px;
+    background: var(--ms-accent-soft-2); color: var(--ms-accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    margin-bottom: 8px; font-size: 1rem; font-weight: 700;
+  }
+  .stat-card.solution .icon { background: var(--ms-primary-soft-2); color: var(--ms-primary); }
+  .stat-card .num { font-size: 1.4rem; font-weight: 700; color: var(--ms-accent); }
+  .stat-card.solution .num { color: var(--ms-primary); }
+  .stat-card .cap { font-size: .8rem; color: var(--ms-body); margin-top: 6px; }
+
+  .bullet-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 10px 0;
+  }
+  .bullet-row .marker {
+    width: 22px; height: 22px; border-radius: 999px;
+    background: var(--ms-accent-soft-2); color: var(--ms-accent);
+    flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .85rem;
+    margin-top: 2px;
+  }
+  .bullet-row .label { font-weight: 600; color: var(--ms-heading); }
+  .bullet-row .detail { color: var(--ms-body); font-size: .95rem; }
+
+  /* Schematic visuals for re-skinned components */
+  .schematic {
+    margin: 14px 0 4px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid var(--ms-border);
+    border-radius: 8px;
+  }
+  .chaos-grid {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 1fr);
+    gap: 6px;
+    font-size: .75rem;
+    color: var(--ms-body);
+  }
+  .chaos-grid .h { font-weight: 700; color: var(--ms-heading); text-align: center; padding: 4px; background: var(--ms-surface); border-radius: 4px; }
+  .chaos-grid .row-label { font-weight: 700; color: var(--ms-heading); padding: 6px 4px; }
+  .chaos-grid .cell { background: var(--ms-accent-soft); border: 1px solid var(--ms-accent-soft-2); border-radius: 4px; height: 26px; }
+  .chaos-grid .cell.empty { background: transparent; border-style: dashed; }
+  .chaos-grid .cell.x { background: var(--ms-accent-soft-2); position: relative; }
+  .chaos-grid .cell.x::after { content: "✕"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ms-accent); font-weight: 700; }
+
+  .mesh {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .mesh-side {
+    background: var(--ms-surface);
+    border: 1px solid var(--ms-border);
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+    position: relative;
+  }
+  .mesh-side h5 { margin: 0 0 14px; font-family: "Instrument Serif", Georgia, serif; font-size: 1.05rem; color: var(--ms-heading); }
+  .mesh-nodes {
+    display: flex; justify-content: space-around; align-items: center;
+    height: 110px; position: relative;
+  }
+  .mesh-node {
+    width: 32px; height: 32px; border-radius: 999px;
+    background: #fff; border: 2px solid var(--ms-accent);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .8rem; color: var(--ms-accent);
+    z-index: 2;
+  }
+  .mesh-node.hub { background: var(--ms-primary); border-color: var(--ms-primary); color: #fff; }
+  .mesh-edges-tangle {
+    position: absolute; inset: 14px 18px; pointer-events: none;
+  }
+  .mesh-side small { color: var(--ms-body-light); font-size: .8rem; }
+
+  .curve {
+    display: flex; gap: 18px; align-items: flex-end;
+    height: 160px; padding: 12px 6px 0;
+  }
+  .curve-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .curve-col .bar-exp {
+    width: 70%; background: linear-gradient(180deg, var(--ms-accent), var(--ms-accent-soft-2));
+    border-radius: 4px 4px 0 0;
+  }
+  .curve-col .bar-flat {
+    width: 70%; background: var(--ms-primary-soft-2);
+    border-radius: 4px 4px 0 0;
+    border-top: 3px solid var(--ms-primary);
+  }
+  .curve-col small { font-size: .72rem; color: var(--ms-body-light); }
+
+  .accel-row {
+    display: grid; grid-template-columns: 110px 1fr 80px;
+    gap: 12px; align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--ms-border);
+  }
+  .accel-row:last-child { border-bottom: none; }
+  .accel-row .label { font-weight: 700; color: var(--ms-heading); font-size: .9rem; }
+  .accel-row .bars { display: flex; gap: 8px; align-items: center; }
+  .accel-row .bar-before { height: 16px; background: var(--ms-accent-soft-2); border-radius: 4px; }
+  .accel-row .bar-after  { height: 16px; background: var(--ms-primary); border-radius: 4px; }
+  .accel-row .delta { text-align: right; color: var(--ms-primary); font-weight: 700; font-size: .9rem; }
+
+  .mock-cta {
+    background: #fff;
+    border: 1px solid var(--ms-border);
+    border-top: 4px solid var(--ms-accent);
+    border-radius: 10px;
+    padding: 28px 24px;
+    max-width: 460px;
+    margin: 24px auto 0;
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(0,0,0,.04);
+  }
+  .mock-cta .btn {
+    display: inline-block;
+    background: var(--ms-accent);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: .95rem;
+    margin-top: 8px;
+  }
+  .mock-cta .input {
+    display: block;
+    background: #f9fafb;
+    border: 1px solid var(--ms-border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    color: var(--ms-body-light);
+    text-align: left;
+    font-size: .9rem;
+  }
+
+  table.impl {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 24px;
+    font-size: .94rem;
+  }
+  table.impl th, table.impl td {
+    border: 1px solid var(--ms-border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.impl th {
+    background: var(--ms-surface);
+    color: var(--ms-heading);
+    font-weight: 600;
+  }
+  table.impl code { white-space: nowrap; }
+
+  .note {
+    background: #fffbea;
+    border-left: 3px solid #d97706;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: .92rem;
+  }
+
+  .pageflow {
+    display: flex; flex-direction: column; gap: 6px;
+    margin: 12px 0 24px;
+  }
+  .pageflow-row {
+    display: grid;
+    grid-template-columns: 30px 1fr 130px;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 12px;
+    background: var(--ms-surface);
+    border: 1px solid var(--ms-border);
+    border-radius: 6px;
+  }
+  .pageflow-row .step {
+    width: 28px; height: 28px; border-radius: 999px;
+    background: var(--ms-accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .85rem;
+  }
+  .pageflow-row .name { font-weight: 600; color: var(--ms-heading); }
+  .pageflow-row .desc { color: var(--ms-body); font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<h1>AI Transformation PE Microsite</h1>
+<p style="font-size: 1.05rem; color: var(--ms-body-light); margin-top: 0;">
+  Planning document for a new microsite targeting PE operating partners and platform CEOs whose
+  portfolio companies are stuck in AI pilot purgatory.
+</p>
+
+<div class="meta">
+  <dl>
+    <dt>Slug</dt><dd><code>ai-transformation-pe</code></dd>
+    <dt>URL</dt><dd><code>/m/ai-transformation-pe</code></dd>
+    <dt>Audience</dt><dd>PE operating partners and platform CEOs</dd>
+    <dt>Headline</dt><dd>Models work. Data doesn't.</dd>
+    <dt>CTA</dt><dd>Book a portfolio AI assessment (call, not paper download)</dd>
+    <dt>Source memo</dt><dd><code>design_docs/ai_transformation_pain_points_memo.md</code></dd>
+    <dt>Visual pattern</dt><dd>Bespoke page, composed mostly from existing <code>shared/</code> components + re-skinned bespoke visuals</dd>
+  </dl>
+</div>
+
+<h2>1. Strategic positioning</h2>
+
+<h3>Verbal roadmap (Jobs structure: Problem → Solution → Meaning)</h3>
+
+<div class="roadmap">
+  <div>
+    <h4>Problem</h4>
+    <p>80% of AI projects die before production. Not because models fail — because the data underneath isn't ready.</p>
+  </div>
+  <div>
+    <h4>Solution</h4>
+    <p>A semantic layer that resolves what "customer," "claim," "revenue" mean across every entity in the portfolio. Once. Reused.</p>
+  </div>
+  <div>
+    <h4>Meaning</h4>
+    <p>AI moves from pilot purgatory to production. Each bolt-on becomes AI-ready in weeks. The investment compounds across the portfolio.</p>
+  </div>
+</div>
+
+<h3>Headline rationale</h3>
+<p>
+  <strong>"Models work. Data doesn't."</strong> mirrors the rhetorical pattern already used on
+  <code>healthcare-state-rhtp</code> ("Transport is solved. Semantics is not."). Three beats. Concedes
+  what the buyer believes (AI is real, models work) and redirects to the actual obstacle.
+</p>
+
+<h3>Brand tagline</h3>
+<div class="callout">The semantic data layer that makes AI work across your portfolio.</div>
+
+<h2>2. Visual composition</h2>
+
+<p>
+  This microsite is built as a bespoke page that composes existing components from
+  <code>components/microsites/shared/</code> and re-skinned versions of bespoke visuals from
+  other microsites. Tags below: <span class="tag shared">SHARED</span> = pure reuse with new
+  config; <span class="tag reskin">RE-SKIN</span> = new component, adapts an existing visual
+  concept; <span class="tag bespoke">NEW</span> = built from scratch for this microsite.
+</p>
+
+<table class="comp">
+  <thead>
+    <tr><th style="width:40px;">#</th><th>Story beat</th><th>Component</th><th>Source</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Hero — <em>Models work. Data doesn't.</em> + 80% stat</td>
+      <td><code>AiHero</code></td>
+      <td><span class="tag bespoke">NEW</span> (clone shape of <code>PeHero</code>)</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>The AI ROI Gap — pain stats trio</td>
+      <td>Inline stat-card grid (no new component)</td>
+      <td><span class="tag template">INLINE</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Why It's Not the Model — N × M chaos visualization</td>
+      <td><code>AiChaosGrid</code></td>
+      <td><span class="tag reskin">RE-SKIN</span> of <code>ChaosGrid</code> / <code>TangleGrid</code></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>The semantic layer — hub-and-spoke vs. tangle</td>
+      <td><code>AiSharedLayerDiagram</code></td>
+      <td><span class="tag reskin">RE-SKIN</span> of <code>SharedLayerDiagram</code> / <code>MeshDiagram</code></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>What Changes — months → weeks acceleration</td>
+      <td><code>AccelerationRows</code></td>
+      <td><span class="tag shared">SHARED</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Why the Math Works — flat curve vs. exponential</td>
+      <td><code>AiCompoundingCurve</code></td>
+      <td><span class="tag reskin">RE-SKIN</span> of <code>CompoundingCurve</code></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>The ROI gap punchline — investor vs. CEO timeline</td>
+      <td><code>DarkReveal</code></td>
+      <td><span class="tag shared">SHARED</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Why it matters — "We do that work."</td>
+      <td><code>MeaningBeat</code></td>
+      <td><span class="tag shared">SHARED</span></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>CTA — Book a portfolio AI assessment</td>
+      <td><code>AiCta</code></td>
+      <td><span class="tag bespoke">NEW</span> (clone shape of <code>PeCta</code>, swap paper for call)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Mobile sticky CTA</td>
+      <td><code>StickyMobileCta</code></td>
+      <td><span class="tag shared">SHARED</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  Net: 4 shared components reused as-is, 3 re-skinned visuals, 2 new bespoke components
+  (<code>AiHero</code>, <code>AiCta</code>), plus one inline stat-card section. The investor-vs-CEO
+  line moves out of the Section 2 annotation and into <code>DarkReveal</code> as the dramatic
+  emotional pivot of the page.
+</p>
+
+<h2>3. Sample copy</h2>
+
+<h3>Hero</h3>
+<ul>
+  <li><strong>Headline:</strong> Models work. Data doesn't.</li>
+  <li><strong>Subheadline:</strong> 80% of AI projects die before production — not because the models fail, but because the data underneath isn't ready.</li>
+  <li><strong>Hero stat:</strong> <code>80%</code></li>
+  <li><strong>Hero stat caption:</strong> of AI projects never reach production</li>
+  <li><strong>Page title (browser tab):</strong> MTN | Unlock AI Transformation in PE Portfolios</li>
+  <li><strong>Meta description:</strong> Why AI transformation breaks in PE portfolios — and the semantic data layer that lets your portcos ship AI to production instead of stalling in pilot purgatory.</li>
+</ul>
+
+<h3>Section 2 — The AI ROI Gap <em>(inline stats, pain, badge: "The Problem")</em></h3>
+<p><strong>Heading:</strong> The AI ROI Gap</p>
+<ul>
+  <li><strong>80%</strong> — projects that never reach production</li>
+  <li><strong>$187B</strong> — invested in AI in 2024 with no clear returns</li>
+  <li><strong>$2.3M</strong> — average cost of one failed AI POC</li>
+</ul>
+<p style="color: var(--ms-body-light); font-size: .92rem;">
+  <em>Note:</em> The investor-vs-CEO line was originally drafted as the annotation under these
+  stats. It has been moved to the <code>DarkReveal</code> beat further down the page (Section 7)
+  to serve as the dramatic emotional pivot rather than a quiet footnote.
+</p>
+
+<h3>Section 3 — Why It's Not the Model <em>(N × M chaos visualization)</em></h3>
+<p><strong>Heading:</strong> Why It's Not the Model</p>
+<p><strong>Lede above the visual:</strong></p>
+<div class="callout">
+  Every acquisition adds its own ERP, CRM, EHR, billing platform — each with its own definition of
+  "customer," "claim," "revenue." N entities × M systems creates exponential integration debt.
+  AI built on that debt can't ship.
+</div>
+<p><strong>Three supporting bullets:</strong></p>
+<ul>
+  <li><strong>70–85% of AI failures trace to data, not models</strong> — Gartner, McKinsey, BCG, and RAND converge here independently.</li>
+  <li><strong>The integration matrix grows multiplicatively, not additively</strong> — each bolt-on touches every system already in the platform.</li>
+  <li><strong>Pilot purgatory traps two-thirds of portcos</strong> — POCs work on one CRM or EHR. Production exposes the fragmentation that was invisible in the pilot.</li>
+</ul>
+
+<h3>Section 4 — The Semantic Layer <em>(hub-and-spoke vs. tangle)</em></h3>
+<p><strong>Heading:</strong> One layer. Every entity.</p>
+<p><strong>Body:</strong></p>
+<div class="callout">
+  Instead of building point-to-point integrations between every new acquisition and every existing system, the semantic layer becomes the shared meaning across them. "Customer" means the same thing once — and AI runs against that.
+</div>
+
+<h3>Section 5 — What Changes <em>(<code>AccelerationRows</code>, solution)</em></h3>
+<p><strong>Heading:</strong> What changes when the data layer comes first.</p>
+<p><strong>Three acceleration rows:</strong></p>
+<ul>
+  <li><strong>Time-to-AI-ready:</strong> Months → Weeks per portco onboarded</li>
+  <li><strong>Pilot survival:</strong> Pilot → Production for POCs that previously stalled</li>
+  <li><strong>Per-acquisition cost curve:</strong> Compounding → Flat as the portfolio scales</li>
+</ul>
+
+<h3>Section 6 — Why the Math Works <em>(<code>AiCompoundingCurve</code>, proof)</em></h3>
+<p><strong>Heading:</strong> Why the math changes.</p>
+<p><strong>Lede:</strong></p>
+<div class="callout">
+  Without a shared layer, every new portco re-pays the integration cost. With one, portco #10 doesn't re-map portcos 1–9. The cost curve flattens instead of compounding.
+</div>
+<p><strong>Three proof points (rendered as labels on the curve):</strong></p>
+<ul>
+  <li><strong>One semantic layer</strong> — shared across every entity</li>
+  <li><strong>Bi-directional</strong> — AI outputs flow back into the operational systems your portcos already run</li>
+  <li><strong>Resilient</strong> — new acquisitions absorb without re-architecting</li>
+</ul>
+
+<h3>Section 7 — The ROI-gap punchline <em>(<code>DarkReveal</code>)</em></h3>
+<p>Three sequential reveals on a dark background, paced by scroll:</p>
+<ul>
+  <li><strong>Setup:</strong> Investors expect AI ROI in 6 months.</li>
+  <li><strong>Reveal:</strong> CEOs need 2–4 years.</li>
+  <li><strong>Punchline (red):</strong> Only one variable closes that gap. The data layer.</li>
+</ul>
+
+<h3>Section 8 — "Why it matters" <em>(<code>MeaningBeat</code>)</em></h3>
+<ul>
+  <li><strong>Badge:</strong> Why it matters</li>
+  <li><strong>Heading:</strong> The 6% who get AI to work share one thing.</li>
+  <li><strong>Body:</strong> They solved the data foundation first. Semantic reconciliation. Cross-entity harmonization. Operational integration. The unglamorous architectural work.</li>
+  <li><strong>Closer (large red):</strong> We do that work.</li>
+</ul>
+
+<h3>Section 9 — CTA card</h3>
+<ul>
+  <li><strong>Headline:</strong> Book a portfolio AI assessment.</li>
+  <li><strong>Subhead:</strong> A 30-minute review of where your portcos are stuck — and what it would take to ship.</li>
+  <li><strong>Button label:</strong> Book the assessment</li>
+  <li><strong>Confirmation copy (post-submit):</strong> Thanks. We'll reach out within one business day to schedule the review.</li>
+</ul>
+
+<h2>4. Visual mockups</h2>
+
+<h3>Page flow at a glance</h3>
+<div class="pageflow">
+  <div class="pageflow-row"><div class="step">1</div><div><div class="name">AiHero</div><div class="desc">"Models work. Data doesn't." + 80% stat card on gradient background</div></div><div><span class="tag bespoke">NEW</span></div></div>
+  <div class="pageflow-row"><div class="step">2</div><div><div class="name">AI ROI Gap (inline stats)</div><div class="desc">Three pain-tone stat cards: 80% / $187B / $2.3M</div></div><div><span class="tag template">INLINE</span></div></div>
+  <div class="pageflow-row"><div class="step">3</div><div><div class="name">AiChaosGrid</div><div class="desc">N × M grid showing every acquisition touching every system</div></div><div><span class="tag reskin">RE-SKIN</span></div></div>
+  <div class="pageflow-row"><div class="step">4</div><div><div class="name">AiSharedLayerDiagram</div><div class="desc">Tangle ↔ Hub side-by-side: point-to-point chaos vs. one shared layer</div></div><div><span class="tag reskin">RE-SKIN</span></div></div>
+  <div class="pageflow-row"><div class="step">5</div><div><div class="name">AccelerationRows</div><div class="desc">Months → Weeks scroll-animated before/after rows</div></div><div><span class="tag shared">SHARED</span></div></div>
+  <div class="pageflow-row"><div class="step">6</div><div><div class="name">AiCompoundingCurve</div><div class="desc">Exponential red curve vs. flat blue line over portco count</div></div><div><span class="tag reskin">RE-SKIN</span></div></div>
+  <div class="pageflow-row"><div class="step">7</div><div><div class="name">DarkReveal</div><div class="desc">Investor 6mo → CEO 2–4yr → "Only the data layer closes that gap"</div></div><div><span class="tag shared">SHARED</span></div></div>
+  <div class="pageflow-row"><div class="step">8</div><div><div class="name">MeaningBeat</div><div class="desc">"The 6% who get AI to work share one thing. We do that work."</div></div><div><span class="tag shared">SHARED</span></div></div>
+  <div class="pageflow-row"><div class="step">9</div><div><div class="name">AiCta</div><div class="desc">Email-gated call-request card with confirmation state</div></div><div><span class="tag bespoke">NEW</span></div></div>
+  <div class="pageflow-row"><div class="step">10</div><div><div class="name">StickyMobileCta</div><div class="desc">Sticky mobile button visible between hero and CTA</div></div><div><span class="tag shared">SHARED</span></div></div>
+</div>
+
+<h3>Hero</h3>
+<div class="mock">
+  <div class="mock-label">1. AiHero — gradient background, EKG decorative line, MTN logo top-left</div>
+  <div class="mock-header"><span class="mock-logo">▲ MOUNTAIN BIOMETRICS</span></div>
+  <div class="mock-hero">
+    <h2>Models work. Data doesn't.</h2>
+    <div class="mock-stat">
+      <div class="num">80%</div>
+      <div class="cap">of AI projects never reach production</div>
+    </div>
+    <p class="mock-sub">80% of AI projects die before production — not because the models fail, but because the data underneath isn't ready.</p>
+  </div>
+</div>
+
+<h3>The AI ROI Gap (inline stat cards)</h3>
+<div class="mock">
+  <div class="mock-label">2. Pain-tone stats — soft red background, three cards (no annotation; moved to DarkReveal)</div>
+  <div class="mock-section pain">
+    <span class="mock-badge">The Problem</span>
+    <div class="mock-heading">The AI ROI Gap</div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="icon">✕</div><div class="num">80%</div><div class="cap">Projects never reach production</div></div>
+      <div class="stat-card"><div class="icon">$</div><div class="num">$187B</div><div class="cap">Invested in 2024 with no clear returns</div></div>
+      <div class="stat-card"><div class="icon">⏳</div><div class="num">$2.3M</div><div class="cap">Average cost per failed AI POC</div></div>
+    </div>
+  </div>
+</div>
+
+<h3>AiChaosGrid — Why It's Not the Model</h3>
+<div class="mock">
+  <div class="mock-label">3. AiChaosGrid — re-skin of ChaosGrid/TangleGrid. N portcos × M systems with every cell a touchpoint</div>
+  <div class="mock-section pain">
+    <span class="mock-badge">The Cause</span>
+    <div class="mock-heading">Every acquisition multiplies the chaos.</div>
+    <div class="schematic">
+      <div class="chaos-grid">
+        <div></div>
+        <div class="h">ERP</div><div class="h">CRM</div><div class="h">EHR</div><div class="h">Billing</div><div class="h">Data WH</div>
+        <div class="row-label">Portco 1</div>
+        <div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div>
+        <div class="row-label">Portco 2</div>
+        <div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div>
+        <div class="row-label">Portco 3</div>
+        <div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div>
+        <div class="row-label">Portco 4</div>
+        <div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div><div class="cell x"></div>
+      </div>
+      <p style="text-align: center; color: var(--ms-body-light); font-size: .85rem; margin: 14px 0 0;">
+        4 portcos × 5 system types = 20 distinct definitions of "customer," "claim," "revenue."
+      </p>
+    </div>
+  </div>
+</div>
+
+<h3>AiSharedLayerDiagram — The Solution</h3>
+<div class="mock">
+  <div class="mock-label">4. AiSharedLayerDiagram — re-skin of SharedLayerDiagram. Tangle on the left, hub on the right</div>
+  <div class="mock-section solution-a">
+    <span class="mock-badge solution">The Solution</span>
+    <div class="mock-heading">One layer. Every entity.</div>
+    <div class="schematic">
+      <div class="mesh">
+        <div class="mesh-side">
+          <h5>Without a semantic layer</h5>
+          <div class="mesh-nodes">
+            <div class="mesh-node">P1</div>
+            <div class="mesh-node">P2</div>
+            <div class="mesh-node">P3</div>
+            <div class="mesh-node">P4</div>
+          </div>
+          <small>N × (N−1) point-to-point connections</small>
+        </div>
+        <div class="mesh-side">
+          <h5>With a semantic layer</h5>
+          <div class="mesh-nodes">
+            <div class="mesh-node">P1</div>
+            <div class="mesh-node">P2</div>
+            <div class="mesh-node hub">MTN</div>
+            <div class="mesh-node">P3</div>
+            <div class="mesh-node">P4</div>
+          </div>
+          <small>N connections to one shared layer</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>AccelerationRows — What Changes</h3>
+<div class="mock">
+  <div class="mock-label">5. AccelerationRows (SHARED) — scroll-animated before/after bars compress as user scrolls</div>
+  <div class="mock-section solution-a">
+    <span class="mock-badge solution">What Changes</span>
+    <div class="mock-heading">What changes when the data layer comes first.</div>
+    <div class="schematic">
+      <div class="accel-row">
+        <div class="label">Time-to-AI-ready</div>
+        <div class="bars"><div class="bar-before" style="width: 75%;"></div><div class="bar-after" style="width: 12%;"></div></div>
+        <div class="delta">Mo → Wk</div>
+      </div>
+      <div class="accel-row">
+        <div class="label">Pilot survival</div>
+        <div class="bars"><div class="bar-before" style="width: 60%;"></div><div class="bar-after" style="width: 80%;"></div></div>
+        <div class="delta">POC → Prod</div>
+      </div>
+      <div class="accel-row">
+        <div class="label">Per-acquisition cost</div>
+        <div class="bars"><div class="bar-before" style="width: 90%;"></div><div class="bar-after" style="width: 18%;"></div></div>
+        <div class="delta">Compound → Flat</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>AiCompoundingCurve — Why the Math Works</h3>
+<div class="mock">
+  <div class="mock-label">6. AiCompoundingCurve — re-skin of CompoundingCurve. Exponential red vs. flat blue over portco count</div>
+  <div class="mock-section solution-b">
+    <span class="mock-badge solution">The Proof</span>
+    <div class="mock-heading">Why the math changes.</div>
+    <div class="schematic">
+      <div class="curve">
+        <div class="curve-col"><div class="bar-exp" style="height: 14%;"></div><small>1</small></div>
+        <div class="curve-col"><div class="bar-exp" style="height: 22%;"></div><small>2</small></div>
+        <div class="curve-col"><div class="bar-exp" style="height: 34%;"></div><small>3</small></div>
+        <div class="curve-col"><div class="bar-exp" style="height: 50%;"></div><small>4</small></div>
+        <div class="curve-col"><div class="bar-exp" style="height: 70%;"></div><small>5</small></div>
+        <div class="curve-col"><div class="bar-exp" style="height: 92%;"></div><small>6</small></div>
+        <div style="width: 1px; background: var(--ms-border); height: 100%;"></div>
+        <div class="curve-col"><div class="bar-flat" style="height: 14%;"></div><small>1</small></div>
+        <div class="curve-col"><div class="bar-flat" style="height: 16%;"></div><small>2</small></div>
+        <div class="curve-col"><div class="bar-flat" style="height: 15%;"></div><small>3</small></div>
+        <div class="curve-col"><div class="bar-flat" style="height: 17%;"></div><small>4</small></div>
+        <div class="curve-col"><div class="bar-flat" style="height: 16%;"></div><small>5</small></div>
+        <div class="curve-col"><div class="bar-flat" style="height: 16%;"></div><small>6</small></div>
+      </div>
+      <div style="display: flex; justify-content: space-around; margin-top: 6px;">
+        <small style="color: var(--ms-accent); font-weight: 700;">Without a shared layer ↑</small>
+        <small style="color: var(--ms-primary); font-weight: 700;">With a shared layer →</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>DarkReveal — Investor vs. CEO punchline</h3>
+<div class="mock">
+  <div class="mock-label">7. DarkReveal (SHARED) — sequential fade on dark bg with red radial glow</div>
+  <div class="mock-section dark">
+    <div class="setup">Investors expect AI ROI in</div>
+    <div class="reveal">6 months.</div>
+    <div class="setup" style="margin-top: 18px;">CEOs need</div>
+    <div class="reveal">2–4 years.</div>
+    <div class="punch" style="margin-top: 28px;">Only one variable closes that gap.<br /><strong>The data layer.</strong></div>
+  </div>
+</div>
+
+<h3>MeaningBeat — "We do that work."</h3>
+<div class="mock">
+  <div class="mock-label">8. MeaningBeat (SHARED) — centered fade-in, blue badge, big serif heading, red closer</div>
+  <div class="mock-section meaning">
+    <span class="badge">Why it matters</span>
+    <div class="heading">The 6% who get AI to work share one thing.</div>
+    <div class="body">They solved the data foundation first. Semantic reconciliation. Cross-entity harmonization. Operational integration. The unglamorous architectural work.</div>
+    <div class="closer">We do that work.</div>
+  </div>
+</div>
+
+<h3>AiCta + StickyMobileCta</h3>
+<div class="mock">
+  <div class="mock-label">9 + 10. AiCta — call-request form. StickyMobileCta scrolls in on mobile between hero and CTA</div>
+  <div class="mock-section closing">
+    <div class="mock-cta">
+      <div style="font-weight: 600; color: var(--ms-heading); margin-bottom: 6px;">Book a portfolio AI assessment</div>
+      <div style="font-size: .85rem; color: var(--ms-body-light); margin-bottom: 8px;">A 30-minute review of where your portcos are stuck — and what it would take to ship.</div>
+      <div class="input">Work email</div>
+      <div class="input">Firm / platform</div>
+      <span class="btn">Book the assessment →</span>
+    </div>
+  </div>
+</div>
+
+<h2>5. Implementation plan</h2>
+
+<h3>5.1 File-level changes</h3>
+
+<table class="impl">
+  <thead>
+    <tr><th>File</th><th>Change</th><th>Purpose</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>lib/microsites.ts</code></td>
+      <td>Add a new <code>MicrositeConfig</code> entry for <code>ai-transformation-pe</code> with <code>papers: []</code>.</td>
+      <td>Source of truth for headline, subheadline, hero stat, theme, brand tagline, CTA label.</td>
+    </tr>
+    <tr>
+      <td><code>app/(microsites)/m/[slug]/page.tsx</code></td>
+      <td>Add <code>ai-transformation-pe</code> to the bespoke-exclusion filter in <code>generateStaticParams</code>.</td>
+      <td>Ensures the dynamic template skips this slug so the bespoke page renders instead.</td>
+    </tr>
+    <tr>
+      <td><code>app/(microsites)/m/ai-transformation-pe/page.tsx</code> <em>(new)</em></td>
+      <td>Bespoke page composing the 10 components in order.</td>
+      <td>Wires hero → stats → chaos → shared layer → acceleration → curve → dark reveal → meaning beat → CTA → sticky mobile CTA.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/ai-transformation-pe/AiHero.tsx</code> <em>(new)</em></td>
+      <td>Bespoke hero. Clone shape of <code>PeHero</code>; swap copy/stat.</td>
+      <td>Headline, subhead, 80% hero stat card.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/ai-transformation-pe/AiChaosGrid.tsx</code> <em>(new)</em></td>
+      <td>Re-skin of <code>ChaosGrid</code> / <code>TangleGrid</code>.</td>
+      <td>N × M grid of portcos vs. system types with "every cell is a touchpoint" framing.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/ai-transformation-pe/AiSharedLayerDiagram.tsx</code> <em>(new)</em></td>
+      <td>Re-skin of <code>SharedLayerDiagram</code> / <code>MeshDiagram</code>.</td>
+      <td>Side-by-side: tangled point-to-point on left, hub-and-spoke MTN layer on right.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/ai-transformation-pe/AiCompoundingCurve.tsx</code> <em>(new)</em></td>
+      <td>Re-skin of <code>CompoundingCurve</code>.</td>
+      <td>Exponential red vs. flat blue curve over portco count, scroll-animated.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/ai-transformation-pe/AiCta.tsx</code> <em>(new)</em></td>
+      <td>Clone shape of <code>PeCta</code>; swap paper-download payload for call-request confirmation.</td>
+      <td>Email-gated form with "we'll reach out" confirmation state.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/MicrositeEmailGate.tsx</code></td>
+      <td>Extend with optional <code>mode: 'paper' | 'call'</code> prop (default <code>'paper'</code>) and <code>callConfirmation?: string</code>.</td>
+      <td>Allows the gate's "unlocked" state to render call-confirmation copy instead of paper download links, without breaking existing microsites.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/shared/AccelerationRows.tsx</code></td>
+      <td>Imported as-is; new config object passed in from page.</td>
+      <td>Months → Weeks rows for the AI story.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/shared/DarkReveal.tsx</code></td>
+      <td>Imported as-is; investor/CEO copy passed in as props.</td>
+      <td>Dramatic emotional pivot.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/shared/MeaningBeat.tsx</code></td>
+      <td>Imported as-is; "We do that work" copy passed in as props.</td>
+      <td>Closes the page emotionally before CTA.</td>
+    </tr>
+    <tr>
+      <td><code>components/microsites/shared/StickyMobileCta.tsx</code></td>
+      <td>Imported as-is; new label and href passed in.</td>
+      <td>Mobile sticky CTA.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>5.2 Component reuse summary</h3>
+<ul>
+  <li><span class="tag shared">SHARED — no code changes:</span> <code>AccelerationRows</code>, <code>DarkReveal</code>, <code>MeaningBeat</code>, <code>StickyMobileCta</code>, <code>MicrositeThemeWrapper</code></li>
+  <li><span class="tag shared">SHARED — small extension:</span> <code>MicrositeEmailGate</code> (adds <code>mode</code> + <code>callConfirmation</code> props, backwards compatible)</li>
+  <li><span class="tag reskin">RE-SKINS:</span> <code>AiChaosGrid</code>, <code>AiSharedLayerDiagram</code>, <code>AiCompoundingCurve</code> (new files, design adapted from existing visuals)</li>
+  <li><span class="tag bespoke">NEW:</span> <code>AiHero</code>, <code>AiCta</code>, the page wrapper</li>
+</ul>
+
+<h3>5.3 <code>MicrositeConfig</code> entry (shape preview)</h3>
+
+<pre><code>{
+  slug: 'ai-transformation-pe',
+  title: 'MTN | Unlock AI Transformation in PE Portfolios',
+  metaDescription:
+    'Why AI transformation breaks in PE portfolios — and the semantic data layer that lets your portcos ship AI to production instead of stalling in pilot purgatory.',
+  headline: "Models work. Data doesn't.",
+  heroStat: '80%',
+  heroStatCaption: 'of AI projects never reach production',
+  subheadline:
+    "80% of AI projects die before production — not because the models fail, but because the data underneath isn't ready.",
+  papers: [],
+  formspreeId: 'xaqbaljo',
+  ctaLabel: 'Book a portfolio AI assessment',
+  theme: {
+    primaryColor: '#AC1F2D',
+    primaryColorHover: '#8B1924',
+    heroGradientColor: '#F5E0E2',
+  },
+  sections: [],   // bespoke page renders its own components; sections array is unused
+  utmCampaign: 'ai-transformation-pe-call',
+  brandTagline: 'The semantic data layer that makes AI work across your portfolio.',
+}</code></pre>
+
+<h3>5.4 The call-CTA component change</h3>
+<p>Extend <code>MicrositeEmailGate</code> with a mode prop (default <code>'paper'</code>):</p>
+<pre><code>interface MicrositeEmailGateProps {
+  slug: string;
+  formspreeId: string;
+  ctaLabel?: string;
+  // New:
+  mode?: 'paper' | 'call';
+  papers?: MicrositePaper[];      // required when mode === 'paper'
+  callConfirmation?: string;      // shown when mode === 'call' and unlocked
+}</code></pre>
+<p>
+  In <code>mode: 'call'</code> the post-submit "unlocked" state renders the confirmation copy
+  instead of paper download links. Defaulting <code>mode</code> to <code>'paper'</code> means
+  every existing microsite keeps working unchanged.
+</p>
+
+<h3>5.5 Open questions</h3>
+<div class="note">
+  <strong>Decide before implementation:</strong>
+  <ul style="margin-top: 6px; margin-bottom: 0;">
+    <li>Should the call-CTA confirmation include a Calendly / scheduling link, or only a "we'll reach out" message?</li>
+    <li>UTM campaign value: <code>ai-transformation-pe-call</code> proposed.</li>
+    <li>Final wording for the <code>DarkReveal</code> punchline: "Only one variable closes that gap. The data layer." vs alternative phrasings.</li>
+    <li>Re-skinned visuals: are we content with copying the data shape from the source components, or do we want fresh data tuned to PE-specific numbers?</li>
+  </ul>
+</div>
+
+<h3>5.6 Acceptance checklist</h3>
+<ol>
+  <li><code>lib/microsites.ts</code> entry compiles cleanly (verify <code>MicrositeConfig</code> accepts <code>papers: []</code>).</li>
+  <li><code>app/(microsites)/m/[slug]/page.tsx</code> <code>generateStaticParams</code> excludes <code>ai-transformation-pe</code>.</li>
+  <li><code>npm run dev</code> renders <code>/m/ai-transformation-pe</code> with all 10 components in order, correct tones, and brand colors.</li>
+  <li>Scroll-animated components (<code>AccelerationRows</code>, <code>DarkReveal</code>, <code>MeaningBeat</code>, <code>AiCompoundingCurve</code>) animate as expected on desktop and degrade gracefully on mobile.</li>
+  <li>Form submission stores the unlocked flag in <code>localStorage</code> (<code>ms-submitted-ai-transformation-pe</code>) and swaps to the call-confirmation state.</li>
+  <li><code>StickyMobileCta</code> appears between hero and CTA on mobile, hidden otherwise.</li>
+  <li><code>npm run lint</code> passes.</li>
+  <li><code>npm run build</code> succeeds (static export).</li>
+  <li>Manual verification: hero stat, DarkReveal punchline, and MeaningBeat closer all render with intended emphasis and color treatment.</li>
+</ol>
+
+</body>
+</html>

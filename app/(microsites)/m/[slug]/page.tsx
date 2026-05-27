@@ -28,7 +28,8 @@ export function generateStaticParams() {
         slug !== 'healthcare-pe' &&
         slug !== 'b2b-pe' &&
         slug !== 'healthcare-state-rhtp' &&
-        slug !== 'healthcare-ma-alliance',
+        slug !== 'healthcare-ma-alliance' &&
+        slug !== 'ai-transformation-pe',
     )
     .map((slug) => ({ slug }));
 

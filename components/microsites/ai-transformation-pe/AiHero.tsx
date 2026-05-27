@@ -1,0 +1,69 @@
+export default function AiHero() {
+  return (
+    <section
+      id="hero-section"
+      className="py-20 md:py-28 lg:py-32 relative overflow-hidden"
+      style={{ background: 'linear-gradient(160deg, #F5E0E2 0%, #FDFBFC 40%, #F7F7FB 100%)' }}
+    >
+      {/* Decorative EKG pulse line */}
+      <div className="absolute inset-0 flex items-center pointer-events-none" aria-hidden="true">
+        <svg
+          className="w-full opacity-[0.06]"
+          viewBox="0 0 800 120"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 60 H280 L300 48 L320 60 L340 60 L358 15 L376 105 L394 5 L412 60 L440 60 L460 42 L480 60 H800"
+            stroke="#AC1F2D"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      <div className="container-site max-w-3xl mx-auto relative">
+        <h1 className="font-display text-[2rem] md:text-[3.25rem] leading-[1.08] text-[var(--ms-heading)] mb-3 md:mb-4 md:text-center">
+          AI shipped across every portco. In weeks, not&nbsp;years.
+        </h1>
+
+        <p className="text-lg md:text-xl italic text-[var(--ms-body-light)] mb-6 md:mb-8 md:text-center">
+          The models work. Your data doesn&rsquo;t.
+        </p>
+
+        {/* Hero stat card */}
+        <div className="flex md:justify-center mb-6 md:mb-8">
+          <div
+            className="inline-flex flex-col items-center bg-white/80 backdrop-blur-md rounded-2xl px-8 py-7 w-full md:w-auto"
+            style={{ boxShadow: 'var(--ms-shadow-hero)' }}
+          >
+            <p className="text-5xl md:text-6xl font-bold text-[#AC1F2D] tabular-nums">
+              80%
+            </p>
+            <p className="text-base text-[var(--ms-body)] mt-1.5 text-center">
+              of AI projects never reach&nbsp;production
+            </p>
+          </div>
+        </div>
+
+        <p className="text-base md:text-xl text-[var(--ms-body)] leading-relaxed max-w-2xl mx-auto md:text-center">
+          Because the data underneath isn&rsquo;t&nbsp;ready.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-6 md:mt-8 md:justify-center">
+          <a
+            href="#architecture"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#AC1F2D] text-white font-semibold rounded-xl hover:bg-[#8B1924] transition-all duration-200 text-base md:text-lg hover:-translate-y-0.5"
+            style={{ boxShadow: 'var(--ms-shadow-btn)' }}
+          >
+            See why
+          </a>
+          <span className="text-sm text-[var(--ms-muted)] font-medium tracking-wider uppercase">
+            The Babel Tax&ensp;&middot;&ensp;$2.3M per failed POC&ensp;&middot;&ensp;88% never&nbsp;ship
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import EmailCaptureForm from '@/components/forms/EmailCaptureForm';
 import type { MicrositePaper } from '@/lib/microsites';
 
@@ -9,6 +9,9 @@ interface MicrositeEmailGateProps {
   papers: MicrositePaper[];
   formspreeId: string;
   ctaLabel?: string;
+  mode?: 'paper' | 'call';
+  callDescription?: ReactNode;
+  callConfirmation?: ReactNode;
 }
 
 export default function MicrositeEmailGate({
@@ -16,6 +19,9 @@ export default function MicrositeEmailGate({
   papers,
   formspreeId,
   ctaLabel,
+  mode = 'paper',
+  callDescription,
+  callConfirmation,
 }: MicrositeEmailGateProps) {
   const [unlocked, setUnlocked] = useState(false);
 
@@ -30,6 +36,29 @@ export default function MicrositeEmailGate({
   }, [slug]);
 
   if (unlocked) {
+    if (mode === 'call') {
+      return (
+        <div className="bg-[rgba(46,125,111,0.08)] rounded-lg p-6 text-center">
+          <svg
+            className="w-10 h-10 mx-auto mb-3 text-[var(--ms-primary)]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <p className="text-[var(--ms-heading)] font-medium">
+            {callConfirmation ?? "Thanks. We’ll reach out within one business day."}
+          </p>
+        </div>
+      );
+    }
+
     return (
       <div className="space-y-4">
         <div className="bg-[rgba(46,125,111,0.08)] rounded-lg p-6 text-center mb-6">
@@ -102,6 +131,24 @@ export default function MicrositeEmailGate({
             </svg>
           </a>
         ))}
+      </div>
+    );
+  }
+
+  if (mode === 'call') {
+    return (
+      <div>
+        {callDescription && (
+          <div className="mb-6 text-base md:text-lg text-[var(--ms-body)]">
+            {callDescription}
+          </div>
+        )}
+        <EmailCaptureForm
+          formspreeId={formspreeId}
+          micrositeSlug={slug}
+          ctaLabel={ctaLabel}
+          onSuccess={() => setUnlocked(true)}
+        />
       </div>
     );
   }

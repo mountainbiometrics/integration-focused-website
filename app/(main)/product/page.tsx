@@ -10,9 +10,9 @@ import WhatItDoes from '@/components/product/WhatItDoes';
 import MonitoringPulse from '@/components/product/MonitoringPulse';
 
 export const metadata: Metadata = {
-  title: 'Product | MTN',
+  title: 'MTN Guide | MTN',
   description:
-    'MTN Data Foundry closes visibility gaps during acquisitions and system changes. Learn how it works.',
+    'MTN Guide is an agentic data engineer: it maps what your systems mean from schemas and documentation, and keeps that map current as they change.',
 };
 
 export default function ProductPage() {
@@ -20,23 +20,24 @@ export default function ProductPage() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="The data layer underneath the work."
-        subheadline="Live in days. Flat through every add-on. Ready for what you deploy next."
+        headline="MTN Guide"
+        subheadline="An agentic data engineer. It reads your schemas, maps what they mean, and keeps the map current as your systems change."
         ctaText="See How It Works"
         ctaHref="/contact"
         variant="internal"
+        background="topo"
       />
 
-      {/* Product Overview — animated Sources → Foundry → Tools */}
+      {/* Product Overview — animated Sources → Guide → Tools */}
       <FoundryFlow />
 
-      {/* Section 1: Live in days — animated field mapping */}
+      {/* Section 1: A map in days — animated field mapping */}
       <MappingCascade />
 
-      {/* Section 2: Flat through every add-on — maintenance chart */}
+      {/* Section 2: Change stays contained — maintenance chart */}
       <HealingPipeline />
 
-      {/* Section 3: Flat doesn't happen by accident — self-healing vignettes */}
+      {/* Section 3: How change stays contained — vignettes */}
       <AutomatePlumbing />
 
       {/* Section 4: Ready for what you deploy next — AI readiness */}
@@ -45,13 +46,13 @@ export default function ProductPage() {
       {/* Section 5: What it does, and what it doesn't — positioning */}
       <WhatItDoes />
 
-      {/* Section 6: It tells you before anything breaks — 3 signal lanes */}
+      {/* Section 6: You find out when something moves — schema drift */}
       <MonitoringPulse />
 
       {/* Primary CTA */}
       <PrimaryCTABanner
         headline="See how this fits your stack"
-        description="We'll walk through your sources, your warehouse, and your deployment plans, and show how the layer fits underneath."
+        description="We'll walk through your sources, your warehouse, and your deployment plans, and show you where the map fits underneath."
         ctaText="See How It Fits Your Stack"
         ctaHref="/contact"
       />

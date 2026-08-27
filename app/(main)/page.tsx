@@ -4,6 +4,7 @@ import SectionHeader from '@/components/content/SectionHeader';
 import ProblemBullets from '@/components/content/ProblemBullets';
 import BeforeAfter from '@/components/comparison/BeforeAfter';
 import TimelineShuffle from '@/components/comparison/TimelineShuffle';
+import TrustPillars from '@/components/content/TrustPillars';
 import AnimatedThreeStepFlow from '@/components/animation/AnimatedThreeStepFlow';
 import ScrollReveal from '@/components/animation/ScrollReveal';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
@@ -14,7 +15,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="Time to trust your data"
+        headline="It’s time to trust your data"
         subheadline="MTN Guide maps your data and provides the trusted context you need, when you need it."
         ctaText="Start a Conversation"
         ctaHref="/contact"
@@ -52,7 +53,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <ScrollReveal>
               <SectionHeader
-                headline="A true timeline of events is built"
+                headline="Revenue and quality depend on a true timeline"
                 subheadline="And building it is the part everyone underestimates."
               />
             </ScrollReveal>
@@ -88,7 +89,7 @@ export default function Home() {
             <ScrollReveal>
               <SectionHeader
                 headline="How MTN Guide works"
-                subheadline="An agentic data engineer that builds the map, then keeps it current."
+                subheadline="An agentic data engineer that builds MTN FieldMap, then keeps it current."
                 align="center"
               />
             </ScrollReveal>
@@ -98,7 +99,7 @@ export default function Home() {
                 {
                   number: 1,
                   title: 'Read',
-                  description: 'Schemas, docs, and API definitions — not your records',
+                  description: 'Schemas, docs, and API definitions, not your records',
                   icon: 'Database',
                 },
                 {
@@ -126,7 +127,7 @@ export default function Home() {
             <ScrollReveal>
               <SectionHeader
                 headline="What changes"
-                subheadline="The map is the asset. It is yours, and it stays current."
+                subheadline="MTN FieldMap is the asset. It is yours, and it stays current."
                 variant="emphasis"
               />
             </ScrollReveal>
@@ -145,7 +146,7 @@ export default function Home() {
                 after={{
                   title: 'With MTN Guide',
                   items: [
-                    'A map built from schemas, in days',
+                    'A FieldMap built from schemas, in days',
                     'Evidence recorded under every claim',
                     'Change contained to one connection',
                     'Data your models can actually use',
@@ -172,40 +173,11 @@ export default function Home() {
                 checked.
               </p>
             </ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: 'Schema-first',
-                  body: 'Work begins from schemas, documentation, and API definitions. No PHI required to start, and no records leave your systems.',
-                },
-                {
-                  title: 'Evidence-backed',
-                  body: 'Every claim in the map records what it rests on — including a person’s confirmation, which counts as evidence in its own right.',
-                },
-                {
-                  title: 'Honest about gaps',
-                  body: 'When the map cannot answer, it says so and names what is missing. A refusal is a complete answer, not a failure.',
-                },
-                {
-                  title: 'Out of the data path',
-                  body: 'Guide tells you where to look. Running the query stays with you, on your infrastructure, under your controls.',
-                },
-              ].map((card, i) => (
-                <ScrollReveal key={card.title} stagger={i * 0.1} distance={20}>
-                  <div
-                    className="h-full p-6 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)] text-left"
-                    style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
-                  >
-                    <div className="font-display text-[var(--ms-accent)] text-lg mb-2">
-                      {card.title}
-                    </div>
-                    <p className="text-[var(--ms-body)] text-base leading-relaxed">
-                      {card.body}
-                    </p>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
+            <ScrollReveal stagger={0.1} distance={20}>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <TrustPillars />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -223,7 +195,7 @@ export default function Home() {
                   NIH SBIR Fast-Track
                 </div>
                 <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                  MTN — Medical Timeseries Networks — holds a Small Business
+                  MTN (Medical Timeseries Networks) holds a Small Business
                   Innovation Research Fast-Track award from the National Library of
                   Medicine, supporting research on making fragmented clinical and
                   physiological data usable for AI. The team is led by a
@@ -239,7 +211,7 @@ export default function Home() {
       {/* Primary CTA Section */}
       <PrimaryCTABanner
         headline="Send us one representative schema"
-        description="We’ll show you what the map finds in it — and, just as usefully, what it can’t tell you without asking."
+        description="We’ll show you what the FieldMap finds in it. Just as usefully, we’ll show you what it can’t tell you without asking."
         ctaText="Start a Conversation"
         ctaHref="/contact"
       />

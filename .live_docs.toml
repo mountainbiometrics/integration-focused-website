@@ -1,0 +1,7 @@
+# live_docs store config. Discovered by walking up from the working directory.
+# Paths resolve relative to THIS file's directory (absolute and ~ also allowed),
+# so the docs need not live in this repo — point these anywhere.
+inbox   = "../sinai/kb/00-inbox"
+raw     = "../sinai/kb/01-raw"
+docs    = "../sinai/kb/02-docs"
+reviews = "../sinai/kb/reviews"

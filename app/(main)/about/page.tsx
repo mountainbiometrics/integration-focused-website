@@ -2,11 +2,12 @@ import type { Metadata } from 'next';
 import Hero from '@/components/content/Hero';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 import FounderCard from '@/components/content/FounderCard';
+import PeerReviewedValidation from '@/components/content/PeerReviewedValidation';
 
 export const metadata: Metadata = {
   title: 'About | MTN',
   description:
-    'MTN — Medical Timeseries Networks — set out to find patterns in clinical data over time, and hit a wall upstream. MTN Guide is what we built to get past it.',
+    'MTN (Medical Timeseries Networks) set out to find patterns in clinical data over time, and hit a wall upstream. MTN Guide is what we built to get past it.',
 };
 
 export default function AboutPage() {
@@ -15,7 +16,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         headline="We started on the other end of this problem"
-        subheadline="MTN stands for Medical Timeseries Networks. The name is the origin story — and the reason we ended up building a data engineering product."
+        subheadline="MTN stands for Medical Timeseries Networks. The name is the origin story, and the reason we ended up building a data engineering product."
         variant="internal"
         ctaText=""
         ctaHref=""
@@ -37,7 +38,7 @@ export default function AboutPage() {
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
                 And we kept losing the same months to the same work. Not to the
-                models — to figuring out what the data meant. Which of five
+                models, but to figuring out what the data meant. Which of five
                 timestamp columns marked when the encounter actually happened.
                 Whether this system’s visit was the same thing as that system’s
                 encounter. Why a report broke after a vendor update that changed
@@ -63,9 +64,9 @@ export default function AboutPage() {
             <div className="prose prose-gray max-w-none space-y-4">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
                 MTN Guide is an agentic data engineer. It reads schemas,
-                documentation, and API definitions, and builds an evidence-backed
-                map of what an organization’s data means — then maintains that map
-                as systems change. It is the thing we needed before we could do
+                documentation, and API definitions, and builds MTN FieldMap: an
+                evidence-backed map of what an organization’s data means, then
+                maintains that map as systems change. It is the thing we needed before we could do
                 any of the work we actually set out to do.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
@@ -76,7 +77,7 @@ export default function AboutPage() {
                 second is that you cannot merge your way out of this. Two
                 departments genuinely disagree about what a customer is, and a
                 single unified model just hides the disagreement. So we map
-                instead — recording where systems agree, where they overlap, and
+                instead, recording where systems agree, where they overlap, and
                 under what conditions.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
@@ -126,7 +127,7 @@ export default function AboutPage() {
             <div className="space-y-4">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
                 Two things changed. Organizations started trying to deploy AI on
-                data nobody had ever had to explain to a machine before — and
+                data nobody had ever had to explain to a machine before, and
                 discovered that the explaining was the whole job. At the same
                 time, agents became capable enough to do most of that explaining,
                 if they are given the right evidence and held to it.
@@ -215,36 +216,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Research funding */}
+      {/* Peer-reviewed validation */}
       <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
-              Research funding
+              Peer-reviewed validation
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 mb-10">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                MTN holds a Small Business Innovation Research Fast-Track award
-                from the National Library of Medicine, for{' '}
-                <em>
-                  Unlocking Medical AI: A Scalable, Privacy-Preserving Annotation
-                  Platform for Clinical and Physiological Data
-                </em>
-                . Phase I develops the automated data engineering and elicitation
-                systems at the core of MTN Guide, across wearable devices,
-                unstructured documents, and clinical records. Phase II expands the
-                platform, strengthens its security and compliance posture, and
-                tests it with clinical partners.
+                Most of what MTN has built was paid for by research funding we had
+                to win in open competition. Getting that funding meant passing
+                peer review: independent scientists, physicians, and engineers
+                with no connection to the company take the technical approach apart and judge whether it will actually work. It is
+                designed to be hard to pass, and most applications don’t.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                We are grateful to the Nucleus Institute, whose UTIF grant and
-                SBIR application support helped make the award possible.
-              </p>
-              <p className="text-base text-[var(--ms-body-light)] leading-relaxed">
-                NIH funding supports this research. It is not an endorsement of
-                MTN or its products.
+                MTN has been through it three times, in front of three different
+                panels.
               </p>
             </div>
+
+            <PeerReviewedValidation />
+
+            <p className="text-base text-[var(--ms-body-light)] leading-relaxed mt-8">
+              We are grateful to the Nucleus Institute, whose UTIF grant and SBIR
+              application support helped make the NIH award possible. Federal
+              funding supports this research; it is not an endorsement of MTN or
+              its products by NIH, NIA, or the U.S. Army.
+            </p>
           </div>
         </div>
       </section>
@@ -260,7 +260,7 @@ export default function AboutPage() {
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
                 Healthcare generates an extraordinary record of what happens to
                 people over time, and most of it goes unused because nobody can
-                say with confidence what it means. MTN exists to close that gap —
+                say with confidence what it means. MTN exists to close that gap:
                 to make fragmented, irregular, sequential data usable, without
                 asking organizations to hand over the data itself or pretend to a
                 certainty they don’t have.

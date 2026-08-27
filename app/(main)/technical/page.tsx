@@ -7,64 +7,94 @@ import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 export const metadata: Metadata = {
   title: 'Technical Overview | MTN',
   description:
-    'Technical architecture and implementation details for data engineers and IT teams evaluating MTN Data Foundry.',
+    'How MTN Guide works: an evidence-backed semantic map maintained outside the data path, with a deterministic answering engine and explicit refusal.',
 };
 
-const ingestionDetails = {
-  title: 'Ingestion and schema detection',
+const evidenceDetails = {
+  title: 'What Guide reads',
   description:
-    'MTN Data Foundry ingests data from heterogeneous sources without requiring upfront schema definitions. Incoming payloads are fingerprinted to identify structure and detect changes.',
+    'Guide builds the map from descriptions of your systems rather than from their contents. Schema-level evidence is enough to begin, which is what lets an engagement start before a data agreement is in place.',
   behaviors: [
-    'Supports JSON, HL7, X12, CSV, and structured database connections',
-    'Schema signatures are computed from payload structure, not just field names',
-    'New schema versions trigger mapping workflows automatically',
-    'Malformed payloads are quarantined with detailed error context',
+    'DDL, JSON Schema, OpenAPI specs, data dictionaries, and warehouse catalogs',
+    'Prose documentation, integration guides, and vendor references',
+    'Synthetic or anonymized example payloads where values clarify meaning',
+    'Human answers to specific questions, recorded as evidence in their own right',
+    'Each modality keeps an evidence shape faithful to the artifact it came from',
   ],
 };
 
-const mappingDetails = {
-  title: 'Semantic mapping and governance',
+const mapDetails = {
+  title: 'The map',
   description:
-    'Data is mapped to a canonical concept layer that represents healthcare entities consistently across sources. Mapping decisions are governed by confidence thresholds and human approval.',
+    'The map is a graph of concepts and the relationships between them, assembled from assertions. Every assertion records what it rests on, so any claim can be walked back to its source.',
   behaviors: [
-    'Mappings are suggested based on field values, patterns, and healthcare standards',
-    'Confidence scores determine whether mappings auto-apply or require review',
-    'Human-in-the-loop workflows route uncertain cases to domain experts',
-    'Mapping versions are immutable; changes create new versions',
+    'A concept’s existence is itself an assertion, with evidence and an author',
+    'Re-deriving a concept corroborates the existing one rather than duplicating it',
+    'Competing claims coexist and stay visible; the map does not silently overwrite',
+    'Provenance is derived from the writing action — deterministic rule, model, or person',
+    'A person’s confirmation is first-class evidence, not a separate approval flag',
   ],
 };
 
-const changeDetails = {
-  title: 'Change detection and self-healing',
+const layerDetails = {
+  title: 'Layers and change containment',
   description:
-    'When source schemas change, the Foundry detects the change, evaluates impact, and either adapts automatically or routes for review. Historical data remains stable.',
+    'Each source is a layer. Layers compose into higher layers, recursively, and a canonical model is just a composite layer. Correspondence between two systems is recorded in the layer above both of them.',
   behaviors: [
-    'Schema changes detected through payload fingerprinting',
-    'High-confidence changes apply automatically with audit logging',
-    'Low-confidence changes pause and notify for human decision',
-    'Historical data is never retroactively remapped unless explicitly requested',
+    'No fixed hierarchy — how many levels exist is your structural choice',
+    'A schema change re-evaluates the connection it affects, not the whole estate',
+    'A database schema and its API projection can be held apart rather than merged',
+    'Correspondence carries the conditions it holds under, not a bare equals sign',
+    'Conflicts surface when the map is queried, rather than in a separate batch job',
   ],
 };
 
-const monitoringDetails = {
-  title: 'Monitoring and resilience',
-  description:
-    'Continuous monitoring of data transmission, structure, and quality. Problems are surfaced before they impact downstream systems.',
-  behaviors: [
-    'Transmission health monitoring tracks source connectivity and data flow',
-    'Alerting triggers on schema drift, volume anomalies, and quality degradation',
-    'Downstream systems are protected from bad data through validation gates',
-    'Full observability through structured logs and metrics export',
-  ],
-};
+const ANSWER_STAGES = [
+  {
+    stage: 'Interpret',
+    actor: 'Model',
+    detail:
+      'A question is translated into one or more goals from a closed, enumerated catalog. Selection from a fixed set, not free-form query generation.',
+  },
+  {
+    stage: 'Ground',
+    actor: 'Engine',
+    detail:
+      'Terms in the question resolve to identities in the map. The result is resolved, ambiguous-with-candidates, or unknown — never a silent best guess.',
+  },
+  {
+    stage: 'Assess',
+    actor: 'Engine',
+    detail:
+      'Before anything executes, the engine decides whether the map can support the question, and names what is missing if it cannot.',
+  },
+  {
+    stage: 'Execute',
+    actor: 'Engine',
+    detail:
+      'A fixed plan per goal type produces a structured answer, together with the complete set of assertions it was computed from.',
+  },
+  {
+    stage: 'Narrate',
+    actor: 'Model',
+    detail:
+      'The structured answer is rendered into prose. The model adds nothing — including nothing about gaps it was not shown.',
+  },
+  {
+    stage: 'Deliver',
+    actor: 'Log',
+    detail:
+      'Goal, structured answer, and narration arrive together and are logged, so any answer can be replayed and disputed mechanically.',
+  },
+];
 
 export default function TechnicalPage() {
   return (
     <>
       {/* Hero Section */}
       <Hero
-        headline="Technical architecture"
-        subheadline="Live in days. Flat through every add-on. Ready for what you deploy next."
+        headline="Technical overview"
+        subheadline="A map of what your data means, maintained outside your data path, honest about what it does not know."
         ctaText="Schedule a Technical Session"
         ctaHref="/contact"
         variant="internal"
@@ -75,399 +105,224 @@ export default function TechnicalPage() {
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
-              headline="Architecture overview"
-              subheadline="Where the Foundry sits in your data infrastructure."
+              headline="Where Guide sits"
+              subheadline="Above the data path, not inside it. Your records never route through MTN."
             />
-            {/* Medallion Architecture Diagram - Visual */}
-            <div className="mb-8 p-6 md:p-8 rounded-lg bg-white border border-[var(--ms-border)]">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-                {/* Bronze - Source Systems */}
-                <div className="flex flex-col items-center text-center p-4 min-w-[140px]">
-                  {/* Database stack icon */}
-                  <div className="w-16 h-16 mb-3 text-amber-600">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <ellipse cx="12" cy="6" rx="8" ry="3" />
-                      <path d="M4 6v4c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
-                      <path d="M4 10v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4" />
-                      <path d="M4 14v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4" />
-                    </svg>
-                  </div>
-                  <div className="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-1">
-                    Bronze
-                  </div>
-                  <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
-                    Source Systems
-                  </div>
-                  <div className="text-sm text-[var(--ms-body)]">
-                    Raw data as-is
-                  </div>
-                </div>
 
-                {/* Arrow 1 - Desktop */}
-                <div className="hidden md:flex items-center text-[var(--ms-muted)]">
-                  <svg
-                    className="w-12 h-8"
-                    viewBox="0 0 48 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M0 12h40M34 6l8 6-8 6" />
-                  </svg>
-                </div>
-                {/* Arrow 1 - Mobile */}
-                <div className="md:hidden text-[var(--ms-muted)]">
-                  <svg
-                    className="w-8 h-8"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M12 5v14M5 12l7 7 7-7" />
-                  </svg>
-                </div>
+            <div className="mb-8 p-6 md:p-8 rounded-lg bg-white border border-[var(--ms-border)] overflow-x-auto">
+              <svg
+                viewBox="0 0 640 260"
+                className="w-full min-w-[560px] h-auto"
+                role="img"
+                aria-label="Diagram: MTN Guide reads schemas and documentation from source systems and returns routes and mappings to your pipeline. Data itself flows directly from sources to your warehouse without passing through MTN."
+              >
+                {/* Guide box — top */}
+                <rect
+                  x="215"
+                  y="10"
+                  width="210"
+                  height="66"
+                  rx="12"
+                  fill="rgba(74,111,165,0.10)"
+                  stroke="var(--ms-primary)"
+                  strokeWidth="2"
+                />
+                <text
+                  x="320"
+                  y="38"
+                  textAnchor="middle"
+                  fontSize="15"
+                  fontWeight="600"
+                  fill="var(--ms-heading)"
+                >
+                  MTN Guide
+                </text>
+                <text x="320" y="58" textAnchor="middle" fontSize="12" fill="var(--ms-body)">
+                  The map — concepts, evidence, routes
+                </text>
 
-                {/* Foundry - Center, highlighted */}
-                <div className="flex flex-col items-center text-center p-6 min-w-[180px] rounded-xl bg-[rgba(74,111,165,0.1)] border-2 border-[var(--ms-primary)]/40">
-                  {/* Gear/cog icon */}
-                  <div className="w-16 h-16 mb-3 text-[var(--ms-primary)]">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <circle cx="12" cy="12" r="3" />
-                      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
-                    </svg>
-                  </div>
-                  <div className="text-xs uppercase tracking-wide text-[var(--ms-primary)] font-semibold mb-1">
-                    Bronze → Silver
-                  </div>
-                  <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
-                    MTN Data Foundry
-                  </div>
-                  <div className="text-sm text-[var(--ms-body)]">
-                    Adaptive transition layer
-                  </div>
-                </div>
+                {/* Up arrow: reads schemas */}
+                <path
+                  d="M 120 168 L 120 100 L 235 100 L 235 78"
+                  stroke="var(--ms-primary)"
+                  strokeWidth="1.5"
+                  strokeDasharray="5 4"
+                  fill="none"
+                />
+                <path d="M 235 78 l -4 8 l 8 0 z" fill="var(--ms-primary)" />
+                <text x="128" y="120" fontSize="11" fill="var(--ms-primary)">
+                  schemas, docs, API specs
+                </text>
 
-                {/* Arrow 2 - Desktop */}
-                <div className="hidden md:flex items-center text-[var(--ms-muted)]">
-                  <svg
-                    className="w-12 h-8"
-                    viewBox="0 0 48 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M0 12h40M34 6l8 6-8 6" />
-                  </svg>
-                </div>
-                {/* Arrow 2 - Mobile */}
-                <div className="md:hidden text-[var(--ms-muted)]">
-                  <svg
-                    className="w-8 h-8"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M12 5v14M5 12l7 7 7-7" />
-                  </svg>
-                </div>
+                {/* Down arrow: returns routes */}
+                <path
+                  d="M 405 78 L 405 100 L 520 100 L 520 166"
+                  stroke="var(--ms-primary)"
+                  strokeWidth="1.5"
+                  strokeDasharray="5 4"
+                  fill="none"
+                />
+                <path d="M 520 172 l -4 -8 l 8 0 z" fill="var(--ms-primary)" />
+                <text x="414" y="120" fontSize="11" fill="var(--ms-primary)">
+                  mappings, routes, gaps
+                </text>
 
-                {/* Silver/Gold - Downstream */}
-                <div className="flex flex-col items-center text-center p-4 min-w-[140px]">
-                  {/* Chart/bar icon */}
-                  <div className="w-16 h-16 mb-3 text-yellow-600">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <path d="M18 20V10M12 20V4M6 20v-6" />
-                    </svg>
-                  </div>
-                  <div className="text-xs uppercase tracking-wide text-yellow-600 font-semibold mb-1">
-                    Silver / Gold
-                  </div>
-                  <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
-                    Your Platform
-                  </div>
-                  <div className="text-sm text-[var(--ms-body)]">
-                    Business-ready
-                  </div>
-                  <div className="text-xs text-[var(--ms-muted)] mt-1 italic">
-                    feeds reporting, AI, and agents alike
-                  </div>
-                </div>
-              </div>
+                {/* Sources */}
+                <rect
+                  x="40"
+                  y="170"
+                  width="160"
+                  height="62"
+                  rx="10"
+                  fill="white"
+                  stroke="var(--ms-border)"
+                  strokeWidth="1.5"
+                />
+                <text
+                  x="120"
+                  y="196"
+                  textAnchor="middle"
+                  fontSize="14"
+                  fontWeight="600"
+                  fill="var(--ms-heading)"
+                >
+                  Your sources
+                </text>
+                <text x="120" y="215" textAnchor="middle" fontSize="11" fill="var(--ms-body)">
+                  EHRs, claims, devices
+                </text>
+
+                {/* Warehouse */}
+                <rect
+                  x="440"
+                  y="170"
+                  width="160"
+                  height="62"
+                  rx="10"
+                  fill="white"
+                  stroke="var(--ms-border)"
+                  strokeWidth="1.5"
+                />
+                <text
+                  x="520"
+                  y="196"
+                  textAnchor="middle"
+                  fontSize="14"
+                  fontWeight="600"
+                  fill="var(--ms-heading)"
+                >
+                  Your stack
+                </text>
+                <text x="520" y="215" textAnchor="middle" fontSize="11" fill="var(--ms-body)">
+                  warehouse, BI, models
+                </text>
+
+                {/* Data path — solid, direct */}
+                <path
+                  d="M 200 201 L 432 201"
+                  stroke="var(--ms-accent)"
+                  strokeWidth="2.5"
+                  fill="none"
+                />
+                <path d="M 440 201 l -9 -5 l 0 10 z" fill="var(--ms-accent)" />
+                <text
+                  x="316"
+                  y="192"
+                  textAnchor="middle"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="var(--ms-accent)"
+                >
+                  your data
+                </text>
+                <text x="316" y="252" textAnchor="middle" fontSize="11" fill="var(--ms-body-light)">
+                  Records move on your infrastructure. Guide never touches them.
+                </text>
+              </svg>
             </div>
 
-            <div className="prose prose-gray max-w-none">
-              <p className="text-[var(--ms-heading)] leading-relaxed mb-4">
-                MTN Data Foundry is an adaptive transition layer. It detects schemas automatically,
-                maps them to canonical concepts with confidence-based governance, and self-heals
-                when sources change.
-              </p>
-              <p className="text-[var(--ms-heading)] leading-relaxed mb-4">
-                Whether you use medallion architecture, data mesh, or your own layered approach,
-                the transition from raw source data to governed, consistent output is traditionally
-                the most fragile point. MTN Data Foundry operates at this boundary—automatically
-                detecting structure, mapping to a canonical layer, and adapting when source schemas change.
-              </p>
-              <p className="text-[var(--ms-body)] text-base mb-6">
-                Medallion terminology provides a familiar reference point. The Foundry itself is
-                architecture-agnostic and works with any pipeline that requires resilient schema mapping.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-4 rounded-lg bg-white border border-[var(--ms-border)]">
-                  <h4 className="font-display text-[var(--ms-heading)] mb-2">
-                    What it does
-                  </h4>
-                  <ul className="space-y-2 text-base text-[var(--ms-body)]">
-                    <li>• Ingests bronze-layer data from any source</li>
-                    <li>• Maps to silver-layer semantic definitions</li>
-                    <li>• Adapts when source schemas change</li>
-                    <li>• Outputs governed, consistent data downstream</li>
-                  </ul>
-                </div>
-                <div className="p-4 rounded-lg bg-white border border-[var(--ms-border)]">
-                  <h4 className="font-display text-[var(--ms-heading)] mb-2">
-                    What it does not do
-                  </h4>
-                  <ul className="space-y-2 text-base text-[var(--ms-body)]">
-                    <li>• Replace your silver or gold layers</li>
-                    <li>• Compete with your warehouse or BI tools</li>
-                    <li>• Require changes to source systems</li>
-                    <li>• Store data long-term (it&apos;s a transition layer)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How the Foundry delivers */}
-      <section className="section-spacing">
-        <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <SectionHeader
-              headline="How the Foundry delivers."
-              subheadline="Three promises, mapped to the architecture below."
-            />
-            <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
-              <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-x-6 gap-y-4 md:gap-y-5">
-                <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
-                  Live in days
-                </div>
-                <p className="text-base text-[var(--ms-body)] leading-relaxed">
-                  Schema detection, payload fingerprinting, suggested mappings with confidence scoring.
-                </p>
-                <div className="hidden md:block md:col-span-2 border-t border-[var(--ms-border)]" />
-                <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
-                  Flat through every add-on
-                </div>
-                <p className="text-base text-[var(--ms-body)] leading-relaxed">
-                  Self-healing on schema changes, immutable mapping versions, forward-only adaptation.
-                </p>
-                <div className="hidden md:block md:col-span-2 border-t border-[var(--ms-border)]" />
-                <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
-                  Ready for what you deploy next
-                </div>
-                <p className="text-base text-[var(--ms-body)] leading-relaxed">
-                  Canonical concept layer, model-agnostic outputs, BAA-aware lineage.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ingestion Section */}
-      <section className="section-spacing bg-[var(--ms-border)]/30">
-        <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <TechnicalSection {...ingestionDetails} />
-            <p className="text-[var(--ms-body)] leading-relaxed mt-4">
-              Output endpoints respect downstream contracts: SQL, REST, event streams, and dbt-compatible models.
+            <p className="text-base text-[var(--ms-body)] leading-relaxed">
+              This is the structural consequence of one decision: an answer from
+              Guide is a <strong className="font-semibold text-[var(--ms-heading)]">route,
+              not a result</strong>. Guide tells you which tables and fields carry
+              the concept you asked about, and how to join them. Running that query
+              stays with you — which means the map can be useful long before any
+              agreement about data access exists, and stays outside the blast
+              radius of your production pipeline.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mapping Section */}
-      <section className="section-spacing">
-        <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <TechnicalSection
-              {...mappingDetails}
-              intro={
-                <p className="text-[var(--ms-body)] leading-relaxed">
-                  A canonical concept is a stable, healthcare-aware definition: <em>patient</em>, <em>encounter</em>, <em>claim</em>, <em>medication</em>, <em>schedule</em>, <em>provider</em>. Each concept has a target schema, vocabulary bindings (SNOMED CT, ICD-10, LOINC, RxNorm, CPT, NPI), and identity-resolution rules. The Foundry annotates source schemas first; canonical definitions emerge from the patterns across annotated sources, or anchor to an external target like FHIR, USCDI, or OMOP when one applies. The canonical layer grows with the portfolio: new concepts can be added, and existing concepts can be refined without breaking downstream consumers.
-                </p>
-              }
-            />
-
-            {/* Governance detail box */}
-            <div className="mt-8 p-6 rounded-lg bg-white border border-[var(--ms-border)]">
-              <h4 className="font-display text-[var(--ms-heading)] mb-3">
-                Governance model
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
-                    Confidence thresholds
-                  </div>
-                  <p className="text-base text-[var(--ms-body)]">
-                    Configurable thresholds control automation vs. human review
-                  </p>
-                </div>
-                <div>
-                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
-                    Audit logging
-                  </div>
-                  <p className="text-base text-[var(--ms-body)]">
-                    Every decision is logged for compliance and debugging
-                  </p>
-                </div>
-                <div>
-                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
-                    Version control
-                  </div>
-                  <p className="text-base text-[var(--ms-body)]">
-                    Mappings are versioned; rollback is always available
-                  </p>
-                </div>
-                <div>
-                  <div className="font-display font-semibold text-lg text-[var(--ms-heading)] mb-1">
-                    Forward-only changes
-                  </div>
-                  <p className="text-base text-[var(--ms-body)]">
-                    Backward compatibility guaranteed
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Change Detection Section */}
-      <section className="section-spacing bg-[var(--ms-border)]/30">
-        <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <TechnicalSection {...changeDetails} />
-          </div>
-        </div>
-      </section>
-
-      {/* Model-agnostic by design */}
-      <section className="section-spacing">
-        <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-4">
-              <h3 className="font-display text-xl text-[var(--ms-heading)]">
-                Model-agnostic by design
-              </h3>
-              <p className="text-[var(--ms-body)] leading-relaxed">
-                Whatever you deploy next, it reads from the same canonical layer.
-              </p>
-              <ul className="space-y-3 mt-4">
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                    <strong className="font-semibold">Models you deploy:</strong> Claude, GPT, Gemini, open-weight models, fine-tuned models, your own. Same data, no per-vendor pipeline.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                    <strong className="font-semibold">Retrieval-friendly:</strong> canonical concepts are vector-embedding-ready and integrate with existing vector stores.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                    <strong className="font-semibold">Tool-friendly:</strong> outputs structured data that downstream agents can call as tools without re-mapping.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                    <strong className="font-semibold">BAA-aware:</strong> every model query lands inside the compliance perimeter; vendor BAAs flow through subprocessor relationships.
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                    <strong className="font-semibold">Auditable:</strong> every model interaction is logged at the canonical layer, not at each vendor.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Monitoring Section */}
-      <section className="section-spacing bg-[var(--ms-border)]/30">
-        <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <TechnicalSection {...monitoringDetails} />
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance and security */}
+      {/* The answering loop */}
       <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
-              headline="Compliance and security."
-              subheadline="Designed for healthcare's regulatory perimeter, not retrofitted onto a generic platform."
+              headline="How a question is answered"
+              subheadline="A language model appears at exactly two points. Everything between them is deterministic."
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div className="mt-8 rounded-lg bg-white border border-[var(--ms-border)] overflow-hidden">
+              {ANSWER_STAGES.map((s, i) => (
+                <div
+                  key={s.stage}
+                  className={`grid grid-cols-1 md:grid-cols-[130px_90px_minmax(0,1fr)] gap-x-5 gap-y-1 p-5 md:p-6 ${
+                    i > 0 ? 'border-t border-[var(--ms-border)]' : ''
+                  }`}
+                >
+                  <div className="font-display font-semibold text-[var(--ms-heading)] text-lg">
+                    {s.stage}
+                  </div>
+                  <div>
+                    <span
+                      className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide uppercase ${
+                        s.actor === 'Model'
+                          ? 'bg-[var(--ms-accent)]/10 text-[var(--ms-accent)]'
+                          : 'bg-[var(--ms-border)] text-[var(--ms-body)]'
+                      }`}
+                    >
+                      {s.actor}
+                    </span>
+                  </div>
+                  <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                    {s.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
                 <h3 className="font-display text-[var(--ms-heading)] mb-3">
-                  HIPAA and the BAA chain
+                  The model never states a fact
                 </h3>
                 <p className="text-base text-[var(--ms-body)] leading-relaxed">
-                  <strong className="font-semibold text-[var(--ms-heading)]">BAA-ready by default.</strong> The BAA chain extends through subprocessors, infrastructure providers, and model vendors, so PHI flowing into and out of the Foundry stays under one continuous chain of liability. Documentation artifacts align with HHS OCR audit expectations. Minimum-necessary access is enforced at the canonical layer, not bolted on at output.
+                  It selects a goal and it renders a result. Every fact in an answer
+                  came from an assertion a writer put in the map. Selection from a
+                  governed vocabulary fails loudly and out of scope; free-form query
+                  generation fails silently and plausibly.
                 </p>
               </div>
               <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
                 <h3 className="font-display text-[var(--ms-heading)] mb-3">
-                  42 CFR Part 2 and redisclosure
+                  Refusal is a complete answer
                 </h3>
                 <p className="text-base text-[var(--ms-body)] leading-relaxed">
-                  Substance-use-disorder data is tagged at ingestion and tracked through every downstream consumer. Redisclosure restrictions are encoded in the lineage layer; a query that would violate Part 2 returns an error, not the data. Consent metadata travels with the record, not in a separate consent system.
+                  “The map cannot answer this, and here is what is missing” is a
+                  successful outcome, decided before execution by a per-goal
+                  predicate. Those named gaps become the queue for what to map next.
                 </p>
               </div>
               <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
                 <h3 className="font-display text-[var(--ms-heading)] mb-3">
-                  State and federal regimes
+                  Every answer is replayable
                 </h3>
                 <p className="text-base text-[var(--ms-body)] leading-relaxed">
-                  Aligned controls for California (CCPA, CPRA, CMIA, AB-3129), Washington (My Health My Data Act), Texas (Texas Data Privacy and Security Act), and the multi-state landscape (Colorado, Connecticut, Virginia, and others as they take effect). ONC information-blocking interfaces are respected; 21st Century Cures Act data-exchange requirements are supported out of the box. New regimes update at the canonical layer, not every pipeline.
-                </p>
-              </div>
-              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
-                <h3 className="font-display text-[var(--ms-heading)] mb-3">
-                  Controls and audit
-                </h3>
-                <p className="text-base text-[var(--ms-body)] leading-relaxed">
-                  <strong className="font-semibold text-[var(--ms-heading)]">SOC 2 Type II aligned controls.</strong> End-to-end encryption (TLS 1.3 in transit, AES-256 at rest). Role-based access with purpose-of-use metadata on every query. Comprehensive audit logging covers every mapping change, query, and model interaction, with retention tunable per regulation. Customer-managed keys available on cloud and on-premises deployments.
+                  Goal, structured answer, and prose are delivered together and
+                  logged. “Why did it say that” is settled by inspection rather than
+                  argument, and answers are recomputed against the current map
+                  rather than cached and going stale.
                 </p>
               </div>
             </div>
@@ -475,23 +330,154 @@ export default function TechnicalPage() {
         </div>
       </section>
 
-      {/* Deployment and Integration */}
+      {/* Evidence / ingestion */}
+      <section className="section-spacing bg-[var(--ms-border)]/30">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <TechnicalSection {...evidenceDetails} />
+          </div>
+        </div>
+      </section>
+
+      {/* The map */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <TechnicalSection {...mapDetails} />
+          </div>
+        </div>
+      </section>
+
+      {/* Layers */}
+      <section className="section-spacing bg-[var(--ms-border)]/30">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <TechnicalSection {...layerDetails} />
+          </div>
+        </div>
+      </section>
+
+      {/* Uncertainty and review */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader
+              headline="Uncertainty and human review"
+              subheadline="Where we are precise about what exists today, because this is the part that matters most."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  Evidence behind every answer
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Each assertion carries a self-reported confidence from the writer
+                  that made it, along with its evidence. Deterministic derivations
+                  are certain by construction and say so. Answers name the complete
+                  set of assertions behind them, so a reviewer can see exactly what
+                  a conclusion rests on and where the weak link is.
+                </p>
+              </div>
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  Calibrated confidence and guided review
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Trust levels are validated against outcomes rather than asserted by
+                  the model that produced them, and guided elicitation ranks which
+                  questions are actually worth a person’s attention. Because the
+                  inputs are calibrated, an aggregate confidence score means something
+                  you can act on. Where the evidence does not support a score, the
+                  engine still declines to invent one — a number that looks more
+                  authoritative than it is remains the failure mode we design against.
+                </p>
+              </div>
+            </div>
+            <p className="text-base text-[var(--ms-body-light)] leading-relaxed mt-6">
+              Engagements today are bounded and engineer-supported. A forward-deployed
+              engineer configures access, model providers, and the review workflow, and
+              works the ambiguous cases with your domain experts. The engineer does not
+              hand-map every field — that is the part the system does.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Security posture */}
       <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <SectionHeader
-              headline="Deployment options"
-              subheadline="Flexible deployment to fit your security and infrastructure requirements."
+              headline="Security and regulatory posture"
+              subheadline="The strongest control is architectural: the sensitive data mostly isn’t there."
             />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
                 <h3 className="font-display text-[var(--ms-heading)] mb-3">
-                  Cloud-hosted
+                  Schema-first by default
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  An engagement can begin with schemas, documentation, and synthetic
+                  examples, with no PHI and no production access. Because answers are
+                  routes rather than results, records do not flow through MTN in
+                  normal operation. This materially shortens security review, and it
+                  is a design property rather than a configuration option.
+                </p>
+              </div>
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  When deeper access is warranted
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Some work — value-level disambiguation, drift detection against
+                  live data — needs more than schemas. That is a separate, explicit
+                  step taken under a BAA, scoped to the specific need, and never a
+                  precondition for getting started.
+                </p>
+              </div>
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  Audit and traceability
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Every write to the map is attributed to the action that produced
+                  it — deterministic rule, model run, or named person — and every
+                  answer is logged with the goal and structured result that produced
+                  it. Traceability is how the map is built, not a logging layer added
+                  around it.
+                </p>
+              </div>
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  Model independence
+                </h3>
+                <p className="text-base text-[var(--ms-body)] leading-relaxed">
+                  Guide is not tied to one model vendor. Providers are configured per
+                  deployment, so model choice follows your procurement and data
+                  agreements rather than dictating them.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deployment */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <SectionHeader
+              headline="Deployment"
+              subheadline="Shaped to your security and infrastructure requirements."
+            />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
+                <h3 className="font-display text-[var(--ms-heading)] mb-3">
+                  Managed
                 </h3>
                 <p className="text-base text-[var(--ms-body)] mb-4">
-                  Managed deployment in your preferred cloud environment with
-                  SOC 2 compliance and BAA support. BAA executed at deployment;
-                  no separate negotiation per model vendor.
+                  Hosted deployment with single-tenant isolation, managed updates,
+                  and a BAA where the engagement calls for one.
                 </p>
                 <ul className="space-y-2 text-base text-[var(--ms-body)]">
                   <li>• AWS, Azure, or GCP</li>
@@ -501,16 +487,15 @@ export default function TechnicalPage() {
               </div>
               <div className="p-6 rounded-lg bg-white border border-[var(--ms-border)]">
                 <h3 className="font-display text-[var(--ms-heading)] mb-3">
-                  On-premises
+                  In your environment
                 </h3>
                 <p className="text-base text-[var(--ms-body)] mb-4">
-                  Deploy within your existing infrastructure for complete data
-                  control and air-gapped environments. Fully air-gapped operation;
-                  no model traffic leaves your VPC unless you configure it to.
+                  Deployed inside your infrastructure, with model providers pointed
+                  wherever your policies require.
                 </p>
                 <ul className="space-y-2 text-base text-[var(--ms-body)]">
                   <li>• Kubernetes or VM deployment</li>
-                  <li>• No external data transmission</li>
+                  <li>• Your network boundary, your key management</li>
                   <li>• Your security policies apply</li>
                 </ul>
               </div>
@@ -519,45 +504,29 @@ export default function TechnicalPage() {
         </div>
       </section>
 
-      {/* For deployment partners */}
-      <section className="section-spacing">
+      {/* Integration surface */}
+      <section className="section-spacing bg-[var(--ms-border)]/30">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <SectionHeader
-              headline="For deployment partners."
-              subheadline="If you're a forward-deployed engineer or SI technical lead, here's what's exposed."
+              headline="Integration surface"
+              subheadline="If you are an engineer or SI technical lead, here is what you get to build against."
             />
             <ul className="space-y-3 mt-4">
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                  API documentation and OpenAPI specs
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                  Sandbox environments for pre-engagement schema introspection
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                  Mapping export, replay, and review endpoints
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                  Subprocessor BAA inheritance
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-[var(--ms-body)]" />
-                <span className="text-[var(--ms-heading)] text-base leading-relaxed">
-                  White-label deployment available
-                </span>
-              </li>
+              {[
+                'One internal API, exposed as MCP tools and HTTP — machine and human callers get identical semantics',
+                'Structured answer objects consumable directly, without the narration step, when your own agent is the reader',
+                'Map export with the evidence and attribution behind every assertion',
+                'The map is yours: mappings and transformation specifications you can implement in your own pipeline',
+                'Sandbox environment for pre-engagement schema introspection',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2.5 bg-[var(--ms-body)]" />
+                  <span className="text-[var(--ms-heading)] text-base leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -566,7 +535,7 @@ export default function TechnicalPage() {
       {/* Primary CTA */}
       <PrimaryCTABanner
         headline="Ready to discuss architecture?"
-        description="We'll walk through how this fits your stack, your deployment plans, and your security review process, and answer technical questions in detail."
+        description="We'll walk through how this fits your stack, what a bounded evaluation looks like, and where the boundaries of the system actually are."
         ctaText="Schedule a Technical Session"
         ctaHref="/contact"
         variant="technical"

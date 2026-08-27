@@ -4,10 +4,10 @@ import { useRef } from 'react';
 import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 const DOES_ITEMS = [
-  'Read schemas, docs, and API specs — no records required',
+  'Read schemas, docs, and API specs, no records required',
   'Map fields to shared concepts, with the evidence behind each',
   'Re-check only what a schema change actually touched',
-  'Answer where data lives — for your team, your BI, your agents',
+  'Answer where data lives, for your team, your BI, your agents',
 ];
 
 const DOESNT_ITEMS = [
@@ -41,7 +41,7 @@ export default function WhatItDoes() {
               What it does, and what it doesn&apos;t.
             </h2>
             <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-              Guide is the map between your sources and your stack. It doesn&apos;t try to be your stack.
+              MTN FieldMap is the layer between your sources and your stack. It doesn&apos;t try to be your stack.
             </p>
           </div>
 

@@ -167,7 +167,7 @@ export default function SemanticMap() {
             className="w-6 h-0 rounded"
             style={{ borderTop: '2px dashed var(--ms-accent)' }}
           />
-          flagged — asked, not guessed
+          flagged: asked, not guessed
         </span>
       </div>
     </div>

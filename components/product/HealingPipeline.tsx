@@ -119,7 +119,7 @@ export default function HealingPipeline() {
               className="text-sm md:text-base font-semibold text-[var(--ms-heading)] text-center"
               style={{ opacity: chartSummary }}
             >
-              Self-healing pipelines adapt when sources change — no manual rework.
+              Self-healing pipelines adapt when sources change, with no manual rework.
             </p>
           </div>
 

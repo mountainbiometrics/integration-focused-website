@@ -10,7 +10,7 @@ import SemanticMap from '@/components/sequential/SemanticMap';
 export const metadata: Metadata = {
   title: 'Sequential Data | MTN',
   description:
-    'The value in your data is in what happened, in what order. Getting there is a data engineering problem before it is a modeling problem — in healthcare and everywhere else.',
+    'The value in your data is in what happened, in what order. Getting there is a data engineering problem before it is a modeling problem, in healthcare and everywhere else.',
 };
 
 export default function SequentialDataPage() {
@@ -154,13 +154,13 @@ export default function SequentialDataPage() {
         </div>
       </section>
 
-      {/* The map */}
+      {/* MTN FieldMap */}
       <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <SectionHeader
-                headline="So we build the map first"
+                headline="So we build MTN FieldMap first"
                 subheadline="What each field means, which concept it carries, and where the evidence runs out."
                 align="center"
               />
@@ -174,9 +174,9 @@ export default function SequentialDataPage() {
 
             <ScrollReveal stagger={0.2} distance={20}>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed mt-8 max-w-2xl mx-auto text-center">
-                MTN Guide builds this from your schemas, documentation, and API
-                definitions — not from your records — and keeps it current as those
-                systems change. A timeline is an artifact of this work, not
+                MTN Guide builds this FieldMap from your schemas, documentation,
+                and API definitions, never from your records, and keeps it current
+                as those systems change. A timeline is an artifact of this work, not
                 something waiting in the data to be found.
               </p>
             </ScrollReveal>
@@ -200,7 +200,7 @@ export default function SequentialDataPage() {
                   Proven where the data is hardest
                 </h2>
                 <p className="text-[var(--ms-body)] leading-relaxed mb-4">
-                  Healthcare is the most demanding version of this problem — the
+                  Healthcare is the most demanding version of this problem: the
                   most fragmented systems, the most irregular events, the least
                   room for a confident wrong answer. MTN holds a Small Business
                   Innovation Research Fast-Track award from the National Library of
@@ -219,7 +219,7 @@ export default function SequentialDataPage() {
 
       <PrimaryCTABanner
         headline="Bring us one schema"
-        description="Send a representative schema from a system you care about, and we will show you what the map finds — and what it cannot tell you without asking."
+        description="Send a representative schema from a system you care about, and we will show you what the FieldMap finds, and what it cannot tell you without asking."
         ctaText="Start a Conversation"
         ctaHref="/contact"
       />

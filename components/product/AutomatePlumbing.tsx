@@ -24,7 +24,7 @@ export default function AutomatePlumbing() {
             Containment doesn&apos;t happen by accident.
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-            Three ways a source can move, and what the map does about each.
+            Three ways a source can move, and what the FieldMap does about each.
           </p>
 
           <div className="space-y-5">

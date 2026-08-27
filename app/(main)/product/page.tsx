@@ -21,7 +21,7 @@ export default function ProductPage() {
       {/* Hero Section */}
       <Hero
         headline="MTN Guide"
-        subheadline="An agentic data engineer. It reads your schemas, maps what they mean, and keeps the map current as your systems change."
+        subheadline="An agentic data engineer. It reads your schemas and builds MTN FieldMap, an evidence-backed map of what they mean, then keeps it current as your systems change."
         ctaText="See How It Works"
         ctaHref="/contact"
         variant="internal"
@@ -31,7 +31,7 @@ export default function ProductPage() {
       {/* Product Overview — animated Sources → Guide → Tools */}
       <FoundryFlow />
 
-      {/* Section 1: A map in days — animated field mapping */}
+      {/* Section 1: A FieldMap in days — animated field mapping */}
       <MappingCascade />
 
       {/* Section 2: Change stays contained — maintenance chart */}

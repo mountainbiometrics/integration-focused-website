@@ -6,7 +6,7 @@ import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 export const metadata: Metadata = {
   title: 'Use Cases | MTN',
   description:
-    'Deep dives into the scenarios where MTN Guide changes the math — healthcare platforms, payer interoperability, and multi-entity rollups.',
+    'Deep dives into the scenarios where MTN Guide changes the math: healthcare platforms, payer interoperability, and multi-entity rollups.',
 };
 
 const micrositeCards = [
@@ -23,7 +23,7 @@ const micrositeCards = [
     headline: 'The transport layer is solved. The semantic layer is not.',
     stat: 'Sept 30, 2027',
     description:
-      'Hitting state RHTP F.2 milestones before the obligation deadline — semantic normalization between your HIE and your analytics stack.',
+      'Hitting state RHTP F.2 milestones before the obligation deadline, through semantic normalization between your HIE and your analytics stack.',
     href: '/m/healthcare-state-rhtp',
   },
   {
@@ -47,7 +47,7 @@ const micrositeCards = [
     headline: 'The models work. Your data doesn’t.',
     stat: '80%',
     description:
-      'Why your portcos can’t ship AI — and the semantic data layer that finally lets them.',
+      'Why your portcos can’t ship AI, and the semantic data layer that finally lets them.',
     href: '/m/ai-transformation-pe',
   },
   {
@@ -63,7 +63,7 @@ const micrositeCards = [
     headline: 'Your firm\u2019s accelerator. Faster every engagement.',
     stat: '12 artifacts in 5 deals',
     description:
-      'How a productized accelerator captures the mappings, methodology, and canonical concepts your senior consultants build on B2B SaaS bolt-ons \u2014 and reuses them on every next deal.',
+      'How a productized accelerator captures the mappings, methodology, and canonical concepts your senior consultants build on B2B SaaS bolt-ons, then reuses them on every next deal.',
     href: '/m/b2b-saas-ma-alliance',
   },
 ];

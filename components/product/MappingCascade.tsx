@@ -57,7 +57,7 @@ export default function MappingCascade() {
             Live in days.
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-            A new source is mapped against concepts the map already holds, so each system costs less than the last.
+            A new source is mapped against concepts the FieldMap already holds, so each system costs less than the last.
           </p>
 
           {/* SVG Diagram */}
@@ -307,7 +307,7 @@ export default function MappingCascade() {
               className="text-sm text-[var(--ms-heading)] font-medium"
               style={{ opacity: takeaway3, transform: `translateY(${(1 - takeaway3) * 8}px)` }}
             >
-              Low-confidence cases route to a human — never guesses.
+              Low-confidence cases route to a human, never guesses.
             </p>
           </div>
         </div>

@@ -132,8 +132,8 @@ export default function TimelineShuffle() {
       </div>
 
       <figcaption className="text-center text-base text-[var(--ms-body)] mt-4">
-        Same three events — split across two systems, neither in the order things
-        happened.{' '}
+        Same three events, split across two systems, and neither in the order
+        things happened.{' '}
         <span className="text-[var(--ms-body-light)]">
           No one view has the whole story, and nothing says how to join them.
         </span>

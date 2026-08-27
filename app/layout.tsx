@@ -24,11 +24,11 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "MTN | Make Sequential Data Usable",
-  description: "MTN Guide maps what your systems mean — from schemas, not records — and keeps that map current as they change. The layer that has to exist before clinical AI works.",
+  description: "MTN Guide maps what your systems mean, from schemas rather than records, and keeps that map current as they change. The layer that has to exist before clinical AI works.",
   keywords: ["clinical data", "sequential data", "point process data", "semantic mapping", "healthcare interoperability", "EHR integration", "AI readiness", "data engineering"],
   openGraph: {
     title: "MTN | Make Sequential Data Usable",
-    description: "MTN Guide maps what your systems mean — from schemas, not records — and keeps that map current as they change.",
+    description: "MTN Guide maps what your systems mean, from schemas rather than records, and keeps that map current as they change.",
     type: "website",
   },
 };

@@ -7,7 +7,7 @@ import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 const SOURCE_LABELS = ['EHRs', 'Billing', 'Scheduling', 'Vendors', 'Claims'];
 const OUTPUT_LABELS = ['Warehouse', 'BI', 'Analytics', 'AI Agents'];
 
-const BADGES = ['A map in days', 'Change stays contained', 'Answers you can check'];
+const BADGES = ['A FieldMap in days', 'Change stays contained', 'Answers you can check'];
 
 const SVG_W = 600;
 const SVG_H = 200;

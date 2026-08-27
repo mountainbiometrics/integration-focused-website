@@ -129,7 +129,7 @@ export default function B2bPePage() {
       <footer className="mt-auto py-6 md:py-8 border-t border-[var(--ms-border)]">
         <div className="container-site text-center">
           <p className="text-base text-[var(--ms-body)] mb-2">
-            Full data visibility during consolidation and system&nbsp;change.
+            It&apos;s time to trust your&nbsp;data.
           </p>
           <p className="text-sm text-[var(--ms-muted)]">
             &copy; {currentYear} Mountain Biometrics. All rights reserved.

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const footerNavLinks = [
   { href: '/product', label: 'MTN Guide' },
-  { href: '/sequential-data', label: 'Sequential Data' },
+  { href: '/sequential-data', label: 'Solving Time' },
   { href: '/use-cases', label: 'Use Cases' },
   { href: '/technical', label: 'Technical' },
   { href: '/about', label: 'About' },
@@ -33,7 +33,7 @@ export default function Footer() {
               />
             </Link>
             <p className="!text-gray-300 text-sm leading-relaxed max-w-xs">
-              Full data visibility during consolidation and system change.
+              It&apos;s time to trust your data.
             </p>
           </div>
 

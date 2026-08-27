@@ -106,7 +106,7 @@ const microsites: MicrositeConfig[] = [
       },
     ],
     utmCampaign: 'healthcare-pe-wp',
-    brandTagline: 'Full data visibility during consolidation and system change.',
+    brandTagline: 'It’s time to trust your data.',
   },
   {
     slug: 'b2b-pe',
@@ -171,7 +171,7 @@ const microsites: MicrositeConfig[] = [
       },
     ],
     utmCampaign: 'b2b-pe-wp',
-    brandTagline: 'Full data visibility during consolidation and system change.',
+    brandTagline: 'It’s time to trust your data.',
   },
   {
     slug: 'cms-interop',
@@ -204,7 +204,7 @@ const microsites: MicrositeConfig[] = [
     },
     sections: [],
     utmCampaign: 'cms-interop-wp',
-    brandTagline: 'Full data visibility during consolidation and system change.',
+    brandTagline: 'It’s time to trust your data.',
   },
   {
     slug: 'healthcare-state-rhtp',

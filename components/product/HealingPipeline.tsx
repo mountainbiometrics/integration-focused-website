@@ -49,10 +49,10 @@ export default function HealingPipeline() {
       <div className="container-site">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-3 text-center">
-            Flat through every add-on.
+            Change stays contained.
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-            Conventional integration maintenance compounds with every new system. The Foundry keeps it flat.
+            Conventional integration maintenance compounds with every new system. Mapping each source into its own layer keeps a change local to the connection it affects.
           </p>
 
           {/* Maintenance curve chart */}
@@ -109,7 +109,7 @@ export default function HealingPipeline() {
                     <line x1={xStart} y1={yTop + 6} x2={xStart + 20} y2={yTop + 6} stroke={convColor} strokeWidth="2" />
                     <text x={xStart + 24} y={yTop + 10} fill={convColor} fontSize="10">Conventional</text>
                     <line x1={xStart} y1={yTop + 20} x2={xStart + 20} y2={yTop + 20} stroke={accentColor} strokeWidth="2" />
-                    <text x={xStart + 24} y={yTop + 24} fill={accentColor} fontSize="10">Foundry</text>
+                    <text x={xStart + 24} y={yTop + 24} fill={accentColor} fontSize="10">Guide</text>
                   </>
                 )}
               </svg>

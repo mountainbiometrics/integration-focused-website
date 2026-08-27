@@ -4,17 +4,17 @@ import { useRef } from 'react';
 import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 
 const DOES_ITEMS = [
-  'Ingest from any source, with no upfront schema',
-  'Map to canonical concepts, with confidence scoring',
-  'Adapt when source schemas change',
-  'Output to your warehouse, BI, AI, and agents',
+  'Read schemas, docs, and API specs — no records required',
+  'Map fields to shared concepts, with the evidence behind each',
+  'Re-check only what a schema change actually touched',
+  'Answer where data lives — for your team, your BI, your agents',
 ];
 
 const DOESNT_ITEMS = [
   'Replace your warehouse or BI tools',
-  'Compete with your data platform',
+  'Sit in your production data path',
   'Require changes to your source systems',
-  'Store data long-term',
+  'Hold your records, or return data as results',
 ];
 
 export default function WhatItDoes() {
@@ -41,7 +41,7 @@ export default function WhatItDoes() {
               What it does, and what it doesn&apos;t.
             </h2>
             <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-              The Foundry is the layer between your sources and your stack. It doesn&apos;t try to be your stack.
+              Guide is the map between your sources and your stack. It doesn&apos;t try to be your stack.
             </p>
           </div>
 

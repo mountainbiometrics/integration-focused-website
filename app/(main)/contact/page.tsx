@@ -83,7 +83,7 @@ export default function ContactPage() {
                     </svg>
                   </span>
                   <span className="text-[var(--ms-heading)]">
-                    How MTN Data Foundry fits with your existing systems
+                    How MTN Guide fits with your existing systems
                   </span>
                 </div>
                 <div className="flex items-start gap-3">

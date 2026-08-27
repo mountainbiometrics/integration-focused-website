@@ -63,10 +63,10 @@ export default function MonitoringPulse() {
       <div className="container-site">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-3 text-center">
-            It tells you before anything breaks.
+            You find out when something moves.
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-            Issues surface before they reach downstream systems.
+            A schema change re-opens only the mappings it touches, and conflicts surface the moment you ask.
           </p>
 
           {/* SVG Lanes */}
@@ -257,7 +257,7 @@ export default function MonitoringPulse() {
               transform: `translateY(${(1 - closeLine) * 8}px)`,
             }}
           >
-            Issues surface before they reach downstream systems.
+            A schema change re-opens only the mappings it touches, and conflicts surface the moment you ask.
           </p>
         </div>
       </div>

@@ -21,10 +21,10 @@ export default function AutomatePlumbing() {
       <div className="container-site">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-3 text-center">
-            Flat doesn&apos;t happen by accident.
+            Containment doesn&apos;t happen by accident.
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-            Keep your people focused on the high-value work.
+            Three ways a source can move, and what the map does about each.
           </p>
 
           <div className="space-y-5">

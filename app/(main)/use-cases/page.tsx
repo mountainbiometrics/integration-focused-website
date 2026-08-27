@@ -6,18 +6,10 @@ import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 export const metadata: Metadata = {
   title: 'Use Cases | MTN',
   description:
-    'Deep dives into the scenarios where MTN Data Foundry changes the math — healthcare rollups, B2B platforms, and CMS interoperability.',
+    'Deep dives into the scenarios where MTN Guide changes the math — healthcare platforms, payer interoperability, and multi-entity rollups.',
 };
 
 const micrositeCards = [
-  {
-    badge: 'AI transformation',
-    headline: 'The models work. Your data doesn’t.',
-    stat: '80%',
-    description:
-      'Why your portcos can’t ship AI — and the semantic data layer that finally lets them.',
-    href: '/m/ai-transformation-pe',
-  },
   {
     badge: 'Healthcare rollups',
     headline: 'Five clinics. Five systems. No answers.',
@@ -25,30 +17,6 @@ const micrositeCards = [
     description:
       'How faster integration changes the fund math for healthcare platforms.',
     href: '/m/healthcare-pe',
-  },
-  {
-    badge: 'B2B rollups',
-    headline: 'Eight acquisitions in. Still no single source of truth.',
-    stat: '70%',
-    description:
-      'Why compounding integration costs are quietly destroying rollup returns.',
-    href: '/m/b2b-pe',
-  },
-  {
-    badge: 'Healthcare M&A practices',
-    headline: 'Turn integration labor into compounding IP.',
-    stat: '6\u20138 wk \u2192 1\u20132 wk',
-    description:
-      'How a productized accelerator turns integration labor on bolt-ons into firm IP that compounds across every engagement.',
-    href: '/m/healthcare-ma-alliance',
-  },
-  {
-    badge: 'B2B SaaS M&A practices',
-    headline: 'Your firm\u2019s accelerator. Faster every engagement.',
-    stat: '12 artifacts in 5 deals',
-    description:
-      'How a productized accelerator captures the mappings, methodology, and canonical concepts your senior consultants build on B2B SaaS bolt-ons \u2014 and reuses them on every next deal.',
-    href: '/m/b2b-saas-ma-alliance',
   },
   {
     badge: 'Rural health programs',
@@ -66,6 +34,38 @@ const micrositeCards = [
       'Turning CMS interoperability mandates from a compliance cost into a competitive advantage.',
     href: '/m/cms-interop',
   },
+  {
+    badge: 'Healthcare M&A practices',
+    headline: 'Turn integration labor into compounding IP.',
+    stat: '6\u20138 wk \u2192 1\u20132 wk',
+    description:
+      'How a productized accelerator turns integration labor on bolt-ons into firm IP that compounds across every engagement.',
+    href: '/m/healthcare-ma-alliance',
+  },
+  {
+    badge: 'AI transformation',
+    headline: 'The models work. Your data doesn’t.',
+    stat: '80%',
+    description:
+      'Why your portcos can’t ship AI — and the semantic data layer that finally lets them.',
+    href: '/m/ai-transformation-pe',
+  },
+  {
+    badge: 'B2B rollups',
+    headline: 'Eight acquisitions in. Still no single source of truth.',
+    stat: '70%',
+    description:
+      'Why compounding integration costs are quietly destroying rollup returns.',
+    href: '/m/b2b-pe',
+  },
+  {
+    badge: 'B2B SaaS M&A practices',
+    headline: 'Your firm\u2019s accelerator. Faster every engagement.',
+    stat: '12 artifacts in 5 deals',
+    description:
+      'How a productized accelerator captures the mappings, methodology, and canonical concepts your senior consultants build on B2B SaaS bolt-ons \u2014 and reuses them on every next deal.',
+    href: '/m/b2b-saas-ma-alliance',
+  },
 ];
 
 export default function UseCasesPage() {
@@ -74,7 +74,7 @@ export default function UseCasesPage() {
       {/* Hero Section */}
       <Hero
         headline="Where this makes a difference"
-        subheadline="Deep dives into the scenarios where MTN Data Foundry changes the math."
+        subheadline="Deep dives into the scenarios where MTN Guide changes the math."
         variant="internal"
         ctaText=""
         ctaHref=""

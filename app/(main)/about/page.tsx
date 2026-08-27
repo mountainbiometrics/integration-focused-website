@@ -6,7 +6,7 @@ import FounderCard from '@/components/content/FounderCard';
 export const metadata: Metadata = {
   title: 'About | MTN',
   description:
-    'We built MTN Data Foundry to solve our own integration challenges. A team of neuroscientists, ML scientists, and engineers sharing what we built.',
+    'MTN — Medical Timeseries Networks — set out to find patterns in clinical data over time, and hit a wall upstream. MTN Guide is what we built to get past it.',
 };
 
 export default function AboutPage() {
@@ -14,60 +14,73 @@ export default function AboutPage() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="Why we built the MTN Data Foundry"
-        subheadline="We built the Foundry to make our own AI deployments work. Then we realized everyone deploying AI or general analytics has that same problem."
+        headline="We started on the other end of this problem"
+        subheadline="MTN stands for Medical Timeseries Networks. The name is the origin story — and the reason we ended up building a data engineering product."
         variant="internal"
         ctaText=""
         ctaHref=""
       />
 
-      {/* The Problem We Lived */}
+      {/* The wall */}
       <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
-              The problem we kept hitting
+              The wall we hit
             </h2>
             <div className="prose prose-gray max-w-none space-y-4">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                We were building our own
-                AI-powered solutions across healthcare sites.
-                Deployments hit the same wall: different EHRs, different
-                schemas, IOT devices, and stalled pipelines with each vendor update. Our
-                ML scientists and engineers wanted to avoid debugging data
-                transformations and focus on actionable models.
+                We came to this from computational neuroscience and clinical
+                medicine, working on models that find patterns in physiological
+                and clinical data as they unfold over time. We built the
+                pipelines, the wearable integrations, the dashboards.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                The problem wasn&apos;t unique to us. Traditional integration
-                approaches assume stability, but healthcare data environments
-                are anything but stable. We needed infrastructure that
-                expected change instead of breaking from it.
+                And we kept losing the same months to the same work. Not to the
+                models — to figuring out what the data meant. Which of five
+                timestamp columns marked when the encounter actually happened.
+                Whether this system’s visit was the same thing as that system’s
+                encounter. Why a report broke after a vendor update that changed
+                three field names.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                We weren&apos;t the first to hit it. We won&apos;t be the last.
+                Our ML scientists were doing data archaeology. Every new site
+                started the work over. And every answer lived in one engineer’s
+                head until they left.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why This Exists */}
+      {/* What we built */}
       <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
-              What we built for ourselves
+              So we built the layer underneath
             </h2>
             <div className="prose prose-gray max-w-none space-y-4">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                So we built our own solution. Our team of ML
-                scientists, physicians and software engineers developed an AI-powered
-                integration layer that could detect schemas automatically, learn
-                from previous mappings, and adapt when sources changed.
+                MTN Guide is an agentic data engineer. It reads schemas,
+                documentation, and API definitions, and builds an evidence-backed
+                map of what an organization’s data means — then maintains that map
+                as systems change. It is the thing we needed before we could do
+                any of the work we actually set out to do.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                The same technology works wherever fragmented data systems need
-                to operate as one.
+                Two convictions shaped it. The first is that a map has to be
+                honest about its own uncertainty: a confident wrong answer is
+                worse than no answer, so Guide records the evidence under every
+                claim and refuses plainly when the evidence isn’t there. The
+                second is that you cannot merge your way out of this. Two
+                departments genuinely disagree about what a customer is, and a
+                single unified model just hides the disagreement. So we map
+                instead — recording where systems agree, where they overlap, and
+                under what conditions.
+              </p>
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                It turned out this was not our problem. It was everyone’s.
               </p>
             </div>
 
@@ -77,11 +90,12 @@ export default function AboutPage() {
                 style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
               >
                 <h3 className="font-display text-[var(--ms-heading)] mb-2">
-                  Built for operators
+                  Built for the messy case
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">
-                  Designed for people who need visibility now, not perfect data
-                  eventually.
+                  Partial, inconsistent, and drifting data isn’t an edge case we
+                  handle. It’s the condition the product assumes, and the reason
+                  it exists.
                 </p>
               </div>
               <div
@@ -92,9 +106,9 @@ export default function AboutPage() {
                   Built for governance
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">
-                  Healthcare requires audit trails, human oversight, and
-                  deterministic behavior. The Foundry was designed to satisfy
-                  compliance requirements, not work around them.
+                  Working from schemas rather than records keeps sensitive data
+                  where it belongs, and makes security review a shorter
+                  conversation.
                 </p>
               </div>
             </div>
@@ -109,11 +123,20 @@ export default function AboutPage() {
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
               Why now
             </h2>
-            <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-              When we hit the wall, we hit it alone. That&apos;s no longer true.
-              Every AI deployment eventually discovers what we discovered: deployments
-              fail on data, not on models. The Foundry is the layer that lets it work.
-            </p>
+            <div className="space-y-4">
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                Two things changed. Organizations started trying to deploy AI on
+                data nobody had ever had to explain to a machine before — and
+                discovered that the explaining was the whole job. At the same
+                time, agents became capable enough to do most of that explaining,
+                if they are given the right evidence and held to it.
+              </p>
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                Both halves matter. An agent that maps your data confidently and
+                wrongly is worse than no agent at all. The engineering problem is
+                keeping it accountable to evidence, and knowing when to ask.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -147,7 +170,7 @@ export default function AboutPage() {
                 title="Lead Systems Engineer"
                 imagePath="/images/team/samuel_wecker.jpg"
                 linkedInUrl="https://www.linkedin.com/in/samuel-wecker/"
-                bio="Over twelve years building and scaling production software, including as a founding engineer at a startup that grew to a billion-dollar platform. Specializes in unifying disparate systems and data sources at scale. Leads Data Foundry's core platform development."
+                bio="Over twelve years building and scaling production software, including as a founding engineer at a startup that grew to a billion-dollar platform. Specializes in unifying disparate systems and data sources at scale. Leads core platform development for MTN Guide."
               />
 
               {/* <FounderCard
@@ -192,8 +215,42 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our mission */}
+      {/* Research funding */}
       <section className="section-spacing bg-[var(--ms-surface)]">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
+              Research funding
+            </h2>
+            <div className="space-y-4">
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                MTN holds a Small Business Innovation Research Fast-Track award
+                from the National Library of Medicine, for{' '}
+                <em>
+                  Unlocking Medical AI: A Scalable, Privacy-Preserving Annotation
+                  Platform for Clinical and Physiological Data
+                </em>
+                . Phase I develops the automated data engineering and elicitation
+                systems at the core of MTN Guide, across wearable devices,
+                unstructured documents, and clinical records. Phase II expands the
+                platform, strengthens its security and compliance posture, and
+                tests it with clinical partners.
+              </p>
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                We are grateful to the Nucleus Institute, whose UTIF grant and
+                SBIR application support helped make the award possible.
+              </p>
+              <p className="text-base text-[var(--ms-body-light)] leading-relaxed">
+                NIH funding supports this research. It is not an endorsement of
+                MTN or its products.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our mission */}
+      <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
@@ -201,17 +258,15 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                MTN is dedicated to improving the financial sustainability of
-                the healthcare system by making fragmented data systems
-                operable. The Data Foundry replaces months of manual data
-                engineering with software that learns, harmonizes, and adapts.
-                Each new data source is easier to use than the last. We make
-                organizations more nimble, responsive, and adaptive, reducing
-                operational overhead, raising provider satisfaction, and
-                improving patient outcomes.
+                Healthcare generates an extraordinary record of what happens to
+                people over time, and most of it goes unused because nobody can
+                say with confidence what it means. MTN exists to close that gap —
+                to make fragmented, irregular, sequential data usable, without
+                asking organizations to hand over the data itself or pretend to a
+                certainty they don’t have.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                We&apos;re building the connective tissue of modern healthcare.
+                We’re building the layer that makes the rest possible.
               </p>
             </div>
           </div>
@@ -221,8 +276,8 @@ export default function AboutPage() {
       {/* Primary CTA */}
       <PrimaryCTABanner
         headline="Want to learn more?"
-        description="Whether you're operating a portfolio, deploying AI, or trying to make integration work in a roll-up, we'd like to hear from you."
-        ctaText="Learn More About Our Approach"
+        description="Whether you're deploying clinical AI, integrating after an acquisition, or just trying to find out what your own data means, we'd like to hear from you."
+        ctaText="Start a Conversation"
         ctaHref="/contact"
       />
     </>

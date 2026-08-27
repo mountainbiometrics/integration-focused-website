@@ -2,7 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const footerNavLinks = [
-  { href: '/product', label: 'Product' },
+  { href: '/product', label: 'MTN Guide' },
+  { href: '/sequential-data', label: 'Sequential Data' },
   { href: '/use-cases', label: 'Use Cases' },
   { href: '/technical', label: 'Technical' },
   { href: '/about', label: 'About' },

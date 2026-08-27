@@ -7,7 +7,7 @@ import { useScrollProgress, remap } from '@/hooks/useScrollProgress';
 const SOURCE_LABELS = ['EHRs', 'Billing', 'Scheduling', 'Vendors', 'Claims'];
 const OUTPUT_LABELS = ['Warehouse', 'BI', 'Analytics', 'AI Agents'];
 
-const BADGES = ['Live in days', 'Flat through every add-on', 'Ready for what you deploy next'];
+const BADGES = ['A map in days', 'Change stays contained', 'Answers you can check'];
 
 const SVG_W = 600;
 const SVG_H = 200;
@@ -50,7 +50,7 @@ export default function FoundryFlow() {
       <div className="container-site">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-8 text-center">
-            What MTN Data Foundry does
+            What MTN Guide does
           </h2>
 
           {/* SVG Diagram */}
@@ -58,7 +58,7 @@ export default function FoundryFlow() {
             <svg
               viewBox={`0 0 ${SVG_W} ${SVG_H}`}
               className="w-full max-w-[756px] h-auto"
-              aria-label="Data flows from sources through the Foundry to outputs"
+              aria-label="MTN Guide maps source systems to shared concepts that downstream tools consume"
             >
               {/* Sources circle */}
               <circle
@@ -122,7 +122,7 @@ export default function FoundryFlow() {
                 />
               )}
 
-              {/* Foundry circle */}
+              {/* Guide circle */}
               <circle
                 cx={FDR_CX} cy={CY}
                 r={MAIN_R + 2}
@@ -145,7 +145,7 @@ export default function FoundryFlow() {
                 fontSize="13" fontWeight="700" fill="var(--ms-blue)"
                 opacity={foundryScale}
               >
-                Foundry
+                Guide
               </text>
 
               {/* Pulse ring */}

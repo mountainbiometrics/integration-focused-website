@@ -57,7 +57,7 @@ export default function MappingCascade() {
             Live in days.
           </h2>
           <p className="text-[var(--ms-body)] text-center mb-10 max-w-2xl mx-auto">
-            New systems come online quickly because the Foundry learns from existing mappings.
+            A new source is mapped against concepts the map already holds, so each system costs less than the last.
           </p>
 
           {/* SVG Diagram */}
@@ -65,7 +65,7 @@ export default function MappingCascade() {
             <svg
               viewBox={`0 0 ${SVG_W} ${SVG_H}`}
               className="w-full max-w-[784px] h-auto"
-              aria-label="Fields from a new source are automatically mapped to target fields through the Foundry"
+              aria-label="Fields from a new source are mapped to shared concepts by MTN Guide, with unresolved fields flagged for review"
             >
               {/* "New source" label */}
               <text
@@ -99,7 +99,7 @@ export default function MappingCascade() {
                 );
               })}
 
-              {/* Foundry circle */}
+              {/* Guide circle */}
               <circle
                 cx={FDR_CX} cy={SVG_H / 2} r={32}
                 fill="rgba(90,111,209,0.08)"
@@ -112,7 +112,7 @@ export default function MappingCascade() {
                 fontSize="13" fontWeight="700" fill="var(--ms-blue)"
                 opacity={arrowToFoundry}
               >
-                Foundry
+                Guide
               </text>
 
               {/* Pulse ring */}

@@ -23,12 +23,12 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "MTN | Close the Visibility Gap",
-  description: "Close data visibility gaps during acquisitions, system changes, and multi-vendor environments. Keep reporting, revenue visibility, and operations live while systems evolve.",
-  keywords: ["healthcare integration", "data integration", "healthcare rollups", "MSO", "revenue cycle management", "EHR integration"],
+  title: "MTN | Make Sequential Data Usable",
+  description: "MTN Guide maps what your systems mean — from schemas, not records — and keeps that map current as they change. The layer that has to exist before clinical AI works.",
+  keywords: ["clinical data", "sequential data", "point process data", "semantic mapping", "healthcare interoperability", "EHR integration", "AI readiness", "data engineering"],
   openGraph: {
-    title: "MTN | Close the Visibility Gap",
-    description: "Close data visibility gaps during acquisitions and system changes. Keep visibility live while systems evolve.",
+    title: "MTN | Make Sequential Data Usable",
+    description: "MTN Guide maps what your systems mean — from schemas, not records — and keeps that map current as they change.",
     type: "website",
   },
 };

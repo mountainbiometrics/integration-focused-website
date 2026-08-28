@@ -18,7 +18,7 @@ interface Validation {
 const VALIDATIONS: Validation[] = [
   {
     logos: [
-      { src: '/images/logos/nih.png', alt: 'National Institutes of Health', w: 2500, h: 1406 },
+      { src: '/images/logos/nih.png', alt: 'National Institutes of Health', w: 356, h: 200 },
       { src: '/images/logos/nlm.svg', alt: 'National Library of Medicine', w: 708, h: 722 },
     ],
     name: 'SBIR Fast-Track',
@@ -27,7 +27,7 @@ const VALIDATIONS: Validation[] = [
   },
   {
     logos: [
-      { src: '/images/logos/a2-collective.png', alt: 'a2 Collective', w: 600, h: 450 },
+      { src: '/images/logos/a2-collective.png', alt: 'a2 Collective', w: 267, h: 200 },
     ],
     name: 'a2 Collective Award',
     org: 'National Institute on Aging',
@@ -35,8 +35,8 @@ const VALIDATIONS: Validation[] = [
   },
   {
     logos: [
-      { src: '/images/logos/xtech.png', alt: 'Army xTech', w: 2084, h: 834 },
-      { src: '/images/logos/us-army.png', alt: 'U.S. Army', w: 1600, h: 1440 },
+      { src: '/images/logos/xtech.png', alt: 'Army xTech', w: 500, h: 200 },
+      { src: '/images/logos/us-army.png', alt: 'U.S. Army', w: 222, h: 200 },
     ],
     name: 'AI Grand Challenge',
     org: 'U.S. Army',

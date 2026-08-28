@@ -8,7 +8,7 @@ import SemanticChecks from '@/components/sequential/SemanticChecks';
 import SemanticMap from '@/components/sequential/SemanticMap';
 
 export const metadata: Metadata = {
-  title: 'Sequential Data | MTN',
+  title: 'Solving Time | MTN',
   description:
     'The value in your data is in what happened, in what order. Getting there is a data engineering problem before it is a modeling problem, in healthcare and everywhere else.',
 };
@@ -17,7 +17,7 @@ export default function SequentialDataPage() {
   return (
     <>
       <Hero
-        headline="Order matters. Your systems don’t agree on it."
+        headline="Time matters. Your systems don’t agree on it."
         subheadline="Sequence is where the value is. Assembling a true timeline is a data engineering problem long before it is a modeling problem."
         ctaText="Talk Through Your Data"
         ctaHref="/contact"

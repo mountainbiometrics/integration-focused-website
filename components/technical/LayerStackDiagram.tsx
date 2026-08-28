@@ -17,6 +17,9 @@ const BODY = 'var(--ms-body)';
 const PRIM = 'var(--ms-primary)';
 const ACC = 'var(--ms-accent)';
 
+const ARIA =
+  'Diagram: three tiers. At the bottom, source layers: Epic, athenahealth, and Claims 837. Above them, composite layers for clinical and billing, each holding the correspondences between the systems beneath it. On top, the canonical model, which is itself just another composite layer. A schema change in Epic is highlighted, re-evaluating only the one correspondence it affects rather than the whole estate.';
+
 interface BoxProps {
   x: number;
   y: number;
@@ -128,15 +131,25 @@ function Link({
   );
 }
 
-function TierLabel({ y, children }: { y: number; children: string }) {
+function TierLabel({
+  y,
+  x = 80,
+  anchor = 'end',
+  children,
+}: {
+  y: number;
+  x?: number;
+  anchor?: 'start' | 'end';
+  children: string;
+}) {
   return (
     <text
-      x={80}
+      x={x}
       y={y}
       fontSize={10}
       fontWeight={700}
       fill={BODY}
-      textAnchor="end"
+      textAnchor={anchor}
       letterSpacing="1.2"
     >
       {children}
@@ -146,12 +159,65 @@ function TierLabel({ y, children }: { y: number; children: string }) {
 
 export default function LayerStackDiagram() {
   return (
-    <div className="rounded-lg bg-white border border-[var(--ms-border)] p-4 md:p-6 overflow-x-auto">
+    <div className="rounded-lg bg-white border border-[var(--ms-border)] p-4 md:p-6">
+      {/* Portrait for phones — tier labels move above each band, and the
+          billing layer reaches the canonical one up the right margin rather
+          than behind the clinical band. */}
+      <svg
+        viewBox="0 0 340 366"
+        className="w-full max-w-[380px] mx-auto h-auto md:hidden"
+        role="img"
+        aria-label={ARIA}
+      >
+        <TierLabel y={14} x={10} anchor="start">CANONICAL</TierLabel>
+        <Box x={15} y={22} w={300} h={48} label="Canonical model" sub="a composite layer like any other" />
+
+        <Link x1={100} y1={112} x2={100} y2={70} />
+        <path
+          d="M 315 214 H 328 V 56 H 315"
+          fill="none"
+          stroke={PRIM}
+          strokeWidth={1.3}
+          strokeOpacity={0.32}
+        />
+
+        <Link x1={50} y1={162} x2={50} y2={274} affected />
+        <Link x1={130} y1={162} x2={155} y2={274} affected />
+        <Link x1={215} y1={162} x2={185} y2={274} />
+        <Link x1={270} y1={234} x2={279} y2={274} />
+
+        <TierLabel y={104} x={10} anchor="start">COMPOSITE</TierLabel>
+        <Box x={15} y={112} w={300} h={62} corner="CLINICAL" />
+        <Chip x={25} y={140} w={132} label="patient_id ↔ pat_id" affected />
+        <Chip x={165} y={140} w={140} label="encounter ↔ visit" />
+
+        <Box x={15} y={190} w={300} h={50} corner="BILLING" />
+        <Chip x={165} y={212} w={140} label="claim ↔ encounter" />
+
+        <TierLabel y={262} x={10} anchor="start">SOURCES</TierLabel>
+        <Box x={15} y={274} w={92} h={44} label="Epic" />
+        <Box x={124} y={274} w={92} h={44} label="athena" />
+        <Box x={233} y={274} w={92} h={44} label="Claims" />
+
+        <circle cx={101} cy={274} r={10} fill={ACC} />
+        <text x={101} y={279} fontSize={12} fontWeight={700} fill="white" textAnchor="middle">
+          !
+        </text>
+
+        <text x={15} y={340} fontSize={10.5} fill={ACC}>
+          A schema change in Epic re-evaluates one
+        </text>
+        <text x={15} y={356} fontSize={10.5} fill={ACC}>
+          correspondence. Everything else stands.
+        </text>
+      </svg>
+
+      {/* Landscape from md up */}
       <svg
         viewBox="0 0 800 345"
-        className="w-full min-w-[620px] h-auto"
+        className="w-full h-auto hidden md:block"
         role="img"
-        aria-label="Diagram: three tiers. At the bottom, source layers: Epic, athenahealth, and Claims 837. Above them, composite layers for clinical and billing, each holding the correspondences between the systems beneath it. On top, the canonical model, which is itself just another composite layer. A schema change in Epic is highlighted, re-evaluating only the one correspondence it affects rather than the whole estate."
+        aria-label={ARIA}
       >
         <TierLabel y={83}>CANONICAL</TierLabel>
         <TierLabel y={183}>COMPOSITE</TierLabel>

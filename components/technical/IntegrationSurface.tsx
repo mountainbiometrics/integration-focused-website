@@ -64,24 +64,93 @@ function Transport({ x, y, label }: { x: number; y: number; label: string }) {
   );
 }
 
-function Arrow({ x1, y1, x2, y2 }: { x1: number; y1: number; x2: number; y2: number }) {
+function Arrow({
+  x1,
+  y1,
+  x2,
+  y2,
+  vertical = false,
+}: {
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+  vertical?: boolean;
+}) {
   return (
     <g stroke={PRIM} fill={PRIM} strokeOpacity={0.6} fillOpacity={0.6}>
-      <line x1={x1} y1={y1} x2={x2 - 7} y2={y2} strokeWidth={1.5} />
-      <path d={`M ${x2} ${y2} l -8 -4.5 l 0 9 z`} stroke="none" />
+      <line
+        x1={x1}
+        y1={y1}
+        x2={vertical ? x2 : x2 - 7}
+        y2={vertical ? y2 - 7 : y2}
+        strokeWidth={1.5}
+      />
+      <path
+        d={
+          vertical
+            ? `M ${x2} ${y2} l -4.5 -8 l 9 0 z`
+            : `M ${x2} ${y2} l -8 -4.5 l 0 9 z`
+        }
+        stroke="none"
+      />
     </g>
   );
 }
 
+const ARIA =
+  'Diagram: your agent calls MCP tools and your app or a person calls HTTP. Both reach one internal API with identical semantics. The API returns a structured answer you can consume directly, and prose narration is an optional step after it.';
+
 export default function IntegrationSurface() {
   return (
     <div className="space-y-6">
-      <div className="rounded-lg bg-white border border-[var(--ms-border)] p-4 md:p-6 overflow-x-auto">
+      <div className="rounded-lg bg-white border border-[var(--ms-border)] p-4 md:p-6">
+        {/* Portrait for phones — the same flow, turned vertical */}
+        <svg
+          viewBox="0 0 340 436"
+          className="w-full max-w-[360px] mx-auto h-auto md:hidden"
+          role="img"
+          aria-label={ARIA}
+        >
+          <Box x={15} y={10} w={150} h={50} label="Your agent" />
+          <Box x={185} y={10} w={150} h={50} label="Your app" sub="or a person" />
+
+          <Arrow x1={90} y1={60} x2={90} y2={90} vertical />
+          <Arrow x1={260} y1={60} x2={260} y2={90} vertical />
+
+          <g transform="translate(-165 0)">
+            <Transport x={195} y={90} label="MCP tools" />
+          </g>
+          <g transform="translate(5 0)">
+            <Transport x={195} y={90} label="HTTP" />
+          </g>
+
+          <Arrow x1={90} y1={126} x2={115} y2={155} vertical />
+          <Arrow x1={260} y1={126} x2={225} y2={155} vertical />
+
+          <Box x={40} y={155} w={260} h={64} label="One internal API" sub="identical semantics" />
+
+          <Arrow x1={170} y1={219} x2={170} y2={265} vertical />
+          <Box x={40} y={265} w={260} h={58} label="Structured answer" sub="consume directly" />
+
+          {/* Narration is a step you can decline, not a stage you route through */}
+          <g stroke={PRIM} fill={PRIM} strokeOpacity={0.6} fillOpacity={0.6}>
+            <line x1={170} y1={323} x2={170} y2={363} strokeWidth={1.5} strokeDasharray="5 4" />
+            <path d="M 170 370 l -4.5 -8 l 9 0 z" stroke="none" />
+          </g>
+          <text x={180} y={349} fontSize={10.5} fill={BODY}>
+            optional
+          </text>
+
+          <Box x={40} y={370} w={260} h={58} label="Prose narration" sub="optional" />
+        </svg>
+
+        {/* Landscape from md up */}
         <svg
           viewBox="0 0 780 246"
-          className="w-full min-w-[600px] h-auto"
+          className="w-full h-auto hidden md:block"
           role="img"
-          aria-label="Diagram: your agent calls MCP tools and your app or a person calls HTTP. Both reach one internal API with identical semantics. The API returns a structured answer you can consume directly, and prose narration is an optional step after it."
+          aria-label={ARIA}
         >
           <Box x={20} y={45} w={140} h={50} label="Your agent" />
           <Box x={20} y={165} w={140} h={50} label="Your app" sub="or a person" />

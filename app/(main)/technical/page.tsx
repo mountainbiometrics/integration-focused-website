@@ -95,10 +95,69 @@ export default function TechnicalPage() {
               subheadline="Above the data path, not inside it. Your records never route through MTN."
             />
 
-            <div className="mb-8 p-6 md:p-8 rounded-lg bg-white border border-[var(--ms-border)] overflow-x-auto">
+            <div className="mb-8 p-6 md:p-8 rounded-lg bg-white border border-[var(--ms-border)]">
+              {/* Portrait for phones: the chain runs down, and the data path
+                  bypasses Guide on a rail rather than sitting below it. */}
+              <svg
+                viewBox="0 0 340 372"
+                className="w-full max-w-[360px] mx-auto h-auto md:hidden"
+                role="img"
+                aria-label="Diagram: MTN Guide reads schemas, documentation, and anonymized payloads from source systems and returns routes and mappings to your pipeline. Data itself flows directly from sources to your warehouse without passing through MTN."
+              >
+                <rect x="15" y="16" width="215" height="56" rx="10" fill="white" stroke="var(--ms-border)" strokeWidth="1.5" />
+                <text x="122" y="42" textAnchor="middle" fontSize="14" fontWeight="600" fill="var(--ms-heading)">
+                  Your sources
+                </text>
+                <text x="122" y="60" textAnchor="middle" fontSize="11" fill="var(--ms-body)">
+                  EHRs, claims, devices
+                </text>
+
+                <path d="M 122 72 L 122 142" stroke="var(--ms-primary)" strokeWidth="1.5" strokeDasharray="5 4" fill="none" />
+                <path d="M 122 148 l -4 -8 l 8 0 z" fill="var(--ms-primary)" />
+                <text x="134" y="101" fontSize="10.5" fill="var(--ms-primary)">schemas, docs,</text>
+                <text x="134" y="115" fontSize="10.5" fill="var(--ms-primary)">anonymized payloads</text>
+
+                <rect x="15" y="148" width="215" height="60" rx="12" fill="rgba(74,111,165,0.10)" stroke="var(--ms-primary)" strokeWidth="2" />
+                <text x="122" y="174" textAnchor="middle" fontSize="15" fontWeight="600" fill="var(--ms-heading)">
+                  MTN Guide
+                </text>
+                <text x="122" y="193" textAnchor="middle" fontSize="10.5" fill="var(--ms-body)">
+                  the map — concepts, evidence
+                </text>
+
+                <path d="M 122 208 L 122 278" stroke="var(--ms-primary)" strokeWidth="1.5" strokeDasharray="5 4" fill="none" />
+                <path d="M 122 284 l -4 -8 l 8 0 z" fill="var(--ms-primary)" />
+                <text x="134" y="237" fontSize="10.5" fill="var(--ms-primary)">routes and mappings,</text>
+                <text x="134" y="251" fontSize="10.5" fill="var(--ms-primary)">not results</text>
+
+                <rect x="15" y="284" width="215" height="56" rx="10" fill="white" stroke="var(--ms-border)" strokeWidth="1.5" />
+                <text x="122" y="310" textAnchor="middle" fontSize="14" fontWeight="600" fill="var(--ms-heading)">
+                  Your stack
+                </text>
+                <text x="122" y="328" textAnchor="middle" fontSize="11" fill="var(--ms-body)">
+                  warehouse, BI, models
+                </text>
+
+                {/* The data path bypasses Guide entirely */}
+                <path d="M 230 44 L 290 44 L 290 312 L 238 312" stroke="var(--ms-accent)" strokeWidth="2.5" fill="none" />
+                <path d="M 230 312 l 9 -5 l 0 10 z" fill="var(--ms-accent)" />
+                <text
+                  x="306"
+                  y="178"
+                  fontSize="11"
+                  fontWeight="600"
+                  fill="var(--ms-accent)"
+                  textAnchor="middle"
+                  transform="rotate(90 306 178)"
+                >
+                  your data, never through MTN
+                </text>
+              </svg>
+
+              {/* Landscape from md up */}
               <svg
                 viewBox="0 0 640 260"
-                className="w-full min-w-[560px] h-auto"
+                className="w-full h-auto hidden md:block"
                 role="img"
                 aria-label="Diagram: MTN Guide reads schemas, documentation, and anonymized payloads from source systems and returns routes and mappings to your pipeline. Data itself flows directly from sources to your warehouse without passing through MTN."
               >
@@ -353,12 +412,6 @@ export default function TechnicalPage() {
                 one.
               </p>
             </div>
-
-            <p className="text-base text-[var(--ms-body-light)] leading-relaxed mt-6">
-              A forward-deployed engineer works the ambiguous cases with your
-              domain experts, but does not hand-map every field. That is the
-              part the system does.
-            </p>
           </div>
         </div>
       </section>

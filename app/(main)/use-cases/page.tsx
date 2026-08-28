@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Hero from '@/components/content/Hero';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
+import SectionHeader from '@/components/content/SectionHeader';
+import ScrollReveal from '@/components/animation/ScrollReveal';
+import FiveSystemsFiveAnswers, { HEALTHCARE_HEADCOUNT, FINANCE_AUM } from '@/components/content/FiveSystemsFiveAnswers';
+import ResolvedRollup from '@/components/content/ResolvedRollup';
 
 export const metadata: Metadata = {
   title: 'Use Cases | MTN',
@@ -73,12 +77,79 @@ export default function UseCasesPage() {
     <>
       {/* Hero Section */}
       <Hero
-        headline="Where this makes a difference"
-        subheadline="Deep dives into the scenarios where MTN Guide changes the math."
+        headline="One metric. Five systems. Five answers."
+        subheadline="The same failure shows up in every industry that grew by acquisition. Here is what it costs, and what resolving it looks like."
         variant="internal"
         ctaText=""
         ctaHref=""
       />
+
+      {/* The same failure, two industries */}
+      <section className="section-spacing !pt-4 md:!pt-5 xl:!pt-7">
+        <div className="container-site">
+          <div className="max-w-5xl mx-auto">
+            <ScrollReveal>
+              <SectionHeader
+                headline="The same failure, two industries"
+                subheadline="Different systems, different metric, identical problem: nothing says which answer is the one to report."
+              />
+            </ScrollReveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+              <ScrollReveal stagger={0} distance={20}>
+                <FiveSystemsFiveAnswers
+                  compact
+                  question="What was our Q3 headcount?"
+                  rows={HEALTHCARE_HEADCOUNT}
+                  footer="Healthcare. Pressure from sponsors, the board, and competitors already announcing."
+                />
+              </ScrollReveal>
+              <ScrollReveal stagger={0.1} distance={20}>
+                <FiveSystemsFiveAnswers
+                  compact
+                  question="What was Q3 AUM ($M)?"
+                  rows={FINANCE_AUM}
+                  spreadPrefix="$"
+                  spreadSuffix="M"
+                  footer="Finance. LPs asking for the data behind the answer, regulators expecting lineage."
+                />
+              </ScrollReveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Worked example */}
+      <section className="section-spacing bg-[var(--ms-surface)]">
+        <div className="container-site">
+          <div className="max-w-3xl mx-auto">
+            <ScrollReveal>
+              <SectionHeader
+                headline="A roll-up, resolved"
+                subheadline="What it looks like when the map is in place."
+              />
+            </ScrollReveal>
+            <ScrollReveal stagger={0.1} distance={20}>
+              <div className="mt-10">
+                <ResolvedRollup />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Deep dives */}
+      <section className="section-spacing !pb-4">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <SectionHeader
+                headline="Deep dives"
+                subheadline="The scenarios worked through in detail, with the evidence behind them."
+              />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
       {/* Microsite Hub Cards */}
       <section className="section-spacing !pt-4 md:!pt-5 xl:!pt-7">

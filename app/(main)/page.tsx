@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import Hero from '@/components/content/Hero';
 import SectionHeader from '@/components/content/SectionHeader';
-import ProblemBullets from '@/components/content/ProblemBullets';
-import BeforeAfter from '@/components/comparison/BeforeAfter';
 import TimelineShuffle from '@/components/comparison/TimelineShuffle';
 import TrustPillars from '@/components/content/TrustPillars';
+import FiveSystemsFiveAnswers, { HEALTHCARE_HEADCOUNT } from '@/components/content/FiveSystemsFiveAnswers';
+import TheShift from '@/components/content/TheShift';
+import MountainTiers from '@/components/content/MountainTiers';
+import OfferStages from '@/components/content/OfferStages';
 import AnimatedThreeStepFlow from '@/components/animation/AnimatedThreeStepFlow';
 import ScrollReveal from '@/components/animation/ScrollReveal';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
-import { Clock, Layers, HelpCircle, GitBranch } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -22,26 +23,69 @@ export default function Home() {
         variant="homepage"
       />
 
-      {/* Problem Section */}
+      {/* The stakes */}
       <section className="section-spacing bg-[var(--ms-surface-warm)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <ScrollReveal>
               <SectionHeader
-                headline="The blocker isn’t the model"
-                subheadline="AI stalls upstream, on questions nobody can answer about the data itself."
+                headline="Messy data used to slow you down"
+                subheadline="Now, with unchecked AI, it lies with confidence."
               />
             </ScrollReveal>
-            <ScrollReveal stagger={0.15} distance={20}>
-              <ProblemBullets
-                variant="visual"
-                iconBullets={[
-                  { icon: Layers, label: 'The same concept, named differently in every system.' },
-                  { icon: Clock, label: 'Timestamps that record when someone typed, not when it happened.' },
-                  { icon: GitBranch, label: 'A schema change that quietly breaks a report nobody re-checks.' },
-                  { icon: HelpCircle, label: 'Answers no one can trace back to a source.' },
-                ]}
+            <ScrollReveal stagger={0.1} distance={20}>
+              <div className="mt-8">
+                <FiveSystemsFiveAnswers
+                  question="What was our Q3 headcount?"
+                  rows={HEALTHCARE_HEADCOUNT}
+                />
+              </div>
+            </ScrollReveal>
+            <ScrollReveal stagger={0.2} distance={20}>
+              <p className="text-lg text-[var(--ms-body)] leading-relaxed mt-8">
+                An agent asked this question will pick one and tell you with total
+                confidence. You cannot build AI on data you cannot trust.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Why now */}
+      <section className="section-spacing">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <SectionHeader
+                headline="Understanding your data used to require expensive humans"
+                subheadline="In late 2025, that ended."
+                align="center"
               />
+            </ScrollReveal>
+            <ScrollReveal stagger={0.1} distance={20}>
+              <div className="mt-10">
+                <TheShift />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* The mountain */}
+      <section className="section-spacing bg-[var(--ms-surface)]">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal>
+              <SectionHeader
+                headline="Three tiers, one MTN"
+                subheadline="Trusted data at the base, the real AI business at the top."
+                align="center"
+              />
+            </ScrollReveal>
+            <ScrollReveal stagger={0.1} distance={20}>
+              <div className="mt-10">
+                <MountainTiers />
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -53,8 +97,8 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <ScrollReveal>
               <SectionHeader
-                headline="Revenue and quality depend on a true timeline"
-                subheadline="And building it is the part everyone underestimates."
+                headline="Order matters, and the summit runs on it"
+                subheadline="Revenue and quality depend on a true timeline. Building one is the part everyone underestimates."
               />
             </ScrollReveal>
             <ScrollReveal stagger={0.1} distance={20}>
@@ -65,7 +109,9 @@ export default function Home() {
             <ScrollReveal stagger={0.15} distance={20}>
               <div className="space-y-5">
                 <p className="text-lg text-[var(--ms-heading)] leading-relaxed font-medium">
-                  That is the work MTN Guide does.
+                  Sequence models learn from order. They only become viable once
+                  the foundation underneath them is clean and consistent. That is
+                  the work MTN Guide does first.
                 </p>
                 <Link
                   href="/sequential-data"
@@ -120,41 +166,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Outcome Section */}
+      {/* The offer */}
       <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <ScrollReveal>
               <SectionHeader
-                headline="What changes"
-                subheadline="MTN FieldMap is the asset. It is yours, and it stays current."
-                variant="emphasis"
+                headline="A different deal"
+                subheadline="Fixed scope and a named engineer, instead of an open-ended program."
+                align="center"
               />
             </ScrollReveal>
-
-            <ScrollReveal stagger={0.15} distance={20}>
-              <BeforeAfter
-                before={{
-                  title: 'Integration as a project',
-                  items: [
-                    'Months of manual mapping',
-                    'Knowledge in one person’s head',
-                    'Every schema change reopens the work',
-                    'AI pilots stall on data',
-                  ],
-                }}
-                after={{
-                  title: 'With MTN Guide',
-                  items: [
-                    'A FieldMap built from schemas, in days',
-                    'Evidence recorded under every claim',
-                    'Change contained to one connection',
-                    'Data your models can actually use',
-                  ],
-                }}
-                variant="withIcons"
-                compact
-              />
+            <ScrollReveal stagger={0.1} distance={20}>
+              <div className="mt-10">
+                <OfferStages />
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -176,32 +202,6 @@ export default function Home() {
             <ScrollReveal stagger={0.1} distance={20}>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <TrustPillars />
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Credibility */}
-      <section className="section-spacing">
-        <div className="container-site">
-          <div className="max-w-3xl mx-auto">
-            <ScrollReveal>
-              <div
-                className="p-8 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)]"
-                style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
-              >
-                <div className="text-xs uppercase tracking-wide text-[var(--ms-accent)] font-semibold mb-3">
-                  NIH SBIR Fast-Track
-                </div>
-                <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                  MTN (Medical Timeseries Networks) holds a Small Business
-                  Innovation Research Fast-Track award from the National Library of
-                  Medicine, supporting research on making fragmented clinical and
-                  physiological data usable for AI. The team is led by a
-                  physician-researcher, with published work in Nature journals,
-                  PNAS, and PLoS Computational Biology.
-                </p>
               </div>
             </ScrollReveal>
           </div>

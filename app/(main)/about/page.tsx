@@ -3,6 +3,7 @@ import Hero from '@/components/content/Hero';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 import FounderCard from '@/components/content/FounderCard';
 import PeerReviewedValidation from '@/components/content/PeerReviewedValidation';
+import TheShift from '@/components/content/TheShift';
 
 export const metadata: Metadata = {
   title: 'About | MTN',
@@ -16,7 +17,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         headline="We started on the other end of this problem"
-        subheadline="MTN stands for Medical Timeseries Networks. The name is the origin story, and the reason we ended up building a data engineering product."
+        subheadline="MTN stands for “Medical Timeseries Networks”. We build the MTN Guide to solve our own data engineering problems."
         variant="internal"
         ctaText=""
         ctaHref=""
@@ -45,7 +46,7 @@ export default function AboutPage() {
                 three field names.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                Our ML scientists were doing data archaeology. Every new site
+                Our ML scientists were doing data archaeology. Every new project
                 started the work over. And every answer lived in one engineer’s
                 head until they left.
               </p>
@@ -104,12 +105,12 @@ export default function AboutPage() {
                 style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
               >
                 <h3 className="font-display text-[var(--ms-heading)] mb-2">
-                  Built for governance
+                  Built for High-Trust
                 </h3>
                 <p className="text-base text-[var(--ms-body)]">
-                  Working from schemas rather than records keeps sensitive data
-                  where it belongs, and makes security review a shorter
-                  conversation.
+                  The map is built from how your systems are shaped, so the
+                  sensitive part never has to move. Security review gets a lot
+                  shorter.
                 </p>
               </div>
             </div>
@@ -120,24 +121,26 @@ export default function AboutPage() {
       {/* Why now */}
       <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
               Why now
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 mb-10">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                Two things changed. Organizations started trying to deploy AI on
-                data nobody had ever had to explain to a machine before, and
-                discovered that the explaining was the whole job. At the same
-                time, agents became capable enough to do most of that explaining,
-                if they are given the right evidence and held to it.
+                For decades, understanding a data estate required expensive
+                humans reading it one system at a time. That was affordable for
+                large enterprises and out of reach for everyone else. In late
+                2025 coding agents became trustworthy enough to do the reading,
+                and the economics inverted.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                Both halves matter. An agent that maps your data confidently and
-                wrongly is worse than no agent at all. The engineering problem is
-                keeping it accountable to evidence, and knowing when to ask.
+                The urgency arrived at the same moment. Messy data used to be a
+                hindrance that slowed a company down. Handed to an unchecked
+                agent, it now lies with confidence.
               </p>
             </div>
+
+            <TheShift />
           </div>
         </div>
       </section>

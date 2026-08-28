@@ -18,15 +18,15 @@ interface Validation {
 const VALIDATIONS: Validation[] = [
   {
     logos: [
-      { src: '/images/logos/nih.png', alt: 'National Institutes of Health', w: 356, h: 200 },
-      { src: '/images/logos/nlm.svg', alt: 'National Library of Medicine', w: 708, h: 722 },
+      { src: '/images/logos/nih-nlm.png', alt: 'NIH National Library of Medicine', w: 600, h: 200 },
     ],
     name: 'SBIR Fast-Track',
     org: 'National Library of Medicine',
-    detail: '$2.2M. Funded on first submission.',
+    detail: '$2.34M. Funded on first submission.',
   },
   {
     logos: [
+      { src: '/images/logos/nih-nia.png', alt: 'NIH National Institute on Aging', w: 528, h: 139 },
       { src: '/images/logos/a2-collective.png', alt: 'a2 Collective', w: 267, h: 200 },
     ],
     name: 'a2 Collective Award',
@@ -35,8 +35,8 @@ const VALIDATIONS: Validation[] = [
   },
   {
     logos: [
-      { src: '/images/logos/xtech.png', alt: 'Army xTech', w: 500, h: 200 },
       { src: '/images/logos/us-army.png', alt: 'U.S. Army', w: 222, h: 200 },
+      { src: '/images/logos/xtech.png', alt: 'Army xTech', w: 500, h: 200 },
     ],
     name: 'AI Grand Challenge',
     org: 'U.S. Army',
@@ -53,7 +53,9 @@ export default function PeerReviewedValidation() {
           className="flex flex-col p-6 rounded-2xl bg-white border border-[var(--ms-border)]"
           style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
         >
-          <div className="h-12 flex items-center gap-4 mb-5">
+          {/* min-w-0 lets a wide pair shrink to fit a narrow card instead of
+              overflowing it; object-contain keeps each mark undistorted. */}
+          <div className="h-12 flex items-center gap-3 lg:gap-4 mb-5">
             {v.logos.map((l) => (
               <Image
                 key={l.src}
@@ -61,7 +63,7 @@ export default function PeerReviewedValidation() {
                 alt={l.alt}
                 width={l.w}
                 height={l.h}
-                className="h-10 w-auto object-contain"
+                className="h-10 w-auto min-w-0 object-contain"
               />
             ))}
           </div>

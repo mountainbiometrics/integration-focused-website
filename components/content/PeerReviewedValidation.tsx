@@ -1,10 +1,15 @@
 import Image from 'next/image';
 
+interface Logo {
+  src: string;
+  alt: string;
+  /** intrinsic dimensions, so Next can reserve the right space */
+  w: number;
+  h: number;
+}
+
 interface Validation {
-  /** Short mark shown when no logo file is supplied yet. */
-  mark: string;
-  /** Drop a file in /public/images/logos and set this to swap in real artwork. */
-  logoSrc?: string;
+  logos: Logo[];
   name: string;
   org: string;
   detail: string;
@@ -12,19 +17,27 @@ interface Validation {
 
 const VALIDATIONS: Validation[] = [
   {
-    mark: 'NIH',
+    logos: [
+      { src: '/images/logos/nih.png', alt: 'National Institutes of Health', w: 2500, h: 1406 },
+      { src: '/images/logos/nlm.svg', alt: 'National Library of Medicine', w: 708, h: 722 },
+    ],
     name: 'SBIR Fast-Track',
     org: 'National Library of Medicine',
     detail: '$2.2M. Funded on first submission.',
   },
   {
-    mark: 'a²',
+    logos: [
+      { src: '/images/logos/a2-collective.png', alt: 'a2 Collective', w: 600, h: 450 },
+    ],
     name: 'a2 Collective Award',
     org: 'National Institute on Aging',
     detail: 'Won to build time-series models.',
   },
   {
-    mark: 'xTech',
+    logos: [
+      { src: '/images/logos/xtech.png', alt: 'Army xTech', w: 2084, h: 834 },
+      { src: '/images/logos/us-army.png', alt: 'U.S. Army', w: 1600, h: 1440 },
+    ],
     name: 'AI Grand Challenge',
     org: 'U.S. Army',
     detail: 'Finalist. Tested on Army data.',
@@ -40,24 +53,17 @@ export default function PeerReviewedValidation() {
           className="flex flex-col p-6 rounded-2xl bg-white border border-[var(--ms-border)]"
           style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
         >
-          {/* logo slot */}
-          <div className="h-14 flex items-center mb-5">
-            {v.logoSrc ? (
+          <div className="h-12 flex items-center gap-4 mb-5">
+            {v.logos.map((l) => (
               <Image
-                src={v.logoSrc}
-                alt={`${v.org} ${v.name}`}
-                width={160}
-                height={56}
-                className="h-12 w-auto object-contain"
+                key={l.src}
+                src={l.src}
+                alt={l.alt}
+                width={l.w}
+                height={l.h}
+                className="h-10 w-auto object-contain"
               />
-            ) : (
-              <span
-                className="inline-flex items-center justify-center px-4 h-12 rounded-lg border-2 border-[var(--ms-primary)] font-display text-2xl text-[var(--ms-primary)]"
-                aria-hidden="true"
-              >
-                {v.mark}
-              </span>
-            )}
+            ))}
           </div>
 
           <div className="font-display text-[var(--ms-heading)] text-xl leading-tight">

@@ -107,12 +107,7 @@ export default function Home() {
               </div>
             </ScrollReveal>
             <ScrollReveal stagger={0.15} distance={20}>
-              <div className="space-y-5">
-                <p className="text-lg text-[var(--ms-heading)] leading-relaxed font-medium">
-                  Sequence models learn from order. They only become viable once
-                  the foundation underneath them is clean and consistent. That is
-                  the work MTN Guide does first.
-                </p>
+              <div>
                 <Link
                   href="/sequential-data"
                   className="inline-flex items-center gap-1 text-[var(--ms-accent)] font-medium no-underline hover:gap-2 transition-all"

@@ -146,7 +146,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section-spacing bg-[var(--ms-surface-warm)]">
+      <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
@@ -198,7 +198,7 @@ export default function AboutPage() {
       </section>
 
       {/* Quote */}
-      <section className="section-spacing">
+      <section className="section-spacing bg-[var(--ms-surface-warm)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <div
@@ -220,7 +220,7 @@ export default function AboutPage() {
       </section>
 
       {/* Peer-reviewed validation */}
-      <section className="section-spacing bg-[var(--ms-surface)]">
+      <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
@@ -253,7 +253,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our mission */}
-      <section className="section-spacing">
+      <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">

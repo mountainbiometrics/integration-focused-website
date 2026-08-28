@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 /* Foundation → Middle → Summit, drawn as one mountain rather than three boxes.
    Each band is a trapezoid whose top edge equals the band above it, so the
    slopes run continuously from the peak down to the base. */
@@ -71,16 +69,6 @@ export default function MountainTiers() {
           </p>
         </div>
       ))}
-
-      <Link
-        href="/sequential-data"
-        className="inline-flex items-center gap-1 text-[var(--ms-accent)] font-medium no-underline hover:gap-2 transition-all mt-8"
-      >
-        Why order matters at the top
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </Link>
     </div>
   );
 }

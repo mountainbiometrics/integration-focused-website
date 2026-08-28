@@ -333,7 +333,7 @@ function Key({ stacked = false }: { stacked?: boolean }) {
 }
 
 const ARIA =
-  'Diagram: the map is a graph of concepts — Patient, Encounter, Provider, Claim line, Facility, Disposition — joined by labelled relationships. Node shape shows what wrote the assertion: a deterministic rule, a model, or a person. Contour lines behind the graph show the weight of evidence, so corroborated concepts sit on high ground with tight contours and Disposition, which has thin evidence and remains unresolved, sits in a basin.';
+  'Diagram: the map is a graph of concepts (Patient, Encounter, Provider, Claim line, Facility, Disposition) joined by labelled relationships. Node shape shows what wrote the assertion: a deterministic rule, a model, or a person. Contour lines behind the graph show the weight of evidence, so corroborated concepts sit on high ground with tight contours and Disposition, which has thin evidence and remains unresolved, sits in a basin.';
 
 export default function ConceptMapDiagram() {
   return (

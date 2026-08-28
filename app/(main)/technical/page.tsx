@@ -122,7 +122,7 @@ export default function TechnicalPage() {
                   MTN Guide
                 </text>
                 <text x="122" y="193" textAnchor="middle" fontSize="10.5" fill="var(--ms-body)">
-                  the map — concepts, evidence
+                  the map: concepts, evidence
                 </text>
 
                 <path d="M 122 208 L 122 278" stroke="var(--ms-primary)" strokeWidth="1.5" strokeDasharray="5 4" fill="none" />

@@ -17,8 +17,8 @@ export default function SequentialDataPage() {
   return (
     <>
       <Hero
-        headline="What happened, and in what order"
-        subheadline="Nearly every question worth asking is a question about sequence. Answering it is a data engineering problem long before it is a modeling problem."
+        headline="Order matters. Your systems don’t agree on it."
+        subheadline="Sequence is where the value is. Assembling a true timeline is a data engineering problem long before it is a modeling problem."
         ctaText="Talk Through Your Data"
         ctaHref="/contact"
         variant="internal"
@@ -184,34 +184,39 @@ export default function SequentialDataPage() {
         </div>
       </section>
 
-      {/* NIH context */}
-      <section className="section-spacing bg-[var(--ms-surface-warm)]">
+      {/* What it makes possible */}
+      <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-3xl mx-auto">
             <ScrollReveal>
-              <div
-                className="p-8 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)]"
-                style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
-              >
-                <div className="text-xs uppercase tracking-wide text-[var(--ms-accent)] font-semibold mb-3">
-                  NIH SBIR Fast-Track
-                </div>
-                <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl mb-4">
-                  Proven where the data is hardest
-                </h2>
-                <p className="text-[var(--ms-body)] leading-relaxed mb-4">
-                  Healthcare is the most demanding version of this problem: the
-                  most fragmented systems, the most irregular events, the least
-                  room for a confident wrong answer. MTN holds a Small Business
-                  Innovation Research Fast-Track award from the National Library of
-                  Medicine to build exactly this layer for clinical and
-                  physiological data. What works there travels.
-                </p>
-                <p className="text-[var(--ms-body-light)] text-sm leading-relaxed">
-                  NIH funding supports this research. It is not an endorsement of
-                  MTN or its products.
-                </p>
-              </div>
+              <SectionHeader
+                headline="What a true timeline makes possible"
+                align="center"
+              />
+            </ScrollReveal>
+            <ScrollReveal stagger={0.1} distance={20}>
+              <ul className="mt-10 flex flex-col gap-4">
+                {[
+                  'Models that learn from a sequence of events rather than scoring one moment in isolation.',
+                  'Agents that can act on what happened, in the order it actually happened.',
+                  'Honest answers to what usually comes next, and where acting changes the outcome.',
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-4 rounded-2xl bg-white border-l-[3px] border-l-[var(--ms-accent)] p-5"
+                    style={{ boxShadow: 'var(--ms-shadow-card-sm)' }}
+                  >
+                    <span className="flex-shrink-0 w-2 h-2 rounded-full mt-2.5 bg-[var(--ms-accent)]" />
+                    <span className="text-lg text-[var(--ms-body)] leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+            <ScrollReveal stagger={0.2} distance={20}>
+              <p className="text-lg text-[var(--ms-heading)] leading-relaxed mt-8 text-center">
+                Build it with your own models, your own team, or a vendor you
+                already trust.
+              </p>
             </ScrollReveal>
           </div>
         </div>

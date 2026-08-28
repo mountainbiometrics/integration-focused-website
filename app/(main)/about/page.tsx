@@ -17,7 +17,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         headline="We started on the other end of this problem"
-        subheadline="MTN stands for “Medical Timeseries Networks”. We build the MTN Guide to solve our own data engineering problems."
+        subheadline="MTN stands for “Medical Timeseries Networks”. We built the MTN Guide to solve our own data engineering problems."
         variant="internal"
         ctaText=""
         ctaHref=""
@@ -219,12 +219,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Peer-reviewed validation */}
+      {/* Vetted validation */}
       <section className="section-spacing">
         <div className="container-site">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
-              Peer-reviewed validation
+              Vetted validation
             </h2>
             <div className="space-y-4 mb-10">
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">

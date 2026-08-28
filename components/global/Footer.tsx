@@ -33,7 +33,7 @@ export default function Footer() {
               />
             </Link>
             <p className="!text-gray-300 text-sm leading-relaxed max-w-xs">
-              It&apos;s time to trust your data.
+              It’s time to trust your data.
             </p>
           </div>
 

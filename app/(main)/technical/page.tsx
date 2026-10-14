@@ -80,10 +80,11 @@ export default function TechnicalPage() {
       {/* Hero Section */}
       <Hero
         headline="Technical overview"
-        subheadline="MTN FieldMap: a map of what your data means, maintained outside your data path, honest about what it does not know."
+        subheadline="Meaning, not records. MTN FieldMap is a map of what your data means, built from structure, maintained outside your data path, and honest about what it does not know."
         ctaText="Schedule a Technical Session"
         ctaHref="/contact"
         variant="internal"
+        topo="mesa"
       />
 
       {/* Architecture Overview */}

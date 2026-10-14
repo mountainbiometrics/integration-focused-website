@@ -24,7 +24,7 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "MTN | It’s time to trust your data",
-  description: "MTN Guide maps what your systems mean, from schemas rather than records, and keeps that map current as they change. The layer that has to exist before clinical AI works.",
+  description: "MTN is a trusted guide to your organization’s data. MTN Guide maps what your systems mean and when it applies, from schemas rather than records, so teams and AI can act with confidence.",
   keywords: [
     "trusted data",
     "AI readiness",
@@ -36,10 +36,12 @@ export const metadata: Metadata = {
     "healthcare interoperability",
     "EHR integration",
     "sequential data",
+    "financial services data",
+    "AI ROI",
   ],
   openGraph: {
     title: "MTN | It’s time to trust your data",
-    description: "MTN Guide maps what your systems mean, from schemas rather than records, and keeps that map current as they change.",
+    description: "MTN is a trusted guide to your organization’s data: what it means, where it lives, and how it fits together over time, without requiring access to sensitive records.",
     type: "website",
   },
 };

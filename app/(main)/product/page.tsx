@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Hero from '@/components/content/Hero';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
-import FoundryFlow from '@/components/product/FoundryFlow';
+import SectionHeader from '@/components/content/SectionHeader';
+import GuideAlongside from '@/components/content/GuideAlongside';
 import MappingCascade from '@/components/product/MappingCascade';
 import HealingPipeline from '@/components/product/HealingPipeline';
 import AutomatePlumbing from '@/components/product/AutomatePlumbing';
@@ -12,7 +13,7 @@ import MonitoringPulse from '@/components/product/MonitoringPulse';
 export const metadata: Metadata = {
   title: 'MTN Guide | MTN',
   description:
-    'MTN Guide is an agentic data engineer: it maps what your systems mean from schemas and documentation, and keeps that map current as they change.',
+    'One platform, two parts: MTN Guide, an agentic data engineer, builds MTN FieldMap, an evidence-backed map of what your systems mean, and keeps it current as they change.',
 };
 
 export default function ProductPage() {
@@ -21,15 +22,28 @@ export default function ProductPage() {
       {/* Hero Section */}
       <Hero
         headline="MTN Guide"
-        subheadline="An agentic data engineer. It reads your schemas and builds MTN FieldMap, an evidence-backed map of what they mean, then keeps it current as your systems change."
+        subheadline="One platform, two parts. Guide, an agentic data engineer, reads your schemas, documentation, and API specifications, not your records. It builds MTN FieldMap, a map of what your data means across systems with the evidence behind each mapping, and keeps it current as those systems change."
         ctaText="See How It Works"
         ctaHref="/contact"
         variant="internal"
-        background="topo"
+        topo="summit"
       />
 
-      {/* Product Overview — animated Sources → Guide → Tools */}
-      <FoundryFlow />
+      {/* Product Overview — where Guide lands in your stack */}
+      <section className="section-spacing bg-[var(--ms-surface)]">
+        <div className="container-site">
+          <div className="max-w-5xl mx-auto">
+            <SectionHeader
+              headline="Where MTN Guide lands"
+              subheadline="Beside your systems, not in the data path. Your stack keeps working as it does today."
+              align="center"
+            />
+            <div className="mt-10">
+              <GuideAlongside />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Section 1: A FieldMap in days — animated field mapping */}
       <MappingCascade />

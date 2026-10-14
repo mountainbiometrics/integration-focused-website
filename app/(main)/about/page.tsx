@@ -17,10 +17,11 @@ export default function AboutPage() {
       {/* Hero Section */}
       <Hero
         headline="We started on the other end of this problem"
-        subheadline="MTN stands for “Medical Timeseries Networks”. We built the MTN Guide to solve our own data engineering problems."
+        subheadline="We built the MTN Guide to solve our own data engineering problems."
         variant="internal"
         ctaText=""
         ctaHref=""
+        topo="basin"
       />
 
       {/* The wall */}
@@ -82,7 +83,9 @@ export default function AboutPage() {
                 under what conditions.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                It turned out this was not our problem. It was everyone’s.
+                It turned out this was not our problem. It was everyone’s. Organizations
+                putting AI to work hit the same wall, and need a
+                trusted guide to what their data means before the AI can help.
               </p>
             </div>
 
@@ -150,12 +153,12 @@ export default function AboutPage() {
         <div className="container-site">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
-              Technical leadership
+              Leadership
             </h2>
             <p className="text-lg text-[var(--ms-body)] leading-relaxed mb-10">
-              An unusual combination: ML scientists who understand deployment
-              constraints, physicians who understand data infrastructure, and engineers
-              who turn it into product. Our work has been published in Nature
+              Physicians and data scientists founded and lead MTN, alongside
+              engineers who have built and scaled production platforms. The
+              combination brings scientific rigor to practical problems. Our work has been published in Nature
               journals, PNAS, JMIR, Chest, PLoS Computational Biology, The Royal
               Society, and other leading venues.
             </p>
@@ -269,7 +272,10 @@ export default function AboutPage() {
                 certainty they don’t have.
               </p>
               <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                We’re building the layer that makes the rest possible.
+                Healthcare is where we started, and where the stakes are highest.
+                The same problem holds anywhere trust, time, and data integrity
+                matter, from financial services to any business putting AI to
+                work. We want to be the trusted guide those organizations rely on.
               </p>
             </div>
           </div>

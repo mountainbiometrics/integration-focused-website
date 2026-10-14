@@ -78,10 +78,11 @@ export default function UseCasesPage() {
       {/* Hero Section */}
       <Hero
         headline="One metric. Five systems. Five answers."
-        subheadline="The same failure shows up in every industry that grew by acquisition. Here is what it costs, and what resolving it looks like."
+        subheadline="The same failure shows up in healthcare, financial services, and every industry that grew by acquisition. Here is what it costs, and what resolving it looks like."
         variant="internal"
         ctaText=""
         ctaHref=""
+        topo="twin"
       />
 
       {/* The same failure, two industries */}

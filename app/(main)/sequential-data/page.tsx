@@ -18,10 +18,11 @@ export default function SequentialDataPage() {
     <>
       <Hero
         headline="Time matters. Your systems don’t agree on it."
-        subheadline="Sequence is where the value is. Assembling a true timeline is a data engineering problem long before it is a modeling problem."
+        subheadline="AI needs to know more than what a field means. It needs to know what its time means: when something happened, when it was recorded, and where the gaps are."
         ctaText="Talk Through Your Data"
         ctaHref="/contact"
         variant="internal"
+        topo="ridge"
       />
 
       {/* Two kinds of sequence — visual-led */}

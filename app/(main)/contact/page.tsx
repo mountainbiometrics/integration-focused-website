@@ -5,21 +5,21 @@ import ContactForm from '@/components/forms/ContactForm';
 export const metadata: Metadata = {
   title: 'Contact | MTN',
   description:
-    'Start a conversation about your next integration. Discuss your acquisition, system change, or visibility challenges with our team.',
+    'Start with one business problem. We’ll test fit, effort, and value with you before any wider rollout.',
 };
 
 const scenarios = [
   {
-    title: 'Upcoming acquisition',
-    description: 'Planning a close and want to maintain data visibility throughout',
+    title: 'An AI initiative stalled on data',
+    description: 'Models and agents are ready, but nobody can say which data to trust',
   },
   {
-    title: 'Recent system change',
-    description: 'EHR migration, billing system change, or vendor transition',
+    title: 'An acquisition or system change',
+    description: 'A close, an EHR or core-system migration, or a vendor transition',
   },
   {
-    title: 'Ongoing visibility gaps',
-    description: 'Struggling with fragmented data across multiple systems',
+    title: 'Conflicting answers',
+    description: 'The same question returns different numbers from different systems',
   },
 ];
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <Hero
         headline="Start a conversation"
-        subheadline="We'll discuss your specific scenario, walk through how visibility can stay live during your transition, and how you can reduce maintenance costs."
+        subheadline="Bring one business problem. We'll walk through where its data lives, what MTN would map, and how to test fit, effort, and value before any wider rollout."
         variant="internal"
         ctaText=""
         ctaHref=""
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     </svg>
                   </span>
                   <span className="text-[var(--ms-heading)]">
-                    Your specific integration scenario and timeline
+                    The business problem and the systems behind it
                   </span>
                 </div>
                 <div className="flex items-start gap-3">

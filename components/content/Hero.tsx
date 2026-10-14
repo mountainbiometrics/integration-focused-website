@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import TopoLines from '@/components/content/TopoLines';
+import TopoLines, { type TopoVariant } from '@/components/content/TopoLines';
 
 interface HeroProps {
   headline: string;
@@ -7,8 +7,8 @@ interface HeroProps {
   ctaText?: string;
   ctaHref?: string;
   variant?: 'homepage' | 'internal';
-  /** Optional decorative background treatment behind the hero copy. */
-  background?: 'none' | 'topo';
+  /** Optional topographic contour background; each page uses its own terrain. */
+  topo?: TopoVariant;
   children?: React.ReactNode;
 }
 
@@ -18,7 +18,7 @@ export default function Hero({
   ctaText = 'Start a Conversation',
   ctaHref = '/contact',
   variant = 'homepage',
-  background = 'none',
+  topo,
   children,
 }: HeroProps) {
   const isHomepage = variant === 'homepage';
@@ -45,9 +45,7 @@ export default function Hero({
       )}
 
       {/* Topographic contour lines */}
-      {background === 'topo' && (
-        <TopoLines className="absolute inset-0 -z-10 h-full w-full" />
-      )}
+      {topo && <TopoLines variant={topo} className="absolute inset-0 -z-10 h-full w-full" />}
 
       <div className="container-site">
         <div className="max-w-4xl mx-auto">

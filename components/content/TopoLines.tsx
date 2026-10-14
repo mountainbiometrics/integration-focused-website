@@ -11,8 +11,16 @@
  * headline sitting over it keeps its contrast.
  */
 
+import {
+  BASIN_CONTOURS,
+  MESA_CONTOURS,
+  RANGE_CONTOURS,
+  RIDGE_CONTOURS,
+  TWIN_CONTOURS,
+} from '@/components/content/topoFields';
+
 // [contour index, path data] over a 1600 x 420 field
-const CONTOURS: [number, string][] = [
+const SUMMIT_CONTOURS: [number, string][] = [
   [1, 'M240.3 0.0C240.5 1.3 241.7 4.0 241.4 8.0C241.2 12.0 242.0 17.3 238.8 24.0C235.5 30.7 228.4 41.3 221.8 48.0C215.1 54.7 207.8 59.4 198.8 64.0C189.9 68.6 178.5 72.9 168.0 75.8C157.5 78.6 146.7 80.1 136.0 81.0C125.3 81.9 116.0 81.8 104.0 81.0C92.0 80.1 81.3 78.8 64.0 75.9C46.7 72.9 10.7 65.5 0.0 63.5'],
   [1, 'M783.2 0.0C781.2 2.7 776.7 10.0 771.5 16.0C766.3 22.0 757.9 30.6 752.0 36.0C746.1 41.4 742.7 44.1 736.0 48.5C729.3 52.8 720.0 58.3 712.0 62.1C704.0 65.9 696.0 68.9 688.0 71.4C680.0 74.0 676.0 75.7 664.0 77.4C652.0 79.1 633.3 82.0 616.0 81.6C598.7 81.2 574.7 77.7 560.0 75.0C545.3 72.3 536.9 68.6 528.0 65.4C519.1 62.3 515.9 61.6 506.7 56.0C497.5 50.4 480.4 38.7 472.7 32.0C465.1 25.3 463.4 21.3 460.6 16.0C457.7 10.7 456.3 2.7 455.4 0.0'],
   [2, 'M846.1 0.0C838.2 8.0 814.2 34.7 798.8 48.0C783.3 61.3 769.2 71.0 753.4 80.0C737.6 89.0 721.6 96.2 704.0 102.1C686.4 108.1 665.3 112.6 648.0 115.7C630.7 118.7 617.3 119.6 600.0 120.2C582.7 120.9 561.3 120.4 544.0 119.4C526.7 118.5 520.0 117.8 496.0 114.6C472.0 111.3 424.0 102.8 400.0 99.9C376.0 97.0 366.7 97.1 352.0 97.2C337.3 97.4 334.8 96.9 312.0 100.7C289.2 104.5 240.8 115.5 215.4 120.0C190.1 124.5 195.9 125.7 160.0 128.0C124.1 130.3 26.7 132.8 0.0 133.8'],
@@ -42,40 +50,56 @@ const CONTOURS: [number, string][] = [
   [21, 'M1224.0 102.4C1215.9 105.7 1193.8 114.4 1183.2 120.0C1172.7 125.6 1167.2 130.7 1160.5 136.0C1153.8 141.3 1152.3 141.3 1143.2 152.0C1134.1 162.7 1116.7 184.0 1106.0 200.0C1095.3 216.0 1084.2 237.3 1079.0 248.0C1073.8 258.7 1075.3 258.7 1074.7 264.0C1074.0 269.3 1073.8 274.7 1075.1 280.0C1076.3 285.3 1079.8 292.0 1082.2 296.0C1084.6 300.0 1085.9 301.2 1089.6 304.0C1093.2 306.8 1098.9 310.8 1104.0 313.1C1109.1 315.4 1114.7 316.9 1120.0 317.8C1125.3 318.7 1130.7 318.9 1136.0 318.6C1141.3 318.2 1146.7 317.3 1152.0 315.7C1157.3 314.2 1161.6 312.9 1168.0 309.6C1174.4 306.3 1171.8 309.5 1190.5 296.0C1209.1 282.5 1260.3 244.8 1280.0 228.8C1299.7 212.8 1302.3 207.5 1308.9 200.0C1315.5 192.5 1316.7 189.3 1319.7 184.0C1322.7 178.7 1325.0 173.3 1326.7 168.0C1328.3 162.7 1329.4 157.3 1329.5 152.0C1329.6 146.7 1329.1 141.1 1327.5 136.0C1326.0 130.9 1322.8 125.5 1320.0 121.5C1317.2 117.5 1314.6 115.0 1310.6 112.0C1306.6 109.0 1302.4 106.0 1296.0 103.7C1289.6 101.3 1282.7 98.4 1272.0 97.8C1261.3 97.3 1240.0 99.7 1232.0 100.4C1224.0 101.2 1232.1 99.2 1224.0 102.4Z'],
 ];
 
+/* One terrain per page, so no two heroes share a landscape. */
+const FIELDS = {
+  summit: { contours: SUMMIT_CONTOURS, w: 1600, h: 420 }, // MTN Guide
+  range: { contours: RANGE_CONTOURS, w: 1600, h: 720 }, // Home
+  ridge: { contours: RIDGE_CONTOURS, w: 1600, h: 480 }, // Solving Time
+  twin: { contours: TWIN_CONTOURS, w: 1600, h: 480 }, // Use Cases
+  mesa: { contours: MESA_CONTOURS, w: 1600, h: 480 }, // Technical
+  basin: { contours: BASIN_CONTOURS, w: 1600, h: 480 }, // About
+};
+
+export type TopoVariant = keyof typeof FIELDS;
+
 interface TopoLinesProps {
   className?: string;
+  variant?: TopoVariant;
 }
 
-export default function TopoLines({ className = '' }: TopoLinesProps) {
+export default function TopoLines({ className = '', variant = 'summit' }: TopoLinesProps) {
+  const { contours, w, h } = FIELDS[variant];
+  const maskId = `topo-fade-mask-${variant}`;
+  const gradId = `topo-fade-${variant}`;
   return (
     <svg
       aria-hidden="true"
       focusable="false"
-      viewBox="0 0 1600 420"
+      viewBox={`0 0 ${w} ${h}`}
       preserveAspectRatio="xMidYMid slice"
       className={`pointer-events-none select-none ${className}`}
       fill="none"
     >
       <defs>
         {/* Fades the lines out toward the left, under the headline */}
-        <linearGradient id="topo-fade" x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stopColor="#4D4D4D" />
           <stop offset="0.3" stopColor="#9E9E9E" />
           <stop offset="0.62" stopColor="#FFFFFF" />
           <stop offset="1" stopColor="#FFFFFF" />
         </linearGradient>
-        <mask id="topo-fade-mask">
-          <rect width="1600" height="420" fill="url(#topo-fade)" />
+        <mask id={maskId}>
+          <rect width={w} height={h} fill={`url(#${gradId})`} />
         </mask>
       </defs>
 
       <g
-        mask="url(#topo-fade-mask)"
+        mask={`url(#${maskId})`}
         stroke="var(--ms-primary)"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {CONTOURS.map(([level, d], i) => {
+        {contours.map(([level, d], i) => {
           const isIndexLine = level % 5 === 0;
           return (
             <path

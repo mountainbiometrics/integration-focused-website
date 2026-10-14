@@ -3,6 +3,7 @@ import Hero from '@/components/content/Hero';
 import PrimaryCTABanner from '@/components/cta/PrimaryCTABanner';
 import FounderCard from '@/components/content/FounderCard';
 import PeerReviewedValidation from '@/components/content/PeerReviewedValidation';
+import NewsLinks from '@/components/content/NewsLinks';
 import TheShift from '@/components/content/TheShift';
 
 export const metadata: Metadata = {
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
   description:
     'MTN (Medical Timeseries Networks) set out to find patterns in clinical data over time, and hit a wall upstream. MTN Guide is what we built to get past it.',
 };
+
+/* The Why now section is hidden for the moment; flip to show it again. */
+const SHOW_WHY_NOW = false;
 
 export default function AboutPage() {
   return (
@@ -122,34 +126,36 @@ export default function AboutPage() {
       </section>
 
       {/* Why now */}
-      <section className="section-spacing bg-[var(--ms-surface)]">
-        <div className="container-site">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
-              Why now
-            </h2>
-            <div className="space-y-4 mb-10">
-              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                For decades, understanding a data estate required expensive
-                humans reading it one system at a time. That was affordable for
-                large enterprises and out of reach for everyone else. In late
-                2025 coding agents became trustworthy enough to do the reading,
-                and the economics inverted.
-              </p>
-              <p className="text-lg text-[var(--ms-body)] leading-relaxed">
-                The urgency arrived at the same moment. Messy data used to be a
-                hindrance that slowed a company down. Handed to an unchecked
-                agent, it now lies with confidence.
-              </p>
-            </div>
+      {SHOW_WHY_NOW && (
+        <section className="section-spacing bg-[var(--ms-surface)]">
+          <div className="container-site">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
+                Why now
+              </h2>
+              <div className="space-y-4 mb-10">
+                <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                  For decades, understanding a data estate required expensive
+                  humans reading it one system at a time. That was affordable for
+                  large enterprises and out of reach for everyone else. In late
+                  2025 coding agents became trustworthy enough to do the reading,
+                  and the economics inverted.
+                </p>
+                <p className="text-lg text-[var(--ms-body)] leading-relaxed">
+                  The urgency arrived at the same moment. Messy data used to be a
+                  hindrance that slowed a company down. Handed to an unchecked
+                  agent, it now lies with confidence.
+                </p>
+              </div>
 
-            <TheShift />
+              <TheShift />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Team */}
-      <section className="section-spacing">
+      <section className="section-spacing bg-[var(--ms-surface)]">
         <div className="container-site">
           <div className="max-w-5xl mx-auto">
             <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
@@ -169,7 +175,7 @@ export default function AboutPage() {
                 title="Co-Founder & CEO"
                 imagePath="/images/team/pettine_headshot.jpg"
                 linkedInUrl="https://www.linkedin.com/in/warren-pettine/"
-                bio="A machine learning scientist and software builder who has wrestled the data engineering problem for 17 years. Trained in medicine at Colorado and computational neuroscience at Harvard, Stanford, NYU, and Yale. He co-founded MTN in 2023 to address the under-utilization of data in healthcare. Separately, he leads the Medical Machine Intelligence (M²Int) Lab at the University of Utah, an academic research group developing AI for clinical applications. Prior service in U.S. and Colorado health policy, and on the University of Utah IRB, shapes MTN's governance posture."
+                bio="A machine learning scientist and software builder who has wrestled the data engineering problem for 17 years. Trained in medicine at Colorado and computational neuroscience at Harvard, Stanford, NYU, and Yale. He co-founded MTN in 2023 to address the under-utilization of data in healthcare. Separately, he is on partial leave from leading the Medical Machine Intelligence (M²Int) Lab at the University of Utah, an academic research group developing AI for clinical applications. Prior service in U.S. and Colorado health policy, and on the University of Utah IRB, shapes MTN's governance posture."
               />
 
               <FounderCard
@@ -251,6 +257,19 @@ export default function AboutPage() {
               funding supports this research; it is not an endorsement of MTN or
               its products by NIH, NIA, or the U.S. Army.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* In the news — shares the validation section's background, as part of
+          the same proof block */}
+      <section className="section-spacing !pt-0">
+        <div className="container-site">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display leading-[1.12] text-[var(--ms-heading)] text-2xl md:text-3xl mb-6">
+              In the news
+            </h2>
+            <NewsLinks />
           </div>
         </div>
       </section>

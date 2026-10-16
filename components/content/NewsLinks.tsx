@@ -12,6 +12,12 @@ interface NewsItem {
 
 const NEWS: NewsItem[] = [
   {
+    outlet: 'BriefGlance',
+    date: 'Oct 13, 2026',
+    headline: 'The Agentic Shift: MTN Secures $2.34M NIH Grant for Privacy-First AI',
+    href: 'https://briefglance.com/articles/the-agentic-shift-mtn-secures-234m-nih-grant-for-privacy-first-ai',
+  },
+  {
     outlet: 'TechBuzz News',
     date: 'Oct 13, 2026',
     headline: 'MTN Lands $2.34 Million NIH Grant to Help AI Navigate Fragmented Data',
@@ -28,7 +34,7 @@ const NEWS: NewsItem[] = [
 
 export default function NewsLinks() {
   return (
-    <ul className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 gap-6">
+    <ul className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {NEWS.map((n) => (
         <li key={n.href}>
           <a
